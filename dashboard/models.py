@@ -9,11 +9,12 @@ class Setor(models.Model):
         return self.setor
 
 class Leito(models.Model):
+    numero = models.IntegerField(default=0)
     situacao = models.CharField(default="A", max_length=2) #A - ativo, D = desativado
     status = models.CharField(default="L", max_length=2) #L - livre, O = ocupado, B = bloqueado
 
     def __str__(self):
-        return "Leito " + str(self.id) + "(" + self.situacao + " - " + self.status + ")"
+        return "Leito " + str(self.numero) + "(" + self.situacao + " - " + self.status + ")"
 
 class Medico(models.Model):
     crm = models.CharField(default="", max_length=6)
