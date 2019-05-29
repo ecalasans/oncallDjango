@@ -6,6 +6,9 @@ class Hospital(models.Model):
     nome = models.CharField(max_length=250, default="")
     sigla = models.CharField(max_length=50, default="")
 
+    def __str__(self):
+        return self.sigla + " - " + self.nome
+
 class Setor(models.Model):
     setor = models.CharField(default="", max_length=10)
 
