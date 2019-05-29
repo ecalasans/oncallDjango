@@ -2,6 +2,10 @@ from django.db import models
 from django.utils import timezone
 
 
+class Hospital(models.Model):
+    nome = models.CharField(max_length=250, default="")
+    sigla = models.CharField(max_length=50, default="")
+
 class Setor(models.Model):
     setor = models.CharField(default="", max_length=10)
 
@@ -9,6 +13,7 @@ class Setor(models.Model):
         return self.setor
 
 class Leito(models.Model):
+    hospital = models.ForeignKey(Hospital, on_delete=models.DO_NOTHING, default="")
     numero = models.IntegerField(default=0)
     situacao = models.CharField(default="A", max_length=2) #A - ativo, D = desativado
     status = models.CharField(default="L", max_length=2) #L - livre, O = ocupado, B = bloqueado
@@ -32,6 +37,7 @@ class Paciente_Leito(models.Model):
     pac = models.ForeignKey(Paciente, on_delete=models.DO_NOTHING)
     leito = models.ForeignKey(Leito, on_delete=models.DO_NOTHING)
 
+
 class Ocorrencia(models.Model):
     pac = models.ForeignKey(Paciente, on_delete=models.DO_NOTHING)
     med = models.ForeignKey(Medico, on_delete=models.DO_NOTHING)
@@ -53,4 +59,6 @@ class Ocorrencia(models.Model):
         self.data_modif = timezone.now()
 
         return super(Ocorrencia, self).save(*args, **kwargs)
+
+
 
