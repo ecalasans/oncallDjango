@@ -72,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="176">
+              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -84,10 +84,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            <state relative-caret-position="154">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oncall/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+              <folding>
+                <element signature="e#630#662#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,10 +139,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="67" />
-    <option name="y" value="27" />
-    <option name="width" value="1144" />
-    <option name="height" value="940" />
+    <option name="x" value="1055" />
+    <option name="y" value="23" />
+    <option name="width" value="1505" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -138,6 +150,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,18 +165,19 @@
             </path>
             <path>
               <item name="oncall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="oncall" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oncall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (oncall) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="oncall" type="462c0819:PsiDirectoryNode" />
+              <item name="oncall" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,6 +242,7 @@
       <workItem from="1558294537278" duration="6564000" />
       <workItem from="1558634955746" duration="1145000" />
       <workItem from="1558650202697" duration="1835000" />
+      <workItem from="1561570678189" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Parei no tutorial 2">
       <created>1557656232750</created>
@@ -261,12 +276,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25973000" />
+    <option name="totallyTimeSpent" value="26009000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1213" height="999" extended-state="6" />
+    <frame x="1055" y="23" width="1505" height="1053" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22365038" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11278196" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -311,15 +326,7 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d09780fa-68a4-4892-8fe5-34add44572f5/console.sql" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8aa80269-5814-44fd-9bc0-b3039f165846/console.sql" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ea0d9cc9-3dbc-4778-b4ca-599c6cc26cf0/console.sql" />
-    <entry file="das://ea0d9cc9-3dbc-4778-b4ca-599c6cc26cf0/database/oncall_django/schema/public/table/auth_group">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="ace43068-008d-47d5-ae1f-f89aa20a0fde">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://ea0d9cc9-3dbc-4778-b4ca-599c6cc26cf0/database/oncall_django/schema/public/table/auth_group" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7e870c6e-88be-4bf1-93fb-4a90bfce45f1/console.sql" />
     <entry file="das://7e870c6e-88be-4bf1-93fb-4a90bfce45f1/database/oncall_django/schema/public/table/dashboard_leito">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -336,21 +343,11 @@
     <entry file="file://$PROJECT_DIR$/dashboard/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/migrations/0005_merge_20190529_1400.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/migrations/0004_auto_20190519_1831.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/migrations/0003_auto_20190519_1743.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/migrations/0002_auto_20190523_1938.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/migrations/0002_auto_20190519_1741.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/migrations/0005_merge_20190529_1400.py" />
+    <entry file="file://$PROJECT_DIR$/dashboard/migrations/0004_auto_20190519_1831.py" />
+    <entry file="file://$PROJECT_DIR$/dashboard/migrations/0003_auto_20190519_1743.py" />
+    <entry file="file://$PROJECT_DIR$/dashboard/migrations/0002_auto_20190523_1938.py" />
+    <entry file="file://$PROJECT_DIR$/dashboard/migrations/0002_auto_20190519_1741.py" />
     <entry file="file://$PROJECT_DIR$/dashboard/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-744" />
@@ -376,33 +373,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oncall/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="e#630#662#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django_adminlte/templates/adminlte/lib/_main_sidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django_adminlte/templates/adminlte/lib/_main_header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-830" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/templates/adminlte/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="34" lean-forward="true" selection-start-column="34" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django_adminlte/templates/adminlte/lib/_main_sidebar.html" />
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django_adminlte/templates/adminlte/lib/_main_header.html" />
+    <entry file="file://$PROJECT_DIR$/dashboard/templates/adminlte/base.html" />
     <entry file="file://$PROJECT_DIR$/dashboard/templates/dashboard/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -447,18 +420,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="176">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/oncall/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding>
+            <element signature="e#630#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        <state relative-caret-position="154">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
