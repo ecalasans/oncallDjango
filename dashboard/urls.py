@@ -1,8 +1,10 @@
 from django.urls import path
 from . import views
 
+
 app_name = 'dashboard'
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('<int:numero>/', views.details, name='details'),
+    path('', views.MainView.as_view(), name='index'),
+    path('registration/', views.LoginView.as_view()),
+    #path('<int:numero>/', views.details, name='details'),
 ]

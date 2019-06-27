@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from django.views.generic import ListView, TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-def index(request):
-    context = {}
+class LoginView(LoginRequiredMixin, TemplateView):
+    login_url = 'accounts/login/'
+    redirect_field_name = 'dashboard/'
 
-    return render(request, 'dashboard/index.html', context)
-
-def details(request, numero):
-    return HttpResponse("ID do leito: %s" % numero)
+class MainView(TemplateView):
+    template_name = 'dashboard/index.html'
