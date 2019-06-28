@@ -3,9 +3,11 @@ from django.http import HttpResponse, Http404
 from django.views.generic import ListView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+
 class LoginView(LoginRequiredMixin, TemplateView):
-    login_url = 'accounts/login/'
-    redirect_field_name = 'dashboard/'
+    login_url = '/accounts/login/'
+    template_name = 'registration/login.html'
+
 
 class MainView(TemplateView):
     template_name = 'dashboard/index.html'
