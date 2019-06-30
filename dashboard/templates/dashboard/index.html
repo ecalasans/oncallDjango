@@ -16,9 +16,9 @@
             </div>
             <div class="box-footer no-padding">
               <ul class="nav nav-stacked">
-                <li><a>Ocupados <span class="pull-right badge bg-blue">3</span></a></li>
-                <li><a>Vagos <span class="pull-right badge bg-aqua">5</span></a></li>
-                <li><a>Reservados/Bloqueados<span class="pull-right badge bg-red">5</span></a></li>
+                <li><a>Ocupados <span class="pull-right badge bg-blue">{{ utin1_ocup }}</span></a></li>
+                <li><a>Vagos <span class="pull-right badge bg-aqua">{{ utin1_vago }}</span></a></li>
+                <li><a>Reservados/Bloqueados<span class="pull-right badge bg-red">{{ utin1_bloq }}</span></a></li>
               </ul>
             </div>
           </div>
@@ -32,9 +32,9 @@
             </div>
             <div class="box-footer no-padding">
               <ul class="nav nav-stacked">
-                <li><a>Ocupados <span class="pull-right badge bg-blue">10</span></a></li>
-                <li><a>Vagos <span class="pull-right badge bg-aqua">2</span></a></li>
-                <li><a>Reservados/Bloqueados<span class="pull-right badge bg-red">0</span></a></li>
+                <li><a>Ocupados <span class="pull-right badge bg-blue">{{ utin2_ocup }}</span></a></li>
+                <li><a>Vagos <span class="pull-right badge bg-aqua">{{ utin2_vago }}</span></a></li>
+                <li><a>Reservados/Bloqueados<span class="pull-right badge bg-red">{{ utin2_bloq }}</span></a></li>
               </ul>
             </div>
           </div>
@@ -48,9 +48,9 @@
                 </div>
                 <div class="box-footer no-padding">
                   <ul class="nav nav-stacked">
-                    <li><a>Ocupados <span class="pull-right badge bg-blue">6</span></a></li>
-                    <li><a>Vagos <span class="pull-right badge bg-aqua">2</span></a></li>
-                    <li><a>Reservados/Bloqueados<span class="pull-right badge bg-red">0</span></a></li>
+                    <li><a>Ocupados <span class="pull-right badge bg-blue">{{ mr_ocup }}</span></a></li>
+                    <li><a>Vagos <span class="pull-right badge bg-aqua">{{ mr_vago }}</span></a></li>
+                    <li><a>Reservados/Bloqueados<span class="pull-right badge bg-red">{{ mr_bloq }}</span></a></li>
                   </ul>
                 </div>
               </div>
@@ -146,7 +146,7 @@
                                   <th>Paciente</th>
                                   <th>Ocorrências</th>
                                 </tr>
-                                <tr>
+                                <tr data-toggle="modal" data-target="#modal-default">
                                   <td>21</td>
                                   <td>RN de Fernanda Menezes</td>
                                   <td>Sem intercorrências no momento.  Absorve bem a dieta.</td>
@@ -162,7 +162,31 @@
                         </div>
                     </div>
             </ul>
+            <div class="modal fade" id="modal-default" style="display: none;">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Default Modal</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>One fine body…</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+                <!-- /.modal-content -->
+              </div>
+              <!-- /.modal-dialog -->
+            </div>
         </div>
+    </div>
+
+    <div class="row">
+        <h3>{{ leitos.count }}</h3>
     </div>
 
 {% endblock %}

@@ -11,6 +11,7 @@ class Hospital(models.Model):
 
 class Setor(models.Model):
     setor = models.CharField(default="", max_length=10)
+    hospital = models.ForeignKey(Hospital, on_delete=models.DO_NOTHING, default="")
 
     def __str__(self):
         return self.setor
@@ -18,11 +19,12 @@ class Setor(models.Model):
 class Leito(models.Model):
     hospital = models.ForeignKey(Hospital, on_delete=models.DO_NOTHING, default="")
     numero = models.IntegerField(default=0)
+    setor = models.ForeignKey(Setor, on_delete=models.DO_NOTHING, default="")
     situacao = models.CharField(default="A", max_length=2) #A - ativo, D = desativado
     status = models.CharField(default="L", max_length=2) #L - livre, O = ocupado, B = bloqueado
 
     def __str__(self):
-        return "Leito " + str(self.numero) + "(" + self.situacao + " - " + self.status + ")"
+        return "Leito " + str(self.numero) + "(" + self.situacao + " - " + self.status + ") - " + str(self.hospital.sigla)
 
 class Medico(models.Model):
     crm = models.CharField(default="", max_length=6)
