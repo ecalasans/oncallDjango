@@ -1,12 +1,37 @@
 {% extends 'adminlte/login.html' %}
 
-{% block title %}OnCall System{% endblock %}
+{% block title %}PassaPlantão{% endblock %}
 
 {% block logo_text %}
-    On<b>Call</b> System
+    <b>Passa</b>Plantão
 {% endblock %}
 
-{% block login_form_links %}
-    <a href="#">Esqueci a senha...️️</a><br>
-    <a href="#">Fazer cadastro</a>
+{% block login_form %}
+    <form action="" method="post">
+                    {% csrf_token %}
+                    {% if message %}
+                        <p class="login-box-msg" style="color: red;">{{ message }}</p>
+                    {% endif %}
+                    <div class="form-group has-feedback">
+                        <input name="username" class="form-control" placeholder="Username">
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            {% block login_form_links %}
+                                <a href="#">Esqueci a senha...️️</a><br>
+                                <a href="#">Fazer cadastro</a>
+                            {% endblock %}
+                        </div>
+                        <div class="col-xs-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+                            <input type="hidden" name="next" value="/dashboard">
+                        </div>
+                    </div>
+                </form>
 {% endblock %}
+
