@@ -12,6 +12,8 @@ class LoginView(LoginRequiredMixin, TemplateView):
         'next': '/dashboard',
     }
 
+
+#Classe de logout
 class LogoutView(RedirectView):
     url = '/'
 
