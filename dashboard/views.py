@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
-from django.views.generic import ListView, TemplateView
+from django.views.generic import ListView, TemplateView, RedirectView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import logout
 
 
 class LoginView(LoginRequiredMixin, TemplateView):
@@ -10,6 +11,13 @@ class LoginView(LoginRequiredMixin, TemplateView):
     extra_context = {
         'next': '/dashboard',
     }
+
+class LogoutView(RedirectView):
+    url = '/'
+
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return super(LogoutView, self).get(request, *args, **kwargs)
 
 class MainView(TemplateView):
     template_name = 'dashboard/index.html'
