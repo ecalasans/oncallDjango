@@ -3,7 +3,7 @@ from django.http import HttpResponse, Http404
 from django.views.generic import ListView, TemplateView, RedirectView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import logout
-from dashboard.models import Leito, Hospital
+from dashboard.models import Leito, Hospital, Paciente
 
 
 class LoginView(LoginRequiredMixin, TemplateView):
@@ -46,3 +46,8 @@ class MainView(TemplateView):
         }
 
         return context
+
+#Pacientes
+#Criação
+class CreatePaciente(CreateView):
+    model = Paciente
