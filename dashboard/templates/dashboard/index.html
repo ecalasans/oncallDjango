@@ -7,54 +7,34 @@
 {% block content %}
     {# Quadro de vagas  #}
     <div class="row">
+        {% for key, value in leitos.items %}
         <div class="col-lg-4">
         <div class="box box-widget widget-user-2">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-green-gradient">
-              <h3 class="widget-user-username">UTIN 1</h3>
+                <h3 class="widget-user-username"><b>{{ key }}</b></h3>
               <h5 class="widget-user-desc"></h5>
             </div>
             <div class="box-footer no-padding">
               <ul class="nav nav-stacked">
-                <li><a>Ocupados <span class="pull-right badge bg-blue">{{ utin1_ocup }}</span></a></li>
-                <li><a>Vagos <span class="pull-right badge bg-aqua">{{ utin1_vago }}</span></a></li>
-                <li><a>Reservados/Bloqueados<span class="pull-right badge bg-red">{{ utin1_bloq }}</span></a></li>
+                  {% for leito in value %}
+                      {% if leito.status == 'L' %}
+                          <li><a>Vagas<span class="pull-right badge bg-blue">{{ leito.setor__count }}</span></a></li>
+                      {% elif  leito.status == 'O'%}
+                          <li><a>Vagas<span class="pull-right badge bg-green">{{ leito.setor__count }}</span></a></li>
+                      {% elif  leito.status == 'B'%}
+                          <li><a>Reservado/Bloqueado<span class="pull-right badge bg-red">{{ leito.setor__count }}</span></a></li>
+                      {% endif %}
+                  {% endfor %}
+
+{#                <li><a>Vagos <span class="pull-right badge bg-aqua">{{ utin1_vago }}</span></a></li>#}
+{#                <li><a>Reservados/Bloqueados<span class="pull-right badge bg-red">{{ utin1_bloq }}</span></a></li>#}
               </ul>
             </div>
           </div>
         </div>
-        <div class="col-lg-4">
-        <div class="box box-widget widget-user-2">
-            <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="widget-user-header bg-green">
-              <h3 class="widget-user-username">UTIN 2</h3>
-              <h5 class="widget-user-desc"></h5>
-            </div>
-            <div class="box-footer no-padding">
-              <ul class="nav nav-stacked">
-                <li><a>Ocupados <span class="pull-right badge bg-blue">{{ utin2_ocup }}</span></a></li>
-                <li><a>Vagos <span class="pull-right badge bg-aqua">{{ utin2_vago }}</span></a></li>
-                <li><a>Reservados/Bloqueados<span class="pull-right badge bg-red">{{ utin2_bloq }}</span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="box box-widget widget-user-2">
-                <!-- Add the bg color to the header using any of the bg-* classes -->
-                <div class="widget-user-header bg-blue-gradient">
-                  <h3 class="widget-user-username">Médio Risco</h3>
-                  <h5 class="widget-user-desc"></h5>
-                </div>
-                <div class="box-footer no-padding">
-                  <ul class="nav nav-stacked">
-                    <li><a>Ocupados <span class="pull-right badge bg-blue">{{ mr_ocup }}</span></a></li>
-                    <li><a>Vagos <span class="pull-right badge bg-aqua">{{ mr_vago }}</span></a></li>
-                    <li><a>Reservados/Bloqueados<span class="pull-right badge bg-red">{{ mr_bloq }}</span></a></li>
-                  </ul>
-                </div>
-              </div>
-        </div>
+        {% endfor %}
+
     </div>
 
     {#  Timeline #}
@@ -62,10 +42,11 @@
         <div class="col-lg-12">
             <ul class="timeline">
                 <li class="time-label"><span class="bg-green-gradient">Ontem</span> </li>
-                    <div class="col-lg-4">
-                        <div class="box">
+                    <div class="col-lg-12">
+                        {% for setor in setores %}
+                            <div class="box">
                             <div class="box-header">
-                              <h3 class="box-title">UTIN 1</h3>
+                              <h3 class="box-title">{{ setor.setor }}</h3>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body table-responsive no-padding">
@@ -94,72 +75,7 @@
                             </div>
                             <!-- /.box-body -->
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="box">
-                            <div class="box-header">
-                              <h3 class="box-title">UTIN 2</h3>
-                            </div>
-                            <!-- /.box-header -->
-                            <div class="box-body table-responsive no-padding">
-                              <table class="table table-hover">
-                                <tbody><tr>
-                                  <th>Leito</th>
-                                  <th>Paciente</th>
-                                  <th>Ocorrências</th>
-                                </tr>
-                                <tr>
-                                  <td>09</td>
-                                  <td>RN de Crysddallyanne Myrlla(Maynglisson)</td>
-                                  <td>Aguarda vaga no MR.</td>
-                                </tr>
-                                <tr>
-                                  <td>10</td>
-                                  <td></td>
-                                  <td>RESERVADO PARA CIRURGIA DE RETINOPEXIA</td>
-                                </tr>
-                                <tr>
-                                  <td>11</td>
-                                  <td>RN de Maria Luísa Saraiva(Bartô)</td>
-                                  <td>Sem intercorrências no momento.</td>
-                                </tr>
-                                <tr>
-                                  <td>12</td>
-                                  <td>RN de Márcia Moisés</td>
-                                  <td>Aguarda ecocardiograma(contato feito com a AMICO).</td>
-                                </tr>
-                              </tbody></table>
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="box">
-                            <div class="box-header">
-                              <h3 class="box-title">Médio Risco</h3>
-                            </div>
-                            <!-- /.box-header -->
-                            <div class="box-body table-responsive no-padding">
-                              <table class="table table-hover">
-                                <tbody><tr>
-                                  <th>Leito</th>
-                                  <th>Paciente</th>
-                                  <th>Ocorrências</th>
-                                </tr>
-                                <tr data-toggle="modal" data-target="#modal-default">
-                                  <td>21</td>
-                                  <td>RN de Fernanda Menezes</td>
-                                  <td>Sem intercorrências no momento.  Absorve bem a dieta.</td>
-                                </tr>
-                                <tr>
-                                  <td>22</td>
-                                  <td>RN de Janaína Gonçalves</td>
-                                  <td>Boa sucção ao seio.  Provável alta para o AC.</td>
-                                </tr>
-                              </tbody></table>
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
+                        {% endfor %}
                     </div>
             </ul>
             <div class="modal fade" id="modal-default" style="display: none;">
