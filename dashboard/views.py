@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import logout
 from dashboard.models import Leito, Hospital, Paciente, Setor
 from django.db.models import Count
+from django.contrib.auth.models import User
 
 
 class LoginView(LoginRequiredMixin, TemplateView):
@@ -49,3 +50,9 @@ class MainView(TemplateView):
 #Criação
 class CreatePaciente(CreateView):
     model = Paciente
+
+
+#Médicos
+#Criação
+class CreateUser(CreateView):
+    model = User
