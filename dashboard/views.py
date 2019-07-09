@@ -6,6 +6,7 @@ from django.contrib.auth import logout
 from dashboard.models import Leito, Hospital, Paciente, Setor
 from django.db.models import Count
 from django.contrib.auth.models import User
+from .forms import MedicoForm, UserForm
 
 
 class LoginView(LoginRequiredMixin, TemplateView):
@@ -51,8 +52,8 @@ class MainView(TemplateView):
 class CreatePaciente(CreateView):
     model = Paciente
 
-
 #Médicos
 #Criação
 class CreateUser(CreateView):
-    model = User
+    template_name = 'dashboard/medicos/medicos.html'
+    form_class = UserForm
