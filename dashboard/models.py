@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class Hospital(models.Model):
@@ -27,12 +29,11 @@ class Leito(models.Model):
     def __str__(self):
         return "Leito " + str(self.numero) + "(" + self.situacao + " - " + self.status + ") - " + str(self.hospital.sigla)
 
-class Medico(models.Model):
-    crm = models.CharField(default="", max_length=6)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
+class Medico(User):
+    crm = models.CharField(default="0000", max_length=6)
 
     def __str__(self):
-        return self.user_id.first_name
+        return self.first_name
 
 class Paciente(models.Model):
     nome = models.CharField(max_length=250, default="")
@@ -68,6 +69,4 @@ class Ocorrencia(models.Model):
         self.data_modif = timezone.now()
 
         return super(Ocorrencia, self).save(*args, **kwargs)
-
-
 

@@ -10,9 +10,5 @@ class PacienteForm(forms.ModelForm):
 class MedicoForm(forms.ModelForm):
     class Meta:
         model = Medico
-        fields = ['crm',]
+        fields = ['crm', 'username', 'first_name', 'last_name', 'email', 'password',]
 
-class UserForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'password',]
