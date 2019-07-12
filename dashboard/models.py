@@ -31,6 +31,7 @@ class Leito(models.Model):
 
 class Medico(User):
     crm = models.CharField(default="0000", max_length=6)
+    hospital = models.ForeignKey(Hospital, on_delete=models.CASCADE, default="")
 
     def __str__(self):
         return self.first_name

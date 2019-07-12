@@ -57,3 +57,15 @@ class CreateUser(CreateView):
     template_name = 'dashboard/medicos/medicos.html'
     form_class = MedicoForm
     success_url = '/'
+
+    def get_context_data(self, **kwargs):
+        context = super(CreateUser, self).get_context_data(**kwargs)
+
+        hospitais = Hospital.objects.all().order_by('id')
+
+        form = MedicoForm()
+
+        context['form'] = form
+        context['hospitais'] = hospitais
+
+        return context

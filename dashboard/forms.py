@@ -5,12 +5,12 @@ from django.contrib.auth.models import User
 class PacienteForm(forms.ModelForm):
     class Meta:
         model = Paciente
-        fields = ['nome', 'ig', 'idade', 'peso_nasc', 'peso_atual', 'setor',]
+        fields = ['nome', 'ig', 'idade', 'peso_nasc', 'peso_atual', 'setor', ]
 
 class MedicoForm(forms.ModelForm):
     class Meta:
         model = Medico
-        fields = ['crm', 'username', 'first_name', 'last_name', 'email', 'password',]
+        fields = ['crm', 'username', 'first_name', 'last_name', 'email', 'password', 'hospital', ]
 
     def save(self, commit=True):
         medico = super(MedicoForm, self).save(commit=False)
