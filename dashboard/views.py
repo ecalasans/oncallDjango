@@ -56,3 +56,4 @@ class CreatePaciente(CreateView):
 class CreateUser(CreateView):
     template_name = 'dashboard/medicos/medicos.html'
     form_class = MedicoForm
+    success_url = '/'

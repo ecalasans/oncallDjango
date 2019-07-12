@@ -12,3 +12,14 @@ class MedicoForm(forms.ModelForm):
         model = Medico
         fields = ['crm', 'username', 'first_name', 'last_name', 'email', 'password',]
 
+    def save(self, commit=True):
+        medico = super(MedicoForm, self).save(commit=False)
+
+        pass_raw = self.cleaned_data['password']
+
+        medico.set_password(pass_raw)
+
+        if commit:
+            medico.save()
+
+        return medico
