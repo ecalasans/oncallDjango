@@ -10,7 +10,7 @@ class PacienteForm(forms.ModelForm):
 class MedicoForm(forms.ModelForm):
     class Meta:
         model = Medico
-        fields = ['crm', 'username', 'first_name', 'last_name', 'email', 'password', 'hospital', ]
+        fields = ['crm', 'username', 'first_name', 'last_name', 'email', 'password', 'hospital',]
 
     def save(self, commit=True):
         medico = super(MedicoForm, self).save(commit=False)
@@ -19,7 +19,9 @@ class MedicoForm(forms.ModelForm):
 
         medico.set_password(pass_raw)
 
+
         if commit:
             medico.save()
 
         return medico
+
