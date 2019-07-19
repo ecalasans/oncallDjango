@@ -1,16 +1,18 @@
 from django import forms
-from .models import Paciente, Medico
+from .models import Paciente_Leito, Medico
 from django.contrib.auth.models import User
+from bootstrap_modal_forms.forms import BSModalForm
 
 class PacienteForm(forms.ModelForm):
     class Meta:
-        model = Paciente
-        fields = ['nome', 'ig', 'idade', 'peso_nasc', 'peso_atual', 'setor', ]
+        model = Paciente_Leito
+        fields =['nome', 'ig', 'peso_nasc', 'peso_atual', 'idade', 'leito',]
 
-class MedicoForm(forms.ModelForm):
+class MedicoForm(BSModalForm):
     class Meta:
         model = Medico
-        fields = ['crm', 'username', 'first_name', 'last_name', 'email', 'password', 'hospital',]
+        fields = ['crm', 'username', 'first_name', 'last_name', 'email', 'password', 'hospital',
+                  'is_active',]
 
     def save(self, commit=True):
         medico = super(MedicoForm, self).save(commit=False)
@@ -19,6 +21,7 @@ class MedicoForm(forms.ModelForm):
 
         medico.set_password(pass_raw)
 
+        medico.is_active = False
 
         if commit:
             medico.save()

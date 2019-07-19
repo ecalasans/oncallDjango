@@ -42,10 +42,8 @@ class Paciente(models.Model):
     idade = models.CharField(default="", max_length=10)
     peso_nasc = models.IntegerField(default=0)
     peso_atual = models.IntegerField(default=0)
-    setor = models.ForeignKey(Setor, on_delete=models.DO_NOTHING)
 
-class Paciente_Leito(models.Model):
-    pac = models.ForeignKey(Paciente, on_delete=models.DO_NOTHING)
+class Paciente_Leito(Paciente):
     leito = models.ForeignKey(Leito, on_delete=models.DO_NOTHING)
 
 
