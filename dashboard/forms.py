@@ -1,14 +1,14 @@
 from django import forms
 from .models import Paciente_Leito, Medico
 from django.contrib.auth.models import User
-from bootstrap_modal_forms.forms import BSModalForm
+from django.shortcuts import render_to_response
 
 class PacienteForm(forms.ModelForm):
     class Meta:
         model = Paciente_Leito
         fields =['nome', 'ig', 'peso_nasc', 'peso_atual', 'idade', 'leito',]
 
-class MedicoForm(BSModalForm):
+class MedicoForm(forms.ModelForm):
     class Meta:
         model = Medico
         fields = ['crm', 'username', 'first_name', 'last_name', 'email', 'password', 'hospital',
@@ -28,3 +28,5 @@ class MedicoForm(BSModalForm):
 
         return medico
 
+    # def is_valid(self):
+    #     render_to_response('dashboard/medicos/success/index.html')

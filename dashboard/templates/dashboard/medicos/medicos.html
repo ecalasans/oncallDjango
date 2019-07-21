@@ -1,84 +1,92 @@
-{# <div class="row">#}
-{#    <div class="box box-primary">#}
-{#        <div class="box-header with-border">#}
-{#            <h3 class="box-title">Cadastro de Médicos</h3>#}
-{#        </div>#}
-{#        <form role="form" action="" method="post">#}
-{#            {% csrf_token %}#}
-{#            <div class="box-body">#}
-{#                    <div class="form-group">#}
-{#                        <label for="id_first_name">Primeiro nome</label>#}
-{#                        <input type="text" class="form-control" id="id_first_name"#}
-{#                               name="first_name" placeholder="ex. João">#}
-{#                    </div>#}
-{#                    <div class="form-group">#}
-{#                        <label for="id_last_name">Sobrenome</label>#}
-{#                        <input type="text" class="form-control" id="id_last_name"#}
-{#                               name="last_name" placeholder="ex. Maria da Silva">#}
-{#                    </div>#}
-{#                    <div class="form-group">#}
-{#                        <label for="id_email">Email</label>#}
-{#                        <input type="email" class="form-control" id="id_email"#}
-{#                               name="email" placeholder="ex. joaomaria@xyz.com">#}
-{#                    </div>#}
-{#                    <div class="row">#}
-{#                        <div class="col-lg-4">#}
-{#                            <div class="form-group">#}
-{#                                <label for="id_crm">CRM</label>#}
-{#                                <input type="number" class="form-control" id="id_crm"#}
-{#                                    name="crm" placeholder="ex. 1234">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="col-lg-8">#}
-{#                            <div class="form-group">#}
-{#                                <label for="{{ form.hospital.id_for_label }}" >Hospital</label>#}
-{#                                <select id="{{ form.hospital.id_for_label}}" name="{{ form.hospital.html_name }}"#}
-{#                                        class="form-control">#}
-{#                                    <option value="None">Nenhum</option>#}
-{#                                    {% for hospital in hospitais %}#}
-{#                                        <option value="{{ hospital.id }}">{{ hospital.nome }}</option>#}
-{#                                    {% endfor %}#}
-{#                                </select>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="form-group">#}
-{#                        <label for="id_username">Usuário</label>#}
-{#                        <input type="text" class="form-control" id="id_username"#}
-{#                               name="username" placeholder="ex. joaomaria">#}
-{#                    </div>#}
-{#                    <div class="form-group">#}
-{#                        <label for="id_password">Senha</label>#}
-{#                        <input type="password" class="form-control" id="id_password"#}
-{#                               name="password" placeholder="************">#}
-{#                    </div>#}
-{#                </div>#}
-{#            <div class="box-footer">#}
-{#                <button type="submit" class="btn btn-primary">Enviar</button>#}
-{#                <button type="reset" class="btn btn-default pull-right">Limpar</button>#}
-{#            </div>#}
-{#        </form>#}
-{#    </div>#}
-{#</div>#}
-
 {% extends 'adminlte/login.html' %}
 {% load staticfiles %}
 
 {% block extra_head %}
     <script src="{% static "jquery/dist/jquery.min.js" %}"></script>
-
     <script type="text/javascript">
         $(document).ready(function () {
-           $("#create_user").modal('show');
-        });
+            $("#envia_dados").click(function () {
+                $("#cadastro").submit();
+            })
+        })
     </script>
 {% endblock %}
 
 {% block login_form %}
-    <div class="modal fade" tabindex="-1" id="create_user">
+     <div class="row">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Cadastro de Médicos</h3>
+                </div>
+                <form role="form" id="cadastro" action="" method="post">
+                    {% csrf_token %}
+                    <div class="box-body">
+                            <div class="form-group">
+                                <label for="id_first_name">Nome</label>
+                                <input type="text" class="form-control" id="id_first_name"
+                                       name="first_name" placeholder="ex. João">
+                            </div>
+                            <div class="form-group">
+                                <label for="id_last_name">Sobrenome</label>
+                                <input type="text" class="form-control" id="id_last_name"
+                                       name="last_name" placeholder="ex. Maria da Silva">
+                            </div>
+                            <div class="form-group">
+                                <label for="id_email">Email</label>
+                                <input type="email" class="form-control" id="id_email"
+                                       name="email" placeholder="ex. joaomaria@xyz.com">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="id_crm">CRM</label>
+                                        <input type="number" class="form-control" id="id_crm"
+                                            name="crm" placeholder="ex. 1234">
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label for="{{ form.hospital.id_for_label }}" >Hospital</label>
+                                        <select id="{{ form.hospital.id_for_label}}" name="{{ form.hospital.html_name }}"
+                                                class="form-control">
+                                            <option value="None">Nenhum</option>
+                                            {% for hospital in hospitais %}
+                                                <option value="{{ hospital.id }}">{{ hospital.nome }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="id_username">Usuário</label>
+                                <input type="text" class="form-control" id="id_username"
+                                       name="username" placeholder="ex. joaomaria">
+                            </div>
+                            <div class="form-group">
+                                <label for="id_password">Senha</label>
+                                <input type="password" class="form-control" id="id_password"
+                                       name="password" placeholder="************">
+                            </div>
+                        </div>
+                    <div class="box-footer">
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#success_created">Enviar</button>
+                        <button type="reset" class="btn btn-default pull-right">Limpar</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+
+    <div class="modal fade" id="success_created">
         <div class="modal-dialog">
             <div class="modal-content">
-                {% include 'dashboard/medicos/modal.html' %}
+                <div class="modal-header">
+                    <h3 class="modal-title">Passa<B>Plantão</B></h3>
+                </div>
+                <div class="modal-body">Dados enviados!  Aguarde liberação!</div>
+                <div class="modal-footer">
+                    <button type="button" id="envia_dados">Fechar</button>
+                </div>
             </div>
         </div>
     </div>

@@ -1,23 +1,15 @@
-{% extends 'adminlte/base.html' %}
+{% extends 'registration/login.html' %}
+{% load staticfiles %}
+
+{% block extra_head %}
+    <script src="{% static "jquery/dist/jquery.min.js" %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+           $("#modal_success").modal('show');
+        });
+    </script>
+{% endblock %}
 
 {% block content %}
-    <div class="modal fade in" id="modal-default" style="display: block; padding-right: 15px;">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span></button>
-                <h4 class="modal-title">Passa<b>Plantão</b></h4>
-              </div>
-              <div class="modal-body">
-                <p>Cadastro realizado com sucesso!  Aguarde liberação de acesso!</p>
-              </div>
-              <div class="modal-footer">
-                <a href="{% url 'login' %}" class="text-center">Fechar</a>
-              </div>
-            </div>
-            <!-- /.modal-content -->
-          </div>
-          <!-- /.modal-dialog -->
-        </div>
+
 {% endblock %}

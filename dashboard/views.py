@@ -77,7 +77,7 @@ class CreatePaciente(CreateView):
 class CreateUser(CreateView):
     template_name = 'dashboard/medicos/medicos.html'
     form_class = MedicoForm
-    success_url = 'success/'
+    success_url = '/'
 
     def get_context_data(self, **kwargs):
         context = super(CreateUser, self).get_context_data(**kwargs)
@@ -90,6 +90,5 @@ class CreateUser(CreateView):
         context['hospitais'] = hospitais
 
         return context
-
 
 
