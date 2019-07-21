@@ -61,3 +61,25 @@
 {#    </div>#}
 {#</div>#}
 
+{% extends 'adminlte/login.html' %}
+{% load staticfiles %}
+
+{% block extra_head %}
+    <script src="{% static "jquery/dist/jquery.min.js" %}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+           $("#create_user").modal('show');
+        });
+    </script>
+{% endblock %}
+
+{% block login_form %}
+    <div class="modal fade" tabindex="-1" id="create_user">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                {% include 'dashboard/medicos/modal.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

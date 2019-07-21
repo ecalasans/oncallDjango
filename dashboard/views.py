@@ -13,12 +13,20 @@ class LoginView(LoginRequiredMixin, TemplateView):
     login_url = 'accounts/login/'
     template_name = 'registration/login.html'
 
-    hospitais = Hospital.objects.all().order_by('nome')
+    hosp = Hospital.objects.all().order_by('id')
 
     extra_context = {
         'next': '/dashboard',
-        'hospitais': hospitais,
+        'hosp': hosp,
     }
+
+    def get_context_data(self, **kwargs):
+        context = super(LoginView).get_context_data(**kwargs)
+
+        context['hosp'] = self.hosp
+
+        return context
+
 
 #Classe de logout
 class LogoutView(RedirectView):
@@ -66,26 +74,22 @@ class CreatePaciente(CreateView):
 
 #Médicos
 #Criação
-# class CreateUser(CreateView):
-#     template_name = 'dashboard/medicos/medicos.html'
-#     form_class = MedicoForm
-#     success_url = 'success/'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super(CreateUser, self).get_context_data(**kwargs)
-#
-#         hospitais = Hospital.objects.all().order_by('id')
-#
-#         form = MedicoForm()
-#
-#         context['form'] = form
-#         context['hospitais'] = hospitais
-#
-#         return context
-
-class CreateUser(BSModalCreateView):
-    template_name = 'dashboard/medicos/modal.html'
+class CreateUser(CreateView):
+    template_name = 'dashboard/medicos/medicos.html'
     form_class = MedicoForm
-    success_message = "Você foi cadastrado com sucesso!!"
-    success_url = '/'
+    success_url = 'success/'
+
+    def get_context_data(self, **kwargs):
+        context = super(CreateUser, self).get_context_data(**kwargs)
+
+        hospitais = Hospital.objects.all().order_by('id')
+
+        form = MedicoForm()
+
+        context['form'] = form
+        context['hospitais'] = hospitais
+
+        return context
+
+
 
