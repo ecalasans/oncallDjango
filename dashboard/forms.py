@@ -28,5 +28,3 @@ class MedicoForm(forms.ModelForm):
 
         return medico
 
-    # def is_valid(self):
-    #     render_to_response('dashboard/medicos/success/index.html')

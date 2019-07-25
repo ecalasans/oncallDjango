@@ -7,23 +7,24 @@ from dashboard.models import Leito, Hospital, Paciente_Leito, Setor
 from django.db.models import Count
 from django.contrib.auth.models import User
 from .forms import MedicoForm, PacienteForm
-from bootstrap_modal_forms.generic import BSModalCreateView
+
 
 class LoginView(LoginRequiredMixin, TemplateView):
     login_url = 'accounts/login/'
     template_name = 'registration/login.html'
 
-    hosp = Hospital.objects.all().order_by('id')
-
     extra_context = {
-        'next': '/dashboard',
-        'hosp': hosp,
+        'next': '/',
     }
 
     def get_context_data(self, **kwargs):
-        context = super(LoginView).get_context_data(**kwargs)
+        context = super(LoginView, self).get_context_data(**kwargs)
 
-        context['hosp'] = self.hosp
+        user = self.request.user
+
+        hospitais = Hospital.objects.all()
+
+        context['user_hospitais'] = hospitais
 
         return context
 
