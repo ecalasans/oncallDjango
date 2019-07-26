@@ -4,8 +4,15 @@
 {% block title %}PassaPlantão{% endblock %}
 
 {% block extra_head %}
-    {{ block.super }}
-
+    <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btn_login").click(function () {
+               $("#tipo_next").val("/dashboard");
+               $("#login_form").submit();
+            });
+        });
+    </script>
 {% endblock %}
 
 {% block logo_text %}
@@ -13,7 +20,7 @@
 {% endblock %}
 
 {% block login_form %}
-    <form action="" method="post">
+    <form id="login_form" action="" method="post">
         {% csrf_token %}
         <div class="row">
             {% if message %}
@@ -36,8 +43,8 @@
                 {% endblock %}
             </div>
             <div class="col-xs-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
-                <input type="hidden" name="next" value="/">
+                <button id="btn_login" type="button" class="btn btn-primary btn-block btn-flat">Login</button>
+                <input id="tipo_next" type="hidden" name="next" value="/">
             </div>
         </div>
     </form>
