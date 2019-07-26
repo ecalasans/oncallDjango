@@ -21,14 +21,11 @@
                       {% if leito.status == 'L' %}
                           <li><a>Vagas<span class="pull-right badge bg-blue">{{ leito.setor__count }}</span></a></li>
                       {% elif  leito.status == 'O'%}
-                          <li><a>Vagas<span class="pull-right badge bg-green">{{ leito.setor__count }}</span></a></li>
+                          <li><a>Ocupado<span class="pull-right badge bg-green">{{ leito.setor__count }}</span></a></li>
                       {% elif  leito.status == 'B'%}
                           <li><a>Reservado/Bloqueado<span class="pull-right badge bg-red">{{ leito.setor__count }}</span></a></li>
                       {% endif %}
                   {% endfor %}
-
-{#                <li><a>Vagos <span class="pull-right badge bg-aqua">{{ utin1_vago }}</span></a></li>#}
-{#                <li><a>Reservados/Bloqueados<span class="pull-right badge bg-red">{{ utin1_bloq }}</span></a></li>#}
               </ul>
             </div>
           </div>

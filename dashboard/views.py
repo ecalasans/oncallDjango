@@ -3,17 +3,31 @@ from django.http import HttpResponse, Http404
 from django.views.generic import ListView, TemplateView, RedirectView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import logout
-from dashboard.models import Leito, Hospital, Paciente, Setor
+from dashboard.models import Leito, Hospital, Paciente_Leito, Setor
 from django.db.models import Count
 from django.contrib.auth.models import User
+from .forms import MedicoForm, PacienteForm
 
 
 class LoginView(LoginRequiredMixin, TemplateView):
     login_url = 'accounts/login/'
     template_name = 'registration/login.html'
+
     extra_context = {
-        'next': '/dashboard',
+        'next': '/',
     }
+
+    def get_context_data(self, **kwargs):
+        context = super(LoginView, self).get_context_data(**kwargs)
+
+        user = self.request.user
+
+        hospitais = Hospital.objects.all()
+
+        context['user_hospitais'] = hospitais
+
+        return context
+
 
 #Classe de logout
 class LogoutView(RedirectView):
@@ -49,10 +63,33 @@ class MainView(TemplateView):
 #Pacientes
 #Criação
 class CreatePaciente(CreateView):
-    model = Paciente
+    template_name = 'dashboard/pacientes/create.html'
+    form_class = PacienteForm
+
+    def get_context_data(self, **kwargs):
+        context = super(CreatePaciente).get_context_data(**kwargs)
+
+        return context
+
 
 
 #Médicos
 #Criação
 class CreateUser(CreateView):
-    model = User
+    template_name = 'dashboard/medicos/medicos.html'
+    form_class = MedicoForm
+    success_url = '/'
+
+    def get_context_data(self, **kwargs):
+        context = super(CreateUser, self).get_context_data(**kwargs)
+
+        hospitais = Hospital.objects.all().order_by('id')
+
+        form = MedicoForm()
+
+        context['form'] = form
+        context['hospitais'] = hospitais
+
+        return context
+
+
