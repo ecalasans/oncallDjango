@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block extra_head %}
+    {{ form.media.css }}
     <script src="{% static "jquery/dist/jquery.min.js" %}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -51,13 +52,14 @@
                                 <div class="col-lg-8">
                                     <div class="form-group">
                                         <label for="{{ form.hospital.id_for_label }}" >Hospital</label>
-                                        <select id="{{ form.hospital.id_for_label}}" name="{{ form.hospital.html_name }}"
-                                                class="form-control">
-                                            <option value="None">Nenhum</option>
-                                            {% for hospital in hospitais %}
-                                                <option value="{{ hospital.id }}">{{ hospital.nome }}</option>
-                                            {% endfor %}
-                                        </select>
+{#                                        <select id="{{ form.hospital.id_for_label}}" name="{{ form.hospital.html_name }}"#}
+{#                                                class="form-control">#}
+{#                                            <option value="None">Nenhum</option>#}
+{#                                            {% for hospital in hospitais %}#}
+{#                                                <option value="{{ hospital.id }}">{{ hospital.nome }}</option>#}
+{#                                            {% endfor %}#}
+{#                                        </select>#}
+                                        {{ form.hospitais }}
                                     </div>
                                 </div>
                             </div>

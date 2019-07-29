@@ -6,7 +6,7 @@ from django.contrib.auth import logout
 from dashboard.models import Leito, Hospital, Paciente_Leito, Setor
 from django.db.models import Count
 from django.contrib.auth.models import User
-from .forms import MedicoForm, PacienteForm
+from .forms import UsuarioForm, PacienteForm
 
 
 class LoginView(LoginRequiredMixin, TemplateView):
@@ -20,11 +20,12 @@ class LoginView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super(LoginView, self).get_context_data(**kwargs)
 
-        user = self.request.user
+        user_id = self.request.user.id
 
         hospitais = Hospital.objects.all()
 
         context['user_hospitais'] = hospitais
+
 
         return context
 
@@ -77,7 +78,7 @@ class CreatePaciente(CreateView):
 #Criação
 class CreateUser(CreateView):
     template_name = 'dashboard/medicos/medicos.html'
-    form_class = MedicoForm
+    form_class = UsuarioForm
     success_url = '/'
 
     def get_context_data(self, **kwargs):
@@ -85,9 +86,9 @@ class CreateUser(CreateView):
 
         hospitais = Hospital.objects.all().order_by('id')
 
-        form = MedicoForm()
+        form_usuario = UsuarioForm()
 
-        context['form'] = form
+        context['form'] = form_usuario
         context['hospitais'] = hospitais
 
         return context

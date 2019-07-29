@@ -15,7 +15,9 @@
         {% include 'adminlte/lib/_styles.html' %}
     {% endblock %}
 
-    {% block extra_head %}{% endblock %}
+    {% block extra_head %}
+        {{ form.media.css }}
+    {% endblock %}
 </head>
 <body class="hold-transition skin-blue sidebar-mini {% block body_class %}{% block bodyclass %}{% endblock %}{% endblock %}">
 
@@ -73,6 +75,7 @@
 {% endblock body %}
 
 {% block javascript %}
+    {{ form.media.js }}
 {% include 'adminlte/lib/_scripts.html' %}
 {% endblock %}
 
