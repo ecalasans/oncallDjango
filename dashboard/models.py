@@ -10,7 +10,7 @@ class Hospital(models.Model):
     sigla = models.CharField(max_length=50, default="")
 
     def __str__(self):
-        return self.sigla + " - " + self.nome
+        return  self.nome
 
 class Setor(models.Model):
     setor = models.CharField(default="", max_length=10)
@@ -42,9 +42,7 @@ class Paciente(models.Model):
     idade = models.CharField(default="", max_length=10)
     peso_nasc = models.IntegerField(default=0)
     peso_atual = models.IntegerField(default=0)
-
-class Paciente_Leito(Paciente):
-    leito = models.ForeignKey(Leito, on_delete=models.DO_NOTHING)
+    leito = models.ForeignKey(Leito, on_delete=models.DO_NOTHING, default=None)
 
 
 class Ocorrencia(models.Model):

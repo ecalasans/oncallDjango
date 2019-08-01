@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0015_drop_paciente_leito.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0016_add_leito_to_paciente.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/css/select2.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/css/select2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/medicos/medicos.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/medicos/medicos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oncall/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/oncall/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +83,6 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -97,7 +106,6 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/lib/python3.6/site-packages/django_adminlte/static/jquery/dist" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -204,7 +212,6 @@
       <workItem from="1563705533481" duration="6280000" />
       <workItem from="1563716645018" duration="1583000" />
       <workItem from="1564053834049" duration="6765000" />
-      <workItem from="1564675655244" duration="1185000" />
     </task>
     <task id="LOCAL-00001" summary="Parei no tutorial 2">
       <created>1557656232750</created>
@@ -353,14 +360,7 @@
       <option name="project" value="LOCAL" />
       <updated>1564129926483</updated>
     </task>
-    <task id="LOCAL-00022" summary="Add Django-Select2">
-      <created>1564438241668</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1564438241668</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +401,6 @@
     <MESSAGE value="Penando no Modal Form" />
     <MESSAGE value="Modal funcionando aparentemente..." />
     <MESSAGE value="Ajuste de Banco de Dados" />
-    <MESSAGE value="Add Django-Select2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Django-Select2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajuste de Banco de Dados" />
   </component>
 </project>

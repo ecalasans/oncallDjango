@@ -3,10 +3,10 @@ from django.http import HttpResponse, Http404
 from django.views.generic import ListView, TemplateView, RedirectView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import logout
-from dashboard.models import Leito, Hospital, Paciente_Leito, Setor
+from dashboard.models import Leito, Hospital,  Setor, Medico
 from django.db.models import Count
 from django.contrib.auth.models import User
-from .forms import UsuarioForm, PacienteForm
+from .forms import UsuarioForm
 
 
 class LoginView(LoginRequiredMixin, TemplateView):
@@ -60,18 +60,6 @@ class MainView(TemplateView):
         }
 
         return context
-
-#Pacientes
-#Criação
-class CreatePaciente(CreateView):
-    template_name = 'dashboard/pacientes/create.html'
-    form_class = PacienteForm
-
-    def get_context_data(self, **kwargs):
-        context = super(CreatePaciente).get_context_data(**kwargs)
-
-        return context
-
 
 
 #Médicos

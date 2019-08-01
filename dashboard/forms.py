@@ -1,16 +1,12 @@
 from django import forms
-from .models import Paciente_Leito, Medico, Hospital
+from .models import Medico, Hospital
 from django.contrib.auth.models import User
 from django.shortcuts import render_to_response
 from django_select2.forms import Select2MultipleWidget
 
-class PacienteForm(forms.ModelForm):
-    class Meta:
-        model = Paciente_Leito
-        fields =['nome', 'ig', 'peso_nasc', 'peso_atual', 'idade', 'leito',]
-
 class UsuarioForm(forms.ModelForm):
-    hospitais = forms.ModelMultipleChoiceField(queryset=Hospital.objects.all(), widget=Select2MultipleWidget)
+    hospitais = forms.ModelMultipleChoiceField(queryset=Hospital.objects.all(),
+                                               widget=Select2MultipleWidget)
 
     class Meta:
         model = Medico

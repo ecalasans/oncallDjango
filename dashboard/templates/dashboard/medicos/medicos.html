@@ -1,5 +1,6 @@
 {% extends 'adminlte/login.html' %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 
 {% block logo_text %}
     <b>Passa</b>Plantão
@@ -12,7 +13,9 @@
         $(document).ready(function () {
             $("#envia_dados").click(function () {
                 $("#cadastro").submit();
-            })
+            });
+
+
         })
     </script>
 {% endblock %}
@@ -59,7 +62,7 @@
 {#                                                <option value="{{ hospital.id }}">{{ hospital.nome }}</option>#}
 {#                                            {% endfor %}#}
 {#                                        </select>#}
-                                        {{ form.hospitais }}
+                                        {{ form.hospitais | attr:"style:width:100%"| attr:"id:select_hosp" }}
                                     </div>
                                 </div>
                             </div>
