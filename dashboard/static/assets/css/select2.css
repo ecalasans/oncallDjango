@@ -81,7 +81,7 @@
 .select2-container--classic .select2-selection--multiple:focus{border:1px solid #5897fb}
 .select2-container--classic .select2-selection--multiple .select2-selection__rendered{list-style:none;margin:0;padding:0 5px}
 .select2-container--classic .select2-selection--multiple .select2-selection__clear{display:none}
-.select2-container--classic .select2-selection--multiple .select2-selection__choice{background-color:#e4e4e4;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px}
+.select2-container--classic .select2-selection--multiple .select2-selection__choice{background-color:#3c8dbc;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px}
 .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove{color:#888;cursor:pointer;display:inline-block;font-weight:bold;margin-right:2px}
 .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover{color:#555}
 .select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice{float:right;margin-left:5px;margin-right:auto}
