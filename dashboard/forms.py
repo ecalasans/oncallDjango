@@ -23,8 +23,13 @@ class UsuarioForm(forms.ModelForm):
 
         medico.is_active = False
 
+        hospitais_medico = self.cleaned_data['hospitais']
+
         if commit:
             medico.save()
+
+            for hospital in hospitais_medico:
+                medico.hospitais.add(hospital)
 
         return medico
 

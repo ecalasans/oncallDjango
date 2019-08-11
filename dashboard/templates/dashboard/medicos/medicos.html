@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block extra_head %}
-    {{ form.media.css }}
+    <link rel="stylesheet" type="text/css" href="{% static "assets/css/select2.css" %}">
     <script src="{% static "jquery/dist/jquery.min.js" %}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
