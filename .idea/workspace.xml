@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/css/select2.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/css/select2.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/medicos/medicos.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/medicos/medicos.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -213,7 +213,7 @@
       <workItem from="1563705533481" duration="6280000" />
       <workItem from="1563716645018" duration="1583000" />
       <workItem from="1564053834049" duration="6765000" />
-      <workItem from="1565482709051" duration="1362000" />
+      <workItem from="1565482709051" duration="2820000" />
     </task>
     <task id="LOCAL-00001" summary="Parei no tutorial 2">
       <created>1557656232750</created>
@@ -369,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564699486845</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Resolvido add múltiplos hospitais">
+      <created>1565514311802</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1565514311803</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,7 +418,8 @@
     <MESSAGE value="Modal funcionando aparentemente..." />
     <MESSAGE value="Ajuste de Banco de Dados" />
     <MESSAGE value="Resolvido tamanho da lista em Login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolvido tamanho da lista em Login" />
+    <MESSAGE value="Resolvido add múltiplos hospitais" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolvido add múltiplos hospitais" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
