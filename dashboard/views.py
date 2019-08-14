@@ -22,7 +22,7 @@ class LoginView(LoginRequiredMixin, TemplateView):
 
         user_id = self.request.user.id
 
-        hospitais = Hospital.objects.all()
+        hospitais = Medico.hospitais.filter(medico_id=user_id)
 
         context['user_hospitais'] = hospitais
 
