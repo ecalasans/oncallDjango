@@ -78,8 +78,13 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -204,7 +209,7 @@
       <workItem from="1563716645018" duration="1583000" />
       <workItem from="1564053834049" duration="6765000" />
       <workItem from="1565908597282" duration="611000" />
-      <workItem from="1565913994306" duration="13720000" />
+      <workItem from="1565913994306" duration="16931000" />
     </task>
     <task id="LOCAL-00001" summary="Parei no tutorial 2">
       <created>1557656232750</created>
@@ -360,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565816956878</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Login direto">
+      <created>1565966459615</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1565966459615</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,6 +413,18 @@
     <MESSAGE value="Penando no Modal Form" />
     <MESSAGE value="Modal funcionando aparentemente..." />
     <MESSAGE value="Ajuste de Banco de Dados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajuste de Banco de Dados" />
+    <MESSAGE value="Login direto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login direto" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dashboard/views.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

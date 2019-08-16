@@ -16,22 +16,22 @@ class LoginView(LoginRequiredMixin, TemplateView):
         'next': '/',
     }
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(LoginView, self).get_context_data(**kwargs)
-    #
-    #     user_id = self.request.user.id
-    #
-    #     hospitais_id = Medico.objects.filter(id=user_id).values('hospitais')
-    #
-    #     hospitais_nomes = {}
-    #
-    #     for h in hospitais_id:
-    #         hospitais_nomes[h] = Hospital.objects.get(id=h['hospitais_id'])
-    #
-    #     context['hospitais_id'] = hospitais_id
-    #     context['hospitais_nomes'] = hospitais_nomes
-    #
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super(LoginView, self).get_context_data(**kwargs)
+
+        user_id = self.request.user.id
+
+        hospitais_id = Medico.objects.filter(id=user_id).values('hospitais')
+
+        hospitais_nomes = {}
+
+        for h in hospitais_id.all():
+            hospitais_nomes[h['hospitais']] = Hospital.objects.get(id=h['hospitais']).nome
+
+        context['hospitais_id'] = hospitais_id
+        context['hospitais_nomes'] = hospitais_nomes
+
+        return context
 
 
 #Classe de logout

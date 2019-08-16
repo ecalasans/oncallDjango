@@ -5,18 +5,18 @@
 
 {% block extra_head %}
     <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#btn_login").click(function () {
-               $("#tipo_next").val("/dashboard");
-               $("#login_form").submit();
-            });
-        });
-    </script>
+{#    <script type="text/javascript">#}
+{#        $(document).ready(function () {#}
+{#            $("#btn_login").click(function () {#}
+{#               $("#tipo_next").val("/dashboard");#}
+{#               $("#login_form").submit();#}
+{#            });#}
+{#        });#}
+{#    </script>#}
 {% endblock %}
 
 {% block logo_text %}
-    <b>Passa</b>Plantão{{ user_id }}
+    <b>Passa</b>Plantão
 {% endblock %}
 
 {% block login_form %}
@@ -43,7 +43,7 @@
                 {% endblock %}
             </div>
             <div class="col-xs-4">
-                <button id="btn_login" type="button"
+                <button id="btn_login" type="submit"
                         class="btn btn-primary btn-block btn-flat">Login</button>
                 <input id="tipo_next" type="hidden" name="next" value="/">
             </div>
