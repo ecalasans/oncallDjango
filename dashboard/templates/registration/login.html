@@ -65,12 +65,14 @@
                     <h3><b>Passa</b>Plantão</h3>
                 </div>
                 <div class="modal-body">
-                    <p>Selecione o hospital, <b>{{ usuario }}</b>:</p><br>
-                    <select class="form-control">
-                        {% for key, value in hospitais_nomes.items %}
-                            <option value="{{ key }}">{{ value }}</option>
-                        {% endfor %}
-                    </select>
+                    <form id="#form_seleciona_hospital" name="form_seleciona_hospital" action="" method="post">
+                        <p>Selecione o hospital, <b>{{ usuario }}</b>:</p><br>
+                        <select class="form-control" name="select_seleciona_hospital">
+                            {% for key, value in hospitais_nomes.items %}
+                                <option value="{{ key }}">{{ value }}</option>
+                            {% endfor %}
+                        </select>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button id="conectar" type="button" class="btn btn-primary btn-block btn-flat">Selecionar</button>
