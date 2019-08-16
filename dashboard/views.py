@@ -12,22 +12,26 @@ from .forms import UsuarioForm
 class LoginView(LoginRequiredMixin, TemplateView):
     login_url = 'accounts/login/'
     template_name = 'registration/login.html'
-
     extra_context = {
         'next': '/',
     }
 
-    def get_context_data(self, **kwargs):
-        context = super(LoginView, self).get_context_data(**kwargs)
-
-        user_id = self.request.user.id
-
-        hospitais = Medico.hospitais.filter(medico_id=user_id)
-
-        context['user_hospitais'] = hospitais
-
-
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super(LoginView, self).get_context_data(**kwargs)
+    #
+    #     user_id = self.request.user.id
+    #
+    #     hospitais_id = Medico.objects.filter(id=user_id).values('hospitais')
+    #
+    #     hospitais_nomes = {}
+    #
+    #     for h in hospitais_id:
+    #         hospitais_nomes[h] = Hospital.objects.get(id=h['hospitais_id'])
+    #
+    #     context['hospitais_id'] = hospitais_id
+    #     context['hospitais_nomes'] = hospitais_nomes
+    #
+    #     return context
 
 
 #Classe de logout
