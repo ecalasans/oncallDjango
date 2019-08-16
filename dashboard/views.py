@@ -28,8 +28,8 @@ class LoginView(LoginRequiredMixin, TemplateView):
         for h in hospitais_id.all():
             hospitais_nomes[h['hospitais']] = Hospital.objects.get(id=h['hospitais']).nome
 
-        context['hospitais_id'] = hospitais_id
         context['hospitais_nomes'] = hospitais_nomes
+        context['usuario'] = Medico.objects.get(id=user_id).first_name
 
         return context
 
