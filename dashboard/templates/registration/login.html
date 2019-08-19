@@ -53,7 +53,9 @@
                     <h3><b>Passa</b>Plantão</h3>
                 </div>
                 <div class="modal-body">
-                    <form id="form_seleciona_hospital" name="form_seleciona_hospital" action="" method="post">
+                    <form id="form_seleciona_hospital" name="form_seleciona_hospital"
+                          action="" method="post">
+                        {% csrf_token %}
                         <p>Selecione o hospital, <b>{{ usuario }}</b>:</p><br>
                         <select class="form-control" name="select_seleciona_hospital" id="select_seleciona_hospital">
                             {% for key, value in hospitais_nomes.items %}
@@ -63,8 +65,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <a id="btn_seleciona_hospital" class="btn btn-primary
-                    btn-block btn-flat" href="{% url 'dashboard:index' %}">Selecionar</a>
+                    <button id="btn_seleciona_hospital" class="btn btn-primary
+                    btn-block btn-flat" type="button">Selecionar</button>
                     <br>
                     <button id="btn_logout" type="button" class="btn btn-danger btn-block btn-flat">Logout</button>
                 </div>

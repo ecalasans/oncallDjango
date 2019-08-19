@@ -48,7 +48,7 @@ class MainView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(MainView, self).get_context_data(**kwargs)
 
-        recebido = self.request.GET.get('hosp_selecionado')
+        hosp_recebido = self.request.POST.get('select_seleciona_hospital')
 
         hosp = Hospital.objects.get(sigla='HJPB')
 
@@ -73,7 +73,7 @@ class MainView(TemplateView):
 class CreateUser(CreateView):
     template_name = 'dashboard/medicos/medicos.html'
     form_class = UsuarioForm
-    success_url = '/'
+    success_url = 'medicos/'
 
     def get_context_data(self, **kwargs):
         context = super(CreateUser, self).get_context_data(**kwargs)
@@ -87,4 +87,6 @@ class CreateUser(CreateView):
 
         return context
 
+class ModalView(TemplateView):
+    template_name = 'dashboard/medicos/modal.html'
 

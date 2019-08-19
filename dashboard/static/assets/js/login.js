@@ -4,8 +4,8 @@ function showModalSelecionaHospital() {
     });
 }
 
-$("#btn_seleciona_hospital").click(function () {
-    var selecao = $("#select_seleciona_hospital").val();
-
-    console.log("selecao" + selecao);
+$(document).ready(function () {
+    $("#btn_seleciona_hospital").click(function () {
+        $("#form_seleciona_hospital").submit();
+    })
 })
