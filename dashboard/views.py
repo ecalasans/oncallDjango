@@ -48,6 +48,8 @@ class MainView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(MainView, self).get_context_data(**kwargs)
 
+        recebido = self.request.GET.get('hosp_selecionado')
+
         hosp = Hospital.objects.get(sigla='HJPB')
 
         setores = Setor.objects.filter(hospital_id=hosp)

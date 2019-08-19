@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +75,7 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -204,6 +207,7 @@
       <workItem from="1564053834049" duration="6765000" />
       <workItem from="1565908597282" duration="611000" />
       <workItem from="1565913994306" duration="13720000" />
+      <workItem from="1566201398656" duration="6765000" />
     </task>
     <task id="LOCAL-00001" summary="Parei no tutorial 2">
       <created>1557656232750</created>
@@ -409,5 +413,16 @@
     <MESSAGE value="Ajuste de Banco de Dados" />
     <MESSAGE value="Merge de seleciona_hospital" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge de seleciona_hospital" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dashboard/views.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

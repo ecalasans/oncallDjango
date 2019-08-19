@@ -5,21 +5,9 @@
 
 {% block extra_head %}
     <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/login.js' %}" type="text/javascript"></script>
     {% if user.id %}
-        <script type="text/javascript">
-            $(window).load(function () {
-               $("#modal_hospitais").modal('show');
-            });
-        </script>
-    {% else %}
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#btn_login").click(function () {
-                   //$("#tipo_next").val("/dashboard");
-                   $("#login_form").submit();
-                });
-            });
-        </script>
+        <script type="text/javascript">showModalSelecionaHospital()</script>
     {% endif %}
 {% endblock %}
 
@@ -65,9 +53,9 @@
                     <h3><b>Passa</b>Plantão</h3>
                 </div>
                 <div class="modal-body">
-                    <form id="#form_seleciona_hospital" name="form_seleciona_hospital" action="" method="post">
+                    <form id="form_seleciona_hospital" name="form_seleciona_hospital" action="" method="post">
                         <p>Selecione o hospital, <b>{{ usuario }}</b>:</p><br>
-                        <select class="form-control" name="select_seleciona_hospital">
+                        <select class="form-control" name="select_seleciona_hospital" id="select_seleciona_hospital">
                             {% for key, value in hospitais_nomes.items %}
                                 <option value="{{ key }}">{{ value }}</option>
                             {% endfor %}
@@ -75,7 +63,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button id="conectar" type="button" class="btn btn-primary btn-block btn-flat">Selecionar</button>
+                    <a id="btn_seleciona_hospital" class="btn btn-primary
+                    btn-block btn-flat" href="{% url 'dashboard:index' %}">Selecionar</a>
                     <br>
                     <button id="btn_logout" type="button" class="btn btn-danger btn-block btn-flat">Logout</button>
                 </div>
