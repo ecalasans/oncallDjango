@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from django.views.generic import ListView, TemplateView, RedirectView, CreateView, UpdateView, DeleteView
@@ -7,8 +8,7 @@ from dashboard.models import Leito, Hospital,  Setor, Medico
 from django.db.models import Count
 from django.contrib.auth.models import User
 from .forms import UsuarioForm
-
-
+'''
 class LoginView(LoginRequiredMixin, TemplateView):
     login_url = 'accounts/login/'
     template_name = 'registration/login.html'
@@ -90,3 +90,5 @@ class CreateUser(CreateView):
 class ModalView(TemplateView):
     template_name = 'dashboard/medicos/modal.html'
 
+
+'''

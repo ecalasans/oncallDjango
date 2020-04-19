@@ -25,23 +25,19 @@ SECRET_KEY = '@tv=rzznqrlef(!#84^bmm820c-l3&6#kf!xtm(^43y@=8c&*q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.7.20', '192.168.1.10']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'dashboard.apps.DashboardConfig',
-    'django_adminlte',
-    'django_adminlte_theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_select2',
-    'widget_tweaks',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -80,12 +76,8 @@ WSGI_APPLICATION = 'oncall.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'oncall_django',
-        'USER': 'eric',
-        'PASSWORD': 'eric123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'plantao'),
     }
 }
 
@@ -128,5 +120,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/dashboard/'
+LOGIN_URL = '/dashboard/'
 
