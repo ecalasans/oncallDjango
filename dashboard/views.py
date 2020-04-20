@@ -1,13 +1,11 @@
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
-from django.views.generic import ListView, TemplateView, RedirectView, CreateView, UpdateView, DeleteView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth import logout
+from django.contrib.auth import logout, login
 from dashboard.models import Leito, Hospital,  Setor, Medico
 from django.db.models import Count
 from django.contrib.auth.models import User
-from .forms import UsuarioForm
+from django.contrib.auth.decorators import login_required
 '''
 class LoginView(LoginRequiredMixin, TemplateView):
     login_url = 'accounts/login/'
@@ -92,3 +90,9 @@ class ModalView(TemplateView):
 
 
 '''
+@login_required
+def home(request):
+    return render(request, 'dashboard/index.html')
+
+def login(request):
+    return render(request, 'dashboard/registration/login.html')

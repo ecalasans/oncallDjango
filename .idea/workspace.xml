@@ -2,207 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/css/bootstrap-datetimepicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/css/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/css/fullcalendar.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/css/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/css/tagsinput.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/fonts/fontawesome-webfont3e6e.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/fonts/fontawesome-webfont3e6e.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/fonts/fontawesome-webfont3e6e.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/fonts/fontawesome-webfont3e6e.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/fonts/fontawesome-webfont3e6e.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/fonts/fontawesome-webfontd41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/attachment.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/blog/blog-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/blog/blog-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/blog/blog-03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/blog/blog-04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/blog/blog-thumb-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/blog/blog-thumb-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/blog/blog-thumb-03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/blog/blog-thumb-04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/calander.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/clock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-07.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-08.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-09.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/doctor-thumb-12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/logo-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/patient-thumb-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/patient-thumb-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/placeholder-thumb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/placeholder.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/sent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/user-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/user-03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/user-04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/user-05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/user-06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/user.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/img/video-call.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/Chart.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/bootstrap-datetimepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/fullcalendar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/jquery-3.2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/jquery-ui.min.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/jquery.fullcalendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/jquery.slimscroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/select2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/js/tagsinput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/light-gallery/css/lightgallery.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/light-gallery/fonts/lgd41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/light-gallery/fonts/lgd641.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/light-gallery/fonts/lgd641.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/light-gallery/fonts/lgd641.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/light-gallery/fonts/lgd641.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/light-gallery/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/light-gallery/img/video-play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/light-gallery/img/vimeo-play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/light-gallery/img/youtube-play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/light-gallery/js/lightgallery-all.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/summernote/dist/font/summernote4c4d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/summernote/dist/font/summernote4c4d.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/summernote/dist/font/summernote4c4d.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/summernote/dist/font/summernoted41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/summernote/dist/summernote-bs4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/plugins/summernote/dist/summernote-bs4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/activities.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-appointment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-asset.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-department.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-doctor.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-employee.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-expense.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-holiday.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-leave-type.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-leave.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-patient.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-provident-fund.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-role.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-salary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-schedule.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/add-tax.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/appointments.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/assets.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/attendance.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/blank-page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/blog-details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/calendar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/change-password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/change-password2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/chat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/compose.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/create-invoice.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/departments.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/doctors.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-appointment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-asset.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-department.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-doctor.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-employee.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-expense.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-holiday.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-invoice.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-leave-type.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-leave.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-patient.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-provident-fund.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-role.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-salary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-schedule.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/edit-tax.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/email-settings.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/employees.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/error-404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/error-500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/expense-reports.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/expenses.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/forgot-password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/form-basic-inputs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/form-horizontal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/form-input-groups.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/form-vertical.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/gallery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/holidays.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/inbox.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/incoming-call.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/index-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/invoice-reports.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/invoice-settings.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/invoice-view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/invoices.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/leave-type.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/leaves.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/localization.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/lock-screen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/mail-view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/notifications-settings.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/patients.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/payments.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/provident-fund.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/roles-permissions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/salary-settings.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/salary-view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/salary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/schedule.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/settings.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/tables-basic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/tables-datatables.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/tabs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/taxes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/theme-settings.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/typography.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/uikit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/video-call.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/voice-call.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plantao" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/oncall.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/oncall.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/css/select2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/js/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/adminlte/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/adminlte/lib/_main_footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/adminlte/lib/_main_header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/adminlte/lib/_main_sidebar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/adminlte/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/medicos/medicos.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/medicos/modal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/medicos/success/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/pacientes/create.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/registration/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oncall/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/oncall/settings.py" afterDir="false" />
@@ -396,7 +201,11 @@
       <workItem from="1563716645018" duration="1583000" />
       <workItem from="1564053834049" duration="6765000" />
       <workItem from="1565482709051" duration="2820000" />
-      <workItem from="1587331111740" duration="2976000" />
+      <workItem from="1587331111740" duration="3086000" />
+      <workItem from="1587376726633" duration="326000" />
+      <workItem from="1587377116424" duration="2381000" />
+      <workItem from="1587388051177" duration="5372000" />
+      <workItem from="1587393502473" duration="643000" />
     </task>
     <task id="LOCAL-00001" summary="Parei no tutorial 2">
       <created>1557656232750</created>
@@ -559,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565514311803</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Reestruturando">
+      <created>1587334103562</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1587334103562</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,17 +417,69 @@
     <MESSAGE value="Ajuste de Banco de Dados" />
     <MESSAGE value="Resolvido tamanho da lista em Login" />
     <MESSAGE value="Resolvido add múltiplos hospitais" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolvido add múltiplos hospitais" />
+    <MESSAGE value="Reestruturando" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reestruturando" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/dashboard/views.py</url>
-          <line>94</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state x="373" y="273" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587388773973">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state x="373" y="273" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587388773973" />
+    <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2" timestamp="1587334103346">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587334103346" />
+    <state width="1234" height="321" key="GridCell.Tab.0.bottom" timestamp="1587393423887">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.0.bottom/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
+    <state width="1234" height="321" key="GridCell.Tab.0.center" timestamp="1587393423887">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.0.center/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
+    <state width="1234" height="321" key="GridCell.Tab.0.left" timestamp="1587393423887">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.0.left/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
+    <state width="1234" height="321" key="GridCell.Tab.0.right" timestamp="1587393423887">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.0.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
+    <state width="1234" height="321" key="GridCell.Tab.1.bottom" timestamp="1587393423887">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.1.bottom/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
+    <state width="1234" height="321" key="GridCell.Tab.1.center" timestamp="1587393423887">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.1.center/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
+    <state width="1234" height="321" key="GridCell.Tab.1.left" timestamp="1587393423887">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.1.left/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
+    <state width="1234" height="321" key="GridCell.Tab.1.right" timestamp="1587393423887">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.1.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
+    <state width="1234" height="321" key="GridCell.Tab.2.bottom" timestamp="1587393423888">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.2.bottom/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423888" />
+    <state width="1234" height="321" key="GridCell.Tab.2.center" timestamp="1587393423888">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.2.center/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423888" />
+    <state width="1234" height="321" key="GridCell.Tab.2.left" timestamp="1587393423888">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.2.left/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423888" />
+    <state width="1234" height="321" key="GridCell.Tab.2.right" timestamp="1587393423888">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state width="1234" height="321" key="GridCell.Tab.2.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423888" />
+    <state x="235" y="246" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1587334106502">
+      <screen x="0" y="27" width="1280" height="997" />
+    </state>
+    <state x="235" y="246" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587334106502" />
   </component>
 </project>

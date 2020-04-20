@@ -120,5 +120,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_URL = '/dashboard/'
+LOGIN_URL = '/login/'
 
