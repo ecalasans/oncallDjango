@@ -1,1 +1,11 @@
 {% extends 'dashboard/bases/login.html' %}
+
+{% block hospitais %}
+    <div class="form-group">
+        <select class="form-control">
+            {% for h in hospitais %}
+                <option value="{{ h.id }}">{{ h.nome }}</option>
+            {% endfor %}
+        </select>
+    </div>
+{% endblock %}

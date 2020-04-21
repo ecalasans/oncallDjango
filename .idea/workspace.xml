@@ -2,85 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oncall/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/oncall/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oncall/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/oncall/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantao" beforeDir="false" afterPath="$PROJECT_DIR$/plantao" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="oncall_django@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="oncall_django@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="oncall_django@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="oncall_django: database" type="162271b6:PgImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="oncall_django@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="oncall_django: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="oncall_django@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="oncall_django: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="oncall_django@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="oncall_django: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="oncall_django@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="oncall_django: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="dashboard_medico_hospitais: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
-    </expand>
-    <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -101,6 +36,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="1cbf8272-c5bf-47c0-bd58-0f045bc39415" />
   <component name="ProjectId" id="1OVDNS9bEUGMQX1FNX4yLh4wF0P" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -108,7 +44,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="DatabaseDriversLRU" value="postgresql&#10;sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -206,6 +142,7 @@
       <workItem from="1587377116424" duration="2381000" />
       <workItem from="1587388051177" duration="5372000" />
       <workItem from="1587393502473" duration="643000" />
+      <workItem from="1587472114290" duration="4585000" />
     </task>
     <task id="LOCAL-00001" summary="Parei no tutorial 2">
       <created>1557656232750</created>
@@ -421,6 +358,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Reestruturando" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1381" y="216" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587472218896">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state x="1381" y="216" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1587472218896" />
     <state x="373" y="273" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587388773973">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
@@ -429,21 +370,25 @@
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587334103346" />
-    <state width="1234" height="321" key="GridCell.Tab.0.bottom" timestamp="1587393423887">
-      <screen x="0" y="27" width="1280" height="997" />
+    <state width="1516" height="290" key="GridCell.Tab.0.bottom" timestamp="1587472842596">
+      <screen x="0" y="23" width="2560" height="1057" />
     </state>
+    <state width="1516" height="290" key="GridCell.Tab.0.bottom/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1587472842596" />
     <state width="1234" height="321" key="GridCell.Tab.0.bottom/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
-    <state width="1234" height="321" key="GridCell.Tab.0.center" timestamp="1587393423887">
-      <screen x="0" y="27" width="1280" height="997" />
+    <state width="1516" height="290" key="GridCell.Tab.0.center" timestamp="1587472842595">
+      <screen x="0" y="23" width="2560" height="1057" />
     </state>
+    <state width="1516" height="290" key="GridCell.Tab.0.center/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1587472842595" />
     <state width="1234" height="321" key="GridCell.Tab.0.center/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
-    <state width="1234" height="321" key="GridCell.Tab.0.left" timestamp="1587393423887">
-      <screen x="0" y="27" width="1280" height="997" />
+    <state width="1516" height="290" key="GridCell.Tab.0.left" timestamp="1587472842594">
+      <screen x="0" y="23" width="2560" height="1057" />
     </state>
+    <state width="1516" height="290" key="GridCell.Tab.0.left/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1587472842594" />
     <state width="1234" height="321" key="GridCell.Tab.0.left/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
-    <state width="1234" height="321" key="GridCell.Tab.0.right" timestamp="1587393423887">
-      <screen x="0" y="27" width="1280" height="997" />
+    <state width="1516" height="290" key="GridCell.Tab.0.right" timestamp="1587472842595">
+      <screen x="0" y="23" width="2560" height="1057" />
     </state>
+    <state width="1516" height="290" key="GridCell.Tab.0.right/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1587472842595" />
     <state width="1234" height="321" key="GridCell.Tab.0.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423887" />
     <state width="1234" height="321" key="GridCell.Tab.1.bottom" timestamp="1587393423887">
       <screen x="0" y="27" width="1280" height="997" />
@@ -477,6 +422,10 @@
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state width="1234" height="321" key="GridCell.Tab.2.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587393423888" />
+    <state x="1286" y="190" key="SettingsEditor" timestamp="1587429991812">
+      <screen x="0" y="23" width="2560" height="1057" />
+    </state>
+    <state x="1286" y="190" key="SettingsEditor/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1587429991812" />
     <state x="235" y="246" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1587334106502">
       <screen x="0" y="27" width="1280" height="997" />
     </state>

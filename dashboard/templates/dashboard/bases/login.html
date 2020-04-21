@@ -29,7 +29,9 @@
                     <form action="#" class="form-signin">
 						<div class="account-logo">
                             <a href="index-2.html"><img src="{% static 'assets/img/logo-dark.png' %}" alt=""></a>
+                            <p class="logo-titulo"><span class="logo-titulo destaque">Pass</span>Plantão</p>
                         </div>
+                        <span class="erro">{{ error }}</span>
                         <div class="form-group">
                             <label>Usuário</label>
                             <input type="text" autofocus="" class="form-control">
@@ -38,6 +40,7 @@
                             <label>Senha</label>
                             <input type="password" class="form-control">
                         </div>
+                        {% block hospitais %}{% endblock %}
                         {% comment %}<div class="form-group text-right">
                             <a href="forgot-password.html">Forgot your password?</a>
                         </div>{% endcomment %}

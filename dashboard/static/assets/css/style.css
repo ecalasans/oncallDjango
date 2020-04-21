@@ -1115,6 +1115,20 @@ textarea.form-control {
 	padding: 8px 30px;
 	text-transform: uppercase;
 }
+.erro{
+	color: indianred;
+}
+.logo-titulo{
+	font-size: 40px;
+	margin: 10px;
+	text-align: center;
+}
+.logo-titulo .destaque{
+	color: #009efb;
+	font-weight: bold;
+	padding: 0px;
+	margin: 0px;
+}
 
 /*-----------------
 	9. Dashboard
