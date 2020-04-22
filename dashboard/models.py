@@ -17,7 +17,7 @@ class Setor(models.Model):
     hospital = models.ForeignKey(Hospital, on_delete=models.DO_NOTHING, default="")
 
     def __str__(self):
-        return self.setor
+        return self.setor + ' - ' + str(self.hospital)
 
 class Leito(models.Model):
     hospital = models.ForeignKey(Hospital, on_delete=models.DO_NOTHING, default="")
@@ -34,7 +34,7 @@ class Medico(User):
     hospitais = models.ManyToManyField(Hospital)
 
     def __str__(self):
-        return self.first_name
+        return self.first_name + ' '+ self.last_name +' - ' + str(self.hospitais)
 
 class Paciente(models.Model):
     nome = models.CharField(max_length=250, default="")

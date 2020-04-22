@@ -1,7 +1,7 @@
 
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, Http404
-from django.contrib.auth import logout, login
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import logout, login, authenticate
 from dashboard.models import Leito, Hospital,  Setor, Medico
 from django.db.models import Count
 from django.contrib.auth.models import User
@@ -95,4 +95,9 @@ def home(request):
     return render(request, 'dashboard/index.html')
 
 def login(request):
-    return render(request, 'dashboard/registration/login.html')
+    hospitais = Hospital.objects.all().order_by('nome')
+
+    if request.method == 'GET':
+        return render(request, 'dashboard/registration/login.html',
+                      context={'form': AuthenticationForm(),
+                               'hospitais': hospitais})
