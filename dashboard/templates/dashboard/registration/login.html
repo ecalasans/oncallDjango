@@ -1,1 +1,56 @@
 {% extends 'dashboard/bases/base_login.html' %}
+
+{% block login %}
+    {% csrf_token %}
+    {{ error }}
+    <div>
+        <input type="text" class="form-control" placeholder="Usuário" name="user_login"/>
+    </div>
+    <div>
+        <input type="password" class="form-control" placeholder="Senha" name="pass_login"/>
+    </div>
+    <div>
+        <select class="form-control" name="select_hosp_login">
+            {% for h in hospitais %}
+                <option value="{{ h.id }}">{{ h.nome }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-default submit" >Log in</button>
+    </div>
+{% endblock %}
+
+
+{% block cadastro %}
+    {% csrf_token %}
+    <div>
+        <input type="text" class="form-control" placeholder="Usuário" name="user_cad"/>
+    </div>
+    <div>
+        <input type="text" class="form-control" placeholder="Primeiro nome(ou nome mais conhecido)" name="first_name_cad"/>
+    </div>
+    <div>
+        <input type="text" class="form-control" placeholder="Sobrenome" name="last_name_pass"/>
+    </div>
+    <div>
+        <input type="email" class="form-control" placeholder="Email" name="pass_cad" />
+    </div>
+    <div>
+        <input type="password" class="form-control" placeholder="Password" name="conf_pass" />
+    </div>
+    <div>
+        <input type="text" class="form-control" placeholder="CRM" name="crm_cad"/>
+    </div>
+    <div>
+        <select class="form-control" name="select_hosp_cad">
+            {% for h in hospitais %}
+                <option value="{{ h.id }}">{{ h.nome }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-default submit">Enviar</button>
+        <button type="reset" class="btn btn-default">Limpar</button>
+    </div>
+{% endblock %}

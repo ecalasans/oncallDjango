@@ -1,5 +1,5 @@
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import logout, login, authenticate
 from dashboard.models import Leito, Hospital,  Setor, Medico
@@ -101,3 +101,20 @@ def login(request):
         return render(request, 'dashboard/registration/login.html',
                       context={'form': AuthenticationForm(),
                                'hospitais': hospitais})
+    else:
+        # Autentica usuário com base nos dados recebidos
+        user_login = request.POST["user_login"]
+        pass_login = request.POST["pass_login"]
+
+        usuario = authenticate(request, username=user_login, password=pass_login)
+
+        #Verifica se o usuário existe
+        if usuario is not None:
+            # Faz o login
+            login(request, usuario)
+            return redirect('home')
+        else:
+            return render(request, 'dashboard/registration/login.html',
+                          context={'form': AuthenticationForm(),
+                                   'hospitais': hospitais,
+                                   'error': 'Usuário não encontrado ou dados conflitantes!'})
