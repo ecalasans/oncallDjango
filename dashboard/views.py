@@ -94,7 +94,7 @@ class ModalView(TemplateView):
 def home(request):
     return render(request, 'dashboard/index.html')
 
-def login(request):
+def sysLogin(request):
     hospitais = Hospital.objects.all().order_by('nome')
 
     if request.method == 'GET':
@@ -103,18 +103,16 @@ def login(request):
                                'hospitais': hospitais})
     else:
         # Autentica usuário com base nos dados recebidos
-        user_login = request.POST["user_login"]
-        pass_login = request.POST["pass_login"]
-
-        usuario = authenticate(request, username=user_login, password=pass_login)
+        user = authenticate(request, username=request.POST['user_login'], password=request.POST['pass_login'])
 
         #Verifica se o usuário existe
-        if usuario is not None:
+        if user is not None:
             # Faz o login
-            login(request, usuario)
+            login(request, user)
             return redirect('home')
         else:
             return render(request, 'dashboard/registration/login.html',
                           context={'form': AuthenticationForm(),
                                    'hospitais': hospitais,
                                    'error': 'Usuário não encontrado ou dados conflitantes!'})
+

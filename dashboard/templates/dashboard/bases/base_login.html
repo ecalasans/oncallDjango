@@ -33,10 +33,10 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form method="POST">
+          {% block login %}
+            {% comment %}<form method="POST">
               <h1>Login</h1>
-                {% block login %}
-                 {% comment %} <div>
+                <div>
                         <input type="text" class="form-control" placeholder="Username" required="" />
                   </div>
                   <div>
@@ -45,9 +45,7 @@
                   <div>
                         <a class="btn btn-default submit" href="index.html">Log in</a>
                         <a class="reset_pass" href="#">Lost your password?</a>
-                  </div>                 {% endcomment %}
-                {% endblock %}
-
+                  </div>
 
               <div class="clearfix"></div>
 
@@ -64,16 +62,17 @@
                   <p>©2020 ECalasans</p>
                 </div>
               </div>
-            </form>
+            </form>{% endcomment %}
+          {% endblock %}
           </section>
         </div>
 
         <div id="register" class="animate form registration_form">
           <section class="login_content">
-            <form method="POST">
+          {% block cadastro %}
+            {% comment %}<form method="POST">
               <h1>Cadastro</h1>
-              {% block cadastro %}
-                  {% comment %}<div>
+                  <div>
                     <input type="text" class="form-control" placeholder="Username" required="" />
                   </div>
                   <div>
@@ -84,9 +83,7 @@
                   </div>
                   <div>
                     <a class="btn btn-default submit" href="index.html">Submit</a>
-                  </div>{% endcomment %}
-              {% endblock %}
-
+                  </div>
               <div class="clearfix"></div>
 
               <div class="separator">
@@ -102,7 +99,8 @@
                   <p>©2020 ECalasans</p>
                 </div>
               </div>
-            </form>
+            </form>{% endcomment %}
+          {% endblock %}
           </section>
         </div>
       </div>

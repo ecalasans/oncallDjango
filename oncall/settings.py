@@ -25,7 +25,7 @@ SECRET_KEY = '@tv=rzznqrlef(!#84^bmm820c-l3&6#kf!xtm(^43y@=8c&*q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.7.12']
+ALLOWED_HOSTS = ['localhost', '192.168.7.12']
 
 
 # Application definition
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'oncall.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'plantao'),
+        'NAME': os.path.join(BASE_DIR, 'plantao.sqlite3'),
     }
 }
 
