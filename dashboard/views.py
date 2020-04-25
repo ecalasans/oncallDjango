@@ -6,6 +6,7 @@ from dashboard.models import Leito, Hospital,  Setor, Medico
 from django.db.models import Count
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from .forms import MedicoForm
 '''
 class LoginView(LoginRequiredMixin, TemplateView):
     login_url = 'accounts/login/'
@@ -90,7 +91,7 @@ class ModalView(TemplateView):
 
 
 '''
-@login_required
+
 def home(request):
     return render(request, 'dashboard/index.html')
 
@@ -115,4 +116,16 @@ def sysLogin(request):
                           context={'form': AuthenticationForm(),
                                    'hospitais': hospitais,
                                    'error': 'Usuário não encontrado ou dados conflitantes!'})
+
+def signupUser(request):
+    if request.method == 'GET':
+        return render(request, 'dashboard/registration/login.html',
+                      context={'form': MedicoForm(),
+                               'error': 'Clique no link para fazer o cadastro!'})
+    elif request.method == 'POST':
+        dados = request.POST.dict()
+        for key in dados:
+            print(dados[key])
+
+        return redirect('home')
 

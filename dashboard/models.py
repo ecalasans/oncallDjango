@@ -31,10 +31,10 @@ class Leito(models.Model):
 
 class Medico(User):
     crm = models.CharField(default="0000", max_length=6)
-    hospitais = models.ManyToManyField(Hospital)
+    hospital = models.ManyToManyField(Hospital)
 
     def __str__(self):
-        return self.first_name + ' '+ self.last_name +' - ' + str(self.hospitais)
+        return self.first_name + ' '+ self.last_name
 
 class Paciente(models.Model):
     nome = models.CharField(max_length=250, default="")

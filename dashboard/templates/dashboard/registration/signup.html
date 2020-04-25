@@ -1,48 +1,8 @@
 {% extends 'dashboard/bases/base_login.html' %}
 {% load static %}
-{% block login %}
-   <form method="POST">
-    {% csrf_token %}
-      <h1>Login</h1>
-        {{ error }}
-        <div>
-            <input type="text" class="form-control" placeholder="Username" name="user_login" />
-        </div>
-        <div>
-            <input type="password" class="form-control" placeholder="Password" name="pass_login"/>
-        </div>
-        <div>
-            <select class="form-control" name="select_hosp_cad">
-                {% for h in hospitais %}
-                    <option value="{{ h.id }}">{{ h.nome }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div>
-            <button class="btn btn-default submit" href="index.html">Log in</button>
-        </div>
-
-      <div class="clearfix"></div>
-
-      <div class="separator">
-        <p class="change_link">Não possui cadastro?
-          <a href="#signup" class="to_register"> Acesse aqui </a>
-        </p>
-
-        <div class="clearfix"></div>
-        <br />
-
-        <div>
-          <h1><img src="{% static 'assets/docs/images/logo_escuro.png' %}" class="logo_login">Pass!</h1>
-          <p>©2020 ECalasans</p>
-        </div>
-      </div>
-    </form>
-{% endblock %}
-
 
 {% block cadastro %}
-    <form method="POST" action="{% url 'signupuser' %}">
+    <form method="POST" action="{% url 'signup' %}">
         <h1>Cadastro</h1>
         {% csrf_token %}
         <div>
@@ -79,7 +39,7 @@
     </div>
     <div class="separator">
         <p class="change_link">Já tem conta?
-          <a href="#signin" class="to_register"> Log in </a>
+          <a href="{% url 'login' %}" class="to_register"> Log in </a>
         </p>
 
         <div class="clearfix"></div>
