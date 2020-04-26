@@ -7,7 +7,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/oncall_django</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="plantao.sqlite3" uuid="ae1199d3-f97e-4d3e-95e0-6d9068e56092">
+    <data-source source="LOCAL" name="plantao.sqlite3" uuid="1f4bde6b-f452-440f-93da-8b9274440f70">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>

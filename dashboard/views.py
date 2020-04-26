@@ -91,7 +91,7 @@ class ModalView(TemplateView):
 
 
 '''
-
+@login_required
 def home(request):
     return render(request, 'dashboard/index.html')
 
@@ -123,9 +123,31 @@ def signupUser(request):
                       context={'form': MedicoForm(),
                                'error': 'Clique no link para fazer o cadastro!'})
     elif request.method == 'POST':
+        form = MedicoForm()
         dados = request.POST.dict()
-        for key in dados:
-            print(dados[key])
+
+        form.username = dados['user_cad']
+        form.first_name = dados['first_name_cad']
+        form.last_name = dados['last_name_cad']
+        form.email = dados['email_cad']
+        form.password = dados['pass_cad']
+        form.crm = dados['crm_cad']
+        form.hospital = dados['select_hosp_cad']
+
+        new_medico = form.save(commit=False)
+
+        new_medico.username = form.username
+        new_medico.first_name = form.first_name
+        new_medico.last_name = form.last_name
+        new_medico.email = form.email
+        new_medico.crm = form.crm
+        new_medico.set_password(form.password)
+
+
+        new_medico.save()
+
+        new_medico.hospital.set(form.hospital)
+        new_medico.save()
 
         return redirect('home')
 
