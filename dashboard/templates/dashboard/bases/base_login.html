@@ -27,14 +27,14 @@
 
   <body class="login">
     <div>
-      <a class="hiddenanchor" id="signup"></a>
-      <a class="hiddenanchor" id="signin"></a>
+      {% comment %}<a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>{% endcomment %}
 
       <div class="login_wrapper">
         <div id="register">
           <section class="login_content">
           {% block login %}
-            <form method="POST">
+            {% comment %}<form method="POST">
             {% csrf_token %}
               <h1>Login</h1>
                 {{ error }}
@@ -70,7 +70,7 @@
                   <p>©2020 ECalasans</p>
                 </div>
               </div>
-            </form>
+            </form>{% endcomment %}
           {% endblock %}
           </section>
         </div>

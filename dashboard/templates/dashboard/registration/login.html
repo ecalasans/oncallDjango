@@ -24,9 +24,9 @@
 
       <div class="clearfix"></div>
 
-      <div class="separator">
+    <div>
         <p class="change_link">Não possui cadastro?
-          <a href="#signup" class="to_register"> Acesse aqui </a>
+          <a href="{% url 'signupuser' %}"> Acesse aqui </a>
         </p>
 
         <div class="clearfix"></div>
@@ -38,64 +38,6 @@
         </div>
       </div>
     </form>
+
 {% endblock %}
 
-
-{% block cadastro %}
-    <form method="POST" action="{% url 'signupuser' %}">
-        <h1>Cadastro</h1>
-        {% csrf_token %}
-        <div>
-            {{ form.username.errors }}
-            <input id="user_cad" type="text" class="form-control" placeholder="Usuário" name="user_cad"/>
-        </div>
-        <div>
-            {{ form.first_name.errors }}
-            <input id="first_name_cad" type="text" class="form-control" placeholder="Primeiro nome(ou nome mais conhecido)" name="first_name_cad"/>
-        </div>
-        <div>
-            {{ form.last_name.errors }}
-            <input id="last_name_cad" type="text" class="form-control" placeholder="Sobrenome" name="last_name_cad"/>
-        </div>
-        <div>
-            {{ form.email.errors }}
-            <input id="email_cad" type="email" class="form-control" placeholder="Email" name="email_cad" />
-        </div>
-        <div>
-            {{ form.password.errors }}
-            <input id="pass_cad" type="password" class="form-control" placeholder="Senha" name="pass_cad" />
-        </div>
-        <div>
-            <input id="conf_pass" type="password" class="form-control" placeholder="Confirme senha" name="conf_pass" />
-        </div>
-        <div>
-            {{ form.crm.errors }}
-            <input id="crm_cad" type="text" class="form-control" placeholder="CRM" name="crm_cad"/>
-        </div>
-        <div>
-            {{ form.hospital.errors }}
-            <select class="form-control" name="select_hosp_cad">
-                {% for h in hospitais %}
-                    <option value="{{ h.id }}">{{ h.nome }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-default submit">Enviar</button>
-            <button type="reset" class="btn btn-default">Limpar</button>
-    </div>
-    <div class="separator">
-        <p class="change_link">Já tem conta?
-          <a href="#signin" class="to_register"> Log in </a>
-        </p>
-
-        <div class="clearfix"></div>
-        <br />
-
-        <div>
-          <h1><img src="{% static 'assets/docs/images/logo_escuro.png' %}" class="logo_login">Pass!</h1>
-          <p>©2020 ECalasans</p>
-        </div>
-      </div>
-    </form>
-{% endblock %}
