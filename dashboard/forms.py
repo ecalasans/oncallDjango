@@ -2,6 +2,7 @@ from django.forms import ModelForm, ValidationError
 from .models import Medico
 import re
 
+
 class MedicoForm(ModelForm):
     class Meta:
         model = Medico

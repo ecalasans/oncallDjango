@@ -124,6 +124,7 @@ def signupUser(request):
                                'error': 'Clique no link para fazer o cadastro!'})
     elif request.method == 'POST':
         form = MedicoForm()
+
         dados = request.POST.dict()
 
         form.username = dados['user_cad']
@@ -134,20 +135,25 @@ def signupUser(request):
         form.crm = dados['crm_cad']
         form.hospital = dados['select_hosp_cad']
 
-        new_medico = form.save(commit=False)
+        print(form.crm)
+        print(form.username)
 
-        new_medico.username = form.username
-        new_medico.first_name = form.first_name
-        new_medico.last_name = form.last_name
-        new_medico.email = form.email
-        new_medico.crm = form.crm
-        new_medico.set_password(form.password)
-
-
-        new_medico.save()
-
-        new_medico.hospital.set(form.hospital)
-        new_medico.save()
-
-        return redirect('home')
-
+        # if form.is_valid():
+        #     new_medico = form.save(commit=False)
+        #
+        #     new_medico.username = form.cleaned_data['username']
+        #     new_medico.first_name = form.cleaned_data['first_name']
+        #     new_medico.last_name = form.cleaned_data['last_name']
+        #     new_medico.email = form.cleaned_data['email']
+        #     new_medico.crm = form.cleaned_data['crm']
+        #     new_medico.set_password(form.cleaned_data['password'])
+        #
+        #     new_medico.save()
+        #
+        #     new_medico.hospital.set(form.cleaned_data['hospital'])
+        #     new_medico.save()
+        #
+        #     return redirect('home')
+        # else:
+        #     print(form.errors)
+    return render(request, 'dashboard/registration/login.html')

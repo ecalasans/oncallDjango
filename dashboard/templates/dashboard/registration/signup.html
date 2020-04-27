@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block cadastro %}
-    <form method="POST" action="{% url 'signup' %}">
+    <form method="POST" action="{% url 'signupuser' %}">
         <h1>Cadastro</h1>
         {% csrf_token %}
         <div>
