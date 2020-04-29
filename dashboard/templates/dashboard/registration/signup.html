@@ -1,38 +1,30 @@
 {% extends 'dashboard/bases/base_signup.html' %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block cadastro %}
     <form method="POST" action="{% url 'signupuser' %}">
         <h1>Cadastro</h1>
         {% csrf_token %}
-        <div>
-            <input type="text" class="form-control" placeholder="Usuário" name="user_cad"/>
-        </div>
-        <div>
-            <input type="text" class="form-control" placeholder="Primeiro nome(ou nome mais conhecido)" name="first_name_cad"/>
-        </div>
-        <div>
-            <input type="text" class="form-control" placeholder="Sobrenome" name="last_name_cad"/>
-        </div>
-        <div>
-            <input type="email" class="form-control" placeholder="Email" name="email_cad" />
-        </div>
-        <div>
-            <input type="password" class="form-control" placeholder="Senha" name="pass_cad" />
-        </div>
-        <div>
-            <input type="password" class="form-control" placeholder="Confirme senha" name="conf_pass" />
-        </div>
-        <div>
-            <input type="text" class="form-control" placeholder="CRM" name="crm_cad"/>
-        </div>
-        <div>
-            <select class="form-control" name="select_hosp_cad">
-                {% for h in hospitais %}
-                    <option value="{{ h.id }}">{{ h.nome }}</option>
-                {% endfor %}
-            </select>
-        </div>
+        {{ form.username.errors }}
+        {% render_field form.username class="form-control" placeholder="Usuário"%}
+
+        {{ form.first_name.errors }}
+        {% render_field form.first_name class='form-control' placeholder="Primeiro nome" %}
+
+        {{ form.last_name.errors }}
+        {% render_field form.first_name class='form-control' placeholder="Sobrenome" %}
+
+        {{ form.email.errors }}
+        {% render_field form.email class="form-control" placeholder="e-mail" %}
+
+        <input type="email" id="conf_email" class="form-control" name="conf_email" placeholder="Confirme e-mail">
+
+        {{ form.crm.errors }}
+        {% render_field form.crm class="form-control" placeholder="CRM" %}
+
+        {{ form.hospital.errors }}
+        {% render_field form.hospital class="form-control" %}
         <div>
             <button type="submit" class="btn btn-default submit">Enviar</button>
             <button type="reset" class="btn btn-default">Limpar</button>
