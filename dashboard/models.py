@@ -30,7 +30,7 @@ class Leito(models.Model):
         return "Leito " + str(self.numero) + "(" + self.situacao + " - " + self.status + ") - " + str(self.hospital.sigla)
 
 class Medico(User):
-    crm = models.CharField(default="0000", max_length=6)
+    crm = models.CharField(null=False, max_length=6)
     hospital = models.ManyToManyField(Hospital)
 
     def __str__(self):
