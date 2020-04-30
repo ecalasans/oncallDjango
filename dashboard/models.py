@@ -31,7 +31,7 @@ class Leito(models.Model):
 
 class Medico(User):
     crm = models.CharField(null=False, max_length=6)
-    hospital = models.ManyToManyField(Hospital)
+    hospital = models.ForeignKey(Hospital, on_delete=models.DO_NOTHING, default='')
 
     def __str__(self):
         return self.first_name + ' '+ self.last_name
@@ -43,6 +43,7 @@ class Paciente(models.Model):
     peso_nasc = models.IntegerField(default=0)
     peso_atual = models.IntegerField(default=0)
     leito = models.ForeignKey(Leito, on_delete=models.DO_NOTHING, default=None)
+    #fazer alteração incluindo campo tcle
 
 
 class Ocorrencia(models.Model):

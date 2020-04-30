@@ -1,12 +1,17 @@
-from django.forms import ModelForm, ValidationError
-from .models import Medico
+from django.forms import ModelForm, ValidationError, Select
+from .models import Medico, Hospital
 import re
 
 
 class MedicoForm(ModelForm):
+
     class Meta:
         model = Medico
         fields = ['username', 'password', 'first_name', 'last_name', 'email', 'hospital', 'crm']
+        widgets ={
+            'hospital': Select()
+        }
+
 
     def clean_username(self):
         if len(self.cleaned_data['username']) == 0:
@@ -30,7 +35,7 @@ class MedicoForm(ModelForm):
         if len(self.cleaned_data['username']) == 0:
             raise ValidationError('Este campo é requerido!')
         else:
-            return self.cleaned_data['username']
+            return self.cleaned_data['email']
 
     def clean_crm(self):
         if len(self.cleaned_data['crm']) == 0:
@@ -38,20 +43,14 @@ class MedicoForm(ModelForm):
         else:
             regex_crm = re.compile('[0-9]+')
             if (regex_crm.match(self.cleaned_data['crm'])) is not None:
-                return self.cleaned_data['username']
+                return self.cleaned_data['crm']
             else:
                 raise ValidationError('Só pode conter números!!')
-
-    def clean_hospital(self):
-        if self.cleaned_data['hospital'] == 0:
-            raise ValidationError('Selecione um hospital!')
-        else:
-            return self.cleaned_data['hospital']
 
     def clean_password(self):
         regex_pass = re.compile('[a-zA-Z0-9!@#$%*_]+')
 
-        if len(self.cleaned_data['password']) > 8:
+        if len(self.cleaned_data['password']) >= 8:
             #Verifica o padrão da senha
             if regex_pass.match(self.cleaned_data['password']) is not None:
                 return self.cleaned_data['password']

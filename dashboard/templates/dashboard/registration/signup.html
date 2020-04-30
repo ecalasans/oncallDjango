@@ -6,29 +6,27 @@
     <form method="POST" action="{% url 'signupuser' %}">
         <h1>Cadastro</h1>
         {% csrf_token %}
-        {{ form.username.errors }}
-        {% render_field form.username class="form-control" placeholder="Usuário"%}
+        {% for e in errors %}
+            <p>{{ e }}</p>
+        {% endfor %}
 
-        {{ form.first_name.errors }}
+        {% render_field form.username class="form-control" placeholder="Usuário" %}
+
         {% render_field form.first_name class='form-control' placeholder="Primeiro nome" %}
 
-        {{ form.last_name.errors }}
-        {% render_field form.first_name class='form-control' placeholder="Sobrenome" %}
+        {% render_field form.last_name class='form-control' placeholder="Sobrenome" %}
 
-        {{ form.email.errors }}
         {% render_field form.email class="form-control" placeholder="e-mail" %}
 
         <input type="email" id="conf_email" class="form-control" name="conf_email" placeholder="Confirme e-mail">
 
-        {{ form.crm.errors }}
+        {% render_field form.password type="password" class="form-control" placeholder="Senha" %}
+
+        <input type="password" id="conf_pass" class="form-control" placeholder="Confirme a senha" name="conf_pass">
+
         {% render_field form.crm class="form-control" placeholder="CRM" %}
 
-        {{ form.hospital.errors }}
-        <select class="form-control" id="{{ form.hospital.id_for_label }}" name="select_hosp_cad">
-            {% for h in hospitais %}
-                <option value="{{ h.id }}">{{ h.nome }}</option>
-            {% endfor %}
-        </select>
+        {% render_field form.hospital class="form-control" %}
         <div>
             <button type="submit" class="btn btn-default submit">Enviar</button>
             <button type="reset" class="btn btn-default">Limpar</button>
@@ -47,4 +45,8 @@
         </div>
       </div>
     </form>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{% static 'assets/docs/js/validacao.js' %}"></script>
 {% endblock %}

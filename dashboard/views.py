@@ -127,38 +127,18 @@ def signupUser(request):
     if request.method == 'POST':
         form = MedicoForm(request.POST)
 
-        # dados = request.POST.dict()
-        #
-        # form.username = dados['user_cad']
-        # form.first_name = dados['first_name_cad']
-        # form.last_name = dados['last_name_cad']
-        # form.email = dados['email_cad']
-        # form.password = dados['pass_cad']
-        # form.crm = dados['crm_cad']
-        # form.hospital = dados['select_hosp_cad']
-        #
-        # print(form.crm)
-        # print(form.username)
-
         if form.is_valid():
             new_medico = form.save(commit=False)
-            #
-            # new_medico.username = form.cleaned_data['username']
-            # new_medico.first_name = form.cleaned_data['first_name']
-            # new_medico.last_name = form.cleaned_data['last_name']
-            # new_medico.email = form.cleaned_data['email']
-            # new_medico.crm = form.cleaned_data['crm']
+
             new_medico.set_password(form.cleaned_data['password'])
-
-            new_medico.save()
-
-            new_medico.hospital.set(form.cleaned_data['hospital'])
             new_medico.save()
 
             return redirect('home')
         else:
-            print(form.errors)
+            erros = []
+            for erro in form.errors:
+                erros.append(form.errors[erro])
             return render(request, 'dashboard/registration/signup.html',
-                          context={'form': MedicoForm(),
+                          context={'form': form,
                                    'hospitais': hospitais,
-                                   'errors': form.errors})
+                                   'errors': erros})
