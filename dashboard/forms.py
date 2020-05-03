@@ -7,7 +7,7 @@ class MedicoForm(ModelForm):
 
     class Meta:
         model = Medico
-        fields = ['username', 'password', 'first_name', 'last_name', 'email', 'hospital', 'crm']
+        fields = ['username', 'password', 'first_name', 'last_name', 'email', 'crm', 'hospital']
         widgets ={
             'hospital': Select()
         }

@@ -5,6 +5,8 @@
     {% csrf_token %}
       <h1>Login</h1>
         {{ error }}
+
+        {% if messages %}{% endif %}
         <div>
             <input type="text" class="form-control" placeholder="Username" name="user_login" />
         </div>

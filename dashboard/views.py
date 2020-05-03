@@ -7,6 +7,7 @@ from django.db.models import Count
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import MedicoForm
+from django.contrib import messages
 '''
 class LoginView(LoginRequiredMixin, TemplateView):
     login_url = 'accounts/login/'
@@ -133,11 +134,17 @@ def signupUser(request):
             new_medico.set_password(form.cleaned_data['password'])
             new_medico.save()
 
-            return redirect('home')
+            sucesso = "Seu cadastro foi enviado com sucesso!\nProcure o administrador para liberação do login!"
+            messages.success(request, sucesso)
+
+            return render(request, 'dashboard/registration/signup.html',
+                          context={'form':form,
+                                   'hospitais': hospitais})
         else:
             erros = []
             for erro in form.errors:
-                erros.append(form.errors[erro])
+                frase = "{} - {}".format(erro, form.errors[erro])
+                erros.append(frase)
             return render(request, 'dashboard/registration/signup.html',
                           context={'form': form,
                                    'hospitais': hospitais,

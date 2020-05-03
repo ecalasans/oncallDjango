@@ -6,6 +6,14 @@
     <form method="POST" action="{% url 'signupuser' %}">
         <h1>Cadastro</h1>
         {% csrf_token %}
+
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+                <meta http-equiv="refresh" content="2;url={% url 'login' %}">
+            {% endfor %}
+        {% endif %}
+
         {% for e in errors %}
             <p>{{ e }}</p>
         {% endfor %}

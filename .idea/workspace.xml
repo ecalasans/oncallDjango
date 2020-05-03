@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="Select renderizado ok e modelo Medico CRM alterado">
-      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0019_alter_Medico_hospital.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/js/validacao.js" afterDir="false" />
+    <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/base_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/base_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/base_signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/base_signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/docs/js/validacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/js/validacao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/registration/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oncall/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/oncall/settings.py" afterDir="false" />
@@ -181,7 +178,10 @@
       <workItem from="1587982039959" duration="9271000" />
       <workItem from="1588117384874" duration="3281000" />
       <workItem from="1588195788838" duration="7999000" />
-      <workItem from="1588276589933" duration="10209000" />
+      <workItem from="1588276589933" duration="10806000" />
+      <workItem from="1588327243032" duration="5856000" />
+      <workItem from="1588497875485" duration="1415000" />
+      <workItem from="1588530532155" duration="2759000" />
     </task>
     <task id="LOCAL-00001" summary="Parei no tutorial 2">
       <created>1557656232750</created>
@@ -428,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588122130471</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="#5 - consegui iterar os erros de formulário.">
+      <created>1588290014976</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1588290014976</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +454,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Contagem de leitos funcionando" />
     <MESSAGE value="Dump do banco" />
     <MESSAGE value="Remodelando banco de dados" />
     <MESSAGE value="Iniciando Cadastro de Médicos" />
@@ -472,7 +478,8 @@
     <MESSAGE value="#5 - Validação de campos iniciada" />
     <MESSAGE value="Dividindo login e signup" />
     <MESSAGE value="Select renderizado ok e modelo Medico CRM alterado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Select renderizado ok e modelo Medico CRM alterado" />
+    <MESSAGE value="#5 - consegui iterar os erros de formulário." />
+    <option name="LAST_COMMIT_MESSAGE" value="#5 - consegui iterar os erros de formulário." />
   </component>
   <component name="WindowStateProjectService">
     <state x="470" y="206" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587862282321">
@@ -484,54 +491,54 @@
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="373" y="273" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587582132004" />
-    <state x="358" y="71" width="912" height="905" key="CommitChangelistDialog2" timestamp="1588196380953">
+    <state x="358" y="71" width="912" height="905" key="CommitChangelistDialog2" timestamp="1588290014590">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state x="358" y="71" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588196380953" />
+    <state x="358" y="71" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588290014590" />
     <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587998087064" />
     <state x="653" y="302" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587862277955">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="653" y="302" width="424" height="484" key="FileChooserDialogImpl/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587862277955" />
-    <state width="1573" height="288" key="GridCell.Tab.0.bottom" timestamp="1588289228550">
+    <state width="1391" height="287" key="GridCell.Tab.0.bottom" timestamp="1588537468913">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state width="1573" height="288" key="GridCell.Tab.0.bottom/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588289228550" />
+    <state width="1391" height="287" key="GridCell.Tab.0.bottom/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588537468913" />
     <state width="1234" height="259" key="GridCell.Tab.0.bottom/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587999947858" />
-    <state width="1573" height="288" key="GridCell.Tab.0.center" timestamp="1588289228549">
+    <state width="1391" height="287" key="GridCell.Tab.0.center" timestamp="1588537468912">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state width="1573" height="288" key="GridCell.Tab.0.center/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588289228549" />
+    <state width="1391" height="287" key="GridCell.Tab.0.center/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588537468912" />
     <state width="1234" height="259" key="GridCell.Tab.0.center/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587999947858" />
-    <state width="1573" height="288" key="GridCell.Tab.0.left" timestamp="1588289228548">
+    <state width="1391" height="287" key="GridCell.Tab.0.left" timestamp="1588537468911">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state width="1573" height="288" key="GridCell.Tab.0.left/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588289228548" />
+    <state width="1391" height="287" key="GridCell.Tab.0.left/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588537468911" />
     <state width="1234" height="259" key="GridCell.Tab.0.left/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587999947858" />
-    <state width="1573" height="288" key="GridCell.Tab.0.right" timestamp="1588289228549">
+    <state width="1391" height="287" key="GridCell.Tab.0.right" timestamp="1588537468913">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state width="1573" height="288" key="GridCell.Tab.0.right/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588289228549" />
+    <state width="1391" height="287" key="GridCell.Tab.0.right/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588537468913" />
     <state width="1234" height="259" key="GridCell.Tab.0.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587999947858" />
-    <state width="1573" height="358" key="GridCell.Tab.1.bottom" timestamp="1588289110653">
+    <state width="1573" height="358" key="GridCell.Tab.1.bottom" timestamp="1588334181799">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state width="1573" height="358" key="GridCell.Tab.1.bottom/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588289110653" />
+    <state width="1573" height="358" key="GridCell.Tab.1.bottom/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588334181799" />
     <state width="1234" height="321" key="GridCell.Tab.1.bottom/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587997216151" />
-    <state width="1573" height="358" key="GridCell.Tab.1.center" timestamp="1588289110652">
+    <state width="1573" height="358" key="GridCell.Tab.1.center" timestamp="1588334181798">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state width="1573" height="358" key="GridCell.Tab.1.center/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588289110652" />
+    <state width="1573" height="358" key="GridCell.Tab.1.center/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588334181798" />
     <state width="1234" height="321" key="GridCell.Tab.1.center/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587997216151" />
-    <state width="1573" height="358" key="GridCell.Tab.1.left" timestamp="1588289110651">
+    <state width="1573" height="358" key="GridCell.Tab.1.left" timestamp="1588334181797">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state width="1573" height="358" key="GridCell.Tab.1.left/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588289110651" />
+    <state width="1573" height="358" key="GridCell.Tab.1.left/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588334181797" />
     <state width="1234" height="321" key="GridCell.Tab.1.left/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587997216151" />
-    <state width="1573" height="358" key="GridCell.Tab.1.right" timestamp="1588289110652">
+    <state width="1573" height="358" key="GridCell.Tab.1.right" timestamp="1588334181798">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state width="1573" height="358" key="GridCell.Tab.1.right/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588289110652" />
+    <state width="1573" height="358" key="GridCell.Tab.1.right/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588334181798" />
     <state width="1234" height="321" key="GridCell.Tab.1.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587997216151" />
     <state width="1234" height="321" key="GridCell.Tab.2.bottom" timestamp="1587393423888">
       <screen x="0" y="27" width="1280" height="997" />
@@ -561,26 +568,15 @@
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
     <state x="1255" y="190" key="SettingsEditor/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588013242945" />
-    <state x="470" y="255" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1588122135352">
+    <state x="470" y="255" width="800" height="556" key="Vcs.Push.Dialog.v2" timestamp="1588290017334">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state x="470" y="255" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588122135352" />
+    <state x="470" y="255" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588290017334" />
     <state x="235" y="246" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587998091881" />
     <state x="761" y="451" width="448" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587993060428">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="1522" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1587725993199" />
     <state x="761" y="451" width="448" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587993060428" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/dashboard/views.py</url>
-          <line>138</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
