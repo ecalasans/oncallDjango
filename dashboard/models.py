@@ -27,7 +27,8 @@ class Leito(models.Model):
     status = models.CharField(default="L", max_length=2) #L - livre, O = ocupado, B = bloqueado
 
     def __str__(self):
-        return "Leito " + str(self.numero) + "(" + self.situacao + " - " + self.status + ") - " + str(self.hospital.sigla)
+        return "Leito " + str(self.numero) + "(" + self.situacao + " - " + self.status + ") - " \
+               + self.setor.setor + " " + str(self.hospital.sigla)
 
 class Medico(User):
     crm = models.CharField(null=False, max_length=6)
