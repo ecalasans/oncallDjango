@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import logout, login, authenticate
@@ -8,6 +7,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import MedicoForm
 from django.contrib import messages
+import datetime
+
 '''
 class LoginView(LoginRequiredMixin, TemplateView):
     login_url = 'accounts/login/'
@@ -111,7 +112,27 @@ def sysLogin(request):
         if user is not None:
             # Faz o login
             login(request, user)
-            return redirect('home')
+            primeiro = request.user.first_name
+
+            agora = datetime.datetime.now()
+            data = agora.strftime("%d/%m%Y")
+
+            if (agora.hour >= 0) and (agora.hour < 12):
+                saudacao = "Bom dia,"
+
+            if (agora.hour >= 12) and (agora.hour < 18):
+                saudacao = "Boa tarde,"
+
+            if (agora.hour >= 18):
+                saudacao = "Boa noite,"
+
+            #Pega o hospital do usuário
+            hosp_user = Medico.objects.filter(hospital_id=request.POST['select_hosp_cad']).values('hospital_id')
+
+            return render(request, 'dashboard/index.html',
+                          context={'usuario': user,
+                                   'primeiro': primeiro,
+                                   'saudacao': saudacao})
         else:
             return render(request, 'dashboard/registration/login.html',
                           context={'form': AuthenticationForm(),
@@ -149,3 +170,7 @@ def signupUser(request):
                           context={'form': form,
                                    'hospitais': hospitais,
                                    'errors': erros})
+
+def sysLogout(request):
+    logout(request)
+    return redirect('login')

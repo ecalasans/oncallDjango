@@ -44,7 +44,11 @@ class Paciente(models.Model):
     peso_nasc = models.IntegerField(default=0)
     peso_atual = models.IntegerField(default=0)
     leito = models.ForeignKey(Leito, on_delete=models.DO_NOTHING, default=None)
-    #fazer alteração incluindo campo tcle
+    tcle = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.nome + ' - Leito ' + str(self.leito.numero) + ' - ' \
+               + self.leito.setor.setor + ' ' + self.leito.setor.hospital.sigla
 
 
 class Ocorrencia(models.Model):
