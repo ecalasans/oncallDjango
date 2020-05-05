@@ -116,6 +116,7 @@ def sysLogin(request):
 
             agora = datetime.datetime.now()
             data = agora.strftime("%d/%m%Y")
+            saudacao = ''
 
             if (agora.hour >= 0) and (agora.hour < 12):
                 saudacao = "Bom dia,"
@@ -131,12 +132,19 @@ def sysLogin(request):
             hosp_id = Medico.objects.get(hospital_id=hospital).hospital_id
             hosp_user = Hospital.objects.get(pk=hosp_id).nome
 
+            #Seleção de setores do hospital do usuário
+            setores = Setor.objects.filter(hospital_id=hosp_id).values('setor', 'pk')
+
             #Seleção de leitos do hospital do usuário
             total_leitos = Leito.objects.filter(hospital_id=hosp_id).count()
 
+            # Para os leitos do hospital, separar a situação por setores
+            # Pesquisar entre ativos e inativos
+            situacao_leitos = Leito.objects.filter(hospital_id=hosp_id).values('situacao').annotate(Count('situacao'))
 
-            #Seleção de setores do hospital do usuário
-            setores = Setor.objects.filter(hospital_id=hosp_id).values('setor')
+            # Nos ativos, pesquisar a situação(Vagos, ocupados e bloqueados)
+            status_leitos = Leito.objects.filter(hospital_id=hosp_id, situacao='A').values('status')\
+                .annotate(Count('status'))
 
             return render(request, 'dashboard/index.html',
                           context={'usuario': user,
