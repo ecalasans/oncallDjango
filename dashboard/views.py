@@ -127,12 +127,24 @@ def sysLogin(request):
                 saudacao = "Boa noite,"
 
             #Pega o hospital do usuário
-            hosp_user = Medico.objects.filter(hospital_id=request.POST['select_hosp_cad']).values('hospital_id')
+            hospital = request.POST['select_hosp_cad']
+            hosp_id = Medico.objects.get(hospital_id=hospital).hospital_id
+            hosp_user = Hospital.objects.get(pk=hosp_id).nome
+
+            #Seleção de leitos do hospital do usuário
+            total_leitos = Leito.objects.filter(hospital_id=hosp_id).count()
+
+
+            #Seleção de setores do hospital do usuário
+            setores = Setor.objects.filter(hospital_id=hosp_id).values('setor')
 
             return render(request, 'dashboard/index.html',
                           context={'usuario': user,
                                    'primeiro': primeiro,
-                                   'saudacao': saudacao})
+                                   'saudacao': saudacao,
+                                   'hosp_user': hosp_user,
+                                   'total_leitos': total_leitos,
+                                   'setores':setores})
         else:
             return render(request, 'dashboard/registration/login.html',
                           context={'form': AuthenticationForm(),
