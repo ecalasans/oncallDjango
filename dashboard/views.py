@@ -135,24 +135,21 @@ def sysLogin(request):
             #Seleção de setores do hospital do usuário
             setores = Setor.objects.filter(hospital_id=hosp_id).values('setor', 'pk')
 
-            #Seleção de leitos do hospital do usuário
+            #Total de leitos do hospital do usuário
             total_leitos = Leito.objects.filter(hospital_id=hosp_id).count()
 
-            # Para os leitos do hospital, separar a situação por setores
-            # Pesquisar entre ativos e inativos
-            situacao_leitos = Leito.objects.filter(hospital_id=hosp_id).values('situacao').annotate(Count('situacao'))
+            #Situação dos leitos por setor(Ativos e Inativos)
+            leitos_por_setor = {}
+            for setor in setores:
+                for key in setor:
+                    if key == 'pk':
+                        leitos = Leito.objects.filter(hospital_id=hosp_id, setor=setor[key]).values('status').annotate(Count('status'))
+                        leitos_por_setor[setor[key]] = leitos
 
-            # Nos ativos, pesquisar a situação(Vagos, ocupados e bloqueados)
-            status_leitos = Leito.objects.filter(hospital_id=hosp_id, situacao='A').values('status')\
-                .annotate(Count('status'))
-
-            # Índices
-            for item in situacao_leitos:
-                for key in item:
-                    if key == 'situacao':
-                        pass
-                    else:
-                        print(item[key])
+            for setor, setor_leitos in leitos_por_setor.items():
+                print(setor)
+                for status in setor_leitos:
+                    print(status['status'] + " " + str(status['status__count']))
 
             return render(request, 'dashboard/index.html',
                           context={'usuario': user,
@@ -160,7 +157,7 @@ def sysLogin(request):
                                    'saudacao': saudacao,
                                    'hosp_user': hosp_user,
                                    'total_leitos': total_leitos,
-                                   'setores':setores})
+                                   'setores': setores})
         else:
             return render(request, 'dashboard/registration/login.html',
                           context={'form': AuthenticationForm(),
