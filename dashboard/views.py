@@ -146,6 +146,14 @@ def sysLogin(request):
             status_leitos = Leito.objects.filter(hospital_id=hosp_id, situacao='A').values('status')\
                 .annotate(Count('status'))
 
+            # Índices
+            for item in situacao_leitos:
+                for key in item:
+                    if key == 'situacao':
+                        pass
+                    else:
+                        print(item[key])
+
             return render(request, 'dashboard/index.html',
                           context={'usuario': user,
                                    'primeiro': primeiro,
