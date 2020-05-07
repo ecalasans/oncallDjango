@@ -137,19 +137,27 @@ def sysLogin(request):
 
             #Total de leitos do hospital do usuário
             total_leitos = Leito.objects.filter(hospital_id=hosp_id).count()
+            ativos = Leito.objects.filter(hospital_id=hosp_id, situacao='A').count()
+            inativos = Leito.objects.filter(hospital_id=hosp_id, situacao='D').count()
 
             #Situação dos leitos por setor(Ativos e Inativos)
-            leitos_por_setor = {}
+            ativos_por_setor = {}
+            inativos_por_setor = {}
+            total_ativos = 0
             for setor in setores:
-                for key in setor:
-                    if key == 'pk':
-                        leitos = Leito.objects.filter(hospital_id=hosp_id, setor=setor[key]).values('status').annotate(Count('status'))
-                        leitos_por_setor[setor[key]] = leitos
+                leitos_ativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A').values('status') \
+                    .annotate(Count('status'))
+                leitos_inativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='D')\
+                    .values('status').annotate(Count('status'))
 
-            for setor, setor_leitos in leitos_por_setor.items():
-                print(setor)
-                for status in setor_leitos:
-                    print(status['status'] + " " + str(status['status__count']))
+                ativos_por_setor[setor['setor']] = leitos_ativos
+                inativos_por_setor[setor['setor']] = leitos_inativos
+
+            #Porcentagens
+            porcentagens = {}
+            for setor, dados in ativos_por_setor.items():
+                for status in dados:
+                    p = (dados/ ativos) * 100
 
             return render(request, 'dashboard/index.html',
                           context={'usuario': user,
