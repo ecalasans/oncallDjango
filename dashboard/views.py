@@ -156,8 +156,11 @@ def sysLogin(request):
             #Porcentagens
             porcentagens = {}
             for setor, dados in ativos_por_setor.items():
+                print(setor)
                 for status in dados:
-                    p = (dados/ ativos) * 100
+                    if status['status__count']:
+                        p = (status['status__count'] / ativos) * 100
+                        porcentagens[setor] = p
 
             return render(request, 'dashboard/index.html',
                           context={'usuario': user,
@@ -165,7 +168,12 @@ def sysLogin(request):
                                    'saudacao': saudacao,
                                    'hosp_user': hosp_user,
                                    'total_leitos': total_leitos,
-                                   'setores': setores})
+                                   'setores': setores,
+                                   'ativos': ativos,
+                                   'inativos': inativos,
+                                   'ativos_por_setor': ativos_por_setor,
+                                   'inativos_por_setor': inativos_por_setor,
+                                   'porcentagens': porcentagens})
         else:
             return render(request, 'dashboard/registration/login.html',
                           context={'form': AuthenticationForm(),
