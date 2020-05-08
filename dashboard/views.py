@@ -134,6 +134,7 @@ def sysLogin(request):
 
             #Seleção de setores do hospital do usuário
             setores = Setor.objects.filter(hospital_id=hosp_id).values('setor', 'pk')
+            total_setores = Setor.objects.filter(hospital_id=hosp_id).count
 
             #Total de leitos do hospital do usuário
             total_leitos = Leito.objects.filter(hospital_id=hosp_id).count()
@@ -169,6 +170,7 @@ def sysLogin(request):
                                    'hosp_user': hosp_user,
                                    'total_leitos': total_leitos,
                                    'setores': setores,
+                                   'total_setores': total_setores,
                                    'ativos': ativos,
                                    'inativos': inativos,
                                    'ativos_por_setor': ativos_por_setor,

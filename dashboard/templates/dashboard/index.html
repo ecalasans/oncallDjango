@@ -1,5 +1,6 @@
 {% extends 'dashboard/bases/base.html' %}
 {% load static %}
+{% load mathfilters %}
 
 {% block usuario_topnav %}
     {{ usuario }}
@@ -20,7 +21,7 @@
 
 {% block resumo_vagas %}
         {% for setor in setores %}
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-{{ 12|intdiv:total_setores }} col-lg-{{ 12|intdiv:total_setores }} col-sm-12">
                 <div class="x_panel tile fixed_height_320">
                     <div class="x_title">
                         <h2>{{ setor.setor }}</h2>
