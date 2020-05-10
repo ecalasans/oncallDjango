@@ -139,30 +139,33 @@ def sysLogin(request):
 
             #Total de leitos do hospital do usuário
             total_leitos = Leito.objects.filter(hospital_id=hosp_id).count()
-            ativos = Leito.objects.filter(hospital_id=hosp_id, situacao='A').count()
-            inativos = Leito.objects.filter(hospital_id=hosp_id, situacao='D').count()
 
             #Situação dos leitos por setor(Ativos e Inativos)
-            ativos_por_setor = {}
-            inativos_por_setor = {}
-            total_ativos = 0
+            situacao_por_setor = {}
             for setor in setores:
-                leitos_ativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A').values('status') \
-                    .annotate(Count('status'))
-                leitos_inativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='D')\
+                situacao = {}
+                leitos_ativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A')\
                     .values('status').annotate(Count('status'))
+                ativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A').count()
+                inativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='D').count()
 
-                ativos_por_setor[setor['setor']] = leitos_ativos
-                inativos_por_setor[setor['setor']] = leitos_inativos
+                for qset in leitos_ativos.values('status', 'status__count'):
+                    situacao[qset['status']] = qset['status__count']
+                    p = (qset['status__count'] / ativos_setor) * 100
+                    situacao['porcentagem'] = p
+                situacao['ativos'] = ativos_setor
+                situacao['inativos'] = inativos_setor
+
+                situacao_por_setor[setor['setor']] = situacao
 
             #Porcentagens
-            porcentagens = {}
-            for setor, dados in ativos_por_setor.items():
-                print(setor)
-                for status in dados:
-                    if status['status__count']:
-                        p = (status['status__count'] / ativos) * 100
-                        porcentagens[setor] = p
+            # porcentagens = {}
+            # for setor, dados in ativos_por_setor.items():
+            #     print(setor)
+            #     for status in dados:
+            #         if status['status__count']:
+            #             p = (status['status__count'] / ativos) * 100
+            #             porcentagens[setor] = p
 
             return render(request, 'dashboard/index.html',
                           context={'usuario': user,
@@ -172,11 +175,8 @@ def sysLogin(request):
                                    'total_leitos': total_leitos,
                                    'setores': setores,
                                    'total_setores': total_setores,
-                                   'ativos': ativos,
-                                   'inativos': inativos,
-                                   'ativos_por_setor': ativos_por_setor,
-                                   'inativos_por_setor': inativos_por_setor,
-                                   'porcentagens': porcentagens})
+
+                                   'inativos_por_setor': inativos_por_setor})
         else:
             return render(request, 'dashboard/registration/login.html',
                           context={'form': AuthenticationForm(),
