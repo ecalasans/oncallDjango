@@ -131,7 +131,7 @@ def sysLogin(request):
             #Pega o hospital do usuário
             hospital = request.POST['select_hosp_cad']
             hosp_id = Medico.objects.get(hospital_id=hospital).hospital_id
-            hosp_user = Hospital.objects.get(pk=hosp_id).nome
+            hosp_user = Hospital.objects.get(pk=hosp_id).sigla
 
             #Seleção de setores do hospital do usuário
             setores = Setor.objects.filter(hospital_id=hosp_id).values('setor', 'pk', 'ativo')
@@ -154,7 +154,7 @@ def sysLogin(request):
 
                     for qset in leitos_ativos.values('status', 'status__count'):
                         situacao[qset['status']] = qset['status__count']
-                        p = (qset['status__count'] / ativos_setor) * 100
+                        p = int((qset['status__count'] / ativos_setor) * 100)
                         situacao['porcentagem'] = p
                     situacao['ativos'] = ativos_setor
                     situacao['inativos'] = inativos_setor

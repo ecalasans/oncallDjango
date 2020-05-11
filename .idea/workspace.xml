@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0020_altera_setor_add_ativo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/docs/css/pass_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/css/pass_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/docs/css/validaCadastro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantao.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/plantao.sqlite3" afterDir="false" />
     </list>
@@ -504,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589156370602</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Template - Contando setores corretamente baseado na disponibilidade">
+      <created>1589156827097</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1589156827097</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +534,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ajuste de Banco de Dados" />
     <MESSAGE value="Resolvido tamanho da lista em Login" />
     <MESSAGE value="Resolvido add múltiplos hospitais" />
     <MESSAGE value="Reestruturando" />
@@ -548,7 +558,8 @@
     <MESSAGE value="Tentando iterar no template" />
     <MESSAGE value="Remodelando view" />
     <MESSAGE value="Banco de dados - altera Setor com campo ativo(default=True)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Banco de dados - altera Setor com campo ativo(default=True)" />
+    <MESSAGE value="Template - Contando setores corretamente baseado na disponibilidade" />
+    <option name="LAST_COMMIT_MESSAGE" value="Template - Contando setores corretamente baseado na disponibilidade" />
   </component>
   <component name="WindowStateProjectService">
     <state x="470" y="206" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587862282321">
@@ -561,40 +572,40 @@
     </state>
     <state x="746" y="284" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588549398827" />
     <state x="373" y="273" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587582132004" />
-    <state x="179" y="72" width="825" height="666" key="CommitChangelistDialog2" timestamp="1589156370489">
+    <state x="179" y="72" width="825" height="666" key="CommitChangelistDialog2" timestamp="1589156827001">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="358" y="71" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588963000448" />
     <state x="179" y="58" width="825" height="666" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1589073584635" />
-    <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589156370489" />
+    <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589156827001" />
     <state x="653" y="302" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587862277955">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="653" y="302" width="424" height="484" key="FileChooserDialogImpl/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587862277955" />
-    <state width="1234" height="259" key="GridCell.Tab.0.bottom" timestamp="1589156420973">
+    <state width="1234" height="259" key="GridCell.Tab.0.bottom" timestamp="1589161991502">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state width="1649" height="287" key="GridCell.Tab.0.bottom/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588963052952" />
     <state width="1238" height="245" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589073702726" />
-    <state width="1234" height="259" key="GridCell.Tab.0.bottom/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589156420973" />
-    <state width="1234" height="259" key="GridCell.Tab.0.center" timestamp="1589156420973">
+    <state width="1234" height="259" key="GridCell.Tab.0.bottom/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589161991502" />
+    <state width="1234" height="259" key="GridCell.Tab.0.center" timestamp="1589161991502">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state width="1649" height="287" key="GridCell.Tab.0.center/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588963052950" />
     <state width="1238" height="245" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1589073702725" />
-    <state width="1234" height="259" key="GridCell.Tab.0.center/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589156420973" />
-    <state width="1234" height="259" key="GridCell.Tab.0.left" timestamp="1589156420973">
+    <state width="1234" height="259" key="GridCell.Tab.0.center/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589161991502" />
+    <state width="1234" height="259" key="GridCell.Tab.0.left" timestamp="1589161991502">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state width="1649" height="287" key="GridCell.Tab.0.left/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588963052950" />
     <state width="1238" height="245" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1589073702725" />
-    <state width="1234" height="259" key="GridCell.Tab.0.left/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589156420973" />
-    <state width="1234" height="259" key="GridCell.Tab.0.right" timestamp="1589156420973">
+    <state width="1234" height="259" key="GridCell.Tab.0.left/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589161991502" />
+    <state width="1234" height="259" key="GridCell.Tab.0.right" timestamp="1589161991502">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state width="1649" height="287" key="GridCell.Tab.0.right/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588963052951" />
     <state width="1238" height="245" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1589073702726" />
-    <state width="1234" height="259" key="GridCell.Tab.0.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589156420973" />
+    <state width="1234" height="259" key="GridCell.Tab.0.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589161991502" />
     <state width="1234" height="450" key="GridCell.Tab.1.bottom" timestamp="1589154617583">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
