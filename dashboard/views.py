@@ -134,8 +134,8 @@ def sysLogin(request):
             hosp_user = Hospital.objects.get(pk=hosp_id).nome
 
             #Seleção de setores do hospital do usuário
-            setores = Setor.objects.filter(hospital_id=hosp_id).values('setor', 'pk')
-            total_setores = Setor.objects.filter(hospital_id=hosp_id).count
+            setores = Setor.objects.filter(hospital_id=hosp_id).values('setor', 'pk', 'ativo')
+            total_setores = Setor.objects.filter(hospital_id=hosp_id, ativo=True).count
 
             #Total de leitos do hospital do usuário
             total_leitos = Leito.objects.filter(hospital_id=hosp_id).count()
@@ -143,20 +143,23 @@ def sysLogin(request):
             #Situação dos leitos por setor(Ativos e Inativos)
             situacao_por_setor = {}
             for setor in setores:
-                situacao = {}
-                leitos_ativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A')\
-                    .values('status').annotate(Count('status'))
-                ativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A').count()
-                inativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='D').count()
+                if not setor['ativo']:
+                    pass
+                else:
+                    situacao = {}
+                    leitos_ativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A') \
+                        .values('status').annotate(Count('status'))
+                    ativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A').count()
+                    inativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='D').count()
 
-                for qset in leitos_ativos.values('status', 'status__count'):
-                    situacao[qset['status']] = qset['status__count']
-                    p = (qset['status__count'] / ativos_setor) * 100
-                    situacao['porcentagem'] = p
-                situacao['ativos'] = ativos_setor
-                situacao['inativos'] = inativos_setor
+                    for qset in leitos_ativos.values('status', 'status__count'):
+                        situacao[qset['status']] = qset['status__count']
+                        p = (qset['status__count'] / ativos_setor) * 100
+                        situacao['porcentagem'] = p
+                    situacao['ativos'] = ativos_setor
+                    situacao['inativos'] = inativos_setor
 
-                situacao_por_setor[setor['setor']] = situacao
+                    situacao_por_setor[setor['setor']] = situacao
 
             return render(request, 'dashboard/index.html',
                           context={'usuario': user,
