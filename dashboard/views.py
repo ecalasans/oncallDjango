@@ -96,7 +96,62 @@ class ModalView(TemplateView):
 '''
 @login_required
 def home(request):
-    return render(request, 'dashboard/index.html')
+    primeiro = request.user.first_name
+
+    agora = datetime.datetime.now()
+    data = agora.strftime("%d/%m%Y")
+    saudacao = ''
+
+    if (agora.hour >= 0) and (agora.hour < 12):
+        saudacao = "Bom dia,"
+
+    if (agora.hour >= 12) and (agora.hour < 18):
+        saudacao = "Boa tarde,"
+
+    if (agora.hour >= 18):
+        saudacao = "Boa noite,"
+
+    # Pega o hospital do usuário
+    hosp_id = request.session.get('hosp_user')
+    hosp_user = Hospital.objects.get(pk=hosp_id).sigla
+
+    # Seleção de setores do hospital do usuário
+    setores = Setor.objects.filter(hospital_id=hosp_id).values('setor', 'pk', 'ativo')
+    total_setores = Setor.objects.filter(hospital_id=hosp_id, ativo=True).count
+
+    # Total de leitos do hospital do usuário
+    total_leitos = Leito.objects.filter(hospital_id=hosp_id).count()
+
+    # Situação dos leitos por setor(Ativos e Inativos)
+    situacao_por_setor = {}
+    for setor in setores:
+        if not setor['ativo']:
+            pass
+        else:
+            situacao = {}
+            leitos_ativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A') \
+                .values('status').annotate(Count('status'))
+            ativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A').count()
+            inativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='D').count()
+
+            for qset in leitos_ativos.values('status', 'status__count'):
+                situacao[qset['status']] = qset['status__count']
+                p = int((qset['status__count'] / ativos_setor) * 100)
+                situacao['porcentagem'] = p
+            situacao['ativos'] = ativos_setor
+            situacao['inativos'] = inativos_setor
+
+            situacao_por_setor[setor['setor']] = situacao
+
+    return render(request, 'dashboard/index.html',
+                  context={'usuario': request.user.username,
+                           'primeiro': primeiro,
+                           'saudacao': saudacao,
+                           'hosp_user': hosp_user,
+                           'total_leitos': total_leitos,
+                           'setores': setores,
+                           'total_setores': total_setores,
+                           'situacao_por_setor': situacao_por_setor})
 
 def sysLogin(request):
     hospitais = Hospital.objects.all().order_by('nome')
@@ -113,63 +168,9 @@ def sysLogin(request):
         if user is not None:
             # Faz o login
             login(request, user)
-            primeiro = request.user.first_name
-
-            agora = datetime.datetime.now()
-            data = agora.strftime("%d/%m%Y")
-            saudacao = ''
-
-            if (agora.hour >= 0) and (agora.hour < 12):
-                saudacao = "Bom dia,"
-
-            if (agora.hour >= 12) and (agora.hour < 18):
-                saudacao = "Boa tarde,"
-
-            if (agora.hour >= 18):
-                saudacao = "Boa noite,"
-
-            #Pega o hospital do usuário
-            hospital = request.POST['select_hosp_cad']
-            hosp_id = Medico.objects.get(hospital_id=hospital).hospital_id
-            hosp_user = Hospital.objects.get(pk=hosp_id).sigla
-
-            #Seleção de setores do hospital do usuário
-            setores = Setor.objects.filter(hospital_id=hosp_id).values('setor', 'pk', 'ativo')
-            total_setores = Setor.objects.filter(hospital_id=hosp_id, ativo=True).count
-
-            #Total de leitos do hospital do usuário
-            total_leitos = Leito.objects.filter(hospital_id=hosp_id).count()
-
-            #Situação dos leitos por setor(Ativos e Inativos)
-            situacao_por_setor = {}
-            for setor in setores:
-                if not setor['ativo']:
-                    pass
-                else:
-                    situacao = {}
-                    leitos_ativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A') \
-                        .values('status').annotate(Count('status'))
-                    ativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A').count()
-                    inativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='D').count()
-
-                    for qset in leitos_ativos.values('status', 'status__count'):
-                        situacao[qset['status']] = qset['status__count']
-                        p = int((qset['status__count'] / ativos_setor) * 100)
-                        situacao['porcentagem'] = p
-                    situacao['ativos'] = ativos_setor
-                    situacao['inativos'] = inativos_setor
-
-                    situacao_por_setor[setor['setor']] = situacao
-
-            return render(request, 'dashboard/index.html',
-                          context={'usuario': user,
-                                   'primeiro': primeiro,
-                                   'saudacao': saudacao,
-                                   'hosp_user': hosp_user,
-                                   'total_leitos': total_leitos,
-                                   'setores': setores,
-                                   'total_setores': total_setores,
-                                   'situacao_por_setor': situacao_por_setor})
+            hosp_user = Medico.objects.get(hospital_id=request.POST['select_hosp_cad']).hospital_id
+            request.session['hosp_user'] = hosp_user
+            return redirect('home')
         else:
             return render(request, 'dashboard/registration/login.html',
                           context={'form': AuthenticationForm(),

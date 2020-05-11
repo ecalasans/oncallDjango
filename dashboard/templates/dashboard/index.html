@@ -18,11 +18,6 @@
             font-size: 1em; text-decoration: underline">{{ hosp_user }}!</span>
 {% endblock %}
 
-{% block content %}
-
-{% endblock %}
-
-
 {% block resumo_vagas %}
         {% for key, values in situacao_por_setor.items %}
             {% if total_setores == 1 %}
@@ -67,4 +62,8 @@
             </div>
         {% endfor %}
 
+{% endblock %}
+
+{% block menu %}
+    <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Início </a>
 {% endblock %}
