@@ -15,6 +15,7 @@ class Hospital(models.Model):
 class Setor(models.Model):
     setor = models.CharField(default="", max_length=10)
     hospital = models.ForeignKey(Hospital, on_delete=models.DO_NOTHING, default="")
+    ativo = models.BooleanField(default=True)
 
     def __str__(self):
         return self.setor + ' - ' + str(self.hospital)

@@ -165,7 +165,8 @@ def sysLogin(request):
                                    'hosp_user': hosp_user,
                                    'total_leitos': total_leitos,
                                    'setores': setores,
-                                   'total_setores': total_setores})
+                                   'total_setores': total_setores,
+                                   'situacao_por_setor': situacao_por_setor})
         else:
             return render(request, 'dashboard/registration/login.html',
                           context={'form': AuthenticationForm(),

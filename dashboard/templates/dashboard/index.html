@@ -1,6 +1,7 @@
 {% extends 'dashboard/bases/base.html' %}
 {% load static %}
 {% load mathfilters %}
+{% load dashboard_extras %}
 
 {% block usuario_topnav %}
     {{ usuario }}
@@ -20,7 +21,7 @@
 
 
 {% block resumo_vagas %}
-        {% for key, values in ativos_por_setor.items %}
+        {% for key, values in situacao_por_setor.items %}
             {% if total_setores == 1 %}
                 <div class="col-6 col-sm-12">
             {% else %}
@@ -32,11 +33,10 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        {% for quant in values %}
-                            {% for item, valor in quant.items %}
-                                <div class="widget_summary">
+
+                            <div class="widget_summary">
                                 <div class="w_left w_25">
-                                    <span>{{ valor }}</span>
+                                    <span>{{ values.L}} vaga{{ values.L|pluralize }}</span>
                                 </div>
                                 <div class="w_center w_55">
                                 <div class="progress">
@@ -50,8 +50,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                            {% endfor %}
-                     {% endfor %}
+
                     </div>
                 </div>
             </div>
