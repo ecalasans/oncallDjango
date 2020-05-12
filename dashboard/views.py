@@ -94,26 +94,17 @@ class ModalView(TemplateView):
 
 
 '''
+
+########################################################################################################################
+#   Seção HOME
+########################################################################################################################
 @login_required
 def home(request):
-    primeiro = request.user.first_name
-
-    agora = datetime.datetime.now()
-    data = agora.strftime("%d/%m%Y")
-    saudacao = ''
-
-    if (agora.hour >= 0) and (agora.hour < 12):
-        saudacao = "Bom dia,"
-
-    if (agora.hour >= 12) and (agora.hour < 18):
-        saudacao = "Boa tarde,"
-
-    if (agora.hour >= 18):
-        saudacao = "Boa noite,"
-
-    # Pega o hospital do usuário
-    hosp_id = request.session.get('hosp_user')
-    hosp_user = Hospital.objects.get(pk=hosp_id).sigla
+    # Pega variáveis de sessão
+    hosp_id = request.session.get('hosp_id')
+    hosp_sigla = request.session.get('hosp_sigla')
+    primeiro = request.session.get('primeiro')
+    saudacao = request.session.get('saudacao')
 
     # Seleção de setores do hospital do usuário
     setores = Setor.objects.filter(hospital_id=hosp_id).values('setor', 'pk', 'ativo')
@@ -147,11 +138,15 @@ def home(request):
                   context={'usuario': request.user.username,
                            'primeiro': primeiro,
                            'saudacao': saudacao,
-                           'hosp_user': hosp_user,
+                           'hosp_sigla': hosp_sigla,
                            'total_leitos': total_leitos,
                            'setores': setores,
                            'total_setores': total_setores,
                            'situacao_por_setor': situacao_por_setor})
+
+########################################################################################################################
+#   Seção LOGIN
+########################################################################################################################
 
 def sysLogin(request):
     hospitais = Hospital.objects.all().order_by('nome')
@@ -168,14 +163,43 @@ def sysLogin(request):
         if user is not None:
             # Faz o login
             login(request, user)
-            hosp_user = Medico.objects.get(hospital_id=request.POST['select_hosp_cad']).hospital_id
-            request.session['hosp_user'] = hosp_user
+            hosp_id = Medico.objects.get(hospital_id=request.POST['select_hosp_cad']).hospital_id
+            hosp_sigla = Hospital.objects.get(id=hosp_id).sigla
+
+            primeiro = request.user.first_name
+
+            agora = datetime.datetime.now()
+            data = agora.strftime("%d/%m%Y")
+            saudacao = ''
+
+            if (agora.hour >= 0) and (agora.hour < 12):
+                saudacao = "Bom dia,"
+
+            if (agora.hour >= 12) and (agora.hour < 18):
+                saudacao = "Boa tarde,"
+
+            if (agora.hour >= 18):
+                saudacao = "Boa noite,"
+
+            request.session['hosp_id'] = hosp_id
+            request.session['hosp_sigla'] = hosp_sigla
+            request.session['primeiro'] = primeiro
+            request.session['saudacao'] = saudacao
+
             return redirect('home')
         else:
             return render(request, 'dashboard/registration/login.html',
                           context={'form': AuthenticationForm(),
                                    'hospitais': hospitais,
                                    'error': 'Usuário não encontrado ou dados conflitantes!'})
+
+def sysLogout(request):
+    logout(request)
+    return redirect('login')
+
+########################################################################################################################
+#   Seção CADASTRO DE USUÁRIO
+########################################################################################################################
 
 def signupUser(request):
     hospitais = Hospital.objects.all().order_by('nome')
@@ -209,6 +233,9 @@ def signupUser(request):
                                    'hospitais': hospitais,
                                    'errors': erros})
 
-def sysLogout(request):
-    logout(request)
-    return redirect('login')
+
+########################################################################################################################
+#   Seção LEITOS
+########################################################################################################################
+def beds_manager(request):
+    return render(request, 'dashboard/beds/beds.html')

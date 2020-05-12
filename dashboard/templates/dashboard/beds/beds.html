@@ -1,0 +1,92 @@
+{% extends 'dashboard/bases/base.html' %}
+{% load static %}
+{% load mathfilters %}
+{% load dashboard_extras %}
+
+{% block usuario_topnav %}
+    {{ usuario }}
+{% endblock %}
+
+{% block saudacao %}
+    {{ saudacao }}
+{% endblock %}
+
+{% block usuario_navbar %}
+    <span style="font-weight: bold;">{{ primeiro }}!</span>
+
+    Você está em <span style="font-weight: bold;
+            font-size: 1em; text-decoration: underline">{{ hosp_user }}!</span>
+{% endblock %}
+
+{% block menu %}
+    <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Início </a>
+    <li><a href="{% url 'beds' %}"><i class="fa fa-bed"></i> Leitos </a>
+{% endblock %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 style="margin: auto;">HJPB</h2>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-12">
+            <div class="x_panel">
+      <div class="x_title">
+        <h2>Bordered table <small>Bordered table subtitle</small></h2>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Settings 1</a>
+                <a class="dropdown-item" href="#">Settings 2</a>
+              </div>
+          </li>
+          <li><a class="close-link"><i class="fa fa-close"></i></a>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+{% endblock %}
