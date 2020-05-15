@@ -238,4 +238,25 @@ def signupUser(request):
 #   Seção LEITOS
 ########################################################################################################################
 def beds_manager(request):
-    return render(request, 'dashboard/beds/beds.html')
+    hosp_id = request.session.get('hosp_id')
+
+    #Pega leitos do hospital
+    setores = Setor.objects.filter(hospital_id=hosp_id, ativo=True).values('id','setor')
+
+    leitos ={}
+
+    for valores in setores.values('id', 'setor'):
+        leitos_setor = {}
+
+        l = Leito.objects\
+            .filter(hospital_id=hosp_id, setor=valores['id']).values('numero', 'situacao', 'status')
+
+        for valor in l.values('numero', 'situacao', 'status'):
+            leitos_setor[valor['numero']] = {'situacao': valor['situacao'], 'status': valor['status']}
+
+        leitos[valores['setor']] = leitos_setor
+
+    return render(request, 'dashboard/beds/beds.html',
+                  context={
+                      'leitos': leitos
+                  })
