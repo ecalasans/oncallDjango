@@ -5,7 +5,7 @@ from dashboard.models import Leito, Hospital,  Setor, Medico
 from django.db.models import Count
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .forms import MedicoForm
+from .forms import MedicoForm, LeitoForm
 from django.contrib import messages
 import datetime
 import json
@@ -238,25 +238,36 @@ def signupUser(request):
 #   Seção LEITOS
 ########################################################################################################################
 def beds_manager(request):
-    hosp_id = request.session.get('hosp_id')
+    situacao = {'Ativo': 'A', 'Desativado': 'D'}
+    status = {'Livre': 'L', 'Ocupado': 'O', 'Bloqueado': 'B'}
 
-    #Pega leitos do hospital
-    setores = Setor.objects.filter(hospital_id=hosp_id, ativo=True).values('id','setor')
+    if request.method == 'GET':
+        hosp_id = request.session.get('hosp_id')
+        leito_form = LeitoForm()
 
-    leitos ={}
+        todos_os_leitos = Leito.objects.filter(hospital_id=hosp_id)\
+            .values('numero', 'situacao', 'status').order_by('numero')
 
-    for valores in setores.values('id', 'setor'):
-        leitos_setor = {}
+        #Pega leitos do hospital
+        setores = Setor.objects.filter(hospital_id=hosp_id, ativo=True).values('id','setor')
 
-        l = Leito.objects\
-            .filter(hospital_id=hosp_id, setor=valores['id']).values('numero', 'situacao', 'status')
+        leitos ={}
 
-        for valor in l.values('numero', 'situacao', 'status'):
-            leitos_setor[valor['numero']] = {'situacao': valor['situacao'], 'status': valor['status']}
+        for valores in setores.values('id', 'setor'):
+            leitos_setor = {}
 
-        leitos[valores['setor']] = leitos_setor
+            lpesq = Leito.objects.filter(hospital_id=hosp_id, setor=valores['id'])\
+                .values('numero', 'situacao', 'status')
 
-    return render(request, 'dashboard/beds/beds.html',
-                  context={
-                      'leitos': leitos
-                  })
+            for valor in lpesq.values('numero', 'situacao', 'status'):
+                leitos_setor[valor['numero']] = {'situacao': valor['situacao'], 'status': valor['status']}
+
+                leitos[valores['setor']] = leitos_setor
+
+        return render(request, 'dashboard/beds/beds.html',
+                      context={
+                          'leitos': leitos,
+                          'leito_form': LeitoForm(),
+                          'situacao': situacao,
+                          'status': status
+                      })

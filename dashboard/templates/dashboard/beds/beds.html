@@ -2,6 +2,7 @@
 {% load static %}
 {% load mathfilters %}
 {% load dashboard_extras %}
+{% load widget_tweaks %}
 
 {% block usuario_topnav %}
     {{ usuario }}
@@ -41,15 +42,29 @@
               <th>Leito</th>
               <th>Situação</th>
               <th>Status</th>
+              <th>Ação</th>
             </tr>
           </thead>
           <tbody>
-            {% for key, value in leitos.items %}
-            <tr>
-              <th scope="row">{{ key }}</th>
-              <td>{{ value.situacao }}</td>
-              <td>{{ value.status }}</td>
-            </tr>
+            {% for key_sup, value in leitos.items %}
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <tr>
+                      <th scope="row">{{ key_sup }}</th>
+                      <td>
+                          {% for key, value in situacao.items  %}
+                              <label style="margin-right: 20px;">
+                                <input name="{{ setor }}_situacao" type="radio"
+                                       value="{{ value }}" class="iradio_flat-green"
+                                       id="{{ setor }}_{{ key_sup }}">{{ key }}
+                              </label>
+
+                          {% endfor %}
+                      </td>
+                      <td>{{ value.status }}</td>
+                      <td><button type="submit">Alterar</button> </td>
+                    </tr>
+                </form>
             {% endfor %}
           </tbody>
         </table>

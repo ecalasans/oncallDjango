@@ -1,17 +1,14 @@
-from django.forms import ModelForm, ValidationError, Select
-from .models import Medico, Hospital
+from django.forms import ModelForm, ValidationError, Select, RadioSelect
+from .models import Medico, Hospital, Leito
 import re
 
-
 class MedicoForm(ModelForm):
-
     class Meta:
         model = Medico
         fields = ['username', 'password', 'first_name', 'last_name', 'email', 'crm', 'hospital']
         widgets ={
             'hospital': Select()
         }
-
 
     def clean_username(self):
         if len(self.cleaned_data['username']) == 0:
@@ -57,4 +54,14 @@ class MedicoForm(ModelForm):
             else:
                 raise ValidationError('Senha deve conter apenas alfanuméricos ou \n !@#$%*_')
         else:
-            raise ValidationError('Senha deve ter pelo menos 8 caracteres!')
+           raise ValidationError('Senha deve ter pelo menos 8 caracteres!')
+
+
+class LeitoForm(ModelForm):
+    class Meta:
+        model = Leito
+        fields = ['situacao', 'status']
+        widgets = {
+            'situacao': RadioSelect(),
+            'status': RadioSelect()
+        }
