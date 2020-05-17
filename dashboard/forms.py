@@ -62,6 +62,6 @@ class LeitoForm(ModelForm):
         model = Leito
         fields = ['situacao', 'status']
         widgets = {
-            'situacao': RadioSelect(),
-            'status': RadioSelect()
+            'situacao': Select(choices=[('A', 'Ativo'), ('D', 'Desativado')]),
+            'status': Select(choices=[('L', 'Livre'), ('O', 'Ocupado'), ('B', 'Bloqueado')])
         }

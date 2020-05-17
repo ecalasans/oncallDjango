@@ -238,6 +238,12 @@ def signupUser(request):
 #   Seção LEITOS
 ########################################################################################################################
 def beds_manager(request):
+    # Pega variáveis de sessão
+    hosp_id = request.session.get('hosp_id')
+    hosp_sigla = request.session.get('hosp_sigla')
+    primeiro = request.session.get('primeiro')
+    saudacao = request.session.get('saudacao')
+
     situacao = {'Ativo': 'A', 'Desativado': 'D'}
     status = {'Livre': 'L', 'Ocupado': 'O', 'Bloqueado': 'B'}
 
@@ -266,8 +272,12 @@ def beds_manager(request):
 
         return render(request, 'dashboard/beds/beds.html',
                       context={
+                          'usuario': request.user.username,
+                          'primeiro': primeiro,
+                          'saudacao': saudacao,
+                          'hosp_sigla': hosp_sigla,
                           'leitos': leitos,
-                          'leito_form': LeitoForm(),
+                          'leito_form': leito_form,
                           'situacao': situacao,
                           'status': status
                       })

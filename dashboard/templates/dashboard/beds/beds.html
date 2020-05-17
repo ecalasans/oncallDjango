@@ -3,6 +3,7 @@
 {% load mathfilters %}
 {% load dashboard_extras %}
 {% load widget_tweaks %}
+{% load i18n %}
 
 {% block usuario_topnav %}
     {{ usuario }}
@@ -13,10 +14,10 @@
 {% endblock %}
 
 {% block usuario_navbar %}
-    <span style="font-weight: bold;">{{ primeiro }}!</span>
+    <span style="font-weight: bold;">{{ primeiro }}!</span><br>
 
     Você está em <span style="font-weight: bold;
-            font-size: 1em; text-decoration: underline">{{ hosp_user }}!</span>
+            font-size: 1em; text-decoration: underline">{{ hosp_sigla }}!</span>
 {% endblock %}
 
 {% block menu %}
@@ -46,23 +47,53 @@
             </tr>
           </thead>
           <tbody>
-            {% for key_sup, value in leitos.items %}
-                <form method="POST" action="">
+            {% for key_leitos, value_leitos in leitos.items %}
+                <form method="POST" action="{% url 'beds' %}">
                     {% csrf_token %}
                     <tr>
-                      <th scope="row">{{ key_sup }}</th>
+                      <th scope="row">{{ key_leitos }}</th>
                       <td>
-                          {% for key, value in situacao.items  %}
-                              <label style="margin-right: 20px;">
-                                <input name="{{ setor }}_situacao" type="radio"
-                                       value="{{ value }}" class="iradio_flat-green"
-                                       id="{{ setor }}_{{ key_sup }}">{{ key }}
-                              </label>
-
+                          {% for key_sit, value_sit in situacao.items  %}
+                                {% if value_sit == value_leitos.situacao %}
+                                  <label style="margin-right: 20px;">
+                                    <input name="{{ setor }}_situacao" type="radio"
+                                           value="{{ value_sit }}" class="iradio_flat-green"
+                                           id="{{ setor }}_{{ key_sit }}" checked>{{ key_sit }}
+                                  </label>
+                                {% else %}
+                                  <label style="margin-right: 20px;">
+                                    <input name="{{ setor }}_situacao_{{ key_leitos }}" type="radio"
+                                           value="{{ value_sit }}" class="iradio_flat-green"
+                                           id="{{ setor }}_situacao_{{ key_leitos }}">{{ key_sit }}
+                                  </label>
+                                {% endif %}
                           {% endfor %}
                       </td>
-                      <td>{{ value.status }}</td>
-                      <td><button type="submit">Alterar</button> </td>
+                      <td>
+                        <select class="form-control" id="{{ setor }}_status_{{ key_leitos }}"
+                            name="{{ setor }}_situacao_{{ key_leitos }}">
+                            {% for key_stat, value_stat in status.items %}
+                                {% if value_stat == 'L' %}
+                                    {% trans '#1abb9c' as cor %}
+                                {% elif value_stat == 'B' %}
+                                    {% trans '#ffc107' as cor %}
+                                {% else %}
+                                    {% trans '#dc3545' as cor %}
+                                {% endif %}
+
+                                {% if value_stat == value_leitos.status %}
+                                    <option value="{{ value_stat }}" style="color: {{ cor }};" selected>
+                                        {{ key_stat }}
+                                    </option>
+                                {% else %}
+                                    <option value="{{ value_stat }}" style="color: {{ cor }};">
+                                        {{ key_stat }}
+                                    </option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                      </td>
+                      <td><button type="submit" style="margin:0 auto;">Alterar</button> </td>
                     </tr>
                 </form>
             {% endfor %}
