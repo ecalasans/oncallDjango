@@ -57,45 +57,45 @@
                                 {% if value_leitos.status == 'O' %}
                                     {% if value_sit == value_leitos.situacao %}
                                       <label style="margin-right: 20px;">
-                                        <input name="{{ setor }}_situacao_{{ key_leitos }}" type="radio"
+                                        <input name="sit_rd" type="radio"
                                                value="{{ value_sit }}" class="iradio_flat-green"
-                                               id="{{ setor }}_situacao_{{ key_sit }}" checked>{{ key_sit }}
+                                               id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}" checked>{{ key_sit }}
                                       </label>
                                         <script type="text/javascript">
-                                            document.getElementById("{{ setor }}\_situacao\_{{ key_leitos }}")
+                                            document.getElementById("{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}")
                                                 .disabled = true;
                                         </script>
                                     {% else %}
                                       <label style="margin-right: 20px;">
-                                        <input name="{{ setor }}_situacao_{{ key_leitos }}" type="radio"
+                                        <input name="sit_rd" type="radio"
                                                value="{{ value_sit }}" class="iradio_flat-green"
-                                               id="{{ setor }}_situacao_{{ key_leitos }}">{{ key_sit }}
+                                               id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}">{{ key_sit }}
                                       </label>
                                         <script type="text/javascript">
-                                            document.getElementById("{{ setor }}\_situacao\_{{ key_leitos }}")
+                                            document.getElementById("{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}")
                                                 .disabled = true;
                                         </script>
                                     {% endif %}
                                 {% else %}
                                     {% if value_sit == value_leitos.situacao %}
                                       <label style="margin-right: 20px;">
-                                        <input name="{{ setor }}_situacao_{{ key_leitos }}" type="radio"
+                                        <input name="sit_rd" type="radio"
                                                value="{{ value_sit }}" class="iradio_flat-green"
-                                               id="{{ setor }}_situacao_{{ key_sit }}" checked>{{ key_sit }}
+                                               id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}" checked>{{ key_sit }}
                                       </label>
                                     {% else %}
                                       <label style="margin-right: 20px;">
-                                        <input name="{{ setor }}_situacao_{{ key_leitos }}" type="radio"
+                                        <input name="sit_rd" type="radio"
                                                value="{{ value_sit }}" class="iradio_flat-green"
-                                               id="{{ setor }}_situacao_{{ key_leitos }}">{{ key_sit }}
+                                               id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}">{{ key_sit }}
                                       </label>
                                     {% endif %}
                                 {% endif %}
                           {% endfor %}
                       </td>
                       <td>
-                        <select class="form-control" id="{{ setor }}_status_{{ key_leitos }}"
-                            name="{{ setor }}_situacao_{{ key_leitos }}">
+                        <select class="form-control" id="{{ setor }}_stat_{{ key_leitos }}"
+                            name="select_status">
                             {% for key_stat, value_stat in status.items %}
                                 {% if value_stat == 'L' %}
                                     {% trans '#1abb9c' as cor %}
