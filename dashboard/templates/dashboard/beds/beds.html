@@ -54,18 +54,42 @@
                       <th scope="row">{{ key_leitos }}</th>
                       <td>
                           {% for key_sit, value_sit in situacao.items  %}
-                                {% if value_sit == value_leitos.situacao %}
-                                  <label style="margin-right: 20px;">
-                                    <input name="{{ setor }}_situacao" type="radio"
-                                           value="{{ value_sit }}" class="iradio_flat-green"
-                                           id="{{ setor }}_{{ key_sit }}" checked>{{ key_sit }}
-                                  </label>
+                                {% if value_leitos.status == 'O' %}
+                                    {% if value_sit == value_leitos.situacao %}
+                                      <label style="margin-right: 20px;">
+                                        <input name="{{ setor }}_situacao_{{ key_leitos }}" type="radio"
+                                               value="{{ value_sit }}" class="iradio_flat-green"
+                                               id="{{ setor }}_situacao_{{ key_sit }}" checked>{{ key_sit }}
+                                      </label>
+                                        <script type="text/javascript">
+                                            document.getElementById("{{ setor }}\_situacao\_{{ key_leitos }}")
+                                                .disabled = true;
+                                        </script>
+                                    {% else %}
+                                      <label style="margin-right: 20px;">
+                                        <input name="{{ setor }}_situacao_{{ key_leitos }}" type="radio"
+                                               value="{{ value_sit }}" class="iradio_flat-green"
+                                               id="{{ setor }}_situacao_{{ key_leitos }}">{{ key_sit }}
+                                      </label>
+                                        <script type="text/javascript">
+                                            document.getElementById("{{ setor }}\_situacao\_{{ key_leitos }}")
+                                                .disabled = true;
+                                        </script>
+                                    {% endif %}
                                 {% else %}
-                                  <label style="margin-right: 20px;">
-                                    <input name="{{ setor }}_situacao_{{ key_leitos }}" type="radio"
-                                           value="{{ value_sit }}" class="iradio_flat-green"
-                                           id="{{ setor }}_situacao_{{ key_leitos }}">{{ key_sit }}
-                                  </label>
+                                    {% if value_sit == value_leitos.situacao %}
+                                      <label style="margin-right: 20px;">
+                                        <input name="{{ setor }}_situacao_{{ key_leitos }}" type="radio"
+                                               value="{{ value_sit }}" class="iradio_flat-green"
+                                               id="{{ setor }}_situacao_{{ key_sit }}" checked>{{ key_sit }}
+                                      </label>
+                                    {% else %}
+                                      <label style="margin-right: 20px;">
+                                        <input name="{{ setor }}_situacao_{{ key_leitos }}" type="radio"
+                                               value="{{ value_sit }}" class="iradio_flat-green"
+                                               id="{{ setor }}_situacao_{{ key_leitos }}">{{ key_sit }}
+                                      </label>
+                                    {% endif %}
                                 {% endif %}
                           {% endfor %}
                       </td>
