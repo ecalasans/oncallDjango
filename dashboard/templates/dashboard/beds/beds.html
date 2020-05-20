@@ -50,6 +50,8 @@
             {% for key_leitos, value_leitos in leitos.items %}
                 <form method="POST" action="{% url 'beds' %}">
                     {% csrf_token %}
+                    <input type="hidden" id="{{ setor }}" value="{{ setor }}" name="hidden_set">
+                    <input type="hidden" id="{{ setor }}_{{ key_leitos }}" name="num_leito" value="{{ key_leitos }}">
                     <tr>
                       <th scope="row">{{ key_leitos }}</th>
                       <td>
@@ -57,6 +59,7 @@
                                 {% if value_leitos.status == 'O' %}
                                     {% if value_sit == value_leitos.situacao %}
                                       <label style="margin-right: 20px;">
+                                        <input type="hidden" name="hidden_sit" value={{ value_leitos.situacao }}>
                                         <input name="sit_rd" type="radio"
                                                value="{{ value_sit }}" class="iradio_flat-green"
                                                id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}" checked>{{ key_sit }}
@@ -67,6 +70,7 @@
                                         </script>
                                     {% else %}
                                       <label style="margin-right: 20px;">
+                                        <input type="hidden" name="hidden_sit" value={{ value_leitos.situacao }}>
                                         <input name="sit_rd" type="radio"
                                                value="{{ value_sit }}" class="iradio_flat-green"
                                                id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}">{{ key_sit }}

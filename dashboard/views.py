@@ -247,28 +247,51 @@ def beds_manager(request):
     situacao = {'Ativo': 'A', 'Desativado': 'D'}
     status = {'Livre': 'L', 'Ocupado': 'O', 'Bloqueado': 'B'}
 
+    hosp_id = request.session.get('hosp_id')
+
+    # Pega leitos do hospital
+    setores = Setor.objects.filter(hospital_id=hosp_id, ativo=True).values('id', 'setor')
+
+    leitos = {}
+
+    for valores in setores.values('id', 'setor'):
+        leitos_setor = {}
+
+        lpesq = Leito.objects.filter(hospital_id=hosp_id, setor=valores['id']) \
+            .values('numero', 'situacao', 'status')
+
+        for valor in lpesq.values('numero', 'situacao', 'status'):
+            leitos_setor[valor['numero']] = {'situacao': valor['situacao'], 'status': valor['status']}
+
+            leitos[valores['setor']] = leitos_setor
+
     if request.method == 'GET':
-        hosp_id = request.session.get('hosp_id')
-        leito_form = LeitoForm()
+        return render(request, 'dashboard/beds/beds.html',
+                      context={
+                          'usuario': request.user.username,
+                          'primeiro': primeiro,
+                          'saudacao': saudacao,
+                          'hosp_sigla': hosp_sigla,
+                          'leitos': leitos,
+                          'situacao': situacao,
+                          'status': status
+                      })
 
-        todos_os_leitos = Leito.objects.filter(hospital_id=hosp_id)\
-            .values('numero', 'situacao', 'status').order_by('numero')
+    if request.method == 'POST':
+        recebidos = request.POST
 
-        #Pega leitos do hospital
-        setores = Setor.objects.filter(hospital_id=hosp_id, ativo=True).values('id','setor')
+        s = Setor.objects.get(setor=recebidos['hidden_set'], hospital_id=hosp_id).id
 
-        leitos ={}
+        leito_alterar = Leito.objects.get(numero=recebidos['num_leito'], setor_id=s)
 
-        for valores in setores.values('id', 'setor'):
-            leitos_setor = {}
+        if 'sit_rd' not in request.POST:
+            leito_alterar.situacao = recebidos['hidden_sit']
+        else:
+            leito_alterar.situacao = recebidos['sit_rd']
 
-            lpesq = Leito.objects.filter(hospital_id=hosp_id, setor=valores['id'])\
-                .values('numero', 'situacao', 'status')
+        leito_alterar.status = recebidos['select_status']
 
-            for valor in lpesq.values('numero', 'situacao', 'status'):
-                leitos_setor[valor['numero']] = {'situacao': valor['situacao'], 'status': valor['status']}
-
-                leitos[valores['setor']] = leitos_setor
+        leito_alterar.save()
 
         return render(request, 'dashboard/beds/beds.html',
                       context={
@@ -277,7 +300,6 @@ def beds_manager(request):
                           'saudacao': saudacao,
                           'hosp_sigla': hosp_sigla,
                           'leitos': leitos,
-                          'leito_form': leito_form,
                           'situacao': situacao,
                           'status': status
                       })
