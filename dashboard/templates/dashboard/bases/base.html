@@ -48,8 +48,19 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_info">
-                <span>{% block saudacao %}{% endblock %}</span>
-                <span>{% block usuario_navbar %}{% endblock %}</span>
+                <span>
+                    {% block saudacao %}
+                        {{ saudacao }}
+                    {% endblock %}
+                </span>
+                <span>
+                    {% block usuario_navbar %}
+                        <span style="font-weight: bold;">{{ primeiro }}!</span><br>
+
+                        Você está em <span style="font-weight: bold;
+            font-size: 1em; text-decoration: underline">{{ hosp_sigla }}!</span>
+                    {% endblock %}
+                </span>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -61,7 +72,12 @@
               <div class="menu_section">
                 <h3>Menu</h3>
                 <ul class="nav side-menu">
-                    {% block menu %}{% endblock %}
+                    {% block menu %}
+                        <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Início </a>
+                        <li><a href="{% url 'beds' %}"><i class="fa fa-bed"></i> Leitos </a>
+                        <li><a href="{% url 'patients' %}"><i class="fa fa-child"></i> Pacientes </a>
+
+                    {% endblock %}
                   {% comment %}<li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="index.html">Dashboard</a></li>
@@ -94,7 +110,10 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">{% block usuario_topnav %}{% endblock %}
+                    <img src="images/img.jpg" alt="">
+                      {% block usuario_topnav %}
+                          {{ usuario }}
+                      {% endblock %}
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  href="javascript:;"> Perfil</a>

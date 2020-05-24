@@ -3,25 +3,6 @@
 {% load mathfilters %}
 {% load dashboard_extras %}
 
-{% block usuario_topnav %}
-    {{ usuario }}
-{% endblock %}
-
-{% block saudacao %}
-    {{ saudacao }}
-{% endblock %}
-
-{% block usuario_navbar %}
-    <span style="font-weight: bold;">{{ primeiro }}!</span>
-
-    Você está em <span style="font-weight: bold;
-            font-size: 1em; text-decoration: underline">{{ hosp_sigla }}!</span>
-{% endblock %}
-
-{% block menu %}
-    <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Início </a>
-    <li><a href="{% url 'beds' %}"><i class="fa fa-bed"></i> Leitos </a>
-{% endblock %}
 
 {% block resumo_vagas %}
         {% for key, values in situacao_por_setor.items %}
