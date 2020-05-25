@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'dashboard/bases/base.html' %}
+{% load static %}
+{% load mathfilters %}
+{% load dashboard_extras %}
+{% load widget_tweaks %}
+{% load i18n %}
 
-</body>
-</html>
+{% block content %}
+    {% for setor in setores %}
+        <div class="row" style="margin-left: 5px;">
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>{{ setor }}</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

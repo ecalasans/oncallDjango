@@ -308,4 +308,26 @@ def beds_manager(request):
 #   Seção PACIENTES
 ########################################################################################################################
 def patients_manager(request):
-    pass
+    # Pega variáveis de sessão
+    hosp_id = request.session.get('hosp_id')
+    hosp_sigla = request.session.get('hosp_sigla')
+    primeiro = request.session.get('primeiro')
+    saudacao = request.session.get('saudacao')
+
+    # Pega setores do hospital
+    setores_queryset = Setor.objects.filter(hospital_id=hosp_id, ativo=True)
+
+    s = []
+
+    for setores in setores_queryset.values('id', 'setor'):
+       s.append(setores['setor'])
+
+    if request.method == 'GET':
+        return render(request, 'dashboard/patients/patients.html',
+                      context={
+                          'usuario': request.user.username,
+                          'primeiro': primeiro,
+                          'saudacao': saudacao,
+                          'hosp_sigla': hosp_sigla,
+                          'setores': s,
+                      })
