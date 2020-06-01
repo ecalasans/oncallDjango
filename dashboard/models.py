@@ -44,12 +44,13 @@ class Paciente(models.Model):
     idade = models.CharField(default="", max_length=10)
     peso_nasc = models.IntegerField(default=0)
     peso_atual = models.IntegerField(default=0)
+    setor = models.ForeignKey(Setor, on_delete=models.DO_NOTHING, default=None)
     leito = models.ForeignKey(Leito, on_delete=models.DO_NOTHING, default=None)
     tcle = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nome + ' - Leito ' + str(self.leito.numero) + ' - ' \
-               + self.leito.setor.setor + ' ' + self.leito.setor.hospital.sigla
+               + self.leito.setor.setor
 
 
 class Ocorrencia(models.Model):

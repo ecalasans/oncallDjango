@@ -15,99 +15,97 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Leito</th>
+                          <th>Situação</th>
+                          <th>Status</th>
+                          <th>Ação</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for key_leitos, value_leitos in leitos.items %}
+                            <form method="POST" action="{% url 'beds' %}">
+                                {% csrf_token %}
+                                <input type="hidden" id="{{ setor }}" value="{{ setor }}" name="hidden_set">
+                                <input type="hidden" id="{{ setor }}_{{ key_leitos }}" name="num_leito" value="{{ key_leitos }}">
+                                <tr>
+                                  <th scope="row">{{ key_leitos }}</th>
+                                  <td>
+                                      {% for key_sit, value_sit in situacao.items  %}
+                                            {% if value_leitos.status == 'O' %}
+                                                {% if value_sit == value_leitos.situacao %}
+                                                  <label style="margin-right: 20px;">
+                                                    <input type="hidden" name="hidden_sit" value={{ value_leitos.situacao }}>
+                                                    <input name="sit_rd" type="radio"
+                                                           value="{{ value_sit }}" class="iradio_flat-green"
+                                                           id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}" checked>{{ key_sit }}
+                                                  </label>
+                                                    <script type="text/javascript">
+                                                        document.getElementById("{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}")
+                                                            .disabled = true;
+                                                    </script>
+                                                {% else %}
+                                                  <label style="margin-right: 20px;">
+                                                    <input type="hidden" name="hidden_sit" value={{ value_leitos.situacao }}>
+                                                    <input name="sit_rd" type="radio"
+                                                           value="{{ value_sit }}" class="iradio_flat-green"
+                                                           id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}">{{ key_sit }}
+                                                  </label>
+                                                    <script type="text/javascript">
+                                                        document.getElementById("{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}")
+                                                            .disabled = true;
+                                                    </script>
+                                                {% endif %}
+                                            {% else %}
+                                                {% if value_sit == value_leitos.situacao %}
+                                                  <label style="margin-right: 20px;">
+                                                    <input name="sit_rd" type="radio"
+                                                           value="{{ value_sit }}" class="iradio_flat-green"
+                                                           id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}" checked>{{ key_sit }}
+                                                  </label>
+                                                {% else %}
+                                                  <label style="margin-right: 20px;">
+                                                    <input name="sit_rd" type="radio"
+                                                           value="{{ value_sit }}" class="iradio_flat-green"
+                                                           id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}">{{ key_sit }}
+                                                  </label>
+                                                {% endif %}
+                                            {% endif %}
+                                      {% endfor %}
+                                  </td>
+                                  <td>
+                                    <select class="form-control" id="{{ setor }}_stat_{{ key_leitos }}"
+                                        name="select_status">
+                                        {% for key_stat, value_stat in status.items %}
+                                            {% if value_stat == 'L' %}
+                                                {% trans '#1abb9c' as cor %}
+                                            {% elif value_stat == 'B' %}
+                                                {% trans '#ffc107' as cor %}
+                                            {% else %}
+                                                {% trans '#dc3545' as cor %}
+                                            {% endif %}
 
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Leito</th>
-              <th>Situação</th>
-              <th>Status</th>
-              <th>Ação</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for key_leitos, value_leitos in leitos.items %}
-                <form method="POST" action="{% url 'beds' %}">
-                    {% csrf_token %}
-                    <input type="hidden" id="{{ setor }}" value="{{ setor }}" name="hidden_set">
-                    <input type="hidden" id="{{ setor }}_{{ key_leitos }}" name="num_leito" value="{{ key_leitos }}">
-                    <tr>
-                      <th scope="row">{{ key_leitos }}</th>
-                      <td>
-                          {% for key_sit, value_sit in situacao.items  %}
-                                {% if value_leitos.status == 'O' %}
-                                    {% if value_sit == value_leitos.situacao %}
-                                      <label style="margin-right: 20px;">
-                                        <input type="hidden" name="hidden_sit" value={{ value_leitos.situacao }}>
-                                        <input name="sit_rd" type="radio"
-                                               value="{{ value_sit }}" class="iradio_flat-green"
-                                               id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}" checked>{{ key_sit }}
-                                      </label>
-                                        <script type="text/javascript">
-                                            document.getElementById("{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}")
-                                                .disabled = true;
-                                        </script>
-                                    {% else %}
-                                      <label style="margin-right: 20px;">
-                                        <input type="hidden" name="hidden_sit" value={{ value_leitos.situacao }}>
-                                        <input name="sit_rd" type="radio"
-                                               value="{{ value_sit }}" class="iradio_flat-green"
-                                               id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}">{{ key_sit }}
-                                      </label>
-                                        <script type="text/javascript">
-                                            document.getElementById("{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}")
-                                                .disabled = true;
-                                        </script>
-                                    {% endif %}
-                                {% else %}
-                                    {% if value_sit == value_leitos.situacao %}
-                                      <label style="margin-right: 20px;">
-                                        <input name="sit_rd" type="radio"
-                                               value="{{ value_sit }}" class="iradio_flat-green"
-                                               id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}" checked>{{ key_sit }}
-                                      </label>
-                                    {% else %}
-                                      <label style="margin-right: 20px;">
-                                        <input name="sit_rd" type="radio"
-                                               value="{{ value_sit }}" class="iradio_flat-green"
-                                               id="{{ setor }}_sit_{{ key_leitos }}_{{ value_sit }}">{{ key_sit }}
-                                      </label>
-                                    {% endif %}
-                                {% endif %}
-                          {% endfor %}
-                      </td>
-                      <td>
-                        <select class="form-control" id="{{ setor }}_stat_{{ key_leitos }}"
-                            name="select_status">
-                            {% for key_stat, value_stat in status.items %}
-                                {% if value_stat == 'L' %}
-                                    {% trans '#1abb9c' as cor %}
-                                {% elif value_stat == 'B' %}
-                                    {% trans '#ffc107' as cor %}
-                                {% else %}
-                                    {% trans '#dc3545' as cor %}
-                                {% endif %}
-
-                                {% if value_stat == value_leitos.status %}
-                                    <option value="{{ value_stat }}" style="color: {{ cor }};" selected>
-                                        {{ key_stat }}
-                                    </option>
-                                {% else %}
-                                    <option value="{{ value_stat }}" style="color: {{ cor }};">
-                                        {{ key_stat }}
-                                    </option>
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                      </td>
-                      <td><button type="submit" style="margin:0 auto;">Alterar</button> </td>
-                    </tr>
-                </form>
-            {% endfor %}
-          </tbody>
-        </table>
-
-      </div>
+                                            {% if value_stat == value_leitos.status %}
+                                                <option value="{{ value_stat }}" style="color: {{ cor }};" selected>
+                                                    {{ key_stat }}
+                                                </option>
+                                            {% else %}
+                                                <option value="{{ value_stat }}" style="color: {{ cor }};">
+                                                    {{ key_stat }}
+                                                </option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                  </td>
+                                  <td><button type="submit" style="margin:0 auto;">Alterar</button> </td>
+                                </tr>
+                            </form>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
             </div>
             </div>
             <div class="clearfix"></div>

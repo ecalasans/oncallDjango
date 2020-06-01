@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import logout, login, authenticate
-from dashboard.models import Leito, Hospital,  Setor, Medico
+from dashboard.models import Leito, Hospital, Setor, Medico, Paciente
 from django.db.models import Count
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -315,12 +315,25 @@ def patients_manager(request):
     saudacao = request.session.get('saudacao')
 
     # Pega setores do hospital
-    setores_queryset = Setor.objects.filter(hospital_id=hosp_id, ativo=True)
+    setores_queryset = Setor.objects.filter(hospital_id=hosp_id).values('id', 'setor')
 
-    s = []
+    pacientes = {}
 
-    for setores in setores_queryset.values('id', 'setor'):
-       s.append(setores['setor'])
+    for setor in setores_queryset:
+        p = {}
+        leitos_queryset = Leito.objects.filter(hospital_id=hosp_id, setor_id=setor['id']).order_by('numero')
+
+        for leito in leitos_queryset:
+            if leito.status == 'L':
+                p[str(leito.numero)] = 'VAGO'
+            elif leito.status == 'B':
+                p[str(leito.numero)] = 'BLOQUEADO'
+            else:
+                if Paciente.objects.filter(leito__numero=leito.numero).exists():
+                    p[str(leito.numero)] = Paciente.objects.get(leito__numero=leito.numero)
+                else:
+                    p[str(leito.numero)] = 'INDEFINIDO'
+        pacientes[setor['setor']] = p
 
     if request.method == 'GET':
         return render(request, 'dashboard/patients/patients.html',
@@ -329,5 +342,5 @@ def patients_manager(request):
                           'primeiro': primeiro,
                           'saudacao': saudacao,
                           'hosp_sigla': hosp_sigla,
-                          'setores': s,
+                          'pacientes': pacientes,
                       })

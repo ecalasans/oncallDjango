@@ -1,2 +1,0 @@
-INSERT INTO public.dashboard_hospital (id, nome, sigla) VALUES (1, 'Maternidade do Divino Amor', 'MDA');
-INSERT INTO public.dashboard_hospital (id, nome, sigla) VALUES (2, 'Hospital Dr. José Pedro Bezerra', 'HJPB');
