@@ -1,5 +1,5 @@
 from django.forms import ModelForm, ValidationError, Select, RadioSelect
-from .models import Medico, Hospital, Leito
+from .models import Medico, Hospital, Leito, Paciente, Setor
 import re
 
 class MedicoForm(ModelForm):
@@ -56,7 +56,6 @@ class MedicoForm(ModelForm):
         else:
            raise ValidationError('Senha deve ter pelo menos 8 caracteres!')
 
-
 class LeitoForm(ModelForm):
     class Meta:
         model = Leito
@@ -65,3 +64,8 @@ class LeitoForm(ModelForm):
             'situacao': Select(choices=[('A', 'Ativo'), ('D', 'Desativado')]),
             'status': Select(choices=[('L', 'Livre'), ('O', 'Ocupado'), ('B', 'Bloqueado')])
         }
+
+class PacienteForm(ModelForm):
+    class Meta:
+        model = Paciente
+        fields = ['nome', 'ig', 'idade', 'peso_nasc', 'peso_atual', 'setor', 'leito', 'tcle']

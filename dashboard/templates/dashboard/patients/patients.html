@@ -8,7 +8,8 @@
 {% block content %}
     <div class="row" style="margin-left: 5px;">
         <div class="col-md-12 col-sm-12 col-lg-12">
-            <button type="button" class="btn btn-success" style="float: right;">Novo paciente</button>
+            <button type="button" class="btn btn-success" style="float: right;"
+                class="btn btn-primary" data-toggle="modal" data-target="#modalIncluiPaciente">Novo paciente</button>
         </div>
     </div>
     {% for setor, pac in pacientes.items %}
@@ -34,8 +35,7 @@
                                 <td style="width: 5%;">{{ numero }}</td>
                                 <td style="width: 70%;">{{ nome }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#modalIncluiPaciente">Alta</button>
+                                    <button type="button" class="btn btn-primary">Alta</button>
                                 </td>
                             </tr>
                         {% endfor %}
@@ -54,6 +54,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title">Incluir paciente</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body"></div>
                 <div class="modal-footer"></div>
