@@ -315,11 +315,12 @@ def patients_manager(request):
     saudacao = request.session.get('saudacao')
 
     # Pega setores do hospital
-    setores_queryset = Setor.objects.filter(hospital_id=hosp_id).values('id', 'setor')
+    setores_qs = {str(s['id']): s['setor'] for s in
+                        Setor.objects.filter(hospital_id=hosp_id, ativo=True).values('id', 'setor')}
 
     pacientes = {}
 
-    for setor in setores_queryset:
+    for setor in setores_qs:
         p = {}
         leitos_queryset = Leito.objects.filter(hospital_id=hosp_id, setor_id=setor['id']).order_by('numero')
 
@@ -343,4 +344,5 @@ def patients_manager(request):
                           'saudacao': saudacao,
                           'hosp_sigla': hosp_sigla,
                           'pacientes': pacientes,
+                          'mensagem': "Popup",
                       })
