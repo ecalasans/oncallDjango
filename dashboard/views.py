@@ -5,7 +5,7 @@ from dashboard.models import Leito, Hospital, Setor, Medico, Paciente
 from django.db.models import Count
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .forms import MedicoForm, LeitoForm
+from .forms import MedicoForm, LeitoForm, PacienteForm
 from django.contrib import messages
 import datetime
 import json
@@ -320,9 +320,9 @@ def patients_manager(request):
 
     pacientes = {}
 
-    for setor in setores_qs:
+    for id, setor in setores_qs.items():
         p = {}
-        leitos_queryset = Leito.objects.filter(hospital_id=hosp_id, setor_id=setor['id']).order_by('numero')
+        leitos_queryset = Leito.objects.filter(hospital_id=hosp_id, setor_id=id).order_by('numero')
 
         for leito in leitos_queryset:
             if leito.status == 'L':
@@ -334,7 +334,7 @@ def patients_manager(request):
                     p[str(leito.numero)] = Paciente.objects.get(leito__numero=leito.numero)
                 else:
                     p[str(leito.numero)] = 'INDEFINIDO'
-        pacientes[setor['setor']] = p
+        pacientes[setor] = p
 
     if request.method == 'GET':
         return render(request, 'dashboard/patients/patients.html',
@@ -345,4 +345,6 @@ def patients_manager(request):
                           'hosp_sigla': hosp_sigla,
                           'pacientes': pacientes,
                           'mensagem': "Popup",
+                          'pac_form': PacienteForm,
+                          'setores': setores_qs,
                       })
