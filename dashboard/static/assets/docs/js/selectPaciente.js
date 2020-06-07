@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $('#select_pac_setor').change(function () {
         var setor_id = $(this).val();
 
@@ -8,7 +9,9 @@ $(document).ready(function () {
             data: {'setor_id': setor_id},
             dataType: 'json',
             success: function (response) {
-                console.log(response);
+                $.each(response, function (chave, valor) {
+                    console.log(valor.id);
+                });
             }
         });
     });

@@ -311,6 +311,7 @@ def patientsMmanager(request):
     # Pega variáveis de sessão
     hosp_id = request.session.get('hosp_id')
     hosp_sigla = request.session.get('hosp_sigla')
+    setor_pela_sigla = Setor.objects.filter(hospital__sigla=hosp_sigla)[0]
     primeiro = request.session.get('primeiro')
     saudacao = request.session.get('saudacao')
 
@@ -353,8 +354,9 @@ def patientsList(request):
 
     setor_id = request.GET.get('setor_id')
 
-    leitos_setor = {str(s['id']): 'Leito {}'.format(s['numero']) for s in Leito.objects.filter(hospital_id=hosp_id,
-                                                                           setor_id=setor_id,
-                                                                           situacao='A',
-                                                                           status='L').values('id', 'numero')}
-    return JsonResponse(leitos_setor)
+    leitos_setor = Leito.objects.filter(hospital_id=hosp_id, setor_id=setor_id, situacao='A', status='L')\
+        .values('id', 'numero').order_by('numero')
+
+    lista_leitos = [l for l in leitos_setor]
+
+    return JsonResponse(lista_leitos, safe=False)

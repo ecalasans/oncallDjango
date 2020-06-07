@@ -85,13 +85,21 @@
                                 {% render_field pac_form.peso_nasc class="form-control" placeholder='em g'%}
                             </div>
                         </div><div class="form-group row">
-                            <label class="control-label col-sm-2 col-md-2 label-align">Setor</label>
+                            <label class="control-label col-sm-2 col-md-2 label-align">Setores</label>
                             <div class="col-sm-4 col-md-4">
                                 <select class="select2_group form-control" id="select_pac_setor"
                                         name="select_pac_setor">
-                                    {% for id, setor in setores.items %}
-                                        <option value="{{ id }}">{{ setor }}</option>
+                                    <option value="">------</option>
+                                    {% for setor_id, setor in setores.items %}
+                                        <option value="{{ setor_id }}">{{ setor }}</option>
                                     {% endfor %}
+                                </select>
+                            </div>
+                            <label class="control-label col-sm-1 col-md-1 label-align">Leitos</label>
+                            <div class="col-sm-4 col-md-4">
+                                <select class="select2_group form-control" id="select_pac_leito"
+                                        name="select_pac_leito">
+                                    <option value="">------</option>
                                 </select>
                             </div>
                         </div>
