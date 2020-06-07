@@ -7,8 +7,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import MedicoForm, LeitoForm, PacienteForm
 from django.contrib import messages
+from django.http import JsonResponse
 import datetime
-import json
 
 '''
 class LoginView(LoginRequiredMixin, TemplateView):
@@ -237,7 +237,7 @@ def signupUser(request):
 ########################################################################################################################
 #   Seção LEITOS
 ########################################################################################################################
-def beds_manager(request):
+def bedsMmanager(request):
     # Pega variáveis de sessão
     hosp_id = request.session.get('hosp_id')
     hosp_sigla = request.session.get('hosp_sigla')
@@ -307,7 +307,7 @@ def beds_manager(request):
 ########################################################################################################################
 #   Seção PACIENTES
 ########################################################################################################################
-def patients_manager(request):
+def patientsMmanager(request):
     # Pega variáveis de sessão
     hosp_id = request.session.get('hosp_id')
     hosp_sigla = request.session.get('hosp_sigla')
@@ -347,3 +347,14 @@ def patients_manager(request):
                           'setores': setores_qs,
                           'pac_form': PacienteForm(),
                       })
+
+def patientsList(request):
+    hosp_id = request.session.get('hosp_id')
+
+    setor_id = request.GET.get('setor_id')
+
+    leitos_setor = {str(s['id']): 'Leito {}'.format(s['numero']) for s in Leito.objects.filter(hospital_id=hosp_id,
+                                                                           setor_id=setor_id,
+                                                                           situacao='A',
+                                                                           status='L').values('id', 'numero')}
+    return JsonResponse(leitos_setor)
