@@ -59,6 +59,19 @@
                 <div class="modal-body"></div>
                     <form method="POST">
                         {% csrf_token %}
+
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        {% endif %}
+
+                        {% if errors %}
+                            {% for error in errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        {% endif %}
+
                         <div class="form-group row">
                             <label class="control-label col-sm-2 col-md-2 label-align">Nome</label>
                             <div class="col-sm-9 col-md-9">
@@ -68,11 +81,11 @@
                         <div class="form-group row">
                             <label class="control-label col-sm-2 col-md-2 label-align">Idade</label>
                             <div class="col-sm-4 col-md-4">
-                                {% render_field pac_form.idade class="form-control"%}
+                                {% render_field pac_form.idade class="form-control" placeholder='ex: 12h ou 2d'%}
                             </div>
                             <label class="control-label col-sm-1 col-md-1 label-align">IG</label>
                             <div class="col-sm-4 col-md-4">
-                                {% render_field pac_form.ig class="form-control" placeholder='38sem4d'%}
+                                {% render_field pac_form.ig class="form-control" placeholder='ex: 38sem4d'%}
                             </div>
                         </div>
                         <div class="form-group row">
@@ -102,6 +115,13 @@
                                         name="select_pac_leito">
                                     <option value="">------</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-md-2 label-align">TCLE?</label>
+                            <div class="col-md-4 col-sm-4">
+                                <input type="checkbox" class="flat" id="chk_pac_tcle" name="chk_pac_tcle">
+                                <ins class="iCheck-helper"></ins>
                             </div>
                         </div>
                         <div class="modal-footer">

@@ -349,6 +349,13 @@ def patientsMmanager(request):
                           'pac_form': PacienteForm(),
                       })
 
+    if request.method == 'POST':
+        form = PacienteForm(request.POST)
+        tcle_from_form = 'chk_pac_tcle' in request.POST
+
+        if form.is_valid():
+            pass
+
 def patientsList(request):
     hosp_id = request.session.get('hosp_id')
 
