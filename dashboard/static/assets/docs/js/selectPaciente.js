@@ -2,6 +2,8 @@ $(document).ready(function () {
 
     $('#select_pac_setor').change(function () {
         var setor_id = $(this).val();
+        var opcoes = '';
+        $('#select_pac_leito').empty().append('<option value="">------</option>');
 
         $.ajax({
             url: '/patients/list/',
@@ -10,8 +12,9 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 $.each(response, function (chave, valor) {
-                    console.log(valor.id);
+                    opcoes += '<option value=' + valor.id + '>' + 'Leito ' + valor.numero + '</option>';
                 });
+                $('#select_pac_leito').append(opcoes);
             }
         });
     });
