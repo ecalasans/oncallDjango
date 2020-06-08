@@ -7,8 +7,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import MedicoForm, LeitoForm, PacienteForm
 from django.contrib import messages
+from django.http import JsonResponse
 import datetime
-import json
 
 '''
 class LoginView(LoginRequiredMixin, TemplateView):
@@ -237,7 +237,7 @@ def signupUser(request):
 ########################################################################################################################
 #   Seção LEITOS
 ########################################################################################################################
-def beds_manager(request):
+def bedsMmanager(request):
     # Pega variáveis de sessão
     hosp_id = request.session.get('hosp_id')
     hosp_sigla = request.session.get('hosp_sigla')
@@ -307,10 +307,11 @@ def beds_manager(request):
 ########################################################################################################################
 #   Seção PACIENTES
 ########################################################################################################################
-def patients_manager(request):
+def patientsMmanager(request):
     # Pega variáveis de sessão
     hosp_id = request.session.get('hosp_id')
     hosp_sigla = request.session.get('hosp_sigla')
+    setor_pela_sigla = Setor.objects.filter(hospital__sigla=hosp_sigla)[0]
     primeiro = request.session.get('primeiro')
     saudacao = request.session.get('saudacao')
 
@@ -344,7 +345,18 @@ def patients_manager(request):
                           'saudacao': saudacao,
                           'hosp_sigla': hosp_sigla,
                           'pacientes': pacientes,
-                          'mensagem': "Popup",
-                          'pac_form': PacienteForm,
                           'setores': setores_qs,
+                          'pac_form': PacienteForm(),
                       })
+
+def patientsList(request):
+    hosp_id = request.session.get('hosp_id')
+
+    setor_id = request.GET.get('setor_id')
+
+    leitos_setor = Leito.objects.filter(hospital_id=hosp_id, setor_id=setor_id, situacao='A', status='L')\
+        .values('id', 'numero').order_by('numero')
+
+    lista_leitos = [l for l in leitos_setor]
+
+    return JsonResponse(lista_leitos, safe=False)
