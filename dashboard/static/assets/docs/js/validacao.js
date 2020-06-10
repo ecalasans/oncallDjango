@@ -23,5 +23,16 @@ $(document).ready(function () {
         }
     });
 
+    $('#id_idade').focusout(function (e) {
+        let regex_idade = /(^([0-1][aA])?([1]?[0-9][mM])?([0-6][dD])?$)/gmi;
+        var idade = $(this).val();
+        let resultado = idade.match(regex_idade) || [];
+
+        if(!resultado.length){
+            alert("Dado fora dos padrões!  Veja o exemplo!");
+            $('#ig_idade').focus();
+        }
+    });
+
 
 });

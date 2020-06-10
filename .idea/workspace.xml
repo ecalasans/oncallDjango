@@ -199,13 +199,7 @@
       <workItem from="1591137379661" duration="1275000" />
       <workItem from="1591574705669" duration="4500000" />
       <workItem from="1591621076281" duration="3047000" />
-    </task>
-    <task id="LOCAL-00010" summary="Contagem de leitos funcionando">
-      <created>1561924760109</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1561924760109</updated>
+      <workItem from="1591824863616" duration="1312000" />
     </task>
     <task id="LOCAL-00011" summary="Dump do banco">
       <created>1561925438261</created>
@@ -543,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591576392942</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="validacao.js - Validação por regex funcionando.  Implementar as outras.">
+      <created>1591819359340</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1591819359340</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +564,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="#5 - Validação de campos iniciada" />
     <MESSAGE value="Dividindo login e signup" />
     <MESSAGE value="Select renderizado ok e modelo Medico CRM alterado" />
     <MESSAGE value="#5 - consegui iterar os erros de formulário." />
@@ -588,7 +588,8 @@
     <MESSAGE value="Branch pacientes_ajax criada" />
     <MESSAGE value="Criando PacienteForm" />
     <MESSAGE value="patients.html - template de inclusão pronto!" />
-    <option name="LAST_COMMIT_MESSAGE" value="patients.html - template de inclusão pronto!" />
+    <MESSAGE value="validacao.js - Validação por regex funcionando.  Implementar as outras." />
+    <option name="LAST_COMMIT_MESSAGE" value="validacao.js - Validação por regex funcionando.  Implementar as outras." />
   </component>
   <component name="WindowStateProjectService">
     <state x="470" y="206" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587862282321">
@@ -605,40 +606,40 @@
     </state>
     <state x="746" y="284" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588549398827" />
     <state x="373" y="273" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587582132004" />
-    <state x="179" y="72" width="825" height="666" key="CommitChangelistDialog2" timestamp="1591576392763">
+    <state x="179" y="72" width="825" height="666" key="CommitChangelistDialog2" timestamp="1591819359218">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="358" y="71" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1590972158892" />
     <state x="179" y="58" width="825" height="666" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1589073584635" />
-    <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591576392763" />
+    <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591819359218" />
     <state x="653" y="302" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587862277955">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="653" y="302" width="424" height="484" key="FileChooserDialogImpl/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587862277955" />
-    <state width="1234" height="156" key="GridCell.Tab.0.bottom" timestamp="1591818938740">
+    <state width="1234" height="156" key="GridCell.Tab.0.bottom" timestamp="1591819408710">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state width="1471" height="353" key="GridCell.Tab.0.bottom/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1591137851864" />
     <state width="1238" height="195" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1589384815757" />
-    <state width="1234" height="156" key="GridCell.Tab.0.bottom/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591818938740" />
-    <state width="1234" height="156" key="GridCell.Tab.0.center" timestamp="1591818938740">
+    <state width="1234" height="156" key="GridCell.Tab.0.bottom/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591819408710" />
+    <state width="1234" height="156" key="GridCell.Tab.0.center" timestamp="1591819408710">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state width="1471" height="353" key="GridCell.Tab.0.center/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1591137851861" />
     <state width="1238" height="195" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1589384815756" />
-    <state width="1234" height="156" key="GridCell.Tab.0.center/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591818938740" />
-    <state width="1234" height="156" key="GridCell.Tab.0.left" timestamp="1591818938739">
+    <state width="1234" height="156" key="GridCell.Tab.0.center/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591819408710" />
+    <state width="1234" height="156" key="GridCell.Tab.0.left" timestamp="1591819408710">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state width="1471" height="353" key="GridCell.Tab.0.left/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1591137851860" />
     <state width="1238" height="195" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1589384815756" />
-    <state width="1234" height="156" key="GridCell.Tab.0.left/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591818938739" />
-    <state width="1234" height="156" key="GridCell.Tab.0.right" timestamp="1591818938740">
+    <state width="1234" height="156" key="GridCell.Tab.0.left/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591819408710" />
+    <state width="1234" height="156" key="GridCell.Tab.0.right" timestamp="1591819408710">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state width="1471" height="353" key="GridCell.Tab.0.right/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1591137851863" />
     <state width="1238" height="195" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1589384815757" />
-    <state width="1234" height="156" key="GridCell.Tab.0.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591818938740" />
+    <state width="1234" height="156" key="GridCell.Tab.0.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591819408710" />
     <state width="1234" height="260" key="GridCell.Tab.1.bottom" timestamp="1591579504529">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
@@ -692,12 +693,12 @@
     </state>
     <state x="1255" y="190" key="SettingsEditor/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588961936030" />
     <state x="258" y="185" key="SettingsEditor/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589154364852" />
-    <state x="470" y="255" width="499" height="409" key="Vcs.Push.Dialog.v2" timestamp="1590972163356">
-      <screen x="0" y="23" width="2560" height="1057" />
+    <state x="235" y="246" width="499" height="409" key="Vcs.Push.Dialog.v2" timestamp="1591819362566">
+      <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="470" y="255" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1590972163356" />
     <state x="235" y="194" width="499" height="409" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1589073586409" />
-    <state x="235" y="246" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1590313216288" />
+    <state x="235" y="246" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591819362566" />
     <state width="1280" height="530" key="XDebugger.FullValuePopup" timestamp="1590879050530">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
