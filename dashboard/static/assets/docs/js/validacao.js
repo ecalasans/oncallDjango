@@ -12,4 +12,16 @@ $(document).ready(function () {
         }
     });
 
+    $('#id_ig').focusout(function (e) {
+        let regex_ig = /(^([2-4][1-9]sem)$)|(^([2-4][1-9]sem[0-6]d)$)/gmi;
+        var ig = $(this).val();
+        let resultado = ig.match(regex_ig) || [];
+
+        if(!resultado.length){
+            alert("Dado fora dos padrões!  Veja o exemplo!");
+            $('#ig_ig').focus();
+        }
+    });
+
+
 });
