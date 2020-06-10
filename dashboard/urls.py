@@ -7,6 +7,6 @@ urlpatterns =[
     path('signupuser/', views.signupUser, name='signupuser'),
     path('logout/', views.sysLogout, name='logout'),
     path('beds/', views.bedsMmanager, name='beds'),
-    path('patients/', views.patientsMmanager, name='patients'),
+    path('patients/', views.patientsManager, name='patients'),
     path('patients/list/', views.patientsList, name='patients_list'),
 ]

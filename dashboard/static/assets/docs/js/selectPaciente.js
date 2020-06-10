@@ -1,9 +1,8 @@
 $(document).ready(function () {
-
     $('#select_pac_setor').change(function () {
         var setor_id = $(this).val();
         var opcoes = '';
-        $('#select_pac_leito').empty().append('<option value="">------</option>');
+        $('#select_pac_leito').empty().append('<option value="0">------</option>');
 
         $.ajax({
             url: '/patients/list/',

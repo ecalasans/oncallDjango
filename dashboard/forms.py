@@ -1,4 +1,4 @@
-from django.forms import ModelForm, ValidationError, Select, RadioSelect
+from django.forms import ModelForm, ValidationError, Select, IntegerField
 from .models import Medico, Hospital, Leito, Paciente, Setor
 import re
 
@@ -66,28 +66,30 @@ class LeitoForm(ModelForm):
         }
 
 class PacienteForm(ModelForm):
+    setor = IntegerField()
+    leito = IntegerField()
     class Meta:
         model = Paciente
-        fields = ['nome', 'ig', 'idade', 'peso_nasc', 'peso_atual', 'setor', 'leito', 'tcle']
+        fields = ['nome', 'ig', 'idade', 'peso_nasc', 'peso_atual', 'tcle']
 
-    def clean_nome(self):
-        if len(self.cleaned_data['nome']) == 0:
-            raise ValidationError('Esse campo é requerido')
-        else:
-            return self.cleaned_data['nome']
+    # def clean_nome(self):
+    #     if len(self.cleaned_data['nome']) == 0:
+    #         raise ValidationError('Esse campo é requerido')
+    #     else:
+    #         return self.cleaned_data['nome']
 
-    def clean_ig(self):
-        regex_ig = re.compile('[2-4][0-9]sem[0-6]?d')
-
-        if regex_ig.match(self.cleaned_data['ig']) is not None:
-            return self.cleaned_data['ig']
-        else:
-            raise ValidationError('Dado fora do padrão:  observe o exemplo!')
-
-    def clean_idade(self):
-        regex_idade = re.compile('([0-1][aA]{1})?([0-1]?[0-9][mM])?([0-2]?[0-9][dD])?')
-
-        if regex_idade.match(self.cleaned_data['idade']) is not None:
-            return self.cleaned_data['idade']
-        else:
-            raise ValidationError('Dado fora do padrão:  observe o exemplo!')
+    # def clean_ig(self):
+    #     regex_ig = re.compile('([2-4][0-9])sem|([0-6]d)')
+    #
+    #     if regex_ig.match(self.cleaned_data['ig']) is not None:
+    #         return self.cleaned_data['ig']
+    #     else:
+    #         raise ValidationError('Dado fora do padrão:  observe o exemplo!')
+    #
+    # def clean_idade(self):
+    #     regex_idade = re.compile('([0-1][aA]{1})?([0-1]?[0-9][mM])?([0-2]?[0-9][dD])?')
+    #
+    #     if regex_idade.match(self.cleaned_data['idade']) is not None:
+    #         return self.cleaned_data['idade']
+    #     else:
+    #         raise ValidationError('Dado fora do padrão:  observe o exemplo!')

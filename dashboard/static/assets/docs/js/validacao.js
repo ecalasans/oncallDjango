@@ -1,14 +1,15 @@
 $(document).ready(function () {
-    /*$("#conf_email").blur(function (e) {
-        if (!$("#conf_email").val()){
-            alert("Confirme seu email!");
-            $("#conf_email").focus();
-        }
-    });*/
-
     $("#conf_pass").blur(function (e) {
         if (!$("#conf_pass").val()){
             alert("Confirme a senha!");
         }
     });
+
+    //Validação do formulário de pacientes
+    $('#id_nome').focusout(function (e) {
+        if(!$(this).val()){
+            alert('Nome vazio! Este dado é obrigatório!');
+        }
+    });
+
 });

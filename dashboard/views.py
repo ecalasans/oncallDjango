@@ -307,7 +307,7 @@ def bedsMmanager(request):
 ########################################################################################################################
 #   Seção PACIENTES
 ########################################################################################################################
-def patientsMmanager(request):
+def patientsManager(request):
     # Pega variáveis de sessão
     hosp_id = request.session.get('hosp_id')
     hosp_sigla = request.session.get('hosp_sigla')
@@ -351,10 +351,30 @@ def patientsMmanager(request):
 
     if request.method == 'POST':
         form = PacienteForm(request.POST)
-        tcle_from_form = 'chk_pac_tcle' in request.POST
 
         if form.is_valid():
-            pass
+            return render(request, 'dashboard/patients/patients.html',
+                          context={
+                              'usuario': request.user.username,
+                              'primeiro': primeiro,
+                              'saudacao': saudacao,
+                              'hosp_sigla': hosp_sigla,
+                              'pacientes': pacientes,
+                              'setores': setores_qs,
+                              'pac_form': PacienteForm(),
+                          })
+        else:
+            print('Problema com o formulário')
+            return render(request, 'dashboard/patients/patients.html',
+                          context={
+                              'usuario': request.user.username,
+                              'primeiro': primeiro,
+                              'saudacao': saudacao,
+                              'hosp_sigla': hosp_sigla,
+                              'pacientes': pacientes,
+                              'setores': setores_qs,
+                              'pac_form': PacienteForm(),
+                          })
 
 def patientsList(request):
     hosp_id = request.session.get('hosp_id')
