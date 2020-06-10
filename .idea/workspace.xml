@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/docs/js/validacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/js/validacao.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,14 +198,7 @@
       <workItem from="1591137379661" duration="1275000" />
       <workItem from="1591574705669" duration="4500000" />
       <workItem from="1591621076281" duration="3047000" />
-      <workItem from="1591824863616" duration="1312000" />
-    </task>
-    <task id="LOCAL-00011" summary="Dump do banco">
-      <created>1561925438261</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1561925438261</updated>
+      <workItem from="1591824863616" duration="1618000" />
     </task>
     <task id="LOCAL-00012" summary="Remodelando banco de dados">
       <created>1561992893117</created>
@@ -544,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591819359340</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="validacao.js - Validação por regex funcionando.  Implementar as outras.">
+      <created>1591827106691</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1591827106691</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,12 +605,12 @@
     </state>
     <state x="746" y="284" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588549398827" />
     <state x="373" y="273" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1587582132004" />
-    <state x="179" y="72" width="825" height="666" key="CommitChangelistDialog2" timestamp="1591819359218">
+    <state x="179" y="72" width="825" height="666" key="CommitChangelistDialog2" timestamp="1591827106501">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="358" y="71" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1590972158892" />
     <state x="179" y="58" width="825" height="666" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1589073584635" />
-    <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591819359218" />
+    <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591827106501" />
     <state x="653" y="302" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587862277955">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
@@ -693,12 +692,12 @@
     </state>
     <state x="1255" y="190" key="SettingsEditor/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1588961936030" />
     <state x="258" y="185" key="SettingsEditor/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589154364852" />
-    <state x="235" y="246" width="499" height="409" key="Vcs.Push.Dialog.v2" timestamp="1591819362566">
+    <state x="235" y="246" width="499" height="409" key="Vcs.Push.Dialog.v2" timestamp="1591827108495">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="470" y="255" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1590972163356" />
     <state x="235" y="194" width="499" height="409" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1589073586409" />
-    <state x="235" y="246" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591819362566" />
+    <state x="235" y="246" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591827108495" />
     <state width="1280" height="530" key="XDebugger.FullValuePopup" timestamp="1590879050530">
       <screen x="0" y="23" width="2560" height="1057" />
     </state>
