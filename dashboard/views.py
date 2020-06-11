@@ -353,6 +353,13 @@ def patientsManager(request):
         form = PacienteForm(request.POST)
 
         if form.is_valid():
+            new_patient = form.save(commit=False)
+
+            new_patient.peso_nasc = int(form.cleaned_data['peso_nasc'])
+            new_patient.peso_atual = int(form.cleaned_data['peso_atual'])
+
+            new_patient.save()
+
             return render(request, 'dashboard/patients/patients.html',
                           context={
                               'usuario': request.user.username,

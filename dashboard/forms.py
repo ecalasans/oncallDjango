@@ -66,11 +66,9 @@ class LeitoForm(ModelForm):
         }
 
 class PacienteForm(ModelForm):
-    setor = IntegerField()
-    leito = IntegerField()
     class Meta:
         model = Paciente
-        fields = ['nome', 'ig', 'idade', 'peso_nasc', 'peso_atual', 'tcle']
+        fields = ['nome', 'ig', 'idade', 'peso_nasc', 'peso_atual', 'leito', 'tcle', 'setor']
 
     # def clean_nome(self):
     #     if len(self.cleaned_data['nome']) == 0:

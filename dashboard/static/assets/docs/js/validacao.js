@@ -18,18 +18,18 @@ $(document).ready(function () {
         let resultado = ig.match(regex_ig) || [];
 
         if(!resultado.length){
-            alert("Dado fora dos padrões!  Veja o exemplo!");
+            alert("IG digitada fora dos padrões!  Veja o exemplo!");
             $('#ig_ig').focus();
         }
     });
 
     $('#id_idade').focusout(function (e) {
-        let regex_idade = /(^([0-1][aA])?([1]?[0-9][mM])?([0-6][dD])?$)/gmi;
+        let regex_idade = /^([0-1][aA])?([1]?[0-9][mM])?([0-6][dD])?([0-2]?[0-9][hH])$/gmi;
         var idade = $(this).val();
         let resultado = idade.match(regex_idade) || [];
 
         if(!resultado.length){
-            alert("Dado fora dos padrões!  Veja o exemplo!");
+            alert("Idade digitada fora dos padrões!  Veja o exemplo!");
             $('#ig_idade').focus();
         }
     });
