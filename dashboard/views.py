@@ -237,7 +237,7 @@ def signupUser(request):
 ########################################################################################################################
 #   Seção LEITOS
 ########################################################################################################################
-def bedsMmanager(request):
+def refreshBeds(request):
     # Pega variáveis de sessão
     hosp_id = request.session.get('hosp_id')
     hosp_sigla = request.session.get('hosp_sigla')
@@ -265,7 +265,40 @@ def bedsMmanager(request):
 
             leitos[valores['setor']] = leitos_setor
 
+    return [primeiro, saudacao, hosp_sigla, leitos, situacao, status]
+
+
+def bedsMmanager(request):
+    # # Pega variáveis de sessão
+    # hosp_id = request.session.get('hosp_id')
+    # hosp_sigla = request.session.get('hosp_sigla')
+    # primeiro = request.session.get('primeiro')
+    # saudacao = request.session.get('saudacao')
+    #
+    # situacao = {'Ativo': 'A', 'Desativado': 'D'}
+    # status = {'Livre': 'L', 'Ocupado': 'O', 'Bloqueado': 'B'}
+    #
+    # hosp_id = request.session.get('hosp_id')
+    #
+    # # Pega leitos do hospital
+    # setores = Setor.objects.filter(hospital_id=hosp_id, ativo=True).values('id', 'setor')
+    #
+    # leitos = {}
+    #
+    # for valores in setores.values('id', 'setor'):
+    #     leitos_setor = {}
+    #
+    #     lpesq = Leito.objects.filter(hospital_id=hosp_id, setor=valores['id']) \
+    #         .values('numero', 'situacao', 'status')
+    #
+    #     for valor in lpesq.values('numero', 'situacao', 'status'):
+    #         leitos_setor[valor['numero']] = {'situacao': valor['situacao'], 'status': valor['status']}
+    #
+    #         leitos[valores['setor']] = leitos_setor
+
     if request.method == 'GET':
+        primeiro, saudacao, hosp_sigla, leitos, situacao, status = refreshBeds(request)
+
         return render(request, 'dashboard/beds/beds.html',
                       context={
                           'usuario': request.user.username,
@@ -278,6 +311,8 @@ def bedsMmanager(request):
                       })
 
     if request.method == 'POST':
+        hosp_id = request.session.get('hosp_id')
+
         recebidos = request.POST
 
         s = Setor.objects.get(setor=recebidos['hidden_set'], hospital_id=hosp_id).id
@@ -292,6 +327,8 @@ def bedsMmanager(request):
         leito_alterar.status = recebidos['select_status']
 
         leito_alterar.save()
+
+        primeiro, saudacao, hosp_sigla, leitos, situacao, status = refreshBeds(request)
 
         return render(request, 'dashboard/beds/beds.html',
                       context={
@@ -330,7 +367,7 @@ def refreshPatients(request):
             elif leito.status == 'B':
                 p[str(leito.numero)] = 'BLOQUEADO'
             else:
-                if Paciente.objects.filter(leito__numero=leito.numero).exists():
+                if Paciente.objects.filter(leito__numero=leito.numero, status="I").exists():
                     p[str(leito.numero)] = Paciente.objects.get(leito_id=leito.id).nome
                 else:
                     p[str(leito.numero)] = 'INDEFINIDO'
@@ -383,6 +420,19 @@ def patientsManager(request):
 
     if request.method == 'POST':
         form = PacienteForm(request.POST)
+        # form.nome = request.POST.get("nome")
+        # form.idade = request.POST.get("idade")
+        # form.ig = request.POST.get("ig")
+        # form.peso_nasc = request.POST.get("peso_nasc")
+        # form.peso_atual = request.POST.get("peso_atual")
+        # form.setor = request.POST.get("setor")
+        # form.leito = request.POST.get("leito")
+        # form.tcle = "chk_pac_tcle" in request.POST
+        form.status = "I"
+        form.data_modif = datetime.datetime.now()
+        form.log_med = request.user.id
+
+        form.save(commit=False)
 
         if form.is_valid():
             new_patient = form.save(commit=False)
@@ -393,6 +443,9 @@ def patientsManager(request):
 
             new_patient.peso_nasc = int(form.cleaned_data['peso_nasc'])
             new_patient.peso_atual = int(form.cleaned_data['peso_atual'])
+            new_patient.log_med = Medico.objects.get(id=request.user.id)
+            new_patient.status = "I"
+            new_patient.tcle = 'chk_pac_tcle' in request.POST
 
             new_patient.save()
 

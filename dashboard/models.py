@@ -47,6 +47,10 @@ class Paciente(models.Model):
     setor = models.ForeignKey(Setor, on_delete=models.DO_NOTHING, default=None)
     leito = models.ForeignKey(Leito, on_delete=models.DO_NOTHING, default=None)
     tcle = models.BooleanField(default=False)
+    status = models.CharField(max_length=1, default="")# I - internado, A - Alta, T - Transferido, O - óbito
+    data_add = models.DateTimeField(editable=False, default=timezone.now())
+    data_modif = models.DateTimeField(default=timezone.now())
+    log_med = models.ForeignKey(Medico, on_delete=models.DO_NOTHING, default=None)
 
     def __str__(self):
         return self.nome + ' - Leito ' + str(self.leito.numero) + ' - ' \
