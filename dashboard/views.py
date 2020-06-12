@@ -307,17 +307,16 @@ def bedsMmanager(request):
 ########################################################################################################################
 #   Seção PACIENTES
 ########################################################################################################################
-def patientsManager(request):
+def refreshPatients(request):
     # Pega variáveis de sessão
     hosp_id = request.session.get('hosp_id')
     hosp_sigla = request.session.get('hosp_sigla')
-    setor_pela_sigla = Setor.objects.filter(hospital__sigla=hosp_sigla)[0]
     primeiro = request.session.get('primeiro')
     saudacao = request.session.get('saudacao')
 
     # Pega setores do hospital
     setores_qs = {str(s['id']): s['setor'] for s in
-                        Setor.objects.filter(hospital_id=hosp_id, ativo=True).values('id', 'setor')}
+                  Setor.objects.filter(hospital_id=hosp_id, ativo=True).values('id', 'setor')}
 
     pacientes = {}
 
@@ -332,12 +331,45 @@ def patientsManager(request):
                 p[str(leito.numero)] = 'BLOQUEADO'
             else:
                 if Paciente.objects.filter(leito__numero=leito.numero).exists():
-                    p[str(leito.numero)] = Paciente.objects.get(leito__numero=leito.numero)
+                    p[str(leito.numero)] = Paciente.objects.get(leito_id=leito.id).nome
                 else:
                     p[str(leito.numero)] = 'INDEFINIDO'
         pacientes[setor] = p
 
+    return [primeiro, saudacao, hosp_sigla, pacientes, setores_qs]
+
+
+def patientsManager(request):
+    # # Pega variáveis de sessão
+    # hosp_id = request.session.get('hosp_id')
+    # hosp_sigla = request.session.get('hosp_sigla')
+    # primeiro = request.session.get('primeiro')
+    # saudacao = request.session.get('saudacao')
+    #
+    # # Pega setores do hospital
+    # setores_qs = {str(s['id']): s['setor'] for s in
+    #                     Setor.objects.filter(hospital_id=hosp_id, ativo=True).values('id', 'setor')}
+    #
+    # pacientes = {}
+    #
+    # for id, setor in setores_qs.items():
+    #     p = {}
+    #     leitos_queryset = Leito.objects.filter(hospital_id=hosp_id, setor_id=id).order_by('numero')
+    #
+    #     for leito in leitos_queryset:
+    #         if leito.status == 'L':
+    #             p[str(leito.numero)] = 'VAGO'
+    #         elif leito.status == 'B':
+    #             p[str(leito.numero)] = 'BLOQUEADO'
+    #         else:
+    #             if Paciente.objects.filter(leito__numero=leito.numero).exists():
+    #                 p[str(leito.numero)] = Paciente.objects.get(leito_id=leito.id).nome
+    #             else:
+    #                 p[str(leito.numero)] = 'INDEFINIDO'
+    #     pacientes[setor] = p
+
     if request.method == 'GET':
+        primeiro, saudacao, hosp_sigla, pacientes, setores_qs = refreshPatients(request)
         return render(request, 'dashboard/patients/patients.html',
                       context={
                           'usuario': request.user.username,
@@ -355,10 +387,16 @@ def patientsManager(request):
         if form.is_valid():
             new_patient = form.save(commit=False)
 
+            leito_paciente = Leito.objects.get(id=request.POST.get('leito'))
+            leito_paciente.status = 'O'
+            leito_paciente.save()
+
             new_patient.peso_nasc = int(form.cleaned_data['peso_nasc'])
             new_patient.peso_atual = int(form.cleaned_data['peso_atual'])
 
             new_patient.save()
+
+            primeiro, saudacao, hosp_sigla, pacientes, setores_qs = refreshPatients(request)
 
             return render(request, 'dashboard/patients/patients.html',
                           context={
@@ -371,7 +409,7 @@ def patientsManager(request):
                               'pac_form': PacienteForm(),
                           })
         else:
-            print('Problema com o formulário')
+            primeiro, saudacao, hosp_sigla, pacientes, setores_qs = refreshPatients(request)
             return render(request, 'dashboard/patients/patients.html',
                           context={
                               'usuario': request.user.username,
