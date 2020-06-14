@@ -98,8 +98,14 @@
                                             {% endif %}
                                         {% endfor %}
                                     </select>
+                                    {% if value_leitos.status == 'O' %}
+                                        <script type="text/javascript">
+                                            document.getElementById("{{ setor }}_stat_{{ key_leitos }}")
+                                                .disabled = true;
+                                        </script>
+                                    {% endif %}
                                   </td>
-                                  <td><button type="submit" style="margin:0 auto;">Alterar</button> </td>
+                                  <td><button type="submit" class="btn btn-primary" style="margin:0 auto;">Alterar</button> </td>
                                 </tr>
                             </form>
                         {% endfor %}

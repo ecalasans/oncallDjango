@@ -367,7 +367,7 @@ def refreshPatients(request):
             elif leito.status == 'B':
                 p[str(leito.numero)] = 'BLOQUEADO'
             else:
-                if Paciente.objects.filter(leito__numero=leito.numero, status="I").exists(): #TODO - TRABALHAR NA DUPLICIDADE
+                if Paciente.objects.filter(leito__numero=leito.numero, status="I").exists():
                     p[str(leito.numero)] = Paciente.objects.get(leito_id=leito.id).nome
                 else:
                     p[str(leito.numero)] = 'INDEFINIDO'
