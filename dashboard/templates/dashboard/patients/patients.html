@@ -35,7 +35,20 @@
                                 <td style="width: 5%; font-size: 1.5em; text-align: center;">{{ numero }}</td>
                                 <td style="width: 70%; font-size: 1.5em; align-content: center;">{{ nome }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary">Alta</button>
+                                    <button type="button" id="btn_ocorrencia_{{ setor }}{{ numero }}" class="btn btn-secondary">Ocorrência</button>
+                                    <button type="button" id="btn_alterar_{{ setor }}{{ numero }}" class="btn btn-warning">Alterar</button>
+                                    <button type="button" id="btn_alta_{{ setor }}{{ numero }}" class="btn btn-primary"
+                                        data-toggle="modal" data-target="#modalAltaPaciente">Alta</button>
+                                    {% if nome == 'VAGO' %}
+                                        <script type="text/javascript">
+                                            document.getElementById('btn_alta_{{ setor }}{{ numero }}')
+                                                .disabled = true;
+                                            document.getElementById('btn_alterar_{{ setor }}{{ numero }}')
+                                                .disabled = true;
+                                            document.getElementById('btn_ocorrencia_{{ setor }}{{ numero }}')
+                                                .disabled = true;
+                                        </script>
+                                    {% endif %}
                                 </td>
                             </tr>
                         {% endfor %}
@@ -129,6 +142,18 @@
                             <button type="reset" class="btn btn-danger" style="float: right;">Limpar</button>
                         </div>
                     </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalAltaPaciente" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Alta do Paciente</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body"></div>
+                    <p>Aqui será a alta do paciente</p>
             </div>
         </div>
     </div>
