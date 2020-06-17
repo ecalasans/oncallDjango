@@ -420,14 +420,6 @@ def patientsManager(request):
 
     if request.method == 'POST':
         form = PacienteForm(request.POST)
-        # form.nome = request.POST.get("nome")
-        # form.idade = request.POST.get("idade")
-        # form.ig = request.POST.get("ig")
-        # form.peso_nasc = request.POST.get("peso_nasc")
-        # form.peso_atual = request.POST.get("peso_atual")
-        # form.setor = request.POST.get("setor")
-        # form.leito = request.POST.get("leito")
-        # form.tcle = "chk_pac_tcle" in request.POST
         form.status = "I"
         form.data_modif = datetime.datetime.now()
         form.log_med = request.user.id
