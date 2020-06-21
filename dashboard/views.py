@@ -477,3 +477,9 @@ def patientsList(request):
     lista_leitos = [l for l in leitos_setor]
 
     return JsonResponse(lista_leitos, safe=False)
+
+def patientsDischarge(request):
+
+    dados = request.POST
+
+    return JsonResponse(dados, safe=False)
