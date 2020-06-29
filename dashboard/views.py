@@ -480,6 +480,10 @@ def patientsList(request):
 
 def patientsDischarge(request):
 
-    dados = request.POST
+    status = request.GET.get('status')
+    setor_paciente = request.GET.get('setor_paciente')
+    numero_leito = request.GET.get('numero_leito')
 
-    return JsonResponse(dados, safe=False)
+    print(status)
+
+    return JsonResponse({'status': status})
