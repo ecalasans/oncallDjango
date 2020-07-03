@@ -16,7 +16,7 @@ function altaPaciente(setor, numero, url_alta) {
                     'status': $("input[name='rd_status_alta']:checked").val(),
             },
             success: function () {
-                alert('Alta registrada com sucesso!');
+                window.location.reload();
             },
             error: function () {
                 alert('Erro no servidor!');
@@ -24,5 +24,4 @@ function altaPaciente(setor, numero, url_alta) {
         });
 
     });
-
 }

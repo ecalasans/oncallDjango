@@ -123,11 +123,12 @@ def home(request):
             leitos_ativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A') \
                 .values('status').annotate(Count('status'))
             ativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A').count()
+            ocupacao = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], status='O').count()
             inativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='D').count()
 
             for qset in leitos_ativos.values('status', 'status__count'):
                 situacao[qset['status']] = qset['status__count']
-                p = int((qset['status__count'] / ativos_setor) * 100)
+                p = int((ocupacao/ ativos_setor) * 100)
                 situacao['porcentagem'] = p
             situacao['ativos'] = ativos_setor
             situacao['inativos'] = inativos_setor
@@ -368,9 +369,12 @@ def refreshPatients(request):
                 p[str(leito.numero)] = 'BLOQUEADO'
             else:
                 if Paciente.objects.filter(leito__numero=leito.numero, status="I").exists():
-                    p[str(leito.numero)] = Paciente.objects.get(leito_id=leito.id).nome
+                    p[str(leito.numero)] = Paciente.objects.get(leito_id=leito.id, status="I").nome
                 else:
-                    p[str(leito.numero)] = 'INDEFINIDO'
+                    leito.status = 'L'
+                    leito.save()
+                    p[str(leito.numero)] = 'VAGO'
+                    #p[str(leito.numero)] = 'INDEFINIDO'
         pacientes[setor] = p
 
     return [primeiro, saudacao, hosp_sigla, pacientes, setores_qs]
@@ -479,11 +483,14 @@ def patientsList(request):
     return JsonResponse(lista_leitos, safe=False)
 
 def patientsDischarge(request):
-
     status = request.GET.get('status')
-    setor_paciente = request.GET.get('setor_paciente')
-    numero_leito = request.GET.get('numero_leito')
+    setor_paciente = Setor.objects.get(setor=request.GET.get('setor_paciente')).id
+    numero_leito = Leito.objects.get(numero=request.GET.get('numero_leito'), setor_id=setor_paciente)
 
-    print(status)
+    paciente_para_alta = Paciente.objects.get(leito_id=numero_leito.id)
+    paciente_para_alta.status = status
+    numero_leito.status = 'L'
+    paciente_para_alta.save()
+    numero_leito.save()
 
-    return JsonResponse({'status': status})
+    return JsonResponse({'status': status}, safe=False)
