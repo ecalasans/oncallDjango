@@ -483,14 +483,27 @@ def patientsList(request):
     return JsonResponse(lista_leitos, safe=False)
 
 def patientsDischarge(request):
-    status = request.GET.get('status')
-    setor_paciente = Setor.objects.get(setor=request.GET.get('setor_paciente')).id
-    numero_leito = Leito.objects.get(numero=request.GET.get('numero_leito'), setor_id=setor_paciente)
+    status = request.POST.get('rd_status_alta')
+    setor_paciente = Setor.objects.get(setor=request.POST.get('setor_paciente')).id
+    numero_leito = Leito.objects.get(numero=request.POST.get('numero_paciente'), setor_id=setor_paciente)
 
-    paciente_para_alta = Paciente.objects.get(leito_id=numero_leito.id)
+    paciente_para_alta = Paciente.objects.get(leito_id=numero_leito.id, status="I")
     paciente_para_alta.status = status
     numero_leito.status = 'L'
     paciente_para_alta.save()
     numero_leito.save()
 
-    return JsonResponse({'status': status}, safe=False)
+    primeiro, saudacao, hosp_sigla, pacientes, setores_qs = refreshPatients(request)
+
+    return render(request, 'dashboard/patients/patients.html',
+                  context={
+                      'usuario': request.user.username,
+                      'primeiro': primeiro,
+                      'saudacao': saudacao,
+                      'hosp_sigla': hosp_sigla,
+                      'pacientes': pacientes,
+                      'setores': setores_qs,
+                      'pac_form': PacienteForm(),
+                  })
+
+    #return JsonResponse({'status': status}, safe=False)

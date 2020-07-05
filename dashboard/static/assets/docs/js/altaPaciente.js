@@ -6,7 +6,7 @@ function altaPaciente(setor, numero, url_alta) {
     $("#modalAltaPaciente").modal('show');
 
     $("#form_alta_paciente").submit(function (e) {
-        e.preventDefault();
+        /*e.preventDefault();
 
         $.ajax({
             url: url_alta,
@@ -21,7 +21,7 @@ function altaPaciente(setor, numero, url_alta) {
             error: function () {
                 alert('Erro no servidor!');
             }
-        });
+        });*/
 
     });
 }
