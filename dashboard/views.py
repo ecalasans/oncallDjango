@@ -506,4 +506,5 @@ def patientsDischarge(request):
                       'pac_form': PacienteForm(),
                   })
 
-    #return JsonResponse({'status': status}, safe=False)
+def patientsRecord(request):
+    pass

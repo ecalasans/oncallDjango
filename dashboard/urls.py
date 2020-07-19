@@ -10,4 +10,5 @@ urlpatterns =[
     path('patients/', views.patientsManager, name='patients'),
     path('patients/list/', views.patientsList, name='patients_list'),
     path('patiens/discharge/', views.patientsDischarge, name='patients_discharge'),
+    path('patients/record/', views.patientsRecord, name="patients_record"),
 ]
