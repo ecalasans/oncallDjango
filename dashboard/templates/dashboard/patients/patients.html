@@ -33,7 +33,7 @@
                         {% for numero, nome in pac.items %}
                             <tr>
                                 <td style="width: 5%; font-size: 1.5em; text-align: center;">{{ numero }}</td>
-                                <td style="width: 70%; font-size: 1.5em; align-content: center;">{{ nome }}</td>
+                                <td style="width: 50%; font-size: 1.5em; align-content: center;">{{ nome }}</td>
                                 <td>
                                     <button type="button" id="btn_ocorrencia_{{ setor }}{{ numero }}"
                                             class="btn btn-secondary"
@@ -200,38 +200,38 @@
                         <div class="row" style="margin-bottom: 15px;">
                             <div class="col-sm-12 col-md-6">
                                 <label class="control-label">Diagnóstico</label>
-                                <textarea rows="6" cols="40"></textarea>
+                                <textarea id="txt_oc_diagnostico" name="txt_oc_diagnostico" rows="6" cols="40"></textarea>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <label class="control-label">Dieta</label>
-                                <textarea rows="6" cols="40"></textarea>
+                                <textarea id="txt_oc_dieta" name="txt_oc_dieta" rows="6" cols="40"></textarea>
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 15px;">
                             <div class="col-sm-12 col-md-6">
                                 <label class="control-label">Acesso venoso</label>
-                                <textarea rows="3" cols="40"></textarea>
+                                <textarea id="txt_oc_acesso_venoso" name="txt_oc_acesso_venoso" rows="3" cols="40"></textarea>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <label class="control-label">Antibioticoterapia</label>
-                                <textarea rows="3" cols="40"></textarea>
+                                <textarea id="txt_oc_atb" name="txt_oc_atb" rows="3" cols="40"></textarea>
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 15px;">
                             <div class="col-sm-12 col-md-6">
                                 <label class="control-label">Medicamentos</label>
-                                <textarea rows="6" cols="40"></textarea>
+                                <textarea id="txt_oc_medic" name="txt_oc_medic" rows="6" cols="40"></textarea>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <label class="control-label">Ventilação</label>
-                                <textarea rows="3" cols="40"></textarea>
+                                <textarea rows="3" id="txt_oc_vent" name="txt_oc_vent" cols="40"></textarea>
                                 <div class="row" style="margin-top: 5px;">
                                     <div class="col-12" style="margin-right: 10px;">
                                         <label class="control-label" style="margin-right: 5px;">Fototerapia</label>
-                                        <input type="radio" name="rd_ocor_foto" value="S"
+                                        <input type="radio" name="rd_ocor_foto" id="rd_ocor_foto_sim"  value="S"
                                            class="iradio_flat-green">
                                         <span style="margin-right: 5px;">Sim</span>
-                                        <input type="radio" name="rd_ocor_foto" value="N" class="iradio_flat-green">
+                                        <input type="radio" name="rd_ocor_foto" value="N" id="rd_ocor_foto_nao" class="iradio_flat-green">
                                             <span>Não</span>
                                     </div>
                                 </div>
@@ -240,12 +240,24 @@
                         <div class="row" style="margin-bottom: 15px;">
                             <div class="col-12">
                                 <label class="control-label">Exames importantes</label><br>
-                                <textarea rows="6" style="width: 100%;"></textarea>
+                                <textarea rows="6" id="txt_oc_exames" name="txt_oc_exames" style="width: 100%;"></textarea>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 15px;">
+                            <div class="col-12">
+                                <label class="control-label">Conduta</label><br>
+                                <textarea rows="10" id="txt_oc_cond" name="txt_oc_cond" style="width: 100%;"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-
+                        <div class="row">
+                            <div class="col12">
+                                <input class="btn btn-success" type="submit" value="Enviar"
+                                       style="margin-right: 10px;">
+                                <input class="btn btn-danger" type="reset">
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
