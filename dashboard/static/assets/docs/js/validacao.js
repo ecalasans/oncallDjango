@@ -24,7 +24,7 @@ $(document).ready(function () {
     });
 
     $('#id_idade').focusout(function (e) {
-        let regex_idade = /^(([0-1][aA])?([1]?[0-9]?[mM])?([0-6]*[dD]))$|^([0-4]?[0-9]?[hH])$/gmi;
+        let regex_idade = /^(([0-1][aA])?([1]?[0-9]?[mM])?([0-3]?[0-9]*[dD]))$|^([0-4]?[0-9]?[hH])$/gmi;
         var idade = $(this).val();
         let resultado = idade.match(regex_idade) || [];
 

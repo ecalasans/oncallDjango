@@ -506,5 +506,8 @@ def patientsDischarge(request):
                       'pac_form': PacienteForm(),
                   })
 
+def patientsOpenOccurrence(request):
+    pass
+
 def patientsRecord(request):
     pass
