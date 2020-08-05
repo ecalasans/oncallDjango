@@ -1,13 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import logout, login, authenticate
-from dashboard.models import Leito, Hospital, Setor, Medico, Paciente
+from dashboard.models import Leito, Hospital, Setor, Medico, Paciente, Ocorrencia
 from django.db.models import Count
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import MedicoForm, LeitoForm, PacienteForm
 from django.contrib import messages
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt # Usado para evitar checar csfr_token
 import datetime
 
 '''
@@ -506,8 +507,31 @@ def patientsDischarge(request):
                       'pac_form': PacienteForm(),
                   })
 
+@csrf_exempt
 def patientsOpenOccurrence(request):
-    pass
+    # Recebe os dados de abreOcorrencia
+    dados_recebidos = request.POST
+
+    # Pesquisa no banco de dados as pk's correspondentes às variáveis recebidas:
+    setor_id = Setor.objects.get(setor=dados_recebidos['setor']).id
+    leito_id = Leito.objects.get(numero=dados_recebidos['leito'], setor_id=setor_id, status='O').id
+    paciente_id = Paciente.objects.get(nome=dados_recebidos['nome'], leito_id=leito_id).id
+
+    # Registra numa variável de sessão para ser usada em patientsRecord
+    request.session['setor'] = setor_id
+    request.session['leito'] = leito_id
+    request.session['paciente'] = paciente_id
+
+    if (paciente_id):
+        # Pesquisa ocorrência para o paciente e retorna a última ocorrência pra ele ou um json em branco
+        ocorrencia = Ocorrencia.objects.filter(pac_id=paciente_id).last()
+        if (ocorrencia):
+            return JsonResponse({'ocorrencia': ocorrencia}, safe=False)
+        else:
+            return JsonResponse({'ocorrencia': ''}, safe=False)
+    else:
+        return JsonResponse({'ocorrencia': 'Paciente não encontrado!'})
+
 
 def patientsRecord(request):
     pass

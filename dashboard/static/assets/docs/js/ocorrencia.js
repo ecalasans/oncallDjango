@@ -10,11 +10,15 @@ function abreOcorrencia(url_abre, setor, nome, numero) {
         datatype : 'json',
         data : valores,
         type : 'post',
-        success : function () {
-            $("#modalOcorrencias").modal("show");
+        success : function (response) {
+            if (response.ocorrencia == ''){
+                $('#modalOcorrencias').modal('show');
+            } else {
+                console.log(response.ocorrencia);
+            }
         },
-        error : function () {
-            alert('Não consegui abrir!')
+        error : function (response) {
+            console.log(response.ocorrencia);
         }
     });
 
