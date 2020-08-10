@@ -21,44 +21,44 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th style="width: 5%;">Leito</th>
-                          <th style="text-align: center;">Paciente</th>
-                          <th>Ação</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {% for numero, nome in pac.items %}
+                        <table class="table table-bordered">
+                          <thead>
                             <tr>
-                                <td style="width: 5%; font-size: 1.5em; text-align: center;">{{ numero }}</td>
-                                <td style="width: 50%; font-size: 1.5em; align-content: center;">{{ nome }}</td>
-                                <td>
-                                    <button type="button" id="btn_ocorrencia_{{ setor }}{{ numero }}"
-                                            class="btn btn-secondary"
-                                        onclick="abreOcorrencia('{% url 'patients_open_occurrence'%}',
-                                                '{{ setor }}', '{{ nome }}', '{{ numero }}');"> Ocorrência</button>
-                                    <button type="button" id="btn_alterar_{{ setor }}{{ numero }}" class="btn btn-warning">Alterar</button>
-                                    <button type="button" id="btn_alta_{{ setor }}{{ numero }}" class="btn btn-primary"
-                                        onclick="altaPaciente('{{ setor }}', '{{ numero }}',
-                                                '{% url 'patients_discharge' %}')">Alta</button>
-                                    {% if nome == 'VAGO' %}
-                                        <script type="text/javascript">
-                                            document.getElementById('btn_alta_{{ setor }}{{ numero }}')
-                                                .disabled = true;
-                                            document.getElementById('btn_alterar_{{ setor }}{{ numero }}')
-                                                .disabled = true;
-                                            document.getElementById('btn_ocorrencia_{{ setor }}{{ numero }}')
-                                                .disabled = true;
-                                        </script>
-                                    {% endif %}
-                                </td>
+                              <th style="width: 5%;">Leito</th>
+                              <th style="text-align: center;">Paciente</th>
+                              <th>Ação</th>
                             </tr>
-                        {% endfor %}
-                      </tbody>
-                    </table>
-                </div>
+                          </thead>
+                          <tbody>
+                            {% for numero, nome in pac.items %}
+                                <tr>
+                                    <td style="width: 5%; font-size: 1.5em; text-align: center;">{{ numero }}</td>
+                                    <td style="width: 50%; font-size: 1.5em; align-content: center;">{{ nome }}</td>
+                                    <td>
+                                        <button type="button" id="btn_ocorrencia_{{ setor }}{{ numero }}"
+                                                class="btn btn-secondary"
+                                            onclick="abreOcorrencia('{% url 'patients_open_occurrence'%}',
+                                                    '{{ setor }}', '{{ nome }}', '{{ numero }}');"> Ocorrência</button>
+                                        <button type="button" id="btn_alterar_{{ setor }}{{ numero }}" class="btn btn-warning">Alterar</button>
+                                        <button type="button" id="btn_alta_{{ setor }}{{ numero }}" class="btn btn-primary"
+                                            onclick="altaPaciente('{{ setor }}', '{{ numero }}',
+                                                    '{% url 'patients_discharge' %}')">Alta</button>
+                                        {% if nome == 'VAGO' %}
+                                            <script type="text/javascript">
+                                                document.getElementById('btn_alta_{{ setor }}{{ numero }}')
+                                                    .disabled = true;
+                                                document.getElementById('btn_alterar_{{ setor }}{{ numero }}')
+                                                    .disabled = true;
+                                                document.getElementById('btn_ocorrencia_{{ setor }}{{ numero }}')
+                                                    .disabled = true;
+                                            </script>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
