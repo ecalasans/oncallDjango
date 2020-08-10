@@ -1,5 +1,5 @@
 from django.forms import ModelForm, ValidationError, Select, IntegerField, CharField, DateTimeField
-from .models import Medico, Hospital, Leito, Paciente, Setor
+from .models import Medico,  Leito, Paciente, Ocorrencia
 import re
 
 class MedicoForm(ModelForm):
@@ -73,3 +73,9 @@ class PacienteForm(ModelForm):
         model = Paciente
         fields = ['nome', 'ig', 'idade', 'peso_nasc', 'peso_atual',
                   'leito', 'tcle', 'setor']
+
+class OcorrenciaForm(ModelForm):
+    class Meta:
+        model = Ocorrencia
+        fields = ['diagnostico', 'dieta', 'antibiotico', 'acesso_venoso', 'medicamentos',
+                  'ventilacao', 'fototerapia','exames', 'conduta', "med", "pac"]

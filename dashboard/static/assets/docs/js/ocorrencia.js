@@ -14,7 +14,23 @@ function abreOcorrencia(url_abre, setor, nome, numero) {
             if (response.ocorrencia == ''){
                 $('#modalOcorrencias').modal('show');
             } else {
-                console.log(response.ocorrencia);
+                $("#txt_oc_diagnostico").text(response.diagnostico);
+                $("#txt_oc_dieta").text(response.dieta);
+                $("#txt_oc_acesso_venoso").text(response.acesso_venoso);
+                $("#txt_oc_atb").text(response.antibiotico);
+                $("#txt_oc_medic").text(response.medicamentos);
+                $("#txt_oc_vent").text(response.ventilacao);
+                $("#txt_oc_exames").text(response.exames);
+
+                if (response.fototerapia == "S"){
+                    $('input:radio[name="rd_ocor_foto"][value="S"]').attr('checked', true);
+                } else {
+                    $('input:radio[name="rd_ocor_foto"][value="N"]').attr('checked', true);
+                }
+
+                $("#txt_oc_cond").text(response.conduta);
+
+                $("#modalOcorrencias").modal('show');
             }
         },
         error : function (response) {

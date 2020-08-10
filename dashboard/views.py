@@ -1,13 +1,14 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import logout, login, authenticate
 from dashboard.models import Leito, Hospital, Setor, Medico, Paciente, Ocorrencia
 from django.db.models import Count
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .forms import MedicoForm, LeitoForm, PacienteForm
+from .forms import MedicoForm, PacienteForm
 from django.contrib import messages
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt # Usado para evitar checar csfr_token
 import datetime
 
@@ -526,7 +527,18 @@ def patientsOpenOccurrence(request):
         # Pesquisa ocorrência para o paciente e retorna a última ocorrência pra ele ou um json em branco
         ocorrencia = Ocorrencia.objects.filter(pac_id=paciente_id).last()
         if (ocorrencia):
-            return JsonResponse({'ocorrencia': ocorrencia}, safe=False)
+            resposta = {
+                'diagnostico': ocorrencia.diagnostico,
+                'dieta': ocorrencia.dieta,
+                'acesso_venoso': ocorrencia.acesso_venoso,
+                'antibiotico': ocorrencia.antibiotico,
+                'medicamentos': ocorrencia.medicamentos,
+                'ventilacao': ocorrencia.ventilacao,
+                'fototerapia': ocorrencia.fototerapia,
+                'exames': ocorrencia.exames,
+                'conduta': ocorrencia.conduta
+            }
+            return JsonResponse(resposta, safe=False)
         else:
             return JsonResponse({'ocorrencia': ''}, safe=False)
     else:
@@ -534,4 +546,39 @@ def patientsOpenOccurrence(request):
 
 
 def patientsRecord(request):
-    pass
+    # Pesquisa campos necessários para o registro da ocorrência
+    medico = Medico.objects.get(hospital=request.session.get('hosp_id'), username=request.user.username)
+    paciente = Paciente.objects.get(pk=request.session.get('paciente'))
+
+    # Recebe os dados vindos do formulário de ocorrencias
+    ocorr_form = request.POST
+
+    # Se tiver dados cria o objeto formulário e salva os campos
+    if (ocorr_form):
+        form_oc = Ocorrencia()
+
+        form_oc.diagnostico = request.POST.get("txt_oc_diagnostico")
+        form_oc.dieta = request.POST.get("txt_oc_dieta")
+        form_oc.acesso_venoso = request.POST.get("txt_oc_acesso_venoso")
+        form_oc.antibiotico = request.POST.get("txt_oc_atb")
+        form_oc.medicamentos = request.POST.get("txt_oc_medic")
+        form_oc.ventilacao = request.POST.get("txt_oc_vent")
+        form_oc.fototerapia = request.POST.get("rd_ocor_foto")
+        form_oc.exames = request.POST.get("txt_oc_exames")
+        form_oc.conduta = request.POST.get("txt_oc_cond")
+        form_oc.med = medico
+        form_oc.pac = paciente
+
+        form_oc.save()
+
+    primeiro, saudacao, hosp_sigla, pacientes, setores_qs = refreshPatients(request)
+    return render(request, 'dashboard/patients/patients.html',
+                  context={
+                      'usuario': request.user.username,
+                      'primeiro': primeiro,
+                      'saudacao': saudacao,
+                      'hosp_sigla': hosp_sigla,
+                      'pacientes': pacientes,
+                      'setores': setores_qs,
+                      'pac_form': PacienteForm(),
+                  })
