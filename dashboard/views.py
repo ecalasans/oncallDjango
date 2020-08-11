@@ -108,6 +108,8 @@ def home(request):
     primeiro = request.session.get('primeiro')
     saudacao = request.session.get('saudacao')
 
+    dia_anterior = datetime.date.today() - datetime.timedelta(days=1)
+
     # Seleção de setores do hospital do usuário
     setores = Setor.objects.filter(hospital_id=hosp_id).values('setor', 'pk', 'ativo')
     total_setores = Setor.objects.filter(hospital_id=hosp_id, ativo=True).count
@@ -117,14 +119,28 @@ def home(request):
 
     # Situação dos leitos por setor(Ativos e Inativos)
     situacao_por_setor = {}
+    ocorrencias = {}
     for setor in setores:
         if not setor['ativo']:
             pass
         else:
             situacao = {}
+            # Lista os leitos do setor
+            leitos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'])
+
+            # Pesquisa os leitos do setor:  se estiver ocupado pega o paciente;  se não, registra como vago
+            for leito in leitos_setor:
+                if leito.status == 'O':
+                    paciente_do_leito = Paciente.objects.get(leito_id=leito.id, status='I')
+                elif leito.status == 'B':
+                    pass
+                elif leito.status == 'L':
+                    pass
+
             leitos_ativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A') \
                 .values('status').annotate(Count('status'))
-            ativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A').count()
+            ativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A')
+            ativos_setor = ativos_setor.count()
             ocupacao = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], status='O').count()
             inativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='D').count()
 
