@@ -128,15 +128,43 @@ def home(request):
             # Lista os leitos do setor
             leitos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'])
 
+            lista_ocorr = []
+
             # Pesquisa os leitos do setor:  se estiver ocupado pega o paciente;  se não, registra como vago
             for leito in leitos_setor:
                 if leito.status == 'O':
                     paciente_do_leito = Paciente.objects.get(leito_id=leito.id, status='I')
-                elif leito.status == 'B':
-                    pass
-                elif leito.status == 'L':
-                    pass
+                    ocor_paciente = Ocorrencia.objects.filter(pac_id=paciente_do_leito.id).last()
 
+                    if not ocor_paciente:
+                        pac_ocorr = {'situacao': 'Não há ocorrência registrada no banco de dados!'}
+                    else:
+                        medico_responsavel = "{} {}".format(Medico.objects.get(pk=ocor_paciente.med_id).first_name,
+                                                            Medico.objects.get(pk=ocor_paciente.med_id).last_name)
+
+                        pac_ocorr = {
+                            'situacao': 'OCUPADO',
+                            'num_leito': paciente_do_leito.leito.numero,
+                            'nome_pac' : paciente_do_leito.nome,
+                            'diagnostico': ocor_paciente.diagnostico,
+                            'dieta': ocor_paciente.dieta,
+                            'acesso_venoso': ocor_paciente.acesso_venoso,
+                            'antibiotico': ocor_paciente.antibiotico,
+                            'medicamentos': ocor_paciente.medicamentos,
+                            'ventilacao': ocor_paciente.ventilacao,
+                            'fototerapia': ocor_paciente.fototerapia,
+                            'exames': ocor_paciente.exames,
+                            'conduta': ocor_paciente.conduta,
+                            'medico': medico_responsavel
+                        }
+                elif leito.status == 'B':
+                    pac_ocorr = {'situacao': 'BLOQUEADO'}
+                elif leito.status == 'L':
+                    pac_ocorr = {'situacao': 'VAGO'}
+
+                lista_ocorr.append({str(leito.numero): pac_ocorr})
+
+            ocorrencias[str(setor['setor'])] = lista_ocorr
             leitos_ativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A') \
                 .values('status').annotate(Count('status'))
             ativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A')
