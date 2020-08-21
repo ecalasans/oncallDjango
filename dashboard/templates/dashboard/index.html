@@ -57,31 +57,98 @@
         </div>
     </div>
 
-    {% for setor in setores %}
+    {% for setor, leitos in ocorrencias.items %}
         <div class="row" style="margin-left: 5px;">
             <div class="col-sm-12 col-lg-12">
-                {% if setor.ativo == True %}
-                    <div class="x_panel tile">
-                        <div class="x_title">
-                            <h2>{{ setor.setor }}</h2>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 10%;">Nome</th>
-                                        <th style="width: 10%;">Diagnóstico</th>
-                                        <th style="width: 20%;">Terapia</th>
-                                        <th style="width: 20%;">Exames</th>
-                                        <th style="width: 30%;">Conduta</th>
-                                        <th style="width: 10%">Médico(a)</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
+                <div class="x_panel tile">
+                    <div class="x_title">
+                        <h2>{{ setor }}</h2>
+                        <div class="clearfix"></div>
                     </div>
-            {% endif %}
+                    <div class="x_content">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%;">Nome</th>
+                                    <th style="width: 10%;">Diagnóstico</th>
+                                    <th style="width: 20%;">Terapia</th>
+                                    <th style="width: 20%;">Exames</th>
+                                    <th style="width: 30%;">Conduta</th>
+                                    <th style="width: 10%">Médico(a)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for leito in leitos %}
+                                    {% if leito.situacao == 'NAO_OCORRENCIAS' %}
+                                        <tr>
+                                            <td style="width: 10%;">
+                                                <span class="font-weight-bold text-center">
+                                                    Leito {{ leito.num_leito }}</span>
+                                            </td>
+                                            <td colspan="5" style="width: 10%;">
+                                                <h5 style="text-align: center;">Não há ocorrências registradas</h5>
+                                            </td>
+                                        </tr>
+                                    {% elif leito.situacao == 'VAGO'%}
+                                        <tr>
+                                            <td style="width: 10%;">
+                                                <span class="font-weight-bold text-center">
+                                                    Leito {{ leito.num_leito }}</span>
+                                            </td>
+                                            <td colspan="5" class="bg-green" style="width: 10%;">
+                                                <h5 style="text-align: center;">{{ leito.situacao }}</h5>
+                                            </td>
+                                        </tr>
+                                    {% elif leito.situacao == 'BLOQUEADO' %}
+                                        <tr>
+                                            <td style="width: 10%;">
+                                                <span class="font-weight-bold text-center">
+                                                    Leito {{ leito.num_leito }}</span>
+                                            </td>
+                                            <td colspan="5" class="bg-warning" style="width: 10%;">
+                                                <h5 style="text-align: center;">{{ leito.situacao }}</h5>
+                                            </td>
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <td style="width: 10%;">
+                                                <span class="font-weight-bold text-center">
+                                                    Leito {{ leito.num_leito }}</span><br>
+                                                {{ leito.nome_pac }}
+                                            </td>
+                                            <td style="width: 10%;">
+                                                {{ leito.diagnostico }}
+                                            </td>
+                                            <td style="width: 20%;">
+                                                <span class="font-weight-bold">Dieta:  </span>{{ leito.dieta }}<br>
+                                                <span class="font-weight-bold">Acesso Venoso:  </span>
+                                                    {{ leito.acesso_venoso }}<br>
+                                                <span class="font-weight-bold">Antibióticos:  </span>
+                                                    {{ leito.antibiotico }}<br>
+                                                <span class="font-weight-bold">Medicamentos:  </span>
+                                                    {{ leito.medicamentos }}<br>
+                                                <span class="font-weight-bold">Ventilação:  </span>
+                                                    {{ leito.ventilacao }}<br>
+                                                <span class="font-weight-bold">Fototerapia:  </span>
+                                                    {{ leito.fototerapia }}<br>
+                                            </td>
+                                            <td style="width: 20%;">
+                                                {{ leito.exames }}
+                                            </td>
+                                            <td style="width: 30%;">
+                                                {{ leito.conduta }}
+                                            </td>
+                                            <td style="width: 10%">
+                                                {{ leito.medico }}
+                                            </td>
+                                        </tr>
+                                    {% endif %}
+
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     {% endfor %}

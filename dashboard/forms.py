@@ -5,7 +5,8 @@ import re
 class MedicoForm(ModelForm):
     class Meta:
         model = Medico
-        fields = ['username', 'password', 'first_name', 'last_name', 'email', 'crm', 'hospital']
+        fields = ['username', 'password', 'first_name', 'last_name',
+                  'email', 'crm', 'hospital', 'is_active']
         widgets ={
             'hospital': Select()
         }

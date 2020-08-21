@@ -137,7 +137,7 @@ def home(request):
                     ocor_paciente = Ocorrencia.objects.filter(pac_id=paciente_do_leito.id).last()
 
                     if not ocor_paciente:
-                        pac_ocorr = {'situacao': 'Não há ocorrência registrada no banco de dados!'}
+                        pac_ocorr = {'situacao': 'NAO_OCORRENCIAS', 'num_leito': paciente_do_leito.leito.numero}
                     else:
                         medico_responsavel = "{} {}".format(Medico.objects.get(pk=ocor_paciente.med_id).first_name,
                                                             Medico.objects.get(pk=ocor_paciente.med_id).last_name)
@@ -158,13 +158,14 @@ def home(request):
                             'medico': medico_responsavel
                         }
                 elif leito.status == 'B':
-                    pac_ocorr = {'situacao': 'BLOQUEADO'}
+                    pac_ocorr = {'situacao': 'BLOQUEADO', 'num_leito': leito.numero}
                 elif leito.status == 'L':
-                    pac_ocorr = {'situacao': 'VAGO'}
+                    pac_ocorr = {'situacao': 'VAGO', 'num_leito': leito.numero}
 
-                lista_ocorr.append({str(leito.numero): pac_ocorr})
+                lista_ocorr.append(pac_ocorr)
 
             ocorrencias[str(setor['setor'])] = lista_ocorr
+
             leitos_ativos = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A') \
                 .values('status').annotate(Count('status'))
             ativos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'], situacao='A')
@@ -189,12 +190,12 @@ def home(request):
                            'total_leitos': total_leitos,
                            'setores': setores,
                            'total_setores': total_setores,
-                           'situacao_por_setor': situacao_por_setor})
+                           'situacao_por_setor': situacao_por_setor,
+                           'ocorrencias': ocorrencias})
 
 ########################################################################################################################
 #   Seção LOGIN
 ########################################################################################################################
-
 def sysLogin(request):
     hospitais = Hospital.objects.all().order_by('nome')
 
@@ -247,7 +248,6 @@ def sysLogout(request):
 ########################################################################################################################
 #   Seção CADASTRO DE USUÁRIO
 ########################################################################################################################
-
 def signupUser(request):
     hospitais = Hospital.objects.all().order_by('nome')
 
@@ -260,7 +260,7 @@ def signupUser(request):
 
         if form.is_valid():
             new_medico = form.save(commit=False)
-
+            new_medico.initial['is_active'] = False
             new_medico.set_password(form.cleaned_data['password'])
             new_medico.save()
 

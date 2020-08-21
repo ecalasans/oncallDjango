@@ -79,8 +79,14 @@ WSGI_APPLICATION = 'oncall.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'plantao.sqlite3'),
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'plantao.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'plantao',
+        'USER': 'eric',
+        'PASSWORD': 'e1906d0103',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
