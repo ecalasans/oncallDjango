@@ -50,7 +50,7 @@ jQuery.fn.extend( {
 				if ( cur.nodeType < 11 && ( pos ?
 					pos.index( cur ) > -1 :
 
-					// Don't pass non-elements to Sizzle
+					// Don't oncallDjango non-elements to Sizzle
 					cur.nodeType === 1 &&
 						jQuery.find.matchesSelector( cur, selectors ) ) ) {
 

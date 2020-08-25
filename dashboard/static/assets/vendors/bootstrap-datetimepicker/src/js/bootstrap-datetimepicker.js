@@ -144,7 +144,7 @@
                     returnMoment = moment(); //TODO should this use format? and locale?
                 } else if (moment.isDate(d) || moment.isMoment(d)) {
                     // If the date that is passed in is already a Date() or moment() object,
-                    // pass it directly to moment.
+                    // oncallDjango it directly to moment.
                     returnMoment = moment(d);
                 } else if (hasTimeZone()) { // There is a string to parse and a default time zone
                     // parse with the tz function which takes a default time zone if it is not in the format string

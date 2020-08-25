@@ -26,7 +26,7 @@ test('quotes are killed as well', function (assert) {
   assert.equal(escaped.indexOf('"'), -1);
 });
 
-test('DocumentFragment options pass through', function (assert) {
+test('DocumentFragment options oncallDjango through', function (assert) {
   var frag = document.createDocumentFragment();
   frag.innerHTML = '<strong>test</strong>';
 

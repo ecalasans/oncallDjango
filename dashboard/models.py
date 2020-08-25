@@ -69,6 +69,7 @@ class Ocorrencia(models.Model):
     fototerapia = models.CharField(default="Não", max_length=5)
     exames = models.TextField(default="", max_length=500)
     conduta = models.TextField(default="", max_length=500)
+    recomendacoes = models.TextField(default="", max_length=500)
     data_add = models.DateTimeField(editable=False, default=timezone.now())
     data_modif = models.DateTimeField(default=timezone.now())
 

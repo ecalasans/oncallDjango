@@ -174,7 +174,7 @@ var CanvasRenderer = function(el, options) {
 
 		ctx.lineCap = options.lineCap;
 
-		// if barcolor is a function execute it and pass the percent as a value
+		// if barcolor is a function execute it and oncallDjango the percent as a value
 		var color;
 		if (typeof(options.barColor) === 'function') {
 			color = options.barColor(percent);

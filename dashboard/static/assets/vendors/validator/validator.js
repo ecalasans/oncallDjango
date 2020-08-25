@@ -106,7 +106,7 @@
             text : function(field, data){
                 var that = this;
                 // make sure there are at least X number of words, each at least 2 chars long.
-                // for example 'john F kenedy' should be at least 2 words and will pass validation
+                // for example 'john F kenedy' should be at least 2 words and will oncallDjango validation
                 if( data.validateWords ){
                     var words = data.value.split(' ');
                     // iterate on all the words
@@ -476,7 +476,7 @@
 
             field = this.filterFormElements( [field] )[0];
 
-            // if field did not pass filtering or is simply not passed
+            // if field did not oncallDjango filtering or is simply not passed
             if( !field )
                 return { valid:true, error:"" }
 

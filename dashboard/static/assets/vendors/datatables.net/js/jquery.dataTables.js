@@ -37,7 +37,7 @@
 		// CommonJS
 		module.exports = function (root, $) {
 			if ( ! root ) {
-				// CommonJS environments without a window global must pass a
+				// CommonJS environments without a window global must oncallDjango a
 				// root. This will give an error otherwise
 				root = window;
 			}
@@ -1239,7 +1239,7 @@
 				}
 			}
 			
-			/* Do a first pass on the sorting classes (allows any size changes to be taken into
+			/* Do a first oncallDjango on the sorting classes (allows any size changes to be taken into
 			 * account, and also will apply sorting disabled classes if disabled
 			 */
 			_fnSortingClasses( oSettings );
@@ -5295,16 +5295,16 @@
 		// Hidden header should have zero height, so remove padding and borders. Then
 		// set the width based on the real headers
 	
-		// Apply all styles in one pass
+		// Apply all styles in one oncallDjango
 		_fnApplyToChildren( zeroOut, headerSrcEls );
 	
-		// Read all widths in next pass
+		// Read all widths in next oncallDjango
 		_fnApplyToChildren( function(nSizer) {
 			headerContent.push( nSizer.innerHTML );
 			headerWidths.push( _fnStringToCss( $(nSizer).css('width') ) );
 		}, headerSrcEls );
 	
-		// Apply all widths in final pass
+		// Apply all widths in final oncallDjango
 		_fnApplyToChildren( function(nToSize, i) {
 			// Only apply widths to the DataTables detected header cells - this
 			// prevents complex headers from having contradictory sizes applied
@@ -6480,7 +6480,7 @@
 	 *      out
 	 *  @param {boolean} breakRefs If true, then arrays will be sliced to take an
 	 *      independent copy with the exception of the `data` or `aaData` parameters
-	 *      if they are present. This is so you can pass in a collection to
+	 *      if they are present. This is so you can oncallDjango in a collection to
 	 *      DataTables and have that used as your data source without breaking the
 	 *      references
 	 *  @returns {object} out Reference, just for convenience - out === the return.
@@ -6519,7 +6519,7 @@
 	 * This is good for accessibility since a return on the keyboard will have the
 	 * same effect as a click, if the element has focus.
 	 *  @param {element} n Element to bind the action to
-	 *  @param {object} oData Data object to pass to the triggered function
+	 *  @param {object} oData Data object to oncallDjango to the triggered function
 	 *  @param {function} fn Callback function for when the event is triggered
 	 *  @memberof DataTable#oApi
 	 */
@@ -6574,7 +6574,7 @@
 	 *      oSettings
 	 *  @param {string} eventName Name of the jQuery custom event to trigger. If
 	 *      null no trigger is fired
-	 *  @param {array} args Array of arguments to pass to the callback function /
+	 *  @param {array} args Array of arguments to oncallDjango to the callback function /
 	 *      trigger
 	 *  @memberof DataTable#oApi
 	 */
@@ -9862,7 +9862,7 @@
 	
 	
 		/**
-		 * If ordering is enabled, then DataTables will perform a first pass sort on
+		 * If ordering is enabled, then DataTables will perform a first oncallDjango sort on
 		 * initialisation. You can define which column(s) the sort is performed
 		 * upon, and the sorting direction, with this variable. The `sorting` array
 		 * should contain an array for each column to be sorted initially containing
@@ -11748,7 +11748,7 @@
 		 * superseded by that provided through `ajax`, which should be used instead.
 		 *
 		 * You can instruct DataTables to load data from an external
-		 * source using this parameter (use aData if you want to pass data in you
+		 * source using this parameter (use aData if you want to oncallDjango data in you
 		 * already have). Simply provide a url a JSON object can be obtained from.
 		 *  @type string
 		 *  @default null
@@ -14126,7 +14126,7 @@
 			 * Each function is expected to return:
 			 *
 			 * * `{string|null}` Data type detected, or null if unknown (and thus
-			 *   pass it on to the other type detection functions.
+			 *   oncallDjango it on to the other type detection functions.
 			 *
 			 *  @type array
 			 *

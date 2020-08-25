@@ -6,7 +6,7 @@ describe('Core helper tests', function() {
 		helpers = window.Chart.helpers;
 	});
 
-	it('should iterate over an array and pass the extra data to that function', function() {
+	it('should iterate over an array and oncallDjango the extra data to that function', function() {
 		var testData = [0, 9, "abc"];
 		var scope = {}; // fake out the scope and ensure that 'this' is the correct thing
 

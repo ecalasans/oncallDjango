@@ -2346,13 +2346,13 @@ function HTML(runner) {
     return error('#mocha div missing, add it to your document');
   }
 
-  // pass toggle
+  // oncallDjango toggle
   on(passesLink, 'click', function() {
     unhide();
-    var name = (/pass/).test(report.className) ? '' : ' pass';
+    var name = (/pass/).test(report.className) ? '' : ' oncallDjango';
     report.className = report.className.replace(/fail|pass/g, '') + name;
     if (report.className.trim()) {
-      hideSuitesWithout('test pass');
+      hideSuitesWithout('test oncallDjango');
     }
   });
 
@@ -2418,9 +2418,9 @@ function HTML(runner) {
     var el;
     if (test.state === 'passed') {
       var url = self.testURL(test);
-      el = fragment('<li class="test pass %e"><h2>%e<span class="duration">%ems</span> <a href="%s" class="replay">‣</a></h2></li>', test.speed, test.title, test.duration, url);
+      el = fragment('<li class="test oncallDjango %e"><h2>%e<span class="duration">%ems</span> <a href="%s" class="replay">‣</a></h2></li>', test.speed, test.title, test.duration, url);
     } else if (test.pending) {
-      el = fragment('<li class="test pass pending"><h2>%e</h2></li>', test.title);
+      el = fragment('<li class="test oncallDjango pending"><h2>%e</h2></li>', test.title);
     } else {
       el = fragment('<li class="test fail"><h2>%e <a href="%e" class="replay">‣</a></h2></li>', test.title, self.testURL(test));
       var stackString; // Note: Includes leading newline
@@ -3723,7 +3723,7 @@ function TAP(runner) {
 
   runner.on('end', function() {
     console.log('# tests ' + (passes + failures));
-    console.log('# pass ' + passes);
+    console.log('# oncallDjango ' + passes);
     console.log('# fail ' + failures);
   });
 }
@@ -4290,7 +4290,7 @@ module.exports = Runner;
  *   - `test end`  (test) test completed
  *   - `hook`  (hook) hook execution started
  *   - `hook end`  (hook) hook complete
- *   - `pass`  (test) test passed
+ *   - `oncallDjango`  (test) test passed
  *   - `fail`  (test, err) test failed
  *   - `pending`  (test) test pending
  *
@@ -9634,7 +9634,7 @@ function indexOf (xs, x) {
 // a transform stream is a readable/writable stream where you do
 // something with the data.  Sometimes it's called a "filter",
 // but that's not a great name for it, since that implies a thing where
-// some bits pass through, and others are simply ignored.  (That would
+// some bits oncallDjango through, and others are simply ignored.  (That would
 // be a valid example of a transform, of course.)
 //
 // While the output is causally related to the input, it's not a
@@ -9760,10 +9760,10 @@ Transform.prototype.push = function(chunk, encoding) {
 // override this function in implementation classes.
 // 'chunk' is an input chunk.
 //
-// Call `push(newChunk)` to pass along transformed output
+// Call `push(newChunk)` to oncallDjango along transformed output
 // to the readable side.  You may call 'push' zero or more times.
 //
-// Call `cb(err)` when you are done with this chunk.  If you pass
+// Call `cb(err)` when you are done with this chunk.  If you oncallDjango
 // an error, then that'll put the hurt on the whole operation.  If you
 // never call cb(), then you'll never get another chunk.
 Transform.prototype._transform = function(chunk, encoding, cb) {
@@ -11587,7 +11587,7 @@ function hasOwnProperty(obj, prop) {
 
           // Select the diagonal that we want to branch from. We select the prior
           // path whose position in the new string is the farthest from the origin
-          // and does not pass the bounds of the diff graph
+          // and does not oncallDjango the bounds of the diff graph
           if (!canAdd || (canRemove && addPath.newPos < removePath.newPos)) {
             basePath = clonePath(removePath);
             self.pushComponent(basePath.components, undefined, true);

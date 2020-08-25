@@ -29,6 +29,7 @@ function abreOcorrencia(url_abre, setor, nome, numero) {
                 }
 
                 $("#txt_oc_cond").text(response.conduta);
+                $("#txt_oc_recom").text(response)
 
                 $("#modalOcorrencias").modal('show');
             }

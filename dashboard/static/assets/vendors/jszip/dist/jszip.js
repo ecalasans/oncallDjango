@@ -3543,7 +3543,7 @@ Inflate.prototype.push = function (data, mode) {
 
     // When no more input data, we should check that internal inflate buffers
     // are flushed. The only way to do it when avail_out = 0 - run one more
-    // inflate pass. But if output data not exists, inflate return Z_BUF_ERROR.
+    // inflate oncallDjango. But if output data not exists, inflate return Z_BUF_ERROR.
     // Here we set flag to process this error properly.
     //
     // NOTE. Deflate does not return error in this case and does not needs such
@@ -8383,7 +8383,7 @@ function gen_bitlen(s, desc)
     s.bl_count[bits] = 0;
   }
 
-  /* In a first pass, compute the optimal bit lengths (which may
+  /* In a first oncallDjango, compute the optimal bit lengths (which may
    * overflow in the case of the bit length tree).
    */
   tree[s.heap[s.heap_max] * 2 + 1]/*.Len*/ = 0; /* root of the heap */

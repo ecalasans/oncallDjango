@@ -2908,7 +2908,7 @@ QUnit.done( function( details ) {
 		].join( "" );
 
 	if ( banner ) {
-		banner.className = details.failed ? "qunit-fail" : "qunit-pass";
+		banner.className = details.failed ? "qunit-fail" : "qunit-oncallDjango";
 	}
 
 	if ( tests ) {
@@ -4272,7 +4272,7 @@ QUnit.diff = ( function() {
 			diffs.pop(); // Remove the dummy entry at the end.
 		}
 
-		// Second pass: look for single edits surrounded on both sides by equalities
+		// Second oncallDjango: look for single edits surrounded on both sides by equalities
 		// which can be shifted sideways to eliminate an equality.
 		// e.g: A<ins>BA</ins>C -> <ins>AB</ins>AC
 		changes = false;

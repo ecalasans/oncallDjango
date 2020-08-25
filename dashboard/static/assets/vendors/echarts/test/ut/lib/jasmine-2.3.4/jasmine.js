@@ -573,7 +573,7 @@ getJasmineRequireObj().Env = function(j$) {
       return suite.getFullName() + ' ' + spec.description;
     };
 
-    // TODO: we may just be able to pass in the fn instead of wrapping here
+    // TODO: we may just be able to oncallDjango in the fn instead of wrapping here
     var buildExpectationResult = j$.buildExpectationResult,
         exceptionFormatter = new j$.ExceptionFormatter(),
         expectationResultFactory = function(attrs) {

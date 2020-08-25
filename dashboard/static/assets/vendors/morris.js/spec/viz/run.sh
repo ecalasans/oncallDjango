@@ -22,7 +22,7 @@ do
   fi
 done
 
-# pass / fail
+# oncallDjango / fail
 if [ $PASS -eq 1 ]
 then
   echo "Success."

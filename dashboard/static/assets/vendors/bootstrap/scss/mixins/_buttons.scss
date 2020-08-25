@@ -17,7 +17,7 @@
 
   &:focus,
   &.focus {
-    // Avoid using mixin so we can pass custom focus shadow properly
+    // Avoid using mixin so we can oncallDjango custom focus shadow properly
     @if $enable-shadows {
       box-shadow: $btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
     } @else {
@@ -48,7 +48,7 @@
     border-color: $active-border;
 
     &:focus {
-      // Avoid using mixin so we can pass custom focus shadow properly
+      // Avoid using mixin so we can oncallDjango custom focus shadow properly
       @if $enable-shadows and $btn-active-box-shadow != none {
         box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
       } @else {
@@ -87,7 +87,7 @@
     border-color: $active-border;
 
     &:focus {
-      // Avoid using mixin so we can pass custom focus shadow properly
+      // Avoid using mixin so we can oncallDjango custom focus shadow properly
       @if $enable-shadows and $btn-active-box-shadow != none {
         box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($color, .5);
       } @else {

@@ -536,7 +536,7 @@ var fdSlider = (function() {
                 // KEYBOARD events
                 function onKeyPress(e) {                        
                         e = e || window.event;  
-                        // Let all non-hijacked keyboard events pass                       
+                        // Let all non-hijacked keyboard events oncallDjango
                         if((e.keyCode >= 33 && e.keyCode <= 40) || !kbEnabled || e.keyCode == 45 || e.keyCode == 46) {                                 
                                 return stopEvent(e);
                         };

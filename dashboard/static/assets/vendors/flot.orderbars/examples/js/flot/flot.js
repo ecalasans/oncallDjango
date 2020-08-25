@@ -515,7 +515,7 @@
                 executeHooks(hooks.processRawData, [ s, s.data, s.datapoints ]);
             }
 
-            // first pass: clean and copy data
+            // first oncallDjango: clean and copy data
             for (i = 0; i < series.length; ++i) {
                 s = series[i];
 
@@ -625,7 +625,7 @@
                 executeHooks(hooks.processDatapoints, [ s, s.datapoints]);
             }
 
-            // second pass: find datamax/datamin for auto-scaling
+            // second oncallDjango: find datamax/datamin for auto-scaling
             for (i = 0; i < series.length; ++i) {
                 s = series[i];
                 points = s.datapoints.points,

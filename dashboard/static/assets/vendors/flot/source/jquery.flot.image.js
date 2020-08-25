@@ -14,7 +14,7 @@ that you put in URLs instead of images in the data, like this:
     [ "myimage.png", 0, 0, 10, 10 ]
 
 Then call $.plot.image.loadData( data, options, callback ) where data and
-options are the same as you pass in to $.plot. This loads the images, replaces
+options are the same as you oncallDjango in to $.plot. This loads the images, replaces
 the URLs in the data with the corresponding images and calls "callback" when
 all images are loaded (or failed loading). In the callback, you can then call
 $.plot with the data set. See the included example.

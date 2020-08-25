@@ -4347,7 +4347,7 @@ define(["eve"], function(eve) {
      **
      > Parameters
      **
-     - delay (number) number of ms to pass between animation start and actual animation
+     - delay (number) number of ms to oncallDjango between animation start and actual animation
      **
      = (object) new altered Animation object
      | var anim = Raphael.animation({cx: 10, cy: 20}, 2e3);
@@ -4368,7 +4368,7 @@ define(["eve"], function(eve) {
      **
      > Parameters
      **
-     - repeat (number) number iterations of animation. For infinite animation pass `Infinity`
+     - repeat (number) number iterations of animation. For infinite animation oncallDjango `Infinity`
      **
      = (object) new altered Animation object
     \*/

@@ -146,7 +146,7 @@ var JsDiff = (function() {
 
             // Select the diagonal that we want to branch from. We select the prior
             // path whose position in the new string is the farthest from the origin
-            // and does not pass the bounds of the diff graph
+            // and does not oncallDjango the bounds of the diff graph
             if (!canAdd || (canRemove && addPath.newPos < removePath.newPos)) {
               basePath = clonePath(removePath);
               this.pushComponent(basePath.components, oldString[oldPos], undefined, true);
@@ -2620,12 +2620,12 @@ function HTML(runner, root) {
 
   if (!root) return error('#mocha div missing, add it to your document');
 
-  // pass toggle
+  // oncallDjango toggle
   on(passesLink, 'click', function(){
     unhide();
-    var name = /pass/.test(report.className) ? '' : ' pass';
+    var name = /pass/.test(report.className) ? '' : ' oncallDjango';
     report.className = report.className.replace(/fail|pass/g, '') + name;
-    if (report.className.trim()) hideSuitesWithout('test pass');
+    if (report.className.trim()) hideSuitesWithout('test oncallDjango');
   });
 
   // failure toggle
@@ -2677,9 +2677,9 @@ function HTML(runner, root) {
     // test
     if ('passed' == test.state) {
       var url = self.testURL(test);
-      var el = fragment('<li class="test pass %e"><h2>%e<span class="duration">%ems</span> <a href="%s" class="replay">‣</a></h2></li>', test.speed, test.title, test.duration, url);
+      var el = fragment('<li class="test oncallDjango %e"><h2>%e<span class="duration">%ems</span> <a href="%s" class="replay">‣</a></h2></li>', test.speed, test.title, test.duration, url);
     } else if (test.pending) {
-      var el = fragment('<li class="test pass pending"><h2>%e</h2></li>', test.title);
+      var el = fragment('<li class="test oncallDjango pending"><h2>%e</h2></li>', test.title);
     } else {
       var el = fragment('<li class="test fail"><h2>%e <a href="?grep=%e" class="replay">‣</a></h2></li>', test.title, encodeURIComponent(test.fullTitle()));
       var str = test.err.stack || test.err.toString();
@@ -3962,7 +3962,7 @@ function TAP(runner) {
 
   runner.on('end', function(){
     console.log('# tests ' + (passes + failures));
-    console.log('# pass ' + passes);
+    console.log('# oncallDjango ' + passes);
     console.log('# fail ' + failures);
   });
 }
@@ -4387,7 +4387,7 @@ module.exports = Runner;
  *   - `test end`  (test) test completed
  *   - `hook`  (hook) hook execution started
  *   - `hook end`  (hook) hook complete
- *   - `pass`  (test) test passed
+ *   - `oncallDjango`  (test) test passed
  *   - `fail`  (test, err) test failed
  *   - `pending`  (test) test pending
  *

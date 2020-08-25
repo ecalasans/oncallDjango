@@ -39,7 +39,7 @@
 'use strict';
 var DataTable = $.fn.dataTable;
 
-// Allow the constructor to pass in JSZip and PDFMake from external requires.
+// Allow the constructor to oncallDjango in JSZip and PDFMake from external requires.
 // Otherwise, use globally defined variables, if they are available.
 function _jsZip () {
 	return jszip || window.JSZip;

@@ -247,7 +247,7 @@ $.extend( Responsive.prototype, {
 			}
 		} );
 
-		// First pass - draw the table for the current viewport size
+		// First oncallDjango - draw the table for the current viewport size
 		this._resize();
 	},
 
@@ -302,7 +302,7 @@ $.extend( Responsive.prototype, {
 					$.inArray( breakpoint, col.includeIn ) !== -1;
 		} );
 
-		// Auto column control - first pass: how much width is taken by the
+		// Auto column control - first oncallDjango: how much width is taken by the
 		// ones that must be included from the non-auto columns
 		var requiredWidth = 0;
 		for ( i=0, ien=display.length ; i<ien ; i++ ) {
@@ -311,7 +311,7 @@ $.extend( Responsive.prototype, {
 			}
 		}
 
-		// Second pass, use up any remaining width for other columns. For
+		// Second oncallDjango, use up any remaining width for other columns. For
 		// scrolling tables we need to subtract the width of the scrollbar. It
 		// may not be requires which makes this sub-optimal, but it would
 		// require another full redraw to make complete use of those extra few
@@ -637,7 +637,7 @@ $.extend( Responsive.prototype, {
 
 
 	/**
-	 * Get the details to pass to a renderer for a row
+	 * Get the details to oncallDjango to a renderer for a row
 	 * @param  {int} rowIdx Row index
 	 * @private
 	 */

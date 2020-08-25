@@ -491,7 +491,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     url: new RegExp("^" +
     // protocol identifier
     "(?:(?:https?|ftp)://)?" + // ** mod: make scheme optional
-    // user:pass authentication
+    // user:oncallDjango authentication
     "(?:\\S+(?::\\S*)?@)?" + "(?:" +
     // IP address exclusion
     // private & local networks
@@ -1487,7 +1487,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     },
 
     // Just validate field. Do not trigger any event.
-    // Returns `true` iff all constraints pass, `false` if there are failures,
+    // Returns `true` iff all constraints oncallDjango, `false` if there are failures,
     // or `null` if the result can not be determined yet (depends on a promise)
     // See also `whenValid`.
     isValid: function isValid(options) {

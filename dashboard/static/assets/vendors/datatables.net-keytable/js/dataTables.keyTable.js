@@ -569,7 +569,7 @@ $.extend( KeyTable.prototype, {
 				break;
 
 			default:
-				// Everything else - pass through only when fully enabled
+				// Everything else - oncallDjango through only when fully enabled
 				if ( this.s.enable === true ) {
 					this._emitEvent( 'key', [ dt, e.keyCode, this.s.lastFocus, e ] );
 				}

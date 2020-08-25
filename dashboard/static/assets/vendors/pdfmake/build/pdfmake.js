@@ -3721,7 +3721,7 @@
 	     * @private
 	     * @param {Array} array The array to iterate over.
 	     * @param {Function} predicate The function invoked per iteration.
-	     * @returns {boolean} Returns `true` if all elements pass the predicate check,
+	     * @returns {boolean} Returns `true` if all elements oncallDjango the predicate check,
 	     *  else `false`.
 	     */
 	    function arrayEvery(array, predicate) {
@@ -4250,7 +4250,7 @@
 	     * @private
 	     * @param {Array|Object|string} collection The collection to iterate over.
 	     * @param {Function} predicate The function invoked per iteration.
-	     * @returns {boolean} Returns `true` if all elements pass the predicate check,
+	     * @returns {boolean} Returns `true` if all elements oncallDjango the predicate check,
 	     *  else `false`
 	     */
 	    function baseEvery(collection, predicate) {
@@ -8620,7 +8620,7 @@
 	     * @param {Function|Object|string} [predicate=_.identity] The function invoked
 	     *  per iteration.
 	     * @param {*} [thisArg] The `this` binding of `predicate`.
-	     * @returns {boolean} Returns `true` if all elements pass the predicate check,
+	     * @returns {boolean} Returns `true` if all elements oncallDjango the predicate check,
 	     *  else `false`.
 	     * @example
 	     *
@@ -15627,7 +15627,7 @@
 
 	/**
 	* Measures all nodes and sets min/max-width properties required for the second
-	* layout-pass.
+	* layout-oncallDjango.
 	* @param  {Object} docStructure document-definition-object
 	* @return {Object}              document-measurement-object
 	*/
@@ -15788,7 +15788,7 @@
 	DocMeasure.prototype.measureLeaf = function(node) {
 
 		// Make sure style properties of the node itself are considered when building inlines.
-		// We could also just pass [node] to buildInlines, but that fails for bullet points.
+		// We could also just oncallDjango [node] to buildInlines, but that fails for bullet points.
 		var styleStack = this.styleStack.clone();
 		styleStack.push(node);
 
@@ -21383,7 +21383,7 @@
 	// a transform stream is a readable/writable stream where you do
 	// something with the data.  Sometimes it's called a "filter",
 	// but that's not a great name for it, since that implies a thing where
-	// some bits pass through, and others are simply ignored.  (That would
+	// some bits oncallDjango through, and others are simply ignored.  (That would
 	// be a valid example of a transform, of course.)
 	//
 	// While the output is causally related to the input, it's not a
@@ -21509,10 +21509,10 @@
 	// override this function in implementation classes.
 	// 'chunk' is an input chunk.
 	//
-	// Call `push(newChunk)` to pass along transformed output
+	// Call `push(newChunk)` to oncallDjango along transformed output
 	// to the readable side.  You may call 'push' zero or more times.
 	//
-	// Call `cb(err)` when you are done with this chunk.  If you pass
+	// Call `cb(err)` when you are done with this chunk.  If you oncallDjango
 	// an error, then that'll put the hurt on the whole operation.  If you
 	// never call cb(), then you'll never get another chunk.
 	Transform.prototype._transform = function(chunk, encoding, cb) {
@@ -24989,7 +24989,7 @@
 	    s.bl_count[bits] = 0;
 	  }
 
-	  /* In a first pass, compute the optimal bit lengths (which may
+	  /* In a first oncallDjango, compute the optimal bit lengths (which may
 	   * overflow in the case of the bit length tree).
 	   */
 	  tree[s.heap[s.heap_max]*2 + 1]/*.Len*/ = 0; /* root of the heap */
@@ -28977,7 +28977,7 @@
 	}
 
 	// At present only the three keys mentioned above are used and
-	// understood by the spec. Implementations or sub modules can pass
+	// understood by the spec. Implementations or sub modules can oncallDjango
 	// other keys to the AssertionError's constructor - they will be
 	// ignored.
 
@@ -29067,7 +29067,7 @@
 	           actual.lastIndex === expected.lastIndex &&
 	           actual.ignoreCase === expected.ignoreCase;
 
-	  // 7.4. Other pairs that do not both pass typeof value == 'object',
+	  // 7.4. Other pairs that do not both oncallDjango typeof value == 'object',
 	  // equivalence is determined by ==.
 	  } else if (!util.isObject(actual) && !util.isObject(expected)) {
 	    return actual == expected;

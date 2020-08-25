@@ -2,7 +2,260 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0024_alter_ocorrencia_add_recomend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/oncall.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/oncall.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/docs/js/ocorrencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/js/ocorrencia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Chart.js/dist/Chart.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Chart.js/dist/Chart.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Chart.js/test/core.helpers.tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Chart.js/test/core.helpers.tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-af-ZA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-af-ZA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-AE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-AE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-BH.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-BH.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-DZ.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-DZ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-EG.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-EG.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-IQ.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-IQ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-JO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-JO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-KW.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-KW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-LB.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-LB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-LY.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-LY.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-MA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-MA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-OM.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-OM.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-QA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-QA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-SA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-SA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-SY.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-SY.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-TN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-TN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-YE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ar-YE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-az-Cyrl-AZ.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-az-Cyrl-AZ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-az-Latn-AZ.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-az-Latn-AZ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-be-BY.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-be-BY.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-bg-BG.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-bg-BG.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-bs-Latn-BA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-bs-Latn-BA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ca-ES.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ca-ES.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-cs-CZ.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-cs-CZ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-cy-GB.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-cy-GB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-da-DK.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-da-DK.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-de-AT.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-de-AT.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-de-CH.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-de-CH.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-de-DE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-de-DE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-de-LI.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-de-LI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-de-LU.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-de-LU.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-dv-MV.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-dv-MV.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-el-GR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-el-GR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-029.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-029.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-AU.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-AU.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-BZ.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-BZ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-CA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-CA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-GB.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-GB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-IE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-IE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-JM.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-JM.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-NZ.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-NZ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-PH.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-PH.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-TT.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-TT.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-US.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-US.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-ZA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-ZA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-ZW.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-en-ZW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-AR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-AR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-BO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-BO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-CL.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-CL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-CO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-CO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-CR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-CR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-DO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-DO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-EC.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-EC.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-ES.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-ES.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-GT.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-GT.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-HN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-HN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-MX.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-MX.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-NI.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-NI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-PA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-PA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-PE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-PE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-PR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-PR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-PY.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-PY.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-SV.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-SV.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-UY.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-UY.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-VE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-es-VE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-et-EE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-et-EE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-eu-ES.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-eu-ES.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fa-IR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fa-IR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fi-FI.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fi-FI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fo-FO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fo-FO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-BE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-BE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-CA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-CA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-CH.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-CH.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-FR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-FR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-LU.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-LU.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-MC.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-fr-MC.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-gl-ES.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-gl-ES.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-gu-IN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-gu-IN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-he-IL.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-he-IL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-hi-IN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-hi-IN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-hr-BA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-hr-BA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-hr-HR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-hr-HR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-hu-HU.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-hu-HU.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-hy-AM.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-hy-AM.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-id-ID.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-id-ID.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-is-IS.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-is-IS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-it-CH.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-it-CH.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-it-IT.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-it-IT.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ja-JP.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ja-JP.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ka-GE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ka-GE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-kk-KZ.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-kk-KZ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-kn-IN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-kn-IN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ko-KR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ko-KR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-kok-IN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-kok-IN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ky-KG.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ky-KG.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-lt-LT.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-lt-LT.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-lv-LV.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-lv-LV.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-mi-NZ.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-mi-NZ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-mk-MK.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-mk-MK.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-mn-MN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-mn-MN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-mr-IN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-mr-IN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ms-BN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ms-BN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ms-MY.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ms-MY.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-mt-MT.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-mt-MT.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-nb-NO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-nb-NO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-nl-BE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-nl-BE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-nl-NL.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-nl-NL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-nn-NO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-nn-NO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ns-ZA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ns-ZA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-pa-IN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-pa-IN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-pl-PL.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-pl-PL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-pt-BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-pt-BR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-pt-PT.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-pt-PT.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-quz-BO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-quz-BO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-quz-EC.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-quz-EC.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-quz-PE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-quz-PE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ro-RO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ro-RO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ru-RU.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ru-RU.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sa-IN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sa-IN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-se-FI.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-se-FI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-se-NO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-se-NO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-se-SE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-se-SE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sk-SK.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sk-SK.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sl-SI.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sl-SI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sma-NO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sma-NO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sma-SE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sma-SE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-smj-NO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-smj-NO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-smj-SE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-smj-SE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-smn-FI.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-smn-FI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sms-FI.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sms-FI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sq-AL.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sq-AL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sr-Cyrl-BA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sr-Cyrl-BA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sr-Cyrl-CS.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sr-Cyrl-CS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sr-Latn-BA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sr-Latn-BA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sr-Latn-CS.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sr-Latn-CS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sv-FI.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sv-FI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sv-SE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sv-SE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sw-KE.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-sw-KE.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-syr-SY.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-syr-SY.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ta-IN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ta-IN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-te-IN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-te-IN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-th-TH.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-th-TH.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-tn-ZA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-tn-ZA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-tr-TR.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-tr-TR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-tt-RU.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-tt-RU.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-uk-UA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-uk-UA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ur-PK.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-ur-PK.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-uz-Cyrl-UZ.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-uz-Cyrl-UZ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-uz-Latn-UZ.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-uz-Latn-UZ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-vi-VN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-vi-VN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-xh-ZA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-xh-ZA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zh-CN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zh-HK.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zh-HK.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zh-MO.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zh-MO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zh-SG.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zh-SG.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zh-TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zu-ZA.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date-zu-ZA.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/build/date.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/reports/lcov-report/prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/reports/lcov-report/prettify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/src/core/parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/DateJS/src/core/parser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap-datetimepicker/docs/theme/js/prettify-1.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap-datetimepicker/docs/theme/js/prettify-1.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/build/vnu-jar.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/build/vnu-jar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/scss/_modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/scss/_modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/scss/mixins/_box-shadow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/scss/mixins/_box-shadow.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/scss/mixins/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/scss/mixins/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/scss/mixins/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/bootstrap/scss/mixins/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/datatables.net-buttons/js/buttons.html5.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/datatables.net-buttons/js/buttons.html5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/datatables.net-keytable/js/dataTables.keyTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/datatables.net-keytable/js/dataTables.keyTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/datatables.net-responsive/js/dataTables.responsive.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/datatables.net-responsive/js/dataTables.responsive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/datatables.net/js/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/datatables.net/js/jquery.dataTables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/devbridge-autocomplete/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/devbridge-autocomplete/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/echarts/dist/extension/dataTool.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/echarts/dist/extension/dataTool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/echarts/extension/dataTool/prepareBoxplotData.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/echarts/extension/dataTool/prepareBoxplotData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/echarts/test/ut/lib/jasmine-2.3.4/jasmine.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/echarts/test/ut/lib/jasmine-2.3.4/jasmine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot.orderbars/examples/js/flot/flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot.orderbars/examples/js/flot/flot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/docs/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/docs/API.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/source/jquery.canvaswrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/source/jquery.canvaswrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/source/jquery.flot.image.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/source/jquery.flot.image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/source/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/source/jquery.flot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/source/jquery.flot.selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/source/jquery.flot.selection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/source/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/flot/source/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/fullcalendar/dist/fullcalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/fullcalendar/dist/fullcalendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/gauge.js/assets/fd-slider/fd-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/gauge.js/assets/fd-slider/fd-slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/gauge.js/assets/prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/gauge.js/assets/prettify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/google-code-prettify/bin/prettify.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/google-code-prettify/bin/prettify.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/google-code-prettify/bin/run_prettify.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/google-code-prettify/bin/run_prettify.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/google-code-prettify/src/prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/google-code-prettify/src/prettify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/google-code-prettify/src/run_prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/google-code-prettify/src/run_prettify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery.easy-pie-chart/dist/angular.easypiechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery.easy-pie-chart/dist/angular.easypiechart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery.easy-pie-chart/dist/easypiechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery.easy-pie-chart/dist/easypiechart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery.easy-pie-chart/src/renderer/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery.easy-pie-chart/src/renderer/canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery.hotkeys/jquery.hotkeys.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery.hotkeys/jquery.hotkeys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/external/sizzle/dist/sizzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/external/sizzle/dist/sizzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/src/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/src/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/src/effects.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/src/effects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/src/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/src/event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/src/event/trigger.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/src/event/trigger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/src/traversing.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jquery/src/traversing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/jszip/dist/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/jszip/dist/jszip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/mocha/mocha.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/mocha/mocha.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/moment/min/moment-with-locales.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/moment/min/moment-with-locales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/moment/min/tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/moment/min/tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/moment/moment.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/moment/moment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/moment/src/lib/locale/locales.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/moment/src/lib/locale/locales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/morris.js/spec/lib/parse_time_spec.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/morris.js/spec/lib/parse_time_spec.coffee" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/morris.js/spec/viz/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/morris.js/spec/viz/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/nprogress/nprogress.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/nprogress/nprogress.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/expect.js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/expect.js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/expect.js/support/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/expect.js/support/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/dist/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/src/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/src/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/src/effects.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/src/effects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/src/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/src/event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/src/sizzle/dist/sizzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/src/sizzle/dist/sizzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/src/traversing.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/jquery/src/traversing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/mocha/mocha.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/mocha/mocha.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/sinonjs/sinon.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/bower_components/sinonjs/sinon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/dist/parsley.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/dist/parsley.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/src/parsley/field.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/src/parsley/field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/src/parsley/validator_registry.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/parsleyjs/src/parsley/validator_registry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/pdfmake/build/pdfmake.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/pdfmake/build/pdfmake.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/raphael/dev/raphael.core.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/raphael/dev/raphael.core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/raphael/raphael.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/raphael/raphael.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/raphael/raphael.no-deps.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/raphael/raphael.no-deps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/requirejs/require.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/requirejs/require.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/dist/js/select2.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/dist/js/select2.full.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/dist/js/select2.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/dist/js/select2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/docs/vendor/js/prettify.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/docs/vendor/js/prettify.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/tests/utils/escapeMarkup-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/tests/utils/escapeMarkup-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/tests/vendor/jquery-1.7.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/tests/vendor/jquery-1.7.2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/tests/vendor/qunit-1.23.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/tests/vendor/qunit-1.23.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/vendor/jquery-2.1.0.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/select2/vendor/jquery-2.1.0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/switchery/dist/switchery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/switchery/dist/switchery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/switchery/package.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/switchery/package.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/validator/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/validator/validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/patients/patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/patients/patients.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +353,7 @@
         <env name="DJANGO_SETTINGS_MODULE" value="oncall.settings" />
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -240,6 +493,7 @@
       <workItem from="1597994808298" duration="3444000" />
       <workItem from="1598007490102" duration="1356000" />
       <workItem from="1598031370265" duration="283000" />
+      <workItem from="1598315309704" duration="3085000" />
     </task>
     <task id="LOCAL-00024" summary="Reestruturando">
       <created>1587334103562</created>
@@ -632,6 +886,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="index.html - Ocorrências funcionando" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="104" y="23" width="1071" height="777" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598343739693">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="104" y="23" width="1071" height="777" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1598343739693" />
     <state x="280" y="326" width="710" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590314604218">
       <screen x="0" y="27" width="1280" height="997" />
     </state>
@@ -642,33 +900,33 @@
     <state x="358" y="71" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1598008379438" />
     <state x="179" y="58" width="825" height="666" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1597540655313" />
     <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591576392763" />
-    <state width="1385" height="394" key="GridCell.Tab.0.bottom" timestamp="1598009360449">
-      <screen x="0" y="23" width="2560" height="1057" />
+    <state width="1238" height="274" key="GridCell.Tab.0.bottom" timestamp="1598342964811">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1385" height="394" key="GridCell.Tab.0.bottom/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1598009360449" />
     <state width="1238" height="177" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1596331098600" />
-    <state width="1238" height="275" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1597874056025" />
+    <state width="1238" height="274" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1598342964811" />
     <state width="1234" height="260" key="GridCell.Tab.0.bottom/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591579504529" />
-    <state width="1385" height="394" key="GridCell.Tab.0.center" timestamp="1598009360448">
-      <screen x="0" y="23" width="2560" height="1057" />
+    <state width="1238" height="274" key="GridCell.Tab.0.center" timestamp="1598342964810">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1385" height="394" key="GridCell.Tab.0.center/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1598009360448" />
     <state width="1238" height="177" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1596331098598" />
-    <state width="1238" height="275" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1597874056024" />
+    <state width="1238" height="274" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1598342964810" />
     <state width="1234" height="260" key="GridCell.Tab.0.center/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591579504529" />
-    <state width="1385" height="394" key="GridCell.Tab.0.left" timestamp="1598009360447">
-      <screen x="0" y="23" width="2560" height="1057" />
+    <state width="1238" height="274" key="GridCell.Tab.0.left" timestamp="1598342964810">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1385" height="394" key="GridCell.Tab.0.left/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1598009360447" />
     <state width="1238" height="177" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1596331098597" />
-    <state width="1238" height="275" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1597874056023" />
+    <state width="1238" height="274" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1598342964810" />
     <state width="1234" height="260" key="GridCell.Tab.0.left/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591579504529" />
-    <state width="1385" height="394" key="GridCell.Tab.0.right" timestamp="1598009360448">
-      <screen x="0" y="23" width="2560" height="1057" />
+    <state width="1238" height="274" key="GridCell.Tab.0.right" timestamp="1598342964811">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1385" height="394" key="GridCell.Tab.0.right/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1598009360448" />
     <state width="1238" height="177" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1596331098599" />
-    <state width="1238" height="275" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1597874056024" />
+    <state width="1238" height="274" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1598342964811" />
     <state width="1234" height="260" key="GridCell.Tab.0.right/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591579504529" />
     <state width="1385" height="440" key="GridCell.Tab.1.bottom" timestamp="1598009360437">
       <screen x="0" y="23" width="2560" height="1057" />
@@ -702,29 +960,28 @@
       <screen x="0" y="27" width="1280" height="997" />
     </state>
     <state x="521" y="392" width="476" height="271" key="MultipleFileMergeDialog/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591574880984" />
-    <state x="1255" y="190" key="SettingsEditor" timestamp="1597996049888">
-      <screen x="0" y="23" width="2560" height="1057" />
+    <state x="298" y="78" key="SettingsEditor" timestamp="1598343765297">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="1255" y="190" key="SettingsEditor/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1597996049888" />
     <state x="298" y="78" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1596330843031" />
-    <state x="298" y="78" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1597535052707" />
-    <state x="470" y="255" width="511" height="409" key="Vcs.Push.Dialog.v2" timestamp="1598008383976">
-      <screen x="0" y="23" width="2560" height="1057" />
+    <state x="298" y="78" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1598343765297" />
+    <state x="235" y="194" width="511" height="409" key="Vcs.Push.Dialog.v2" timestamp="1598343714763">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="470" y="255" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1598008383976" />
-    <state x="235" y="194" width="511" height="409" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1597540657611" />
+    <state x="235" y="194" width="511" height="409" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1598343714763" />
     <state x="235" y="246" width="800" height="556" key="Vcs.Push.Dialog.v2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1590313216288" />
     <state width="640" height="390" key="XDebugger.FullValuePopup" timestamp="1591695256828">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1280" height="530" key="XDebugger.FullValuePopup/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1590879050530" />
     <state width="640" height="390" key="XDebugger.FullValuePopup/0.23.1280.777@0.23.1280.777" timestamp="1591695256828" />
-    <state width="640" height="499" key="XDebugger.FullValuePopup/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1589530079142" />
-    <state x="761" y="353" width="397" height="158" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596659490607">
+    <state x="761" y="353" width="397" height="158" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598343707752">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="1522" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1596151131675" />
-    <state x="761" y="353" width="397" height="158" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.777@0.23.1280.777" timestamp="1596659490607" />
+    <state x="761" y="353" width="397" height="158" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.777@0.23.1280.777" timestamp="1598343707752" />
     <state x="761" y="451" width="448" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591574863910" />
     <state x="1562" y="268" key="git4idea.branch.GitSmartOperationDialog" timestamp="1590448792412">
       <screen x="0" y="23" width="2560" height="1057" />

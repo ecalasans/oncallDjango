@@ -2,7 +2,7 @@
 'use strict';
 
 var packageName = 'abpetkov:switchery'; // https://atmospherejs.com/mediatainment/switchery
-var where = 'client'; // where to install: 'client' or 'server'. For both, pass nothing.
+var where = 'client'; // where to install: 'client' or 'server'. For both, oncallDjango nothing.
 
 Package.describe({
     name: packageName,

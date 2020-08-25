@@ -149,7 +149,7 @@ function distributeHeight(els, availableHeight, shouldRedistribute) {
 	undistributeHeight(els); // give all elements their natural height
 
 	// find elements that are below the recommended height (expandable).
-	// important to query for heights in a single first pass (to avoid reflow oscillation).
+	// important to query for heights in a single first oncallDjango (to avoid reflow oscillation).
 	els.each(function(i, el) {
 		var minOffset = i === els.length - 1 ? minOffset2 : minOffset1;
 		var naturalOffset = $(el).outerHeight(true);
@@ -432,7 +432,7 @@ function bindAnyScroll(handler) {
 }
 
 
-// undoes bindAnyScroll. must pass in the original function.
+// undoes bindAnyScroll. must oncallDjango in the original function.
 // returns `true` on success.
 function unbindAnyScroll(handler) {
 	if (window.removeEventListener) {
@@ -1082,7 +1082,7 @@ function makeMoment(args, parseAsUTC, parseZone) {
 			if (ambigDateOfMonthRegex.test(input)) {
 				// accept strings like '2014-05', but convert to the first of the month
 				input += '-01';
-				args = [ input ]; // for when we pass it on to moment's constructor
+				args = [ input ]; // for when we oncallDjango it on to moment's constructor
 				isAmbigTime = true;
 				isAmbigZone = true;
 			}
@@ -1916,7 +1916,7 @@ var EmitterMixin = FC.EmitterMixin = {
 	trigger: function(types) {
 		var args = Array.prototype.slice.call(arguments, 1); // arguments after the first
 
-		// pass in "extra" info to the intercept
+		// oncallDjango in "extra" info to the intercept
 		$(this).triggerHandler(types, { args: args });
 
 		return this; // for chaining
@@ -1926,7 +1926,7 @@ var EmitterMixin = FC.EmitterMixin = {
 	triggerWith: function(types, context, args) {
 
 		// `triggerHandler` is less reliant on the DOM compared to `trigger`.
-		// pass in "extra" info to the intercept.
+		// oncallDjango in "extra" info to the intercept.
 		$(this).triggerHandler(types, { context: context, args: args });
 
 		return this; // for chaining
@@ -7138,7 +7138,7 @@ var TimeGrid = FC.TimeGrid = Grid.extend(DayTableMixin, {
 
 	getHitSpan: function(hit) {
 		var start = this.getCellDate(0, hit.col); // row=0
-		var time = this.computeSnapTime(hit.snap); // pass in the snap-index
+		var time = this.computeSnapTime(hit.snap); // oncallDjango in the snap-index
 		var end;
 
 		start.time(time);
@@ -9581,7 +9581,7 @@ var Scroller = FC.Scroller = Class.extend({
 
 	// Causes any 'auto' overflow values to resolves to 'scroll' or 'hidden'.
 	// Useful for preserving scrollbar widths regardless of future resizes.
-	// Can pass in scrollbarWidths for optimization.
+	// Can oncallDjango in scrollbarWidths for optimization.
 	lockOverflow: function(scrollbarWidths) {
 		var overflowX = this.overflowX;
 		var overflowY = this.overflowY;
@@ -12695,7 +12695,7 @@ Calendar.prototype.isSpanAllowed = function(span, constraint, overlap, event) {
 			if (overlap === false) {
 				return false;
 			}
-			// if the event's overlap is a test function, pass the peer event in question as the first param
+			// if the event's overlap is a test function, oncallDjango the peer event in question as the first param
 			else if (typeof overlap === 'function' && !overlap(peerEvent, event)) {
 				return false;
 			}
@@ -12711,7 +12711,7 @@ Calendar.prototype.isSpanAllowed = function(span, constraint, overlap, event) {
 				if (peerOverlap === false) {
 					return false;
 				}
-				// if the peer event's overlap is a test function, pass the subject event as the first param
+				// if the peer event's overlap is a test function, oncallDjango the subject event as the first param
 				if (typeof peerOverlap === 'function' && !peerOverlap(event, peerEvent)) {
 					return false;
 				}

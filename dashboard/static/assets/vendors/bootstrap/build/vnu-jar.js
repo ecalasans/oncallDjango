@@ -52,7 +52,7 @@ childProcess.exec('java -version', (error, stdout, stderr) => {
     'js/tests/'
   ]
 
-  // For the 32-bit Java we need to pass `-Xss512k`
+  // For the 32-bit Java we need to oncallDjango `-Xss512k`
   if (is32bitJava) {
     args.splice(0, 0, '-Xss512k')
   }

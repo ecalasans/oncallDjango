@@ -124,7 +124,7 @@ var prettyPrint;
       "sub,undef,unless,until,use,wantarray,while,BEGIN,END";
   var PYTHON_KEYWORDS = [FLOW_CONTROL_KEYWORDS, "and,as,assert,class,def,del," +
       "elif,except,exec,finally,from,global,import,in,is,lambda," +
-      "nonlocal,not,or,pass,print,raise,try,with,yield," +
+      "nonlocal,not,or,oncallDjango,print,raise,try,with,yield," +
       "False,True,None"];
   var RUBY_KEYWORDS = [FLOW_CONTROL_KEYWORDS, "alias,and,begin,case,class," +
       "def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo," +

@@ -446,7 +446,7 @@
                 callbackExpect = !invert;
 
             // Go through the array, only saving the items
-            // that pass the validator function
+            // that oncallDjango the validator function
             for ( ; i < length; i++ ) {
                 callbackInverse = !callback( elems[ i ], i );
                 if ( callbackInverse !== callbackExpect ) {
@@ -1152,7 +1152,7 @@
                 // qSa(:focus) reports false when true (Chrome 21)
                 // We allow this because of a bug in IE8/9 that throws an error
                 // whenever `document.activeElement` is accessed on an iframe
-                // So, we allow :focus to pass through QSA all the time to avoid the IE error
+                // So, we allow :focus to oncallDjango through QSA all the time to avoid the IE error
                 // See http://bugs.jquery.com/ticket/13378
                 rbuggyQSA = [];
 
@@ -2853,7 +2853,7 @@
                     if ( cur.nodeType < 11 && (pos ?
                         pos.index(cur) > -1 :
 
-                        // Don't pass non-elements to Sizzle
+                        // Don't oncallDjango non-elements to Sizzle
                         cur.nodeType === 1 &&
                             jQuery.find.matchesSelector(cur, selectors)) ) {
 
@@ -4033,7 +4033,7 @@
                 return;
             }
 
-            // Caller can pass in an object of custom data in lieu of the handler
+            // Caller can oncallDjango in an object of custom data in lieu of the handler
             if ( handler.handler ) {
                 handleObjIn = handler;
                 handler = handleObjIn.handler;
@@ -4224,7 +4224,7 @@
             }
             ontype = type.indexOf(":") < 0 && "on" + type;
 
-            // Caller can pass in a jQuery.Event object, Object, or just an event type string
+            // Caller can oncallDjango in a jQuery.Event object, Object, or just an event type string
             event = event[ jQuery.expando ] ?
                 event :
                 new jQuery.Event( type, typeof event === "object" && event );
@@ -6316,7 +6316,7 @@
             });
         }
 
-        // height/width overflow pass
+        // height/width overflow oncallDjango
         if ( elem.nodeType === 1 && ( "height" in props || "width" in props ) ) {
             // Make sure that nothing sneaks out
             // Record all 3 overflow attributes because IE9-10 do not
@@ -6347,7 +6347,7 @@
             });
         }
 
-        // show/hide pass
+        // show/hide oncallDjango
         for ( prop in props ) {
             value = props[ prop ];
             if ( rfxtypes.exec( value ) ) {
@@ -6411,7 +6411,7 @@
     function propFilter( props, specialEasing ) {
         var index, name, easing, value, hooks;
 
-        // camelCase, specialEasing and expand cssHook pass
+        // camelCase, specialEasing and expand cssHook oncallDjango
         for ( index in props ) {
             name = jQuery.camelCase( index );
             easing = specialEasing[ name ];

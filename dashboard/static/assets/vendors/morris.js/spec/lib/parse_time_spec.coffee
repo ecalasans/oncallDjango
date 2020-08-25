@@ -30,6 +30,6 @@ describe '#parseTime', ->
     Morris.parseDate("2012-10-15T12:34:55+04:00").should.equal(Date.UTC(2012, 9, 15, 8, 34, 55))
     Morris.parseDate("2012-10-15T12:34:55-0600").should.equal(Date.UTC(2012, 9, 15, 18, 34, 55))
 
-  it 'should pass-through timestamps', ->
+  it 'should oncallDjango-through timestamps', ->
     Morris.parseDate(new Date(2012, 9, 15, 12, 34, 55, 123).getTime())
       .should.equal(new Date(2012, 9, 15, 12, 34, 55, 123).getTime())

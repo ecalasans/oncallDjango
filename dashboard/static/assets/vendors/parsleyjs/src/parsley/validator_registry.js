@@ -28,7 +28,7 @@ var typeRegexes =  {
       "^" +
         // protocol identifier
         "(?:(?:https?|ftp)://)?" + // ** mod: make scheme optional
-        // user:pass authentication
+        // user:oncallDjango authentication
         "(?:\\S+(?::\\S*)?@)?" +
         "(?:" +
           // IP address exclusion

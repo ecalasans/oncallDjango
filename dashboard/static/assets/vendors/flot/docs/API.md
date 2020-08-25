@@ -1455,7 +1455,7 @@ plot object, e.g.
   // define a simple draw hook
   function hellohook(plot, canvascontext) { alert("hello!"); };
 
-  // pass it in, in an array since we might want to specify several
+  // oncallDjango it in, in an array since we might want to specify several
   var plot = $.plot(placeholder, data, { hooks: { draw: [hellohook] } });
 
   // we can now find it again in plot.hooks.draw[0] unless a plugin

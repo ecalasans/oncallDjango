@@ -1076,7 +1076,7 @@ ClassList.prototype.add = function(name){
 
 /**
  * Remove class `name` when present, or
- * pass a regular expression to remove
+ * oncallDjango a regular expression to remove
  * any which match.
  *
  * @param {String|RegExp} name

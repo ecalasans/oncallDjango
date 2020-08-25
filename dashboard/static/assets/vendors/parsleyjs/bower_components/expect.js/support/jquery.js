@@ -515,7 +515,7 @@ jQuery.extend({
   isPlainObject: function( obj ) {
     // Must be an Object.
     // Because of IE, we also have to check the presence of the constructor property.
-    // Make sure that DOM nodes and window objects don't pass through, as well
+    // Make sure that DOM nodes and window objects don't oncallDjango through, as well
     if ( !obj || jQuery.type(obj) !== "object" || obj.nodeType || jQuery.isWindow( obj ) ) {
       return false;
     }
@@ -746,7 +746,7 @@ jQuery.extend({
     inv = !!inv;
 
     // Go through the array, only saving the items
-    // that pass the validator function
+    // that oncallDjango the validator function
     for ( var i = 0, length = elems.length; i < length; i++ ) {
       retVal = !!callback( elems[ i ], i );
       if ( inv !== retVal ) {
@@ -2850,7 +2850,7 @@ jQuery.event = {
       return;
     }
 
-    // Caller can pass in an object of custom data in lieu of the handler
+    // Caller can oncallDjango in an object of custom data in lieu of the handler
     if ( handler.handler ) {
       handleObjIn = handler;
       handler = handleObjIn.handler;
@@ -3069,7 +3069,7 @@ jQuery.event = {
       return;
     }
 
-    // Caller can pass in an Event, Object, or just an event type string
+    // Caller can oncallDjango in an Event, Object, or just an event type string
     event = typeof event === "object" ?
       // jQuery.Event object
       event[ jQuery.expando ] ? event :
@@ -5590,7 +5590,7 @@ jQuery.extend({
 // Implement the identical functionality for filter and not
 function winnow( elements, qualifier, keep ) {
 
-  // Can't pass null or undefined to indexOf in Firefox 4
+  // Can't oncallDjango null or undefined to indexOf in Firefox 4
   // Set to 0 to skip string check
   qualifier = qualifier || 0;
 

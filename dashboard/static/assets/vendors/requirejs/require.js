@@ -622,7 +622,7 @@ var requirejs, require, define;
                     if (dep && !mod.depMatched[i] && !processed[depId]) {
                         if (getOwn(traced, depId)) {
                             mod.defineDep(i, defined[depId]);
-                            mod.check(); //pass false?
+                            mod.check(); //oncallDjango false?
                         } else {
                             breakCycle(dep, traced, processed);
                         }
@@ -753,7 +753,7 @@ var requirejs, require, define;
                     this.on('error', errback);
                 } else if (this.events.error) {
                     //If no errback already, but there are error listeners
-                    //on this module, set up an errback to pass to the deps.
+                    //on this module, set up an errback to oncallDjango to the deps.
                     errback = bind(this, function (err) {
                         this.emit('error', err);
                     });
@@ -1553,7 +1553,7 @@ var requirejs, require, define;
 
             /**
              * Internal method used by environment adapters to complete a load event.
-             * A load event could be a script load or just a load pass from a synchronous
+             * A load event could be a script load or just a load oncallDjango from a synchronous
              * load call.
              * @param {String} moduleName the name of the module to potentially complete.
              */
@@ -1636,7 +1636,7 @@ var requirejs, require, define;
                 //The slash is important for protocol-less URLs as well as full paths.
                 if (req.jsExtRegExp.test(moduleName)) {
                     //Just a plain path, not module name lookup, so just return it.
-                    //Add extension if it is included. This is a bit wonky, only non-.js things pass
+                    //Add extension if it is included. This is a bit wonky, only non-.js things oncallDjango
                     //an extension, this method probably needs to be reworked.
                     url = moduleName + (ext || '');
                 } else {

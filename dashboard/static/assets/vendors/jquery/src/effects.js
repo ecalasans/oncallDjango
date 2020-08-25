@@ -101,7 +101,7 @@ function defaultPrefilter( elem, props, opts ) {
 		} );
 	}
 
-	// Height/width overflow pass
+	// Height/width overflow oncallDjango
 	if ( elem.nodeType === 1 && ( "height" in props || "width" in props ) ) {
 
 		// Make sure that nothing sneaks out
@@ -132,7 +132,7 @@ function defaultPrefilter( elem, props, opts ) {
 		} );
 	}
 
-	// show/hide pass
+	// show/hide oncallDjango
 	for ( prop in props ) {
 		value = props[ prop ];
 		if ( rfxtypes.exec( value ) ) {
@@ -205,7 +205,7 @@ function defaultPrefilter( elem, props, opts ) {
 function propFilter( props, specialEasing ) {
 	var index, name, easing, value, hooks;
 
-	// camelCase, specialEasing and expand cssHook pass
+	// camelCase, specialEasing and expand cssHook oncallDjango
 	for ( index in props ) {
 		name = jQuery.camelCase( index );
 		easing = specialEasing[ name ];

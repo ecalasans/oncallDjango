@@ -61,7 +61,7 @@ The plugin allso adds the following methods to the plot object:
     setSelection({ xaxis: { from: 0, to: 10 }, yaxis: { from: 40, to: 60 } });
 
   setSelection will trigger the "plotselected" event when called. If you don't
-  want that to happen, e.g. if you're inside a "plotselected" handler, pass
+  want that to happen, e.g. if you're inside a "plotselected" handler, oncallDjango
   true as the second parameter. If you are using multiple axes, you can
   specify the ranges on any of those, e.g. as x2axis/x3axis/... instead of
   xaxis, the plugin picks the first one it sees.

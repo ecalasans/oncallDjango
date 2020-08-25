@@ -580,7 +580,8 @@ def patientsOpenOccurrence(request):
                 'ventilacao': ocorrencia.ventilacao,
                 'fototerapia': ocorrencia.fototerapia,
                 'exames': ocorrencia.exames,
-                'conduta': ocorrencia.conduta
+                'conduta': ocorrencia.conduta,
+                'recomendacoes': ocorrencia.recomendacoes
             }
             return JsonResponse(resposta, safe=False)
         else:

@@ -3864,7 +3864,7 @@ Date.CultureStrings.lang = "it-CH";
 		if (s instanceof Date) {
 			return s.clone();
 		}
-		if (s.length >= 4 && s.charAt(0) !== "0" && s.charAt(0) !== "+"&& s.charAt(0) !== "-") { // ie: 2004 will pass, 0800 won't.
+		if (s.length >= 4 && s.charAt(0) !== "0" && s.charAt(0) !== "+"&& s.charAt(0) !== "-") { // ie: 2004 will oncallDjango, 0800 won't.
 			//  Start with specific formats
 			d = $D.Parsing.ISO.parse(s) || $D.Parsing.Numeric.parse(s);
 		}

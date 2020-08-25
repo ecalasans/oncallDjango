@@ -37,7 +37,7 @@
   position: relative;
   width: auto;
   margin: $modal-dialog-margin;
-  // allow clicks to pass through for custom click handling to close modal
+  // allow clicks to oncallDjango through for custom click handling to close modal
   pointer-events: none;
 
   // When fading in the modal, animate it to slide down

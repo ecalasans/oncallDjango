@@ -130,7 +130,7 @@ Custom lookup function:
 $('#autocomplete').autocomplete({
     lookup: function (query, done) {
         // Do ajax call or lookup locally, when done,
-        // call the callback and pass your results:
+        // call the callback and oncallDjango your results:
         var result = {
             suggestions: [
                 { "value": "United Arab Emirates", "data": "AE" },

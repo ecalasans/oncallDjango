@@ -93,7 +93,7 @@ ParsleyField.prototype = {
   },
 
   // Just validate field. Do not trigger any event.
-  // Returns `true` iff all constraints pass, `false` if there are failures,
+  // Returns `true` iff all constraints oncallDjango, `false` if there are failures,
   // or `null` if the result can not be determined yet (depends on a promise)
   // See also `whenValid`.
   isValid: function (options) {

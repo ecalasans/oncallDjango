@@ -890,7 +890,7 @@
     } else if (actual instanceof Date && expected instanceof Date) {
       return actual.getTime() === expected.getTime();
 
-      // 7.3. Other pairs that do not both pass typeof value == "object",
+      // 7.3. Other pairs that do not both oncallDjango typeof value == "object",
       // equivalence is determined by ==.
     } else if (typeof actual != 'object' && typeof expected != 'object') {
       return actual == expected;

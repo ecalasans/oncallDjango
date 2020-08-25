@@ -350,7 +350,7 @@ don't work unless the canvas is attached to the DOM.
 
      Adds a text string to the canvas text overlay.
      The text isn't drawn immediately; it is marked as rendering, which will
-     result in its addition to the canvas on the next render pass.
+     result in its addition to the canvas on the next render oncallDjango.
 
      The layer is string of space-separated CSS classes uniquely
      identifying the layer containing this text.
@@ -378,7 +378,7 @@ don't work unless the canvas is attached to the DOM.
         y += 0.75 * info.height;
 
         // Determine whether this text already exists at this position.
-        // If so, mark it for inclusion in the next render pass.
+        // If so, mark it for inclusion in the next render oncallDjango.
 
         for (var i = 0, position; positions[i]; i++) {
             position = positions[i];
@@ -462,7 +462,7 @@ don't work unless the canvas is attached to the DOM.
       If no parameters are given, all text within the layer is removed.
 
       Note that the text is not immediately removed; it is simply marked as
-      inactive, which will result in its removal on the next render pass.
+      inactive, which will result in its removal on the next render oncallDjango.
       This avoids the performance penalty for 'clear and redraw' behavior,
       where we potentially get rid of all text on a layer, but will likely
       add back most or all of it later, as when redrawing axes, for example.
