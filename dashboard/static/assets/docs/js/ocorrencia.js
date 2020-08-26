@@ -14,13 +14,13 @@ function abreOcorrencia(url_abre, setor, nome, numero) {
             if (response.ocorrencia == ''){
                 $('#modalOcorrencias').modal('show');
             } else {
-                $("#txt_oc_diagnostico").text(response.diagnostico);
-                $("#txt_oc_dieta").text(response.dieta);
-                $("#txt_oc_acesso_venoso").text(response.acesso_venoso);
-                $("#txt_oc_atb").text(response.antibiotico);
-                $("#txt_oc_medic").text(response.medicamentos);
-                $("#txt_oc_vent").text(response.ventilacao);
-                $("#txt_oc_exames").text(response.exames);
+                $("#txt_oc_diagnostico").attr('value', response.diagnostico);
+                $("#txt_oc_dieta").attr('value', response.dieta);
+                $("#txt_oc_acesso_venoso").attr('value', response.acesso_venoso);
+                $("#txt_oc_atb").attr('value', response.antibiotico);
+                $("#txt_oc_medic").attr('value', response.medicamentos);
+                $("#txt_oc_vent").attr('value', response.ventilacao);
+                $("#txt_oc_exames").attr('value', response.exames);
 
                 if (response.fototerapia == "S"){
                     $('input:radio[name="rd_ocor_foto"][value="S"]').attr('checked', true);
@@ -28,8 +28,8 @@ function abreOcorrencia(url_abre, setor, nome, numero) {
                     $('input:radio[name="rd_ocor_foto"][value="N"]').attr('checked', true);
                 }
 
-                $("#txt_oc_cond").text(response.conduta);
-                $("#txt_oc_recom").text(response)
+                $("#txt_oc_cond").attr('value', response.conduta);
+                $("#txt_oc_recom").attr('value', response.recomendacoes);
 
                 $("#modalOcorrencias").modal('show');
             }

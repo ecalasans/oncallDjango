@@ -20,7 +20,7 @@ $(document).ready(function () {
 })
 
 function getPaciente(url_abre, setor, nome, numero){
-    /*valores = {
+    valores = {
         'setor' : setor,
         'leito' : numero,
         'nome' : nome
@@ -32,13 +32,15 @@ function getPaciente(url_abre, setor, nome, numero){
         data: valores,
         type: 'post',
         success: function (response){
-            $("#modalAlteraPaciente").modal("show");
+            $("#alt_nome").attr('value', response.pac_nome);
+
+
+            $("#modalAlteraPaciente").modal('show');
         },
         error: function (response){
             console.log("Nada");
         },
-    });*/
-    $("#modalAlteraPaciente").modal("show");
+    });
 
 }
 

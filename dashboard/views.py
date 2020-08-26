@@ -638,18 +638,24 @@ def getPaciente(request):
     leito_id = Leito.objects.get(numero=dados_recebidos['leito'], setor_id=setor_id, status='O').id
 
     # Pesquisa o paciente
-    paciente_id = Paciente.objects.get(nome=dados_recebidos['nome'], leito_id=leito_id)
+    paciente = Paciente.objects.get(nome=dados_recebidos['nome'], leito_id=leito_id)
 
     # Registra numa variável de sessão para ser usada em patientsRecord
     request.session['setor'] = setor_id
     request.session['leito'] = leito_id
-    request.session['paciente'] = paciente_id
+    request.session['paciente'] = paciente.id
 
-    # Cria um formulário do tipo PacienteForm
-    pac_form = PacienteForm(paciente_id)
+    # Cria um dicionário com os
+    paciente_resposta = {
+        'pac_nome': paciente.nome,
+        'pac_idade': paciente.idade,
+        'pac_ig': paciente.ig,
+        'pac_peso_nasc': paciente.peso_nasc,
+        'pac_peso_atual': paciente.peso_atual,
+        'pac_setor_pac': paciente.setor_id,
+        'pac_leito_pac': paciente.leito_id,
+        'pac_tcle': paciente.tcle
+    }
 
-    return JsonResponse(pac_form, safe=False)
-
-    # Preenche o formulário com os dados do paciente
-
-    # Forma o JSON de resposta
+    # Retorna a resposta
+    return JsonResponse(paciente_resposta, safe=False)

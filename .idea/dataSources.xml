@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="oncall_django@localhost" uuid="7ea35632-3066-4046-88ec-e6b65aa5dc81">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/oncall_django</jdbc-url>
-    </data-source>
     <data-source source="LOCAL" name="plantao.sqlite3" uuid="1f4bde6b-f452-440f-93da-8b9274440f70">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/plantao.sqlite3</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="oncallDjango" uuid="f7070720-e522-411d-941c-f523440a1c79">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/plantao</jdbc-url>
     </data-source>
   </component>
 </project>
