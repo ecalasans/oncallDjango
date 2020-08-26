@@ -8,9 +8,9 @@ from django.contrib.auth.decorators import login_required
 from .forms import MedicoForm, PacienteForm
 from django.contrib import messages
 from django.http import JsonResponse, HttpResponse
-from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt # Usado para evitar checar csfr_token
 import datetime
+import json
 
 '''
 class LoginView(LoginRequiredMixin, TemplateView):
@@ -627,3 +627,29 @@ def patientsRecord(request):
                       'setores': setores_qs,
                       'pac_form': PacienteForm(),
                   })
+
+@csrf_exempt
+def getPaciente(request):
+    # Recebe os dados de alteraPaciente
+    dados_recebidos = request.POST
+
+    # Pesquisa no banco de dados as pk's correspondentes às variáveis recebidas:
+    setor_id = Setor.objects.get(setor=dados_recebidos['setor']).id
+    leito_id = Leito.objects.get(numero=dados_recebidos['leito'], setor_id=setor_id, status='O').id
+
+    # Pesquisa o paciente
+    paciente_id = Paciente.objects.get(nome=dados_recebidos['nome'], leito_id=leito_id)
+
+    # Registra numa variável de sessão para ser usada em patientsRecord
+    request.session['setor'] = setor_id
+    request.session['leito'] = leito_id
+    request.session['paciente'] = paciente_id
+
+    # Cria um formulário do tipo PacienteForm
+    pac_form = PacienteForm(paciente_id)
+
+    return JsonResponse(pac_form, safe=False)
+
+    # Preenche o formulário com os dados do paciente
+
+    # Forma o JSON de resposta
