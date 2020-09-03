@@ -47,7 +47,7 @@
                                         <button type="button" id="btn_alta_{{ setor }}{{ numero }}" class="btn btn-primary"
                                             onclick="altaPaciente('{{ setor }}', '{{ numero }}',
                                                     '{% url 'patients_discharge' %}')">Alta</button>
-                                        {% if nome == 'VAGO' %}
+                                        {% if nome == 'VAGO' or nome == 'BLOQUEADO'%}
                                             <script type="text/javascript">
                                                 document.getElementById('btn_alta_{{ setor }}{{ numero }}')
                                                     .disabled = true;

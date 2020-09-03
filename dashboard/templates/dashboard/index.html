@@ -34,7 +34,7 @@
                                     </div>
                             </div>
                         <div style="margin-left: 8px; font-weight: bold;">
-                            {{ values.O }}/{{ values.ativos }}
+                            /{{ values.ativos }}
                         </div>
                         <div class="clearfix"></div>
                         </div>
@@ -42,6 +42,13 @@
                     {% if values.B %}
                         <div style="text-align: center; margin-top: 0px; padding-top: 0px;">
                             Leito{{ values.B|pluralize }} bloqueado{{ values.B|pluralize }}:  {{ values.B }}
+                        </div>
+                    {% endif %}
+                    {% if values.inativos %}
+                        <br>
+                        <div style="text-align: center; margin-top: 0px; padding-top: 0px;">
+                            Leito{{ values.inativos|pluralize }} inativo{{ values.inativos|pluralize }}:
+                                {{ values.inativos }}
                         </div>
                     {% endif %}
                 </div>
@@ -106,6 +113,16 @@
                                                     Leito {{ leito.num_leito }}</span>
                                             </td>
                                             <td colspan="5" class="bg-warning" style="width: 10%;">
+                                                <h5 style="text-align: center;">{{ leito.situacao }}</h5>
+                                            </td>
+                                        </tr>
+                                    {% elif leito.situacao == 'DESATIVADO' %}
+                                        <tr>
+                                            <td style="width: 10%;">
+                                                <span class="font-weight-bold text-center">
+                                                    Leito {{ leito.num_leito }}</span>
+                                            </td>
+                                            <td colspan="5" class="bg-danger" style="width: 10%;">
                                                 <h5 style="text-align: center;">{{ leito.situacao }}</h5>
                                             </td>
                                         </tr>

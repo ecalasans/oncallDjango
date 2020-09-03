@@ -126,41 +126,44 @@ def home(request):
         else:
             situacao = {}
             # Lista os leitos do setor
-            leitos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk'])
+            leitos_setor = Leito.objects.filter(hospital_id=hosp_id, setor=setor['pk']).order_by('pk')
 
             lista_ocorr = []
 
             # Pesquisa os leitos do setor:  se estiver ocupado pega o paciente;  se não, registra como vago
             for leito in leitos_setor:
-                if leito.status == 'O':
-                    paciente_do_leito = Paciente.objects.get(leito_id=leito.id, status='I')
-                    ocor_paciente = Ocorrencia.objects.filter(pac_id=paciente_do_leito.id).last()
+                if leito.situacao == 'D':
+                    pac_ocorr = {'situacao': 'DESATIVADO', 'num_leito': leito.numero}
+                else:
+                    if leito.status == 'O':
+                        paciente_do_leito = Paciente.objects.get(leito_id=leito.id, status='I')
+                        ocor_paciente = Ocorrencia.objects.filter(pac_id=paciente_do_leito.id).last()
 
-                    if not ocor_paciente:
-                        pac_ocorr = {'situacao': 'NAO_OCORRENCIAS', 'num_leito': paciente_do_leito.leito.numero}
-                    else:
-                        medico_responsavel = "{} {}".format(Medico.objects.get(pk=ocor_paciente.med_id).first_name,
-                                                            Medico.objects.get(pk=ocor_paciente.med_id).last_name)
+                        if not ocor_paciente:
+                            pac_ocorr = {'situacao': 'NAO_OCORRENCIAS', 'num_leito': paciente_do_leito.leito.numero}
+                        else:
+                            medico_responsavel = "{} {}".format(Medico.objects.get(pk=ocor_paciente.med_id).first_name,
+                                                                Medico.objects.get(pk=ocor_paciente.med_id).last_name)
 
-                        pac_ocorr = {
-                            'situacao': 'OCUPADO',
-                            'num_leito': paciente_do_leito.leito.numero,
-                            'nome_pac' : paciente_do_leito.nome,
-                            'diagnostico': ocor_paciente.diagnostico,
-                            'dieta': ocor_paciente.dieta,
-                            'acesso_venoso': ocor_paciente.acesso_venoso,
-                            'antibiotico': ocor_paciente.antibiotico,
-                            'medicamentos': ocor_paciente.medicamentos,
-                            'ventilacao': ocor_paciente.ventilacao,
-                            'fototerapia': ocor_paciente.fototerapia,
-                            'exames': ocor_paciente.exames,
-                            'conduta': ocor_paciente.conduta,
-                            'medico': medico_responsavel
-                        }
-                elif leito.status == 'B':
-                    pac_ocorr = {'situacao': 'BLOQUEADO', 'num_leito': leito.numero}
-                elif leito.status == 'L':
-                    pac_ocorr = {'situacao': 'VAGO', 'num_leito': leito.numero}
+                            pac_ocorr = {
+                                'situacao': 'OCUPADO',
+                                'num_leito': paciente_do_leito.leito.numero,
+                                'nome_pac' : paciente_do_leito.nome,
+                                'diagnostico': ocor_paciente.diagnostico,
+                                'dieta': ocor_paciente.dieta,
+                                'acesso_venoso': ocor_paciente.acesso_venoso,
+                                'antibiotico': ocor_paciente.antibiotico,
+                                'medicamentos': ocor_paciente.medicamentos,
+                                'ventilacao': ocor_paciente.ventilacao,
+                                'fototerapia': ocor_paciente.fototerapia,
+                                'exames': ocor_paciente.exames,
+                                'conduta': ocor_paciente.conduta,
+                                'medico': medico_responsavel
+                            }
+                    elif leito.status == 'B':
+                        pac_ocorr = {'situacao': 'BLOQUEADO', 'num_leito': leito.numero}
+                    elif leito.status == 'L':
+                        pac_ocorr = {'situacao': 'VAGO', 'num_leito': leito.numero}
 
                 lista_ocorr.append(pac_ocorr)
 
@@ -305,7 +308,7 @@ def refreshBeds(request):
         leitos_setor = {}
 
         lpesq = Leito.objects.filter(hospital_id=hosp_id, setor=valores['id']) \
-            .values('numero', 'situacao', 'status')
+            .values('numero', 'situacao', 'status').order_by('pk')
 
         for valor in lpesq.values('numero', 'situacao', 'status'):
             leitos_setor[valor['numero']] = {'situacao': valor['situacao'], 'status': valor['status']}
@@ -413,6 +416,8 @@ def refreshPatients(request):
                 p[str(leito.numero)] = 'VAGO'
             elif leito.status == 'B':
                 p[str(leito.numero)] = 'BLOQUEADO'
+            elif leito.situacao == 'D':
+                p[str(leito.numero)] = 'DESATIVADO'
             else:
                 if Paciente.objects.filter(leito__numero=leito.numero, status="I").exists():
                     p[str(leito.numero)] = Paciente.objects.get(leito_id=leito.id, status="I").nome
@@ -652,8 +657,8 @@ def getPaciente(request):
         'pac_ig': paciente.ig,
         'pac_peso_nasc': paciente.peso_nasc,
         'pac_peso_atual': paciente.peso_atual,
-        'pac_setor_pac': paciente.setor_id,
-        'pac_leito_pac': paciente.leito_id,
+        'pac_setor': paciente.setor_id,
+        'pac_leito': paciente.leito_id,
         'pac_tcle': paciente.tcle
     }
 
