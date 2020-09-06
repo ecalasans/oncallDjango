@@ -32,7 +32,7 @@
                                 <input type="hidden" id="{{ setor }}_{{ key_leitos }}" name="num_leito" value="{{ key_leitos }}">
                                 <tr>
                                   <th scope="row">{{ key_leitos }}</th>
-                                  <td>
+                                    <td>
                                       {% for key_sit, value_sit in situacao.items  %}
                                             {% if value_leitos.status == 'O' %}
                                                 {% if value_sit == value_leitos.situacao %}
@@ -75,7 +75,7 @@
                                             {% endif %}
                                       {% endfor %}
                                   </td>
-                                  <td>
+                                <td>
                                     <select class="form-control" id="{{ setor }}_stat_{{ key_leitos }}"
                                         name="select_status">
                                         {% for key_stat, value_stat in status.items %}
@@ -98,14 +98,16 @@
                                             {% endif %}
                                         {% endfor %}
                                     </select>
-                                    {% if value_leitos.status == 'O' %}
+                                    {% if value_leitos.status == 'O' or value_leitos.situacao == 'D'%}
                                         <script type="text/javascript">
                                             document.getElementById("{{ setor }}_stat_{{ key_leitos }}")
                                                 .disabled = true;
                                         </script>
                                     {% endif %}
                                   </td>
-                                  <td><button type="submit" class="btn btn-primary" style="margin:0 auto;">Alterar</button> </td>
+                                    <td><button type="submit" class="btn btn-primary" style="margin:0 auto;">
+                                        Alterar</button>
+                                    </td>
                                 </tr>
                             </form>
                         {% endfor %}
