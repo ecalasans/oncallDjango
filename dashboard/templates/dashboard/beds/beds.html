@@ -101,7 +101,7 @@
                                     {% if value_leitos.status == 'O' or value_leitos.situacao == 'D'%}
                                         <script type="text/javascript">
                                             document.getElementById("{{ setor }}_stat_{{ key_leitos }}")
-                                                .disabled = true;
+                                                .setAttribute('readonly', 'true');
                                         </script>
                                     {% endif %}
                                   </td>
