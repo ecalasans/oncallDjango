@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oncall/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/oncall/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oncall/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/oncall/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,14 +254,7 @@
       <workItem from="1599376626173" duration="1921000" />
       <workItem from="1599437521719" duration="715000" />
       <workItem from="1599834661702" duration="2790000" />
-      <workItem from="1599847104625" duration="1151000" />
-    </task>
-    <task id="LOCAL-00029" summary="#3 - Login ainda não funcionando">
-      <created>1587651127487</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1587651127487</updated>
+      <workItem from="1599847104625" duration="1903000" />
     </task>
     <task id="LOCAL-00030" summary="#3 - Issue resolvida">
       <created>1587730800530</created>
@@ -604,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599379582752</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Preparando para deploy">
+      <created>1599848293390</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1599848293390</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,7 +619,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="#9 Templates - Template pronto" />
     <MESSAGE value="#9 Templates - Desabilita radio button de Situação se o leito tiver ocupado" />
     <MESSAGE value="#9 Templates - Alterações nos Leitos ocorrendo com sucesso." />
     <MESSAGE value="Branch pacientes_ajax criada" />
@@ -649,7 +643,8 @@
     <MESSAGE value="index.html - resolvido problema da ordenação de leitos" />
     <MESSAGE value="beds.html - merging" />
     <MESSAGE value="beds.html - resolvido problema do select_status ativo em leito desativado" />
-    <option name="LAST_COMMIT_MESSAGE" value="beds.html - resolvido problema do select_status ativo em leito desativado" />
+    <MESSAGE value="Preparando para deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preparando para deploy" />
   </component>
   <component name="WindowStateProjectService">
     <state x="208" y="23" width="1071" height="777" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598431522151">
@@ -657,10 +652,10 @@
     </state>
     <state x="208" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1598431522151" />
     <state x="104" y="23" width="1071" height="777" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1598344760965" />
-    <state x="179" y="58" width="825" height="666" key="CommitChangelistDialog2" timestamp="1599379582519">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="358" y="71" width="825" height="666" key="CommitChangelistDialog2" timestamp="1599848292917">
+      <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state x="358" y="71" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1598449783203" />
+    <state x="358" y="71" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1599848292917" />
     <state x="179" y="58" width="825" height="666" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1599379582519" />
     <state x="179" y="72" width="912" height="905" key="CommitChangelistDialog2/0.27.1280.997/1280.0.1280.1024@0.27.1280.997" timestamp="1591576392763" />
     <state width="1357" height="395" key="GridCell.Tab.0.bottom" timestamp="1599847405523">
@@ -733,10 +728,10 @@
     <state x="1255" y="190" key="SettingsEditor/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1599834699728" />
     <state x="298" y="78" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1596330843031" />
     <state x="298" y="78" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1599438235761" />
-    <state x="235" y="194" width="511" height="409" key="Vcs.Push.Dialog.v2" timestamp="1599379584678">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="470" y="255" width="511" height="409" key="Vcs.Push.Dialog.v2" timestamp="1599849855280">
+      <screen x="0" y="23" width="2560" height="1057" />
     </state>
-    <state x="470" y="255" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1598449785365" />
+    <state x="470" y="255" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1599849855280" />
     <state x="235" y="194" width="511" height="409" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1599379584678" />
     <state width="640" height="390" key="XDebugger.FullValuePopup" timestamp="1591695256828">
       <screen x="0" y="23" width="1280" height="777" />
