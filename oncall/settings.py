@@ -26,7 +26,7 @@ SECRET_KEY = '@tv=rzznqrlef(!#84^bmm820c-l3&6#kf!xtm(^43y@=8c&*q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.1.10', '192.168.7.12',]
+ALLOWED_HOSTS = ['localhost', '192.168.1.10', '192.168.7.12',"pass.redcaprn.org"]
 
 
 # Application definition
@@ -128,6 +128,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = 'staticfiles'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "dashboard/static"),
+)
 
 LOGIN_URL = '/login/'
 

@@ -271,7 +271,7 @@ def signupUser(request):
             messages.success(request, sucesso)
 
             return render(request, 'dashboard/registration/signup.html',
-                          context={'form':form,
+                          context={'form': form,
                                    'hospitais': hospitais})
         else:
             erros = []
