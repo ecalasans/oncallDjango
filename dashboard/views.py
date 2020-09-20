@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import logout, login, authenticate
 from dashboard.models import Leito, Hospital, Setor, Medico, Paciente, Ocorrencia
 from django.db.models import Count
+from django.core.mail import send_mail
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import MedicoForm, PacienteForm
@@ -263,11 +264,19 @@ def signupUser(request):
 
         if form.is_valid():
             new_medico = form.save(commit=False)
-            new_medico.initial['is_active'] = False
+            new_medico.set_is_active = False
             new_medico.set_password(form.cleaned_data['password'])
             new_medico.save()
 
-            sucesso = "Seu cadastro foi enviado com sucesso!\nProcure o administrador para liberação do login!"
+            solicitacao = "{} {} solicita ativação do seu cadastro realizado em {}"\
+                .format(form.cleaned_data['first_name'], form.cleaned_data['last_name'],
+                        datetime.datetime.now())
+            send_mail(
+                'Cadastro de Usuário', solicitacao, 'admin@pass.redcaprn.org',
+                ['ericcalasans@pass.redcaprn.org', form.cleaned_data['email']], fail_silently=False)
+
+            sucesso = "Seu cadastro foi enviado com sucesso!\nUm e-mail foi mandado para o administrador" \
+                      "para a ativação do seu login"
             messages.success(request, sucesso)
 
             return render(request, 'dashboard/registration/signup.html',
