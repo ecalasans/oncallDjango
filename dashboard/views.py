@@ -428,12 +428,12 @@ def refreshPatients(request):
         leitos_queryset = Leito.objects.filter(hospital_id=hosp_id, setor_id=id).order_by('numero')
 
         for leito in leitos_queryset:
-            if leito.status == 'L':
+            if leito.situacao == 'D':
+                p[str(leito.numero)] = 'DESATIVADO'
+            elif leito.status == 'L':
                 p[str(leito.numero)] = 'VAGO'
             elif leito.status == 'B':
                 p[str(leito.numero)] = 'BLOQUEADO'
-            elif leito.situacao == 'D':
-                p[str(leito.numero)] = 'DESATIVADO'
             else:
                 if Paciente.objects.filter(leito__numero=leito.numero, status="I").exists():
                     p[str(leito.numero)] = Paciente.objects.get(leito_id=leito.id, status="I").nome
@@ -441,7 +441,6 @@ def refreshPatients(request):
                     leito.status = 'L'
                     leito.save()
                     p[str(leito.numero)] = 'VAGO'
-                    #p[str(leito.numero)] = 'INDEFINIDO'
         pacientes[setor] = p
 
     return [primeiro, saudacao, hosp_sigla, pacientes, setores_qs]
