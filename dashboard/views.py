@@ -215,7 +215,7 @@ def sysLogin(request):
         if user is not None:
             # Faz o login
             login(request, user)
-            hosp_id = Medico.objects.get(hospital_id=request.POST['select_hosp_cad']).hospital_id
+            hosp_id = Hospital.objects.get(pk=request.POST['select_hosp_cad']).id
             hosp_sigla = Hospital.objects.get(id=hosp_id).sigla
 
             primeiro = request.user.first_name
