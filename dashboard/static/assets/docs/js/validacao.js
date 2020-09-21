@@ -13,7 +13,7 @@ $(document).ready(function () {
     });
 
     $('#id_ig').focusout(function (e) {
-        let regex_ig = /^(([2-4][0-9])sem([0-6]d)?)$/gmi;
+        let regex_ig = /^(([2-4][0-9])sem([0-6]d)?)|(Termo|TERMO|termo)$/gmi;
         var ig = $(this).val();
         let resultado = ig.match(regex_ig) || [];
 

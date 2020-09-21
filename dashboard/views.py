@@ -271,12 +271,19 @@ def signupUser(request):
             solicitacao = "{} {} solicita ativação do seu cadastro realizado em {}"\
                 .format(form.cleaned_data['first_name'], form.cleaned_data['last_name'],
                         datetime.datetime.now())
+
+            feedback = "Sua solicitação de ativação foi enviada para o administrador!  Você será notificado " \
+                       "quando seu login estiver ativo!"
+
+            send_mail('Ativação de Login', feedback, 'admin@pass.redcaprn.org', [form.cleaned_data['email']],
+                      fail_silently=False)
+
             send_mail(
                 'Cadastro de Usuário', solicitacao, 'admin@pass.redcaprn.org',
-                ['ericcalasans@pass.redcaprn.org', form.cleaned_data['email']], fail_silently=False)
+                ['ericcalasans@pass.redcaprn.org', 'ericcalasans@gmail.com'], fail_silently=False)
 
             sucesso = "Seu cadastro foi enviado com sucesso!\nUm e-mail foi mandado para o administrador" \
-                      "para a ativação do seu login"
+                      "para a ativação do seu login!"
             messages.success(request, sucesso)
 
             return render(request, 'dashboard/registration/signup.html',
