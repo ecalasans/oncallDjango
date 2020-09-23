@@ -211,8 +211,10 @@ def sysLogin(request):
         # Autentica usuário com base nos dados recebidos
         user = authenticate(request, username=request.POST['user_login'], password=request.POST['pass_login'])
 
+        hospital_usuario = Medico.objects.get(user_ptr_id=user.id).hospital_id
+
         #Verifica se o usuário existe
-        if user is not None:
+        if user is not None and (hospital_usuario == int(request.POST['select_hosp_cad'])):
             # Faz o login
             login(request, user)
             hosp_id = Hospital.objects.get(pk=request.POST['select_hosp_cad']).id

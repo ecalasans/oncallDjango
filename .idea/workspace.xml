@@ -3,13 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/docs/js/ocorrencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/js/ocorrencia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -267,14 +268,9 @@
       <workItem from="1600650437795" duration="300000" />
       <workItem from="1600674495341" duration="1240000" />
       <workItem from="1600724606569" duration="2365000" />
-      <workItem from="1600729758225" duration="572000" />
-    </task>
-    <task id="LOCAL-00034" summary="Dividindo login e signup">
-      <created>1587998087180</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1587998087180</updated>
+      <workItem from="1600729758225" duration="2224000" />
+      <workItem from="1600762663670" duration="295000" />
+      <workItem from="1600883053468" duration="6059000" />
     </task>
     <task id="LOCAL-00035" summary="Select renderizado ok e modelo Medico CRM alterado">
       <created>1588122130471</created>
@@ -612,7 +608,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600675724398</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="views.py e ocorrencia.js - resolvendo bugs">
+      <created>1600730470654</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1600730470655</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +635,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Criando PacienteForm" />
     <MESSAGE value="patients.html - template de inclusão pronto!" />
     <MESSAGE value="patients.html - incluindo pacientes com sucesso!" />
     <MESSAGE value="views.py - Inclui e atualiza template de pacientes com sucesso." />
@@ -657,7 +659,8 @@
     <MESSAGE value="views.py - avisa por email ao admin para ativar login." />
     <MESSAGE value="base.html - ajuste na interface retirando envelope." />
     <MESSAGE value="patients.html - desabilitando leitos desativados." />
-    <option name="LAST_COMMIT_MESSAGE" value="patients.html - desabilitando leitos desativados." />
+    <MESSAGE value="views.py e ocorrencia.js - resolvendo bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="views.py e ocorrencia.js - resolvendo bugs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="104" y="23" width="1071" height="777" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600728087825">
@@ -665,59 +668,59 @@
     </state>
     <state x="208" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1598431522151" />
     <state x="104" y="23" width="1071" height="777" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1600728087825" />
-    <state x="179" y="58" width="825" height="666" key="CommitChangelistDialog2" timestamp="1600675724142">
+    <state x="179" y="58" width="825" height="666" key="CommitChangelistDialog2" timestamp="1600730470251">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="358" y="71" key="CommitChangelistDialog2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1600624685166" />
-    <state x="179" y="58" width="825" height="666" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1600675724142" />
-    <state width="1238" height="271" key="GridCell.Tab.0.bottom" timestamp="1600729972507">
+    <state x="179" y="58" width="825" height="666" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1600730470251" />
+    <state width="1238" height="305" key="GridCell.Tab.0.bottom" timestamp="1600891727148">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1401" height="442" key="GridCell.Tab.0.bottom/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1600624698546" />
     <state width="1238" height="177" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1596331098600" />
-    <state width="1238" height="271" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1600729972507" />
-    <state width="1238" height="271" key="GridCell.Tab.0.center" timestamp="1600729972504">
+    <state width="1238" height="305" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1600891727148" />
+    <state width="1238" height="305" key="GridCell.Tab.0.center" timestamp="1600891727148">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1401" height="442" key="GridCell.Tab.0.center/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1600624698545" />
     <state width="1238" height="177" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1596331098598" />
-    <state width="1238" height="271" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1600729972504" />
-    <state width="1238" height="271" key="GridCell.Tab.0.left" timestamp="1600729972503">
+    <state width="1238" height="305" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1600891727148" />
+    <state width="1238" height="305" key="GridCell.Tab.0.left" timestamp="1600891727147">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1401" height="442" key="GridCell.Tab.0.left/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1600624698544" />
     <state width="1238" height="177" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1596331098597" />
-    <state width="1238" height="271" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1600729972503" />
-    <state width="1238" height="271" key="GridCell.Tab.0.right" timestamp="1600729972505">
+    <state width="1238" height="305" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1600891727147" />
+    <state width="1238" height="305" key="GridCell.Tab.0.right" timestamp="1600891727148">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1401" height="442" key="GridCell.Tab.0.right/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1600624698545" />
     <state width="1238" height="177" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1596331098599" />
-    <state width="1238" height="271" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1600729972505" />
-    <state width="1238" height="305" key="GridCell.Tab.1.bottom" timestamp="1600728686530">
+    <state width="1238" height="305" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1600891727148" />
+    <state width="1238" height="305" key="GridCell.Tab.1.bottom" timestamp="1600891746219">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1401" height="442" key="GridCell.Tab.1.bottom/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1600624698548" />
     <state width="1238" height="177" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1596331098392" />
-    <state width="1238" height="305" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1600728686530" />
-    <state width="1238" height="305" key="GridCell.Tab.1.center" timestamp="1600728686528">
+    <state width="1238" height="305" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1600891746219" />
+    <state width="1238" height="305" key="GridCell.Tab.1.center" timestamp="1600891746218">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1401" height="442" key="GridCell.Tab.1.center/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1600624698547" />
     <state width="1238" height="177" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1596331098390" />
-    <state width="1238" height="305" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1600728686528" />
-    <state width="1238" height="305" key="GridCell.Tab.1.left" timestamp="1600728686528">
+    <state width="1238" height="305" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1600891746218" />
+    <state width="1238" height="305" key="GridCell.Tab.1.left" timestamp="1600891746218">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1401" height="442" key="GridCell.Tab.1.left/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1600624698547" />
     <state width="1238" height="177" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1596331098389" />
-    <state width="1238" height="305" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1600728686528" />
-    <state width="1238" height="305" key="GridCell.Tab.1.right" timestamp="1600728686529">
+    <state width="1238" height="305" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1600891746218" />
+    <state width="1238" height="305" key="GridCell.Tab.1.right" timestamp="1600891746219">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1401" height="442" key="GridCell.Tab.1.right/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1600624698548" />
     <state width="1238" height="177" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1596331098391" />
-    <state width="1238" height="305" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1600728686529" />
+    <state width="1238" height="305" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1600891746219" />
     <state width="1238" height="305" key="GridCell.Tab.2.bottom" timestamp="1600728686533">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -744,11 +747,11 @@
     <state x="1255" y="190" key="SettingsEditor/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1599834699728" />
     <state x="298" y="78" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1596330843031" />
     <state x="298" y="78" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1599438235761" />
-    <state x="235" y="194" width="511" height="409" key="Vcs.Push.Dialog.v2" timestamp="1600675725869">
+    <state x="235" y="194" width="511" height="409" key="Vcs.Push.Dialog.v2" timestamp="1600730474203">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="470" y="255" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1600624688416" />
-    <state x="235" y="194" width="511" height="409" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1600675725869" />
+    <state x="235" y="194" width="511" height="409" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1600730474203" />
     <state x="761" y="353" width="397" height="158" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598343707752">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -760,8 +763,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/dashboard/views.py</url>
-          <line>577</line>
-          <option name="timeStamp" value="4" />
+          <line>216</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
