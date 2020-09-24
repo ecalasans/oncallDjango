@@ -159,6 +159,7 @@ def home(request):
                                 'fototerapia': ocor_paciente.fototerapia,
                                 'exames': ocor_paciente.exames,
                                 'conduta': ocor_paciente.conduta,
+                                'recomendacoes': ocor_paciente.recomendacoes,
                                 'medico': medico_responsavel
                             }
                     elif leito.status == 'B':
@@ -633,6 +634,7 @@ def patientsRecord(request):
         form_oc.fototerapia = request.POST.get("rd_ocor_foto")
         form_oc.exames = request.POST.get("txt_oc_exames")
         form_oc.conduta = request.POST.get("txt_oc_cond")
+        form_oc.recomendacoes = request.POST.get("txt_oc_recom")
         form_oc.med = medico
         form_oc.pac = paciente
 
