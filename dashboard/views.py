@@ -555,10 +555,38 @@ def patientUpdate(request):
     if request.method == "POST":
         dados_recebidos = request.POST
 
-        leito_alterar = Leito.objects.get(pk=dados_recebidos["alt_leito"])
+
         paciente_alterar = Paciente.objects.get(pk=dados_recebidos['alt_id'],
                                                 status='I')
-        #TODO: Parei aqui - continuar escrevendo alterações no paciente
+        temp = Paciente.objects.get(pk=dados_recebidos['alt_id'],
+                                                status='I')
+        #Altera campos
+        paciente_alterar.nome = dados_recebidos['alt_nome']
+        paciente_alterar.ig = dados_recebidos['alt_ig']
+        paciente_alterar.idade = dados_recebidos['alt_idade']
+        paciente_alterar.peso_nasc = dados_recebidos['alt_peso_nasc']
+        paciente_alterar.peso_atual = dados_recebidos['alt_peso_atual']
+
+        if request.POST.get('alt_chk_pac_tcle'):
+            paciente_alterar.tcle = True
+        else:
+            paciente_alterar.tcle = False
+
+        paciente_alterar.setor_id = dados_recebidos['alt_setor']
+        paciente_alterar.leito_id = dados_recebidos['alt_leito']
+
+        #Libera o leito antigo após alteração
+        leito_alterar = Leito.objects.get(pk=temp.leito_id)
+        leito_alterar.status = 'L'
+        leito_alterar.save()
+
+        #Altera o status do leito do paciente alterado
+        leito_alterar = Leito.objects.get(pk=paciente_alterar.leito_id)
+        leito_alterar.status = 'O'
+        leito_alterar.save()
+
+        paciente_alterar.save()
+
         primeiro, saudacao, hosp_sigla, pacientes, setores_qs = refreshPatients(request)
 
         return render(request, 'dashboard/patients/patients.html',
