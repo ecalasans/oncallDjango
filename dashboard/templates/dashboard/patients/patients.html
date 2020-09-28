@@ -161,7 +161,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body"></div>
-                    <form method="POST" action="{% url 'patients' %}">
+                    <form method="POST" action="{% url 'patients_update' %}">
                         {% csrf_token %}
 
                         {% if messages %}
@@ -175,7 +175,7 @@
                                 <p>{{ error }}</p>
                             {% endfor %}
                         {% endif %}
-
+                        <input type="hidden" id="alt_id" name="alt_id">
                         <div class="form-group row">
                             <label class="control-label col-sm-2 col-md-2 label-align">Nome</label>
                             <div class="col-sm-9 col-md-9">
@@ -227,6 +227,9 @@
                                 <select class="select2_group form-control" id="alt_pac_leito"
                                         name="alt_leito">
                                     <option value="">------</option>
+                                    {% for leito_id, leito in leitos.items %}
+                                        <option value="{{ leito_id }}">{{ leito }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -238,7 +241,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success" style="float: right;">Incluir</button>
+                            <button type="submit" class="btn btn-success" style="float: right;">Alterar</button>
                             <button type="reset" class="btn btn-danger" style="float: right;">Limpar</button>
                         </div>
                     </form>

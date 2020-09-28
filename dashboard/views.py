@@ -551,6 +551,28 @@ def patientsList(request):
 
     return JsonResponse(lista_leitos, safe=False)
 
+def patientUpdate(request):
+    if request.method == "POST":
+        dados_recebidos = request.POST
+
+        leito_alterar = Leito.objects.get(pk=dados_recebidos["alt_leito"])
+        paciente_alterar = Paciente.objects.get(pk=dados_recebidos['alt_id'],
+                                                status='I')
+        #TODO: Parei aqui - continuar escrevendo alterações no paciente
+        primeiro, saudacao, hosp_sigla, pacientes, setores_qs = refreshPatients(request)
+
+        return render(request, 'dashboard/patients/patients.html',
+                      context={
+                          'usuario': request.user.username,
+                          'primeiro': primeiro,
+                          'saudacao': saudacao,
+                          'hosp_sigla': hosp_sigla,
+                          'pacientes': pacientes,
+                          'setores': setores_qs,
+                          'pac_form': PacienteForm(),
+                      })
+
+
 def patientsDischarge(request):
     status = request.POST.get('rd_status_alta')
     setor_paciente = Setor.objects.get(setor=request.POST.get('setor_paciente')).id
@@ -671,6 +693,7 @@ def getPaciente(request):
 
     # Cria um dicionário com os
     paciente_resposta = {
+        'pac_id': paciente.pk,
         'pac_nome': paciente.nome,
         'pac_idade': paciente.idade,
         'pac_ig': paciente.ig,

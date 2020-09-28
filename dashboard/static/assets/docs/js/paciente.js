@@ -69,16 +69,17 @@ function getPaciente(url_abre, setor, nome, numero){
         data: valores,
         type: 'post',
         success: function (response){
+            $("#alt_id").attr('value', response.pac_id);
             $("#alt_nome").attr('value', response.pac_nome);
             $("#alt_idade").attr('value', response.pac_idade);
             $("#alt_ig").attr('value', response.pac_ig);
             $("#alt_peso_nasc").attr('value', response.pac_peso_nasc);
             $("#alt_peso_atual").attr('value', response.pac_peso_atual);
-            $("#alt_pac_setor").val(response.pac_setor);
+            $("#alt_pac_setor").attr('value', response.pac_setor);
 
             getLeitosPaciente(response.pac_setor);
 
-            $("#alt_pac_leito").val(response.pac_leito);
+            $("#alt_pac_leito").attr('value', response.pac_leito);
 
             $("#modalAlteraPaciente").modal('show');
         },
