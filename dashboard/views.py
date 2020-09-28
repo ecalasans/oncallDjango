@@ -556,10 +556,9 @@ def patientUpdate(request):
         dados_recebidos = request.POST
 
 
-        paciente_alterar = Paciente.objects.get(pk=dados_recebidos['alt_id'],
-                                                status='I')
-        temp = Paciente.objects.get(pk=dados_recebidos['alt_id'],
-                                                status='I')
+        paciente_alterar = Paciente.objects.get(pk=dados_recebidos['alt_id'], status='I')
+        temp = Paciente.objects.get(pk=dados_recebidos['alt_id'], status='I')
+
         #Altera campos
         paciente_alterar.nome = dados_recebidos['alt_nome']
         paciente_alterar.ig = dados_recebidos['alt_ig']
