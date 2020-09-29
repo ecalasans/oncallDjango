@@ -90,7 +90,7 @@
                                         <tr>
                                             <td style="width: 10%;">
                                                 <span class="font-weight-bold text-center">
-                                                    Leito {{ leito.num_leito }}</span>
+                                                    Leito {{ leito.num_leito }}</span><br>
                                             </td>
                                             <td colspan="5" style="width: 10%;">
                                                 <h5 style="text-align: center;">Não há ocorrências registradas</h5>
@@ -131,9 +131,17 @@
                                             <td style="width: 10%;">
                                                 <span class="font-weight-bold text-center">
                                                     Leito {{ leito.num_leito }}</span><br>
-                                                {{ leito.nome_pac }}
+                                                {{ leito.nome_pac }}<br><br>
                                             </td>
                                             <td style="width: 10%;">
+                                                <span class="font-weight-bold">Idade:  </span>
+                                                    {{ leito.pac_idade_atual }}<br>
+                                                <span class="font-weight-bold">IGC:  </span>
+                                                    {{ leito.pac_ig_atual }}<br>
+                                                <span class="font-weight-bold">PN:  </span>
+                                                    {{ leito.pac_PN }}g<br>
+                                                <span class="font-weight-bold">PA:  </span>
+                                                    {{ leito.pac_PA }}g<br><br>
                                                 {{ leito.diagnostico }}
                                             </td>
                                             <td style="width: 20%;">

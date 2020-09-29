@@ -150,6 +150,10 @@ def home(request):
                                 'situacao': 'OCUPADO',
                                 'num_leito': paciente_do_leito.leito.numero,
                                 'nome_pac' : paciente_do_leito.nome,
+                                'pac_idade_atual': paciente_do_leito.idade,
+                                'pac_ig_atual': paciente_do_leito.ig,
+                                'pac_PN': paciente_do_leito.peso_nasc,
+                                'pac_PA': paciente_do_leito.peso_atual,
                                 'diagnostico': ocor_paciente.diagnostico,
                                 'dieta': ocor_paciente.dieta,
                                 'acesso_venoso': ocor_paciente.acesso_venoso,
@@ -571,18 +575,19 @@ def patientUpdate(request):
         else:
             paciente_alterar.tcle = False
 
-        paciente_alterar.setor_id = dados_recebidos['alt_setor']
-        paciente_alterar.leito_id = dados_recebidos['alt_leito']
-
         #Libera o leito antigo após alteração
-        leito_alterar = Leito.objects.get(pk=temp.leito_id)
-        leito_alterar.status = 'L'
-        leito_alterar.save()
+        if dados_recebidos['alt_leito'] != '0' and dados_recebidos['alt_setor'] != '':
+            paciente_alterar.setor_id = dados_recebidos['alt_setor']
+            paciente_alterar.leito_id = dados_recebidos['alt_leito']
 
-        #Altera o status do leito do paciente alterado
-        leito_alterar = Leito.objects.get(pk=paciente_alterar.leito_id)
-        leito_alterar.status = 'O'
-        leito_alterar.save()
+            leito_alterar = Leito.objects.get(pk=temp.leito_id)
+            leito_alterar.status = 'L'
+            leito_alterar.save()
+
+            #Altera o status do leito do paciente alterado
+            leito_alterar = Leito.objects.get(pk=paciente_alterar.leito_id)
+            leito_alterar.status = 'O'
+            leito_alterar.save()
 
         paciente_alterar.save()
 
@@ -632,12 +637,12 @@ def patientsOpenOccurrence(request):
     # Pesquisa no banco de dados as pk's correspondentes às variáveis recebidas:
     setor_id = Setor.objects.get(setor=dados_recebidos['setor']).id
     leito_id = Leito.objects.get(numero=dados_recebidos['leito'], setor_id=setor_id, status='O').id
-    paciente_id = Paciente.objects.get(nome=dados_recebidos['nome'], leito_id=leito_id).id
+    paciente_id = Paciente.objects.get(nome=dados_recebidos['nome'], leito_id=leito_id)
 
     # Registra numa variável de sessão para ser usada em patientsRecord
     request.session['setor'] = setor_id
     request.session['leito'] = leito_id
-    request.session['paciente'] = paciente_id
+    request.session['paciente'] = paciente_id.id
 
     if (paciente_id):
         # Pesquisa ocorrência para o paciente e retorna a última ocorrência pra ele ou um json em branco
