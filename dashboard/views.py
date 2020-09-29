@@ -165,7 +165,7 @@ def home(request):
                                 'conduta': ocor_paciente.conduta,
                                 'recomendacoes': ocor_paciente.recomendacoes,
                                 'medico': medico_responsavel,
-                                'data_modif': ocor_paciente.data_modif
+                                'data_add': ocor_paciente.data_add
                             }
                     elif leito.status == 'B':
                         pac_ocorr = {'situacao': 'BLOQUEADO', 'num_leito': leito.numero}
