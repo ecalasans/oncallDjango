@@ -161,11 +161,9 @@
                                                 {{ leito.exames }}
                                             </td>
                                             <td style="width: 30%;">
-                                                <pre style="font-size: 1em; font-family: 'Helvetica Neue', Roboto, Arial,
-                                                    'Droid Sans';">{{ leito.conduta }}</pre><br>
+                                                {{ leito.conduta | linebreaks}}<br>
                                                 <span class="font-weight-bold">Pendências:  </span>
-                                                <pre style="font-size: 1em; font-family: 'Helvetica Neue', Roboto, Arial,
-                                                    'Droid Sans';">{{ leito.recomendacoes }}</pre>
+                                                {{ leito.recomendacoes | linebreaks}}
                                             </td>
                                             <td style="width: 10%">
                                                 <span class="font-weight-bold">{{ leito.medico }}</span>

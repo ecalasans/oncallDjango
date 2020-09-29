@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="views.py e index.html - inlcui data_modif">
+    <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="index.html - reestrutura layout com &lt;pre&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" afterDir="false" />
     </list>
@@ -287,14 +287,7 @@
       <workItem from="1601277254009" duration="3979000" />
       <workItem from="1601328759305" duration="7289000" />
       <workItem from="1601363585303" duration="3468000" />
-      <workItem from="1601367759614" duration="657000" />
-    </task>
-    <task id="LOCAL-00042" summary="#7 - context pronto">
-      <created>1588932176581</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1588932176581</updated>
+      <workItem from="1601367759614" duration="1945000" />
     </task>
     <task id="LOCAL-00043" summary="Template respondendo parcialmente - habilitar botão com 3 traços">
       <created>1588935281848</created>
@@ -632,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601366872395</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="index.html - reestrutura layout com &lt;pre&gt;">
+      <created>1601368502743</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1601368502744</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,7 +652,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="patients.html - criados botões ocorrência e alterar" />
     <MESSAGE value="patients.html - terminando botão de Alta" />
     <MESSAGE value="patients.html - Botão de alta funcionando completamente." />
     <MESSAGE value="views.py - abreOcorrencia funcionando" />
@@ -677,7 +676,8 @@
     <MESSAGE value="views.py - patientUpdate funcionando com sucesso!" />
     <MESSAGE value="views.py e index.html - patientUpdate altera pesos e idades e apresenta na tela de início" />
     <MESSAGE value="views.py e index.html - inlcui data_modif" />
-    <option name="LAST_COMMIT_MESSAGE" value="views.py e index.html - inlcui data_modif" />
+    <MESSAGE value="index.html - reestrutura layout com &lt;pre&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="index.html - reestrutura layout com &lt;pre&gt;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="104" y="23" width="1071" height="777" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600728087825">
@@ -773,12 +773,12 @@
     <state x="298" y="78" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1596330843031" />
     <state x="298" y="78" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1599438235761" />
     <state x="3175" y="171" key="SettingsEditor/1920.0.2560.1080/0.0.1920.1040@1920.0.2560.1080" timestamp="1601247646827" />
-    <state x="2390" y="238" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1601366877063">
+    <state x="2390" y="238" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1601368505131">
       <screen x="1920" y="0" width="2560" height="1080" />
     </state>
     <state x="470" y="255" key="Vcs.Push.Dialog.v2/-1280.23.1280.777/0.23.2560.1057@0.23.2560.1057" timestamp="1600624688416" />
     <state x="235" y="194" width="511" height="409" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1600730474203" />
-    <state x="2390" y="238" width="800" height="523" key="Vcs.Push.Dialog.v2/1920.0.2560.1080/0.0.1920.1040@1920.0.2560.1080" timestamp="1601366877063" />
+    <state x="2390" y="238" width="800" height="523" key="Vcs.Push.Dialog.v2/1920.0.2560.1080/0.0.1920.1040@1920.0.2560.1080" timestamp="1601368505131" />
     <state x="761" y="353" width="397" height="158" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598343707752">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
