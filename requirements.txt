@@ -1,6 +1,6 @@
 asgiref==3.2.10
 dj-static==0.0.6
-Django==3.1
+Django==3.1.13
 django-mathfilters==1.0.0
 django-widget-tweaks==1.4.8
 psycopg2-binary==2.8.5
