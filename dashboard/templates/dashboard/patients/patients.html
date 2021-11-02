@@ -33,16 +33,20 @@
                             {% for numero, nome in pac.items %}
                                 <tr>
                                     <td style="width: 5%; font-size: 1.5em; text-align: center;">{{ numero }}</td>
-                                    <td style="width: 50%; font-size: 1.5em; align-content: center;">{{ nome }}</td>
+                                    <td style="width: 50%; font-size: 1.5em; align-content: center;">
+                                        {% for n in nome %}
+                                            {{ n.nome }}
+                                        {% endfor %}
+                                    </td>
                                     <td>
                                         <button type="button" id="btn_ocorrencia_{{ setor }}{{ numero }}"
                                                 class="btn btn-secondary"
                                             onclick="abreOcorrencia('{% url 'patients_open_occurrence'%}',
-                                                    '{{ setor }}', '{{ nome }}', '{{ numero }}');"> Ocorrência</button>
+                                                    '{{ setor }}', '{% for n in nome %}{{ n.nome }}{% endfor %}', '{{ numero }}');"> Ocorrência</button>
                                         <button type="button" id="btn_alterar_{{ setor }}{{ numero }}"
                                                 class="btn btn-warning"
                                                 onclick="getPaciente('{% url 'get_paciente' %}', '{{ setor }}',
-                                                        '{{ nome }}', '{{ numero }}');"
+                                                        '{% for n in nome %}{{ n.nome }}{% endfor %}', '{{ numero }}');"
                                                         >Alterar</button>
                                         <button type="button" id="btn_alta_{{ setor }}{{ numero }}" class="btn btn-primary"
                                             onclick="altaPaciente('{{ setor }}', '{{ numero }}',
@@ -331,13 +335,35 @@
                                 <textarea rows="3" id="txt_oc_vent" name="txt_oc_vent" cols="40"></textarea>
                                 <div class="row" style="margin-top: 5px;">
                                     <div class="col-12" style="margin-right: 10px;">
-                                        <label class="control-label" style="margin-right: 5px;">Fototerapia</label>
+                                        <label class="control-label" style="margin-right: 5px;">Fototerapia?</label>
                                         <input type="radio" name="rd_ocor_foto" id="rd_ocor_foto_sim"  value="S"
                                            class="iradio_flat-green">
                                         <span style="margin-right: 5px;">Sim</span>
                                         <input type="radio" name="rd_ocor_foto" value="N" id="rd_ocor_foto_nao"
                                                class="iradio_flat-green">
                                             <span>Não</span>
+                                    </div>
+                                    <div class="col-12" style="margin-right: 10px;">
+                                        <label class="control-label" style="margin-right: 5px;">Recebeu vacinas?</label>
+                                        <div>
+                                            <input type="radio" name="rd_ocor_vacina" id="rd_ocor_vacina_sim"  value="S"
+                                           class="iradio_flat-green">
+                                                <span style="margin-right: 5px;">Sim</span>
+                                            <input type="radio" name="rd_ocor_vacina" value="N" id="rd_ocor_vacina_nao"
+                                               class="iradio_flat-green">
+                                                    <span>Não</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12" style="margin-right: 10px;">
+                                        <label class="control-label" style="margin-right: 5px;">Acompanhamento com Fonoaudiologia?</label>
+                                        <div>
+                                            <input type="radio" name="rd_ocor_fono" id="rd_ocor_fono_sim"  value="S"
+                                           class="iradio_flat-green">
+                                                <span style="margin-right: 5px;">Sim</span>
+                                            <input type="radio" name="rd_ocor_fono" value="N" id="rd_ocor_fono_nao"
+                                               class="iradio_flat-green">
+                                                <span>Não</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

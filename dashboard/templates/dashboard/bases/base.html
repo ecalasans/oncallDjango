@@ -74,9 +74,10 @@
                 <h3>Menu</h3>
                 <ul class="nav side-menu">
                     {% block menu %}
-                        <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Início </a>
-                        <li><a href="{% url 'beds' %}"><i class="fa fa-bed"></i> Leitos </a>
-                        <li><a href="{% url 'patients' %}"><i class="fa fa-child"></i> Pacientes </a>
+                        <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Início </a></li>
+                        <li><a href="{% url 'beds' %}"><i class="fa fa-bed"></i> Leitos </a></li>
+                        <li><a href="{% url 'patients' %}"><i class="fa fa-child"></i> Pacientes</a></li>
+                        <li><a href="{% url 'history' %}"><i class="fa fa-history"></i>Histórico</a></li>
 
                     {% endblock %}
                   {% comment %}<li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>

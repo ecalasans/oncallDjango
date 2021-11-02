@@ -79,4 +79,4 @@ class OcorrenciaForm(ModelForm):
     class Meta:
         model = Ocorrencia
         fields = ['diagnostico', 'dieta', 'antibiotico', 'acesso_venoso', 'medicamentos',
-                  'ventilacao', 'fototerapia','exames', 'conduta', "med", "pac"]
+                  'ventilacao', 'fototerapia', 'vacina', 'fono', 'exames', 'conduta', "med", "pac"]

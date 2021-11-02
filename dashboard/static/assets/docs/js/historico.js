@@ -1,0 +1,3 @@
+function alertaTeste(){
+    alert("Clicado");
+}

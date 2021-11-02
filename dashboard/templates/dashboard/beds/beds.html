@@ -31,7 +31,7 @@
                                 <input type="hidden" id="{{ setor }}" value="{{ setor }}" name="hidden_set">
                                 <input type="hidden" id="{{ setor }}_{{ key_leitos }}" name="num_leito" value="{{ key_leitos }}">
                                 <tr>
-                                  <th scope="row">{{ key_leitos }}</th>
+                                  <th scope="row">{{ value_leitos.label }}</th>
                                     <td>
                                       {% for key_sit, value_sit in situacao.items  %}
                                             {% if value_leitos.status == 'O' %}

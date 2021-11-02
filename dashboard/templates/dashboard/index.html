@@ -90,7 +90,7 @@
                                         <tr>
                                             <td style="width: 10%;">
                                                 <span class="font-weight-bold text-center">
-                                                    Leito {{ leito.num_leito }}</span><br>
+                                                    Leito {{ leito.label }}</span><br>
                                             </td>
                                             <td colspan="5" style="width: 10%;">
                                                 <h5 style="text-align: center;">Não há ocorrências registradas</h5>
@@ -100,7 +100,7 @@
                                         <tr>
                                             <td style="width: 10%;">
                                                 <span class="font-weight-bold text-center">
-                                                    Leito {{ leito.num_leito }}</span>
+                                                    Leito {{ leito.label_leito }}</span>
                                             </td>
                                             <td colspan="5" class="bg-green" style="width: 10%;">
                                                 <h5 style="text-align: center;">{{ leito.situacao }}</h5>
@@ -110,7 +110,7 @@
                                         <tr>
                                             <td style="width: 10%;">
                                                 <span class="font-weight-bold text-center">
-                                                    Leito {{ leito.num_leito }}</span>
+                                                    Leito {{ leito.label_leito }}</span>
                                             </td>
                                             <td colspan="5" class="bg-warning" style="width: 10%;">
                                                 <h5 style="text-align: center;">{{ leito.situacao }}</h5>
@@ -120,7 +120,7 @@
                                         <tr>
                                             <td style="width: 10%;">
                                                 <span class="font-weight-bold text-center">
-                                                    Leito {{ leito.num_leito }}</span>
+                                                    Leito {{ leito.label_leito }}</span>
                                             </td>
                                             <td colspan="5" class="bg-danger" style="width: 10%;">
                                                 <h5 style="text-align: center;">{{ leito.situacao }}</h5>
@@ -130,7 +130,7 @@
                                         <tr>
                                             <td style="width: 10%;">
                                                 <span class="font-weight-bold text-center">
-                                                    Leito {{ leito.num_leito }}</span><br>
+                                                    Leito {{ leito.label_leito }}</span><br>
                                                 {{ leito.nome_pac }}<br><br>
                                             </td>
                                             <td style="width: 10%;">
@@ -156,6 +156,10 @@
                                                     {{ leito.ventilacao }}<br>
                                                 <span class="font-weight-bold">Fototerapia:  </span>
                                                     {{ leito.fototerapia }}<br>
+                                                <span class="font-weight-bold">Vacinado:  </span>
+                                                    {{ leito.vacina }}<br>
+                                                <span class="font-weight-bold">Fonoaudiologia:  </span>
+                                                    {{ leito.fono }}<br>
                                             </td>
                                             <td style="width: 20%;">
                                                 {{ leito.exames }}

@@ -23,12 +23,17 @@ class Setor(models.Model):
 class Leito(models.Model):
     hospital = models.ForeignKey(Hospital, on_delete=models.DO_NOTHING, default="")
     numero = models.IntegerField(default=0)
+    label = models.CharField(default="", max_length=20, null=True)
     setor = models.ForeignKey(Setor, on_delete=models.DO_NOTHING, default="")
     situacao = models.CharField(default="A", max_length=2) #A - ativo, D = desativado
     status = models.CharField(default="L", max_length=2) #L - livre, O = ocupado, B = bloqueado
 
     def __str__(self):
-        return "Leito " + str(self.numero) + "(" + self.situacao + " - " + self.status + ") - " \
+        if self.label != None:
+            return "Leito " + str(self.label) + "(" + self.situacao + " - " + self.status + ") - " \
+                   + self.setor.setor + " " + str(self.hospital.sigla)
+        else:
+            return "Leito " + str(self.numero) + "(" + self.situacao + " - " + self.status + ") - " \
                + self.setor.setor + " " + str(self.hospital.sigla)
 
 class Medico(User):
@@ -67,6 +72,8 @@ class Ocorrencia(models.Model):
     medicamentos = models.TextField(default="", max_length=400)
     ventilacao = models.CharField(default="Ar ambiente", max_length=100)
     fototerapia = models.CharField(default="Não", max_length=5)
+    vacina = models.CharField(default="N", max_length=2)
+    fono = models.CharField(default="N", max_length=2)
     exames = models.TextField(default="", max_length=500)
     conduta = models.TextField(default="", max_length=500)
     recomendacoes = models.TextField(default="", max_length=500)

@@ -14,4 +14,5 @@ urlpatterns =[
     path('patients/update/', views.patientUpdate, name='patients_update'),
     path('patients/record/', views.patientsRecord, name="patients_record"),
     path('patients/occurrence/', views.patientsOpenOccurrence, name='patients_open_occurrence'),
+    path('history/', views.history, name='history'),
 ]

@@ -134,14 +134,16 @@ def home(request):
             # Pesquisa os leitos do setor:  se estiver ocupado pega o paciente;  se não, registra como vago
             for leito in leitos_setor:
                 if leito.situacao == 'D':
-                    pac_ocorr = {'situacao': 'DESATIVADO', 'num_leito': leito.numero}
+                    pac_ocorr = {'situacao': 'DESATIVADO', 'num_leito': leito.numero,
+                                 'label_leito': leito.label}
                 else:
                     if leito.status == 'O':
                         paciente_do_leito = Paciente.objects.get(leito_id=leito.id, status='I')
                         ocor_paciente = Ocorrencia.objects.filter(pac_id=paciente_do_leito.id).last()
 
                         if not ocor_paciente:
-                            pac_ocorr = {'situacao': 'NAO_OCORRENCIAS', 'num_leito': paciente_do_leito.leito.numero}
+                            pac_ocorr = {'situacao': 'NAO_OCORRENCIAS', 'num_leito': leito.numero,
+                                         'label': leito.label}
                         else:
                             medico_responsavel = "{} {}".format(Medico.objects.get(pk=ocor_paciente.med_id).first_name,
                                                                 Medico.objects.get(pk=ocor_paciente.med_id).last_name)
@@ -149,6 +151,7 @@ def home(request):
                             pac_ocorr = {
                                 'situacao': 'OCUPADO',
                                 'num_leito': paciente_do_leito.leito.numero,
+                                'label_leito': paciente_do_leito.leito.label,
                                 'nome_pac' : paciente_do_leito.nome,
                                 'pac_idade_atual': paciente_do_leito.idade,
                                 'pac_ig_atual': paciente_do_leito.ig,
@@ -161,6 +164,8 @@ def home(request):
                                 'medicamentos': ocor_paciente.medicamentos,
                                 'ventilacao': ocor_paciente.ventilacao,
                                 'fototerapia': ocor_paciente.fototerapia,
+                                'vacina': ocor_paciente.vacina,
+                                'fono': ocor_paciente.fono,
                                 'exames': ocor_paciente.exames,
                                 'conduta': ocor_paciente.conduta,
                                 'recomendacoes': ocor_paciente.recomendacoes,
@@ -168,9 +173,11 @@ def home(request):
                                 'data_add': ocor_paciente.data_add
                             }
                     elif leito.status == 'B':
-                        pac_ocorr = {'situacao': 'BLOQUEADO', 'num_leito': leito.numero}
+                        pac_ocorr = {'situacao': 'BLOQUEADO', 'num_leito': leito.numero,
+                                     'label_leito': leito.label}
                     elif leito.status == 'L':
-                        pac_ocorr = {'situacao': 'VAGO', 'num_leito': leito.numero}
+                        pac_ocorr = {'situacao': 'VAGO', 'num_leito': leito.numero,
+                                     'label_leito': leito.label}
 
                 lista_ocorr.append(pac_ocorr)
 
@@ -332,10 +339,11 @@ def refreshBeds(request):
         leitos_setor = {}
 
         lpesq = Leito.objects.filter(hospital_id=hosp_id, setor=valores['id']) \
-            .values('numero', 'situacao', 'status').order_by('pk')
+            .values('numero', 'situacao', 'status', 'label').order_by('pk')
 
-        for valor in lpesq.values('numero', 'situacao', 'status'):
-            leitos_setor[valor['numero']] = {'situacao': valor['situacao'], 'status': valor['status']}
+        for valor in lpesq.values('numero', 'situacao', 'status', 'label'):
+            leitos_setor[valor['numero']] = {'situacao': valor['situacao'], 'status': valor['status'],
+                                             'label': valor['label']}
 
             leitos[valores['setor']] = leitos_setor
 
@@ -437,18 +445,18 @@ def refreshPatients(request):
 
         for leito in leitos_queryset:
             if leito.situacao == 'D':
-                p[str(leito.numero)] = 'DESATIVADO'
+                p[str(leito.label)] = 'DESATIVADO'
             elif leito.status == 'L':
-                p[str(leito.numero)] = 'VAGO'
+                p[str(leito.label)] = 'VAGO'
             elif leito.status == 'B':
-                p[str(leito.numero)] = 'BLOQUEADO'
+                p[str(leito.label)] = 'BLOQUEADO'
             else:
                 if Paciente.objects.filter(leito__numero=leito.numero, status="I").exists():
-                    p[str(leito.numero)] = Paciente.objects.get(leito_id=leito.id, status="I").nome
+                    p[str(leito.label)] = Paciente.objects.filter(leito_id=leito.id, status="I").values('id', 'nome')
                 else:
                     leito.status = 'L'
                     leito.save()
-                    p[str(leito.numero)] = 'VAGO'
+                    p[str(leito.label)] = 'VAGO'
         pacientes[setor] = p
 
     return [primeiro, saudacao, hosp_sigla, pacientes, setores_qs]
@@ -550,7 +558,7 @@ def patientsList(request):
     setor_id = request.GET.get('setor_id')
 
     leitos_setor = Leito.objects.filter(hospital_id=hosp_id, setor_id=setor_id, situacao='A', status='L')\
-        .values('id', 'numero').order_by('numero')
+        .values('id', 'numero', 'label').order_by('numero')
 
     lista_leitos = [l for l in leitos_setor]
 
@@ -657,6 +665,8 @@ def patientsOpenOccurrence(request):
                 'medicamentos': ocorrencia.medicamentos,
                 'ventilacao': ocorrencia.ventilacao,
                 'fototerapia': ocorrencia.fototerapia,
+                'vacina': ocorrencia.vacina,
+                'fono': ocorrencia.fono,
                 'exames': ocorrencia.exames,
                 'conduta': ocorrencia.conduta,
                 'recomendacoes': ocorrencia.recomendacoes
@@ -687,6 +697,8 @@ def patientsRecord(request):
         form_oc.medicamentos = request.POST.get("txt_oc_medic")
         form_oc.ventilacao = request.POST.get("txt_oc_vent")
         form_oc.fototerapia = request.POST.get("rd_ocor_foto")
+        form_oc.vacina = request.POST.get("rd_ocor_vacina")
+        form_oc.fono = request.POST.get("rd_ocor_fono")
         form_oc.exames = request.POST.get("txt_oc_exames")
         form_oc.conduta = request.POST.get("txt_oc_cond")
         form_oc.recomendacoes = request.POST.get("txt_oc_recom")
@@ -739,3 +751,21 @@ def getPaciente(request):
 
     # Retorna a resposta
     return JsonResponse(paciente_resposta, safe=False)
+
+####################################################################################################################
+#  Seção OCORRÊNCIAS
+####################################################################################################################
+
+# Histórico
+def history(request):
+    if request.method == 'GET':
+        primeiro, saudacao, hosp_sigla, pacientes, setores_qs = refreshPatients(request)
+        return render(request, 'dashboard/history/history.html',
+                      context={
+                          'usuario': request.user.username,
+                          'primeiro': primeiro,
+                          'saudacao': saudacao,
+                          'hosp_sigla': hosp_sigla,
+                          'pacientes' : pacientes,
+                          'setores_qs' : setores_qs,
+                      })
