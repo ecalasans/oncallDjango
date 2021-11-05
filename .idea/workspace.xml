@@ -1,29 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0002_alter_leito_ocorrencia_add_fields.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0003_alter_leito_alter_label.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0004_alter_leito_alter_label.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0005_alter_leito_alter_label.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/js/historico.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/history/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/oncall.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/oncall.iml" afterDir="false" />
+    <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="views.py e ocorrencia.js - resolvendo bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/bases/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/beds/beds.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/beds/beds.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/patients/patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/patients/patients.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="hrg" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -309,6 +294,10 @@
       <workItem from="1635710663048" duration="535000" />
       <workItem from="1635751920230" duration="4785000" />
       <workItem from="1635812273052" duration="1207000" />
+      <workItem from="1635815136153" duration="578000" />
+      <workItem from="1635899589740" duration="255000" />
+      <workItem from="1636119918480" duration="1574000" />
+      <workItem from="1636123274838" duration="2606000" />
     </task>
     <task id="LOCAL-00035" summary="Select renderizado ok e modelo Medico CRM alterado">
       <created>1588122130471</created>
@@ -707,6 +696,11 @@
           <url>file://$PROJECT_DIR$/dashboard/templates/dashboard/beds/beds.html</url>
           <line>27</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dashboard/views.py</url>
+          <line>730</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
