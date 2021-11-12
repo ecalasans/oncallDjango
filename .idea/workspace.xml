@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="views.py e ocorrencia.js - resolvendo bugs">
+    <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/docs/js/paciente.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/js/paciente.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" afterDir="false" />
@@ -297,14 +298,8 @@
       <workItem from="1635815136153" duration="578000" />
       <workItem from="1635899589740" duration="255000" />
       <workItem from="1636119918480" duration="1574000" />
-      <workItem from="1636123274838" duration="2606000" />
-    </task>
-    <task id="LOCAL-00035" summary="Select renderizado ok e modelo Medico CRM alterado">
-      <created>1588122130471</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1588122130471</updated>
+      <workItem from="1636123274838" duration="2916000" />
+      <workItem from="1636734624194" duration="2935000" />
     </task>
     <task id="LOCAL-00036" summary="#5 - consegui iterar os erros de formulário.">
       <created>1588290014976</created>
@@ -642,7 +637,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600730470655</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="views.py - multiplicidade de setores resolvida">
+      <created>1636128245164</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1636128245165</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -662,7 +664,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="patients.html - template de inclusão pronto!" />
     <MESSAGE value="patients.html - incluindo pacientes com sucesso!" />
     <MESSAGE value="views.py - Inclui e atualiza template de pacientes com sucesso." />
     <MESSAGE value="views.py - Trabalhar na duplicidade de registros" />
@@ -687,7 +688,8 @@
     <MESSAGE value="base.html - ajuste na interface retirando envelope." />
     <MESSAGE value="patients.html - desabilitando leitos desativados." />
     <MESSAGE value="views.py e ocorrencia.js - resolvendo bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="views.py e ocorrencia.js - resolvendo bugs" />
+    <MESSAGE value="views.py - multiplicidade de setores resolvida" />
+    <option name="LAST_COMMIT_MESSAGE" value="views.py - multiplicidade de setores resolvida" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -699,8 +701,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/dashboard/views.py</url>
-          <line>730</line>
-          <option name="timeStamp" value="27" />
+          <line>643</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

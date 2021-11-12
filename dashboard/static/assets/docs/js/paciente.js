@@ -11,7 +11,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 $.each(response, function (chave, valor) {
-                    opcoes += '<option value=' + valor.id + '>' + 'Leito ' + valor.numero + '</option>';
+                    opcoes += '<option value=' + valor.id + '>' + 'Leito ' + valor.label + '</option>';
                 });
                 $('#select_pac_leito').append(opcoes);
             }

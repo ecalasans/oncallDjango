@@ -645,7 +645,7 @@ def patientsOpenOccurrence(request):
 
     # Pesquisa no banco de dados as pk's correspondentes às variáveis recebidas:
     setor_id = Setor.objects.get(hospital=request.session.get('hosp_id'), setor=dados_recebidos['setor']).id
-    leito_id = Leito.objects.get(numero=dados_recebidos['leito'], setor_id=setor_id, status='O').id
+    leito_id = Leito.objects.get(label=dados_recebidos['leito'], setor_id=setor_id, status='O').id
     paciente_id = Paciente.objects.get(nome=dados_recebidos['nome'], leito_id=leito_id)
 
     # Registra numa variável de sessão para ser usada em patientsRecord
@@ -726,7 +726,7 @@ def getPaciente(request):
 
     # Pesquisa no banco de dados as pk's correspondentes às variáveis recebidas:
     setor_id = Setor.objects.get(hospital=request.session.get('hosp_id'), setor=dados_recebidos['setor']).id
-    leito_id = Leito.objects.get(numero=dados_recebidos['leito'], setor_id=setor_id, status='O').id
+    leito_id = Leito.objects.get(label=dados_recebidos['leito'], setor_id=setor_id, status='O').id
 
     # Pesquisa o paciente
     paciente = Paciente.objects.get(nome=dados_recebidos['nome'], leito_id=leito_id)
