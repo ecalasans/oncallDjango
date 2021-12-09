@@ -15,4 +15,5 @@ urlpatterns =[
     path('patients/record/', views.patientsRecord, name="patients_record"),
     path('patients/occurrence/', views.patientsOpenOccurrence, name='patients_open_occurrence'),
     path('history/', views.history, name='history'),
+    path('history/get_ocurrencies', views.getOccurencies, name='history_get_ocurrencies'),
 ]

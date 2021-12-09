@@ -27,7 +27,7 @@
                                     <h2>{{ pac_value }}</h2>
                                 {% else %}
                                     {% for p in pac_value %}
-                                        <a href="#" id="pac_{{ p.id }}" onclick="alertaTeste();">
+                                        <a href="#" id="pac_{{ p.id }}" onclick="getOcurrencies('{% url 'history_get_ocurrencies' %}', '{{ p.id }}')">
                                             <h2>{{ p.nome }}</h2>
                                         </a>
                                     {% endfor %}

@@ -617,13 +617,13 @@ def patientUpdate(request):
 def patientsDischarge(request):
     status = request.POST.get('rd_status_alta')
     setor_paciente = Setor.objects.get(setor=request.POST.get('setor_paciente')).id
-    numero_leito = Leito.objects.get(numero=request.POST.get('numero_paciente'), setor_id=setor_paciente)
+    leito_paciente = Leito.objects.get(label=request.POST.get('numero_paciente'), setor_id=setor_paciente)
 
-    paciente_para_alta = Paciente.objects.get(leito_id=numero_leito.id, status="I")
+    paciente_para_alta = Paciente.objects.get(leito_id=leito_paciente.id, status="I")
     paciente_para_alta.status = status
-    numero_leito.status = 'L'
+    leito_paciente.status = 'L'
     paciente_para_alta.save()
-    numero_leito.save()
+    leito_paciente.save()
 
     primeiro, saudacao, hosp_sigla, pacientes, setores_qs = refreshPatients(request)
 
@@ -769,3 +769,12 @@ def history(request):
                           'pacientes' : pacientes,
                           'setores_qs' : setores_qs,
                       })
+
+@csrf_exempt
+def getOccurencies(request):
+    dados_recebidos = request.POST
+    print(dados_recebidos['id_paciente'])
+
+    return JsonResponse(
+        { 'mensagem': 'Recebido'},
+    safe=False)
