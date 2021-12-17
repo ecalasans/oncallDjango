@@ -3,13 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/docs/js/paciente.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/js/paciente.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/docs/js/historico.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/js/historico.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/history/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/history/history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oncall/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/oncall/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +41,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="JupyterTrust" id="1cbf8272-c5bf-47c0-bd58-0f045bc39415" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1OVDNS9bEUGMQX1FNX4yLh4wF0P" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -55,7 +70,7 @@
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/dashboard/templates/dashboard/history" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -299,21 +314,24 @@
       <workItem from="1636119918480" duration="1574000" />
       <workItem from="1636123274838" duration="2916000" />
       <workItem from="1636734624194" duration="3090000" />
-      <workItem from="1636846008070" duration="1079000" />
-    </task>
-    <task id="LOCAL-00037" summary="#6 - Inclusão de setores em Hospitais e leitos em Setores">
-      <created>1588538787960</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1588538787960</updated>
-    </task>
-    <task id="LOCAL-00038" summary="#7 - Selecionando hospital no login corretamente.">
-      <created>1588550752664</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1588550752664</updated>
+      <workItem from="1636846008070" duration="1146000" />
+      <workItem from="1636847693736" duration="1829000" />
+      <workItem from="1636901297741" duration="1563000" />
+      <workItem from="1636991414054" duration="65000" />
+      <workItem from="1637009269281" duration="794000" />
+      <workItem from="1638552395127" duration="1070000" />
+      <workItem from="1639087632376" duration="213000" />
+      <workItem from="1639088226438" duration="4341000" />
+      <workItem from="1639349246598" duration="3375000" />
+      <workItem from="1639424477386" duration="3807000" />
+      <workItem from="1639430361036" duration="1428000" />
+      <workItem from="1639491403807" duration="2693000" />
+      <workItem from="1639590312122" duration="1130000" />
+      <workItem from="1639646801216" duration="16000" />
+      <workItem from="1639646847735" duration="6902000" />
+      <workItem from="1639726374057" duration="8903000" />
+      <workItem from="1639764903976" duration="1895000" />
+      <workItem from="1639766919565" duration="2728000" />
     </task>
     <task id="LOCAL-00039" summary="#7 - Iniciei seleção de hospitais, leitos e setores.">
       <created>1588636934740</created>
@@ -644,7 +662,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636737872234</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="views.py e paciente.js - bug de ocorrências do AC resolvido">
+      <created>1636847229175</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1636847229176</updated>
+    </task>
+    <task id="LOCAL-00087" summary="history.html e historico.js - Conexão com o servidor OK">
+      <created>1639093990112</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1639093990113</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,11 +692,9 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="views.py - Inclui e atualiza template de pacientes com sucesso." />
     <MESSAGE value="views.py - Trabalhar na duplicidade de registros" />
     <MESSAGE value="beds.html - habilitando disabled para select status" />
     <MESSAGE value="patients.html - criados botões ocorrência e alterar" />
@@ -689,7 +719,8 @@
     <MESSAGE value="views.py e ocorrencia.js - resolvendo bugs" />
     <MESSAGE value="views.py - multiplicidade de setores resolvida" />
     <MESSAGE value="views.py e paciente.js - bug de ocorrências do AC resolvido" />
-    <option name="LAST_COMMIT_MESSAGE" value="views.py e paciente.js - bug de ocorrências do AC resolvido" />
+    <MESSAGE value="history.html e historico.js - Conexão com o servidor OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="history.html e historico.js - Conexão com o servidor OK" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -701,8 +732,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/dashboard/views.py</url>
-          <line>643</line>
-          <option name="timeStamp" value="29" />
+          <line>799</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

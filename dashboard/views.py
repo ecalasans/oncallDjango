@@ -12,6 +12,7 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt # Usado para evitar checar csfr_token
 import datetime
 import json
+import time
 
 '''
 class LoginView(LoginRequiredMixin, TemplateView):
@@ -755,7 +756,7 @@ def getPaciente(request):
 ####################################################################################################################
 #  Seção OCORRÊNCIAS
 ####################################################################################################################
-
+# Constantes e variáveis globais
 # Histórico
 def history(request):
     if request.method == 'GET':
@@ -773,8 +774,57 @@ def history(request):
 @csrf_exempt
 def getOccurencies(request):
     dados_recebidos = request.POST
-    print(dados_recebidos['id_paciente'])
+    id_paciente = dados_recebidos['id_paciente']
+    nome_paciente = Paciente.objects.get(pk=id_paciente).nome
+    pac_ocorrencias = Ocorrencia.objects.filter(pac_id=id_paciente).order_by('data_add')
 
-    return JsonResponse(
-        { 'mensagem': 'Recebido'},
-    safe=False)
+    anos = list(dict.fromkeys([ocor.data_add.year for ocor in pac_ocorrencias]))
+
+    meses_ano = list(dict.fromkeys([ocor.data_add.month for ocor in pac_ocorrencias]))
+
+    ocor_mes = {}
+
+    ocor_ano = {}
+
+    for ano in anos:
+        for mes in meses_ano:
+            item = Ocorrencia.objects.filter(data_add__month=mes).values('id', 'data_add', 'med__first_name', 'med__last_name')
+            ocor_mes[str(mes)] = list(item)
+        ocor_ano[str(ano)] = ocor_mes
+
+    get_occurrencies = {
+            'nome_paciente': nome_paciente,
+            'historico': ocor_ano,
+        }
+
+    return JsonResponse(get_occurrencies, safe=False)
+
+##########################################################################################################
+# TESTES
+##########################################################################################################
+@csrf_exempt
+def echoServer(request):
+    resposta = ''
+    if request.method == 'GET':
+        print('Recebi uma requisição...')
+        #time.sleep(10)
+        mensagem = 'Olá!  Fizemos contato via fetch!'
+
+        resposta = {'mensagem': mensagem }
+
+        return JsonResponse(resposta, safe=False)
+
+    if request.method == 'POST':
+        dados = json.loads(request.body)
+
+        print(dados)
+
+        return JsonResponse(
+            {'mensagem' : 'Processando dados...'},
+            safe=False
+        )
+
+
+
+
+
