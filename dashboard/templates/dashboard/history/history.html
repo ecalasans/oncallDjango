@@ -38,12 +38,12 @@
                 </div>
             {% endfor %}
         </div>
-        <div id="pac_hist_ocor" class="col-md-6 col-sm-6">
-            <h2 id="hist_nome_pac"></h2>
-            <div class="x_panel">
+        <div id="pac_hist_ocor" class="col-md-6 col-sm-6" style="display:none;">
+            <h2 id="hist_nome_pac">{{ nome_paciente }}</h2>
+            <div class="x_panel" id="ano_container">
                 <div class="x_title">
-                    <h2></h2>
-                    <ul class="nav navbar-right panel_toolbox">
+                    <h2 id="hist_ano">Ano</h2>
+                    <ul class="nav navbar-right panel_toolbox" id="hist_anos">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
                     </ul>

@@ -11,9 +11,7 @@
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/history/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/history/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oncall/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/oncall/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +68,7 @@
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/dashboard/templates/dashboard/history" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -331,14 +329,15 @@
       <workItem from="1639646847735" duration="6902000" />
       <workItem from="1639726374057" duration="8903000" />
       <workItem from="1639764903976" duration="1895000" />
-      <workItem from="1639766919565" duration="2728000" />
-    </task>
-    <task id="LOCAL-00039" summary="#7 - Iniciei seleção de hospitais, leitos e setores.">
-      <created>1588636934740</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1588636934740</updated>
+      <workItem from="1639766919565" duration="2926000" />
+      <workItem from="1640113488219" duration="4208000" />
+      <workItem from="1640330113675" duration="1601000" />
+      <workItem from="1640339553952" duration="917000" />
+      <workItem from="1640477469458" duration="2535000" />
+      <workItem from="1640561688325" duration="3491000" />
+      <workItem from="1640611048419" duration="3492000" />
+      <workItem from="1640779104133" duration="5162000" />
+      <workItem from="1641143302744" duration="8459000" />
     </task>
     <task id="LOCAL-00040" summary="#7 - seleção de hospitais, leitos e setores concluída">
       <created>1588719764809</created>
@@ -676,7 +675,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639093990113</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="history.html e historico.js - Implementando tratamento de resposta">
+      <created>1639769725858</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1639769725859</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,7 +701,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="views.py - Trabalhar na duplicidade de registros" />
     <MESSAGE value="beds.html - habilitando disabled para select status" />
     <MESSAGE value="patients.html - criados botões ocorrência e alterar" />
     <MESSAGE value="patients.html - terminando botão de Alta" />
@@ -720,7 +725,8 @@
     <MESSAGE value="views.py - multiplicidade de setores resolvida" />
     <MESSAGE value="views.py e paciente.js - bug de ocorrências do AC resolvido" />
     <MESSAGE value="history.html e historico.js - Conexão com o servidor OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="history.html e historico.js - Conexão com o servidor OK" />
+    <MESSAGE value="history.html e historico.js - Implementando tratamento de resposta" />
+    <option name="LAST_COMMIT_MESSAGE" value="history.html e historico.js - Implementando tratamento de resposta" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -729,11 +735,6 @@
           <url>file://$PROJECT_DIR$/dashboard/templates/dashboard/beds/beds.html</url>
           <line>27</line>
           <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/dashboard/views.py</url>
-          <line>799</line>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
