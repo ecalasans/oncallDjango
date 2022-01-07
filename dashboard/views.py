@@ -776,7 +776,9 @@ def getOccurencies(request):
     dados_recebidos = request.POST
     id_paciente = dados_recebidos['id_paciente']
     nome_paciente = Paciente.objects.get(pk=id_paciente).nome
-    pac_ocorrencias = Ocorrencia.objects.filter(pac_id=id_paciente).order_by('data_add')
+    pac_ocorrencias = Ocorrencia.objects.filter(pac_id=id_paciente).order_by('-data_add')
+
+    print(pac_ocorrencias.values())
 
     anos = list(dict.fromkeys([ocor.data_add.year for ocor in pac_ocorrencias]))
     anos = sorted(anos, reverse=True)
@@ -789,7 +791,7 @@ def getOccurencies(request):
 
     for ano in anos:
         for mes in meses_ano:
-            item = Ocorrencia.objects.filter(data_add__month=mes, data_add__year=ano).values('id', 'data_add', 'med__first_name', 'med__last_name').order_by('-data_add')
+            item = Ocorrencia.objects.filter(pac_id=id_paciente, data_add__month=mes, data_add__year=ano).values('id', 'data_add', 'med__first_name', 'med__last_name').order_by('-data_add')
             if not item.exists():
                 continue
             ocor_mes[str(mes)] = list(item)

@@ -3,6 +3,10 @@ pac_hist_ocor.style.display = 'none';
 
 const nome_meses = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
 
+const toggleList = () => {
+    console.log(param);
+}
+
 const getOcurrencies = (url_abre, id_paciente) => {
     $.ajax(
         {
@@ -44,9 +48,11 @@ const getOcurrencies = (url_abre, id_paciente) => {
 
                     let ano_title_li = document.createElement('li');
                     ano_title_li.setAttribute('id', 'ano' + ano + '_li');
-                    ano_title_li.innerHTML = '<a class="collapse-link"><i class="fa fa-chevron-up">'
+                    const param = ano + "seta";
+                    ano_title_li.innerHTML = '<a class="collapse-link"><i class="fa fa-chevron-up" id="' + param + '">';
                     ano_title_li.innerHTML += '</i></a>'
                     ano_title_ul.appendChild(ano_title_li);
+
 
                     let div_clearfix = document.createElement('div');
                     div_clearfix.setAttribute('class', 'clearfix');
@@ -56,6 +62,19 @@ const getOcurrencies = (url_abre, id_paciente) => {
                     meses_container.setAttribute('id', 'ano' + ano + '_meses');
                     meses_container.setAttribute('class', 'x_content');
                     ano_container.appendChild(meses_container);
+
+                    const ano_seta = document.getElementById(param);
+                    ano_seta.addEventListener("click", () => {
+                        let classe = ano_seta.getAttribute('class');
+
+                        if (classe == 'fa fa-chevron-up'){
+                            ano_seta.className = 'fa fa-chevron-down';
+                            meses_container.style.display = 'none';
+                        } else {
+                            ano_seta.className = 'fa fa-chevron-up';
+                            meses_container.style.display = 'block';
+                        }
+                    });
 
                     const meses = anos[ano];
 
@@ -72,7 +91,9 @@ const getOcurrencies = (url_abre, id_paciente) => {
 
                         let mes_title = document.createElement('h2');
                         mes_title.setAttribute('id', nome_meses[mes-1] + '_' + ano);
-                        mes_title.innerHTML = '<a href="#"><i class="fa fa-chevron-right">'+"  " + nome_meses[mes-1] + '</i></a>'
+                        const param_mes = ano + mes + "seta";
+                        mes_title.innerHTML = '<a href="#"><i class="fa fa-chevron-down" id="' + param_mes + '">' +
+                            "  " + nome_meses[mes-1] + '</i></a>'
                         mes_div.appendChild(mes_title);
 
                         let dashboad_widget_content = document.createElement('div');
@@ -82,6 +103,19 @@ const getOcurrencies = (url_abre, id_paciente) => {
                         let ul_widget_list = document.createElement('ul');
                         ul_widget_list.setAttribute('class', 'list-unstyled timeline widget');
                         dashboad_widget_content.appendChild(ul_widget_list);
+
+                        const mes_seta = document.getElementById(param_mes);
+                        mes_seta.addEventListener('click', () => {
+                            let classe = mes_seta.getAttribute('class');
+
+                            if (classe == 'fa fa-chevron-down') {
+                                mes_seta.className = 'fa fa-chevron-right';
+                                dashboad_widget_content.style.display = 'none';
+                            } else {
+                                mes_seta.className = 'fa fa-chevron-down';
+                                dashboad_widget_content.style.display = 'block';
+                            }
+                        });
 
                         const dias = meses[mes];
 
@@ -120,7 +154,7 @@ const getOcurrencies = (url_abre, id_paciente) => {
 
             },
             error : (response) => {
-                console.log('Não chegou lá!');
+                alert('Sem conexão com o servidor.\nTente mais tarde!');
             }
         }
     );
