@@ -137,9 +137,12 @@ const getOcurrencies = (url_abre, id_paciente) => {
                             h2_data.setAttribute('id', 'ocor_' + ocor_info.id);
                             h2_data.setAttribute('class', 'title');
                             let data_add = new Date(ocor_info.data_add);
-                            console.log(data_add);
                             h2_data.innerHTML = '<a href="#">' + data_add.toLocaleString('pt-BR') + '</a>';
                             div_block_content.appendChild(h2_data);
+
+                            h2_data.addEventListener('click', () => {
+                                Ocurrency('occurrency', ocor_info.id);
+                            });
 
                             let div_byline = document.createElement('div');
                             div_byline.setAttribute('class', 'byline');
@@ -155,6 +158,23 @@ const getOcurrencies = (url_abre, id_paciente) => {
             },
             error : (response) => {
                 alert('Sem conexão com o servidor.\nTente mais tarde!');
+            }
+        }
+    );
+}
+
+const Ocurrency = (url_abre, id_ocorr) => {
+    $.ajax(
+        {
+            url: url_abre,
+            datatype: 'json',
+            data: {'id_ocorr': id_ocorr},
+            type: 'post',
+            success: (response) => {
+                alert(response.mensagem);
+            },
+            error: (error) => {
+                alert('Falha de conexão');
             }
         }
     );

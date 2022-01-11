@@ -16,5 +16,6 @@ urlpatterns =[
     path('patients/occurrence/', views.patientsOpenOccurrence, name='patients_open_occurrence'),
     path('history/', views.history, name='history'),
     path('history/get_ocurrencies', views.getOccurencies, name='history_get_ocurrencies'),
+    path('history/occurrency', views.Ocurrency, name='history_ocurrency'),
     path('echoserver/', views.echoServer, name='eco_servidor'),
 ]

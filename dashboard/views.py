@@ -805,6 +805,18 @@ def getOccurencies(request):
 
     return JsonResponse(get_occurrencies, safe=False)
 
+@csrf_exempt
+def Ocurrency(request):
+    id_ocorr = request.POST['id_ocorr']
+
+    ocorr_paciente = Ocorrencia.objects\
+        .filter(pk=id_ocorr).values('pac__leito__numero', 'pac__ocorrencia__dieta', 'pac__ocorrencia__antibiotico',
+                                    'pac__idade','pac__ig', 'pac__peso_nasc','pac__peso_atual', 'pac__ocorrencia__diagnostico','pac__ocorrencia__dieta', 'pac__ocorrencia__acesso_venoso', 'pac__ocorrencia__medicamentos',
+                                    'pac__ocorrencia__ventilacao', 'pac__ocorrencia__fototerapia', 'pac__ocorrencia__vacina',
+                                    'pac__ocorrencia__fono', 'pac__ocorrencia__exames', 'pac__ocorrencia__conduta', 'pac__ocorrencia__recomendacoes', 'med__first_name', 'med__last_name')
+
+    return JsonResponse({'ocorrencia': ocorr_paciente}, safe=False)
+
 ##########################################################################################################
 # TESTES
 ##########################################################################################################
@@ -816,7 +828,7 @@ def echoServer(request):
         #time.sleep(10)
         mensagem = 'Olá!  Fizemos contato via fetch!'
 
-        resposta = {'mensagem': mensagem }
+        resposta = {'mensagem': mensagem}
 
         return JsonResponse(resposta, safe=False)
 

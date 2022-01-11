@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -340,14 +341,8 @@
       <workItem from="1641302481555" duration="2644000" />
       <workItem from="1641425031250" duration="1901000" />
       <workItem from="1641470241201" duration="1964000" />
-      <workItem from="1641499609311" duration="7264000" />
-    </task>
-    <task id="LOCAL-00041" summary="#7 - testando loops">
-      <created>1588891741108</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1588891741108</updated>
+      <workItem from="1641499609311" duration="7478000" />
+      <workItem from="1641857779377" duration="4151000" />
     </task>
     <task id="LOCAL-00042" summary="#7 - context pronto">
       <created>1588932176581</created>
@@ -685,7 +680,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641159130083</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="history.html e historico.js - Hide e show das listas funcionando com sucesso">
+      <created>1641524492070</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1641524492071</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -704,7 +706,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="patients.html - criados botões ocorrência e alterar" />
     <MESSAGE value="patients.html - terminando botão de Alta" />
     <MESSAGE value="patients.html - Botão de alta funcionando completamente." />
     <MESSAGE value="views.py - abreOcorrencia funcionando" />
@@ -729,7 +730,8 @@
     <MESSAGE value="history.html e historico.js - Conexão com o servidor OK" />
     <MESSAGE value="history.html e historico.js - Implementando tratamento de resposta" />
     <MESSAGE value="history.html e historico.js - Lista gerada com sucesso.  Issue:  ordenar JSON por ano decrescente(ver reduce em Javascript)" />
-    <option name="LAST_COMMIT_MESSAGE" value="history.html e historico.js - Lista gerada com sucesso.  Issue:  ordenar JSON por ano decrescente(ver reduce em Javascript)" />
+    <MESSAGE value="history.html e historico.js - Hide e show das listas funcionando com sucesso" />
+    <option name="LAST_COMMIT_MESSAGE" value="history.html e historico.js - Hide e show das listas funcionando com sucesso" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -738,11 +740,6 @@
           <url>file://$PROJECT_DIR$/dashboard/templates/dashboard/beds/beds.html</url>
           <line>27</line>
           <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/dashboard/views.py</url>
-          <line>805</line>
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
