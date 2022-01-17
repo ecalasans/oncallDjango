@@ -28,6 +28,18 @@ function abreOcorrencia(url_abre, setor, nome, numero) {
                     $('input:radio[name="rd_ocor_foto"][value="N"]').attr('checked', true);
                 }
 
+                if (response.vacina == "S"){
+                    $('input:radio[name="rd_ocor_vacina"][value="S"]').attr('checked', true);
+                } else {
+                    $('input:radio[name="rd_ocor_vacina"][value="N"]').attr('checked', true);
+                }
+
+                if (response.fono == "S"){
+                    $('input:radio[name="rd_ocor_fono"][value="S"]').attr('checked', true);
+                } else {
+                    $('input:radio[name="rd_ocor_fono"][value="N"]').attr('checked', true);
+                }
+
                 $("#txt_oc_cond").text(response.conduta);
                 $("#txt_oc_recom").text(response.recomendacoes);
 

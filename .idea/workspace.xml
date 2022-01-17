@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a270c6d2-9510-4326-a994-bfc66bf0f3b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dashboard/migrations/0006_alter_ocorrencia_add_idade_igc_pesonasc_pesoatual.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/docs/js/historico.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/js/historico.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/static/assets/docs/js/ocorrencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/docs/js/ocorrencia.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/API.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.image.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.flot.selection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/static/assets/vendors/Flot/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/history/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/templates/dashboard/history/history.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +72,7 @@
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/dashboard/templates/dashboard/history" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -342,14 +346,13 @@
       <workItem from="1641425031250" duration="1901000" />
       <workItem from="1641470241201" duration="1964000" />
       <workItem from="1641499609311" duration="7478000" />
-      <workItem from="1641857779377" duration="4151000" />
-    </task>
-    <task id="LOCAL-00042" summary="#7 - context pronto">
-      <created>1588932176581</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1588932176581</updated>
+      <workItem from="1641857779377" duration="4283000" />
+      <workItem from="1641914406236" duration="593000" />
+      <workItem from="1642000479535" duration="2829000" />
+      <workItem from="1642082080947" duration="1318000" />
+      <workItem from="1642117867327" duration="4340000" />
+      <workItem from="1642169785805" duration="5323000" />
+      <workItem from="1642427794996" duration="3200000" />
     </task>
     <task id="LOCAL-00043" summary="Template respondendo parcialmente - habilitar botão com 3 traços">
       <created>1588935281848</created>
@@ -687,7 +690,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641524492071</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="historico.js - setas funcionando &#10;views.py - ocorrência capturada&#10;urls.py - atualizado path para Occurrency">
+      <created>1641893363464</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1641893363465</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -706,7 +716,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="patients.html - terminando botão de Alta" />
     <MESSAGE value="patients.html - Botão de alta funcionando completamente." />
     <MESSAGE value="views.py - abreOcorrencia funcionando" />
     <MESSAGE value="views.py - ocorrencia funcionando" />
@@ -731,7 +740,8 @@
     <MESSAGE value="history.html e historico.js - Implementando tratamento de resposta" />
     <MESSAGE value="history.html e historico.js - Lista gerada com sucesso.  Issue:  ordenar JSON por ano decrescente(ver reduce em Javascript)" />
     <MESSAGE value="history.html e historico.js - Hide e show das listas funcionando com sucesso" />
-    <option name="LAST_COMMIT_MESSAGE" value="history.html e historico.js - Hide e show das listas funcionando com sucesso" />
+    <MESSAGE value="historico.js - setas funcionando &#10;views.py - ocorrência capturada&#10;urls.py - atualizado path para Occurrency" />
+    <option name="LAST_COMMIT_MESSAGE" value="historico.js - setas funcionando &#10;views.py - ocorrência capturada&#10;urls.py - atualizado path para Occurrency" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -740,6 +750,11 @@
           <url>file://$PROJECT_DIR$/dashboard/templates/dashboard/beds/beds.html</url>
           <line>27</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dashboard/views.py</url>
+          <line>821</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

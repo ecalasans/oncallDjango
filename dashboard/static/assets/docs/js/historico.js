@@ -171,7 +171,25 @@ const Ocurrency = (url_abre, id_ocorr) => {
             data: {'id_ocorr': id_ocorr},
             type: 'post',
             success: (response) => {
-                alert(response.mensagem);
+                $("#nomePacOcorr").text(response.ocorrencia.pac__nome + '\n');
+
+                const data_ocorr = new Date(response.ocorrencia.data_add);
+                $("#dataOcorr").text(data_ocorr.toLocaleString('pt-BR') +' por ' +
+                response.ocorrencia.med__first_name + ' ' + response.ocorrencia.med__last_name);
+
+                $("#idadePacOcorr").html(
+                    "<span class=\"font-weight-bold\">Idade:  </span>" + response.ocorrencia.pac__idade
+                );
+
+                $("#pesoNascPacOcorr").html(
+                    "<span class=\"font-weight-bold\">Peso Nasc.:  </span>" + response.ocorrencia.pac__peso_nasc + "<span>g</span>"
+                );
+
+                $("#pesoAtualPacOcorr").html(
+                    "<span class=\"font-weight-bold\">Peso Nasc.:  </span>" + response.ocorrencia.pac__peso_atual + "<span>g</span>"
+                );
+
+                $("#modalOcorrPaciente").modal('show');
             },
             error: (error) => {
                 alert('Falha de conexão');

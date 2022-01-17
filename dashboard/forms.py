@@ -78,5 +78,4 @@ class PacienteForm(ModelForm):
 class OcorrenciaForm(ModelForm):
     class Meta:
         model = Ocorrencia
-        fields = ['diagnostico', 'dieta', 'antibiotico', 'acesso_venoso', 'medicamentos',
-                  'ventilacao', 'fototerapia', 'vacina', 'fono', 'exames', 'conduta', "med", "pac"]
+        fields = ['diagnostico', 'dieta', 'antibiotico', 'idade', 'igc', 'peso_nasc', 'peso_atual' ,'acesso_venoso', 'medicamentos', 'ventilacao', 'fototerapia', 'vacina', 'fono', 'exames', 'conduta', "med", "pac"]

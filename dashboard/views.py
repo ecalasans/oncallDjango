@@ -580,6 +580,12 @@ def patientUpdate(request):
         paciente_alterar.peso_nasc = dados_recebidos['alt_peso_nasc']
         paciente_alterar.peso_atual = dados_recebidos['alt_peso_atual']
 
+        # Registra varíaveis de sessão para serem usadas no registro de Ocorrência
+        request.session['igc_atual'] = dados_recebidos['alt_ig']
+        request.session['idade_atual'] = dados_recebidos['alt_idade']
+        request.session['peso_nasc'] = dados_recebidos['alt_peso_nasc']
+        request.session['peso_atual'] = dados_recebidos['alt_peso_atual']
+
         if request.POST.get('alt_chk_pac_tcle'):
             paciente_alterar.tcle = True
         else:
@@ -693,6 +699,10 @@ def patientsRecord(request):
 
         form_oc.diagnostico = request.POST.get("txt_oc_diagnostico")
         form_oc.dieta = request.POST.get("txt_oc_dieta")
+        form_oc.idade = request.session['idade_atual']
+        form_oc.igc = request.session['igc_atual']
+        form_oc.peso_nasc = request.session['peso_nasc']
+        form_oc.peso_atual = request.session['peso_atual']
         form_oc.acesso_venoso = request.POST.get("txt_oc_acesso_venoso")
         form_oc.antibiotico = request.POST.get("txt_oc_atb")
         form_oc.medicamentos = request.POST.get("txt_oc_medic")
@@ -810,12 +820,32 @@ def Ocurrency(request):
     id_ocorr = request.POST['id_ocorr']
 
     ocorr_paciente = Ocorrencia.objects\
-        .filter(pk=id_ocorr).values('pac__leito__numero', 'pac__ocorrencia__dieta', 'pac__ocorrencia__antibiotico',
-                                    'pac__idade','pac__ig', 'pac__peso_nasc','pac__peso_atual', 'pac__ocorrencia__diagnostico','pac__ocorrencia__dieta', 'pac__ocorrencia__acesso_venoso', 'pac__ocorrencia__medicamentos',
-                                    'pac__ocorrencia__ventilacao', 'pac__ocorrencia__fototerapia', 'pac__ocorrencia__vacina',
-                                    'pac__ocorrencia__fono', 'pac__ocorrencia__exames', 'pac__ocorrencia__conduta', 'pac__ocorrencia__recomendacoes', 'med__first_name', 'med__last_name')
+        .filter(pk=id_ocorr).values(
+        'pac__leito__numero',
+        'pac__nome',
+        'data_add',
+        'med__first_name',
+        'med__last_name',
+        'pac__idade',
+        'igc',
+        'peso_nasc',
+        'peso_atual',
+        'diagnostico',
+        'dieta',
+        'acesso_venoso',
+        'antibiotico',
+        'medicamentos',
+        'ventilacao',
+        'fototerapia',
+        'vacina',
+        'fono',
+        'exames',
+        'conduta',
+        'recomendacoes'
+    )
 
-    return JsonResponse({'ocorrencia': ocorr_paciente}, safe=False)
+    resp_ocorrencia = {'ocorrencia': ocorr_paciente[0]}
+    return JsonResponse(resp_ocorrencia, safe=False)
 
 ##########################################################################################################
 # TESTES
