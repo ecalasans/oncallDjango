@@ -182,12 +182,56 @@ const Ocurrency = (url_abre, id_ocorr) => {
                 );
 
                 $("#pesoNascPacOcorr").html(
-                    "<span class=\"font-weight-bold\">Peso Nasc.:  </span>" + response.ocorrencia.pac__peso_nasc + "<span>g</span>"
+                    "<span class=\"font-weight-bold\">Peso Nasc.:  </span>" + response.ocorrencia.peso_nasc + "<span>g</span>"
                 );
 
                 $("#pesoAtualPacOcorr").html(
-                    "<span class=\"font-weight-bold\">Peso Nasc.:  </span>" + response.ocorrencia.pac__peso_atual + "<span>g</span>"
+                    "<span class=\"font-weight-bold\">Peso Nasc.:  </span>" + response.ocorrencia.peso_atual + "<span>g</span>"
                 );
+
+                $("#diagPacOcorr").text(response.ocorrencia.diagnostico);
+
+                $("#dietaPacOcorr").html(
+                    "<span class=\"font-weight-bold\">Dieta:  </span>" + response.ocorrencia.dieta
+                );
+
+                $("#acessoPacOcorr").html(
+                    "<span class=\"font-weight-bold\">Acesso vascular:  </span>" + response.ocorrencia.acesso_venoso
+                );
+
+                $("#atbPacOcorr").html(
+                    "<span class=\"font-weight-bold\">Antibioticoterapia:  </span>" + response.ocorrencia.antibiotico
+                );
+
+                $("#medPacOcorr").html(
+                    "<span class=\"font-weight-bold\">Medicamentos:  </span>" + response.ocorrencia.medicamentos
+                );
+
+                $("#ventPacOcorr").html(
+                    "<span class=\"font-weight-bold\">Modo ventilatório:  </span>" + response.ocorrencia.ventilacao
+                );
+
+                if (response.ocorrencia.fototerapia === "S"){
+                    $("#fototerapiaPacOcorr").html("<span class=\"font-weight-bold\">Fototerapia:  </span><span class='text-danger'>Sim</span>");
+                } else {
+                    $("#fototerapiaPacOcorr").html("<span class=\"font-weight-bold\">Fototerapia:  </span>Não");
+                }
+
+                if (response.ocorrencia.vacina === "S"){
+                    $("#vacinaPacOcorr").html("<span class=\"font-weight-bold\">Vacinação atualizada:  </span>Sim");
+                } else {
+                    $("#vacinaPacOcorr").html("<span class=\"font-weight-bold\">Vacinação atualizada:  </span><span class='text-danger'>Não</span>");
+                }
+
+                if (response.ocorrencia.fono === "S"){
+                    $("#fonoPacOcorr").html("<span class=\"font-weight-bold\">Acomp. com a Fonoaudiologia:  </span><span class='text-danger'>Sim</span>");
+                } else {
+                    $("#fonoPacOcorr").html("<span class=\"font-weight-bold\">Acomp. com a Fonoaudiologia:  </span>Não");
+                }
+
+                $("#examesPacOcorr").html(response.ocorrencia.exames);
+                $("#condutaPacOcorr").html(response.ocorrencia.conduta);
+                $("#recomPacOcorr").html(response.ocorrencia.recomendacoes);
 
                 $("#modalOcorrPaciente").modal('show');
             },
