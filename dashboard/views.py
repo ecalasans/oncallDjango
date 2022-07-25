@@ -229,6 +229,15 @@ def sysLogin(request):
 
         #Verifica se o usuário existe
         if user is not None and (hospital_usuario == int(request.POST['select_hosp_cad'])):
+            # Restrição de hospital
+            if hospital_usuario == 2:
+                return render(request, 'dashboard/registration/login.html',
+                              context={'form': AuthenticationForm(),
+                                       'hospitais': hospitais,
+                                       'error': 'Serviço suspenso para este hospital!\nEntre em contato '+
+                                                'com o administrador!'}
+                              )
+
             # Faz o login
             login(request, user)
             hosp_id = Hospital.objects.get(pk=request.POST['select_hosp_cad']).id
@@ -522,6 +531,8 @@ def patientsManager(request):
 
             new_patient.peso_nasc = int(form.cleaned_data['peso_nasc'])
             new_patient.peso_atual = int(form.cleaned_data['peso_atual'])
+            new_patient.ig = form.cleaned_data['ig']
+            new_patient.idade_atual = form.cleaned_data['idade']
             new_patient.log_med = Medico.objects.get(id=request.user.id)
             new_patient.status = "I"
             new_patient.tcle = 'chk_pac_tcle' in request.POST
